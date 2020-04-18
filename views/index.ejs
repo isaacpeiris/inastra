@@ -1,26 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body>
-    <header>
-        <nav class="element">
-        </nav>
-    </header>
+<% include ./partials/head %>
 
-    <section id="hero" class="element">
-        <div class="hero-wrapper">
-            <span class="hero-title element"></span>
-            <div class="hero-content">
-                <div class="hero-img element"></div>
-                <div class="hero-text element"></div>
+<link rel="stylesheet" href="/stylesheets/index.css">
+<script src="/javascripts/index.js"></script>
+
+<% include ./partials/head-bottom %>
+<% include ./components/nav %>
+
+<main>
+    <section id="hero" class="section hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p>Solving complex problems through transdisciplinary innovation.</p>
             </div>
+            <div class="hero-img"></div>
         </div>
     </section>
+    <section class="spacer-section">
+        <img src="https://source.unsplash.com/1600x900/?work" alt="placeholder">
+    </section>
+    <section id="about">
+        <h1>About</h1>
+    </section>
+    <section id="blog">
+        <h1>Blog</h1>
+        <div id="medium-widget"></div>
+        <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
+        <script>
+            MediumWidget.Init({
+                renderTo: '#medium-widget',
+                params: {
+                    "resource":"https://uxdesign.cc/",
+                    "postsPerLine":3,
+                    "limit":3,
+                    "picture":"small",
+                    "fields":[
+                        "author",
+                        "publishAt"
+                    ],
+                    "ratio":"original"
+                }
+            })
+        </script>
 
-</body>
-</html>
+    </section>
+    <section id="contact">
+        <h1>Contact</h1>
+    </section>
+    <section class="spacer-section">
+        <img src="https://source.unsplash.com/1600x900/?work" alt="placeholder">
+    </section>
+</main>
+
+<% include ./components/footer %>

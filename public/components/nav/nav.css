@@ -1,0 +1,28 @@
+:root {
+    --nav-height: 68px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    height: calc(var(--nav-height) - 24px);
+    width: calc(100% - 48px);
+    background-color: var(--c-white);
+    transition: background-color 400ms ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    box-shadow: 0 2px 4px var(--c-black-20);
+}
+
+nav.transparent {
+    background-color: transparent;
+    color: var(--c-white);
+    position: fixed;
+    box-shadow: none;
+}
+
+.nav-item {
+    color: inherit;
+}

@@ -1,0 +1,128 @@
+/* COLOUR */
+:root {
+    --c-primary: rgb(43,190,243);
+    --c-primary-10: rgba(43,190,243,0.1);
+    --c-primary-20: rgba(43,190,243,0.2);
+    --c-primary-30: rgba(43,190,243,0.3);
+    --c-primary-40: rgba(43,190,243,0.4);
+    --c-primary-50: rgba(43,190,243,0.5);
+    --c-primary-60: rgba(43,190,243,0.6);
+    --c-primary-70: rgba(43,190,243,0.7);
+    --c-primary-80: rgba(43,190,243,0.8);
+    --c-primary-90: rgba(43,190,243,0.9);
+    --c-secondary: rgb(99,99,180);
+    --c-secondary-10: rgba(99,99,180,0.1);
+    --c-secondary-20: rgba(99,99,180,0.2);
+    --c-secondary-30: rgba(99,99,180,0.3);
+    --c-secondary-40: rgba(99,99,180,0.4);
+    --c-secondary-50: rgba(99,99,180,0.5);
+    --c-secondary-60: rgba(99,99,180,0.6);
+    --c-secondary-70: rgba(99,99,180,0.7);
+    --c-secondary-80: rgba(99,99,180,0.8);
+    --c-secondary-90: rgba(99,99,180,0.9);
+    --c-background: rgb(32,25,50);
+    --c-background-10: rgba(32,25,50,0.1);
+    --c-background-20: rgba(32,25,50,0.2);
+    --c-background-30: rgba(32,25,50,0.3);
+    --c-background-40: rgba(32,25,50,0.4);
+    --c-background-50: rgba(32,25,50,0.5);
+    --c-background-60: rgba(32,25,50,0.6);
+    --c-background-70: rgba(32,25,50,0.7);
+    --c-background-80: rgba(32,25,50,0.8);
+    --c-background-90: rgba(32,25,50,0.9);
+    --c-white: rgb(255,255,255);
+    --c-white-10: rgba(255,255,255,0.1);
+    --c-white-20: rgba(255,255,255,0.2);
+    --c-white-30: rgba(255,255,255,0.3);
+    --c-white-40: rgba(255,255,255,0.4);
+    --c-white-50: rgba(255,255,255,0.5);
+    --c-white-60: rgba(255,255,255,0.6);
+    --c-white-70: rgba(255,255,255,0.7);
+    --c-white-80: rgba(255,255,255,0.8);
+    --c-white-90: rgba(255,255,255,0.9);
+    --c-black: rgb(0,0,0);
+    --c-black-10: rgba(0,0,0,0.1);
+    --c-black-20: rgba(0,0,0,0.2);
+    --c-black-30: rgba(0,0,0,0.3);
+    --c-black-40: rgba(0,0,0,0.4);
+    --c-black-50: rgba(0,0,0,0.5);
+    --c-black-60: rgba(0,0,0,0.6);
+    --c-black-70: rgba(0,0,0,0.7);
+    --c-black-80: rgba(0,0,0,0.8);
+    --c-black-90: rgba(0,0,0,0.9);
+}
+
+/* FONT */
+:root {
+    --f-body: sans-serif;
+    --f-title: sans-serif;
+    --f-scale: 1.25;
+    --f-size-reg: 1rem;
+    --f-size-sml: calc(var(--f-size-reg) / var(--f-scale));
+    --f-size-5: calc(var(--f-size-reg) * var(--f-scale));
+    --f-size-4: calc(var(--f-size-5) * var(--f-scale));
+    --f-size-3: calc(var(--f-size-4) * var(--f-scale));
+    --f-size-2: calc(var(--f-size-3) * var(--f-scale));
+    --f-size-1: calc(var(--f-size-2) * var(--f-scale));
+    --f-size-0: calc(var(--f-size-1) * var(--f-scale));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+span,
+div {
+    font-family: var(--f-body);
+    font-weight: 400;
+    margin: 0;
+}
+
+/* typescale */
+h1 {font-size: var(--f-size-1);}
+h2 {font-size: var(--f-size-2);}
+h3 {font-size: var(--f-size-3);}
+h4 {font-size: var(--f-size-4);}
+h5 {font-size: var(--f-size-5);}
+
+p,
+a {
+    font-size: var(--f-size-reg);
+}
+
+/* MASTER STYLES */
+body {
+    margin: 0;
+    position: relative;
+    font-family: var(--f-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.link {
+    position: relative;
+}
+
+a.link::after {
+    content: '';
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    background-color: currentColor;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: transform 400ms ease;
+    /* transform-origin: right; */
+}
+
+a.link:hover::after {
+    transform: scaleX(1);
+    /* transform-origin: left; */
+}

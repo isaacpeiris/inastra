@@ -1,0 +1,13 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.hero-section {
+    min-height: 80vh;
+    width: 100%;
+    background-color: var(--c-background);
+    color: var(--c-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
