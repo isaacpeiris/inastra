@@ -18,14 +18,17 @@ nav {
     z-index: 9999;
 }
 
-nav > div {
-    height: 100%;
-    display: flex;
-}
-
 .nav-item {
     color: inherit;
-    display: flex;
-    align-items: center;
+}
+
+.nav-right > a {
+    margin-right: 12px;
+}
+
+.nav-item.button {
+    margin: 0;
+    background-color: var(--c-primary);
     padding: 12px;
+    color: var(--c-white);
 }
