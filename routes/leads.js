@@ -3,7 +3,6 @@ var router = express.Router();
 const axios = require('axios').default;
 
 router.get('/contact', function(req, res, next) {
-    console.log(req.query);
     axios({
         method: 'POST',
         url: 'https://hooks.slack.com/services/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',
