@@ -1,0 +1,23 @@
+section#thank-you {
+    min-height: 100vh;
+    background-color: var(--c-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thank-you-wrapper {
+    margin: auto;
+    width: 90%;
+    max-width: 720px;
+    text-align: center;
+    color: var(--c-white);
+}
+
+.thank-you-wrapper p {
+    margin: 12px 0 24px;
+}
+
+.home-link {
+    color: var(--c-white);
+}

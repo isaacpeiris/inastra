@@ -105,11 +105,11 @@ a {
     text-decoration: none;
 }
 
-a.link {
+.link {
     position: relative;
 }
 
-a.link::after {
+.link::after {
     content: '';
     width: 100%;
     transform: scaleX(0);
@@ -118,11 +118,12 @@ a.link::after {
     position: absolute;
     bottom: -4px;
     left: 0;
-    transition: transform 400ms ease;
+    transition: transform 200ms ease;
     /* transform-origin: right; */
 }
 
-a.link:hover::after {
+a.link:hover::after,
+a:hover .link::after {
     transform: scaleX(1);
     /* transform-origin: left; */
 }

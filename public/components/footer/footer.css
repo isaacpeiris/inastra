@@ -1,0 +1,32 @@
+footer {
+    background-color: var(--c-background);
+    color: var(--c-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+}
+
+.social-link img {
+    width: 24px;
+    transition: opacity 200ms ease;
+}
+
+.social-link:hover img {
+    opacity: 0.6;
+}
+
+.footer-link {
+    color: var(--c-white);
+    margin: 0 12px;
+}
+
+.copyright {
+    font-size: var(--f-size-sml);
+}

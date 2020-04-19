@@ -2,12 +2,80 @@ html {
     scroll-behavior: smooth;
 }
 
-.hero-section {
-    min-height: 80vh;
-    width: 100%;
-    background-color: var(--c-background);
+nav.transparent {
+    background-color: transparent;
     color: var(--c-white);
+    box-shadow: none;
+}
+
+/* HERO */
+section#hero {
+    background-color: var(--c-background);
+    min-height: 64vh;
+    padding: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.hero-text {
+    text-align: center;
+    width: 90%;
+    max-width: 720px;
+    margin: auto;
+    font-size: var(--f-size-0);
+    -webkit-text-stroke: 1px var(--c-primary);
+    -webkit-text-fill-color: transparent;
+}
+
+/* SECTIONS */
+.section {
+    padding: 48px 24px;
+}
+
+.section-wrapper {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    max-width: 840px;
+    margin: auto;
+    grid-gap: 72px;
+}
+
+section#about,
+section#contact {
+    background-color: var(--c-black-10);
+}
+
+form#contact {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: 1fr;
+}
+
+.form-input {
+    border: none;
+    background-color: var(--c-white);
+    font-size: var(--f-size-reg);
+    padding: 12px;
+}
+
+.input-label {
+    display: none;
+}
+
+textarea.form-input {
+    resize: vertical;
+}
+
+button#submit {
+    padding: 12px;
+    width: fit-content;
+    font-size: var(--f-size-reg);
+    background-color: var(--c-background);
+    color: var(--c-white);
+    border: none;
+}
+
+button#submit:hover {
+    cursor: pointer;
 }
