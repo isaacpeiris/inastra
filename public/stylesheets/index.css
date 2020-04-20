@@ -128,6 +128,13 @@ button#submit:hover {
 /* MEDIA QUERIES */
 @media screen and (max-width: 1280px) {
     .hero-wrapper {
+        justify-content: space-between;
+        grid-template-columns: 36% 48%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .hero-wrapper {
         display: block;
     }
     .hero-content {
@@ -142,9 +149,6 @@ button#submit:hover {
         max-width: 60%;
         margin: auto;
     }
-}
-
-@media screen and (max-width: 860px) {
     .section-wrapper {
         grid-template-columns: 1fr !important;
     }

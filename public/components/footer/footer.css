@@ -16,15 +16,12 @@ footer {
     display: flex;
     align-items: center;
     color: var(--c-white);
+    width: fit-content;
 }
 
 .social-link img {
     width: 12px;
     margin-right: 12px;
-}
-
-.social-link:hover {
-    opacity: 0.6;
 }
 
 .copyright {

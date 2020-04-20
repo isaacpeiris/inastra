@@ -31,4 +31,5 @@ nav {
     background-color: var(--c-primary);
     padding: 12px;
     color: var(--c-white);
+    transition: background-color 200ms ease;
 }
