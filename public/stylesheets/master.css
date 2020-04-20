@@ -126,3 +126,15 @@ a.link:hover::after {
     transform: scaleX(1);
     /* transform-origin: left; */
 }
+
+/* fade in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 1200ms ease, transform 800ms ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
