@@ -14,12 +14,16 @@ img {
 
 /* HERO */
 section#hero {
-    background: var(--c-background);
-    background: radial-gradient(circle at center, var(--c-secondary), var(--c-background));
+    background-color: var(--c-background);
     min-height: 48vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+canvas.particles-js-canvas-el {
+    position: absolute;
 }
 
 .hero-wrapper {
