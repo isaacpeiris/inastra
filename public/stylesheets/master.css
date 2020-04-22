@@ -54,8 +54,8 @@
 
 /* FONT */
 :root {
-    --f-body: sans-serif;
-    --f-title: sans-serif;
+    --f-body: 'Lato', sans-serif;
+    --f-title: 'Quicksand', sans-serif;
     --f-scale: 1.25;
     --f-size-reg: 1rem;
     --f-size-sml: calc(var(--f-size-reg) / var(--f-scale));
@@ -94,6 +94,12 @@ a {
 }
 
 /* MASTER STYLES */
+::selection {
+    background: var(--c-primary);
+    color: var(--c-background);
+    -webkit-text-stroke-color: var(--c-background);
+}
+
 body {
     margin: 0;
     position: relative;

@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 0.2,
+      "speed": 0.1,
       "direction": "left",
       "random": false,
       "straight": true,
@@ -68,14 +68,14 @@
     }
   },
   "interactivity": {
-    "detect_on": "canvas",
+    "detect_on": "window",
     "events": {
       "onhover": {
         "enable": true,
         "mode": "bubble"
       },
       "onclick": {
-        "enable": false,
+        "enable": true,
         "mode": "push"
       },
       "resize": true

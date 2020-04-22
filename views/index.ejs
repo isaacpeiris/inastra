@@ -9,7 +9,7 @@
 <% include ./components/nav %>
 
 <main>
-    <section id="hero" class="section particle-container">
+    <section id="hero" class="particle-container">
         <div class="hero-wrapper fade-in">
             <div class="hero-content">
                 <h1 class="hero-text">Solving complex problems through transdisciplinary innovation.</h1>
@@ -56,7 +56,7 @@
                 <hr class="section-underline">
             </div>
             <div class="section-content">
-                <form action="/send/contact" method="GET" id="contact">
+                <form action="/send/contact" method="GET" id="contact" autocomplete="off">
                     <label for="name" class="input-label">Name:</label>
                     <input type="text" class="form-input fade-in" id="name" name="name" placeholder="Full Name">
                     <label for="email" class="input-label">Email:</label>
@@ -70,5 +70,7 @@
         </div>
     </section>
 </main>
+
+<div id="particle-js"></div>
 
 <% include ./components/footer %>
