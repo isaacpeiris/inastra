@@ -85,14 +85,13 @@ form#contact {
     grid-template-columns: 1fr;
 }
 
-.form-input,
-.form-input:-webkit-autofill {
+.form-input {
     border: none;
     background-color: var(--c-secondary-20);
     color: var(--c-white);
     font-size: var(--f-size-reg);
     padding: 12px;
-    transition: background-color 240ms ease;
+    transition: background-color 240ms ease, opacity 1200ms ease, transform 800ms ease;
 }
 
 .form-input::placeholder {
@@ -120,7 +119,7 @@ button#submit {
     background-color: var(--c-secondary-20);
     color: var(--c-white);
     border: none;
-    transition: background-color 240ms ease;
+    transition: background-color 240ms ease, opacity 1200ms ease, transform 800ms ease;
 }
 
 button#submit:hover {
