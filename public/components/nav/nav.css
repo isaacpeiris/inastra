@@ -32,13 +32,22 @@ nav::before {
     margin: auto;
 }
 
+.nav-right {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    grid-gap: 24px;
+}
+
 .nav-item {
     color: inherit;
     position: relative;
 }
 
-.nav-right > a {
-    margin-right: 12px;
+.nav-item.logo {
+    font-family: var(--f-title);
+    font-weight: 700;
+    font-size: var(--f-size-5);
 }
 
 .nav-item.button {

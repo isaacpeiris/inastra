@@ -105,6 +105,7 @@ body {
     position: relative;
     font-family: var(--f-body);
     -webkit-font-smoothing: antialiased;
+    background-color: var(--c-primary);
 }
 
 a {
