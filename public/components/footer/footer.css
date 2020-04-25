@@ -6,8 +6,8 @@ footer {
 
 .footer-wrapper {
     display: grid;
-    grid-template-columns: max-content max-content;
-    grid-gap: 72px;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
     margin: auto;
     align-items: center;
     justify-content: center;
@@ -27,6 +27,8 @@ footer {
 
 .copyright {
     font-size: var(--f-size-sml);
+    word-spacing: 4px;
+    text-align: center;
 }
 
 .footer-link {
@@ -34,27 +36,7 @@ footer {
     margin-right: 12px;
 }
 
-.legal .footer-link {
-    font-size: var(--f-size-sml);
-}
-
 .footer-nav,
 .social-links {
-    margin-bottom: 12px;
-}
-
-@media screen and (max-width: 680px) {
-    .footer-wrapper {
-        display: block;
-        margin: auto;
-        width: fit-content;
-        text-align: center;
-    }
-    .footer-left {
-        margin-bottom: 24px;
-    }
-    .social-link {
-        width: fit-content;
-        margin: auto;
-    }
+    margin: 0 auto;
 }

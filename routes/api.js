@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const axios = require('axios').default;
 
-router.get('/contact', function(req, res, next) {
+router.get('/contact-form', function(req, res, next) {
     axios({
         method: 'POST',
         url: 'https://hooks.slack.com/services/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',
@@ -47,6 +47,9 @@ router.get('/contact', function(req, res, next) {
             ]
         }
     }).then(function() {
+        let fullName = req.query.name;
+        let firstName = fullName.split(' ')[0];
+        console.log(firstName);
         res.redirect('/confirmed');
     });
 });

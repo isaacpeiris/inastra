@@ -1,7 +1,5 @@
 <% include ./partials/head %>
 
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
 <link rel="stylesheet" href="/stylesheets/index.css">
 <script src="/javascripts/index.js"></script>
 
@@ -12,51 +10,67 @@
     <section id="hero" class="particle-container">
         <div class="hero-wrapper fade-in">
             <div class="hero-content">
-                <h1 class="hero-text">Solving complex problems through transdisciplinary innovation.</h1>
+                <h1 class="hero-text">Creativity is not a talent,<br class="hero-break"> it’s a way of thinking.</h1>
             </div>
         </div>
     </section>
-    <section id="about" class="section">
+    <section id="about" class="section fade-in block">
         <div class="section-wrapper fade-in">
             <div class="section-header">
+                <p class="section-name">About</p>
                 <h2 class="section-title">A new perspective.</h2>
                 <hr class="section-underline">
             </div>
             <div class="section-content">
-                <p>Innova is a creative intelligence consultancy delivering meaningful solutions to complex problems through transdisciplinary innovation. With experience across a multitude of industries, we offer unique perspectives that solve your specific problems.</p>
+                <p>We are a creative intelligence consultancy delivering meaningful solutions to complex problems. We do this through transdisciplinary innovation, the cross-pollination of processes between knowledge-bases to form new ways of thinking.</p>
+                <br>
+                <p>As businesses navigate the increasing rate of change and complexity of systems indicative of an ever-increasing rate of change, new ways of thinking and doing are essential to not only thriving, but surviving.</p>
             </div>
         </div>
     </section>
-    <section id="new" class="section">
+    <section id="services" class="section fade-in">
         <div class="section-wrapper fade-in">
             <div class="section-header">
-                <h2 class="section-title">What got you here, won't get you there.</h2>
+                <p class="section-name">Services</p>
+                <h2 class="section-title">Section Title</h2>
                 <hr class="section-underline">
             </div>
             <div class="section-content">
-                <p>Innova is a creative intelligence consultancy delivering meaningful solutions to complex problems through transdisciplinary innovation. With experience across a multitude of industries, we offer unique perspectives that solve your specific problems.</p>
+                <p>We're experts in:</p>
+                <ul class="expertise">
+                    <li class="expertise-item"><span class="material-icons">chevron_right</span>Creative processes</li>
+                    <li class="expertise-item"><span class="material-icons">chevron_right</span>Problem solving</li>
+                    <li class="expertise-item"><span class="material-icons">chevron_right</span>Facilitation</li>
+                    <li class="expertise-item"><span class="material-icons">chevron_right</span>Innovation</li>
+                    <li class="expertise-item"><span class="material-icons">chevron_right</span>Collaboration</li>
+                    <li class="expertise-item"><span class="material-icons">chevron_right</span>Curiosity</li>
+                    <li class="expertise-item"><span class="material-icons">chevron_right</span>Knowledge</li>
+                </ul>
+                <p>Because no two problems are the same, no two processes for solving a problem will be the same either. Our tailored service offerings are designed to be flexible and adaptable to meet your unique needs, meaningfully solving complex problems quickly and effectively.</p>
             </div>
         </div>
     </section>
-    <section id="services" class="section">
+    <section id="approach" class="section fade-in block">
         <div class="section-wrapper fade-in">
             <div class="section-header">
-                <h2 class="section-title">No two problems are the same.</h2>
+                <p class="section-name">Approach</p>
+                <h2 class="section-title">Section Title</h2>
                 <hr class="section-underline">
             </div>
             <div class="section-content">
-                <p>Innova offers a diverse range of services tailored to your needs. No two problems are the same, so no two processes for solving the problem will be the same. Together, we can work to find the right process to deliver the best outcome.</p>
+                <p>Transdisciplinarity occurs when processes are shared across knowledge-bases to inform a more holistic approach, achieving a unity of knowledge that transcends disciplinary boundaries. This is how we solve complex problems.</p>
             </div>
         </div>
     </section>
-    <section id="contact" class="section">
+    <section id="contact" class="section fade-in">
         <div class="section-wrapper fade-in">
             <div class="section-header">
+                <p class="section-name">Contact</p>
                 <h2 class="section-title">Let's get started.</h2>
                 <hr class="section-underline">
             </div>
             <div class="section-content">
-                <form action="/send/contact" method="GET" id="contact" autocomplete="off">
+                <form action="/api/contact-form" method="GET" id="contact" autocomplete="off">
                     <label for="name" class="input-label">Name:</label>
                     <input type="text" class="form-input fade-in" id="name" name="name" placeholder="Full Name">
                     <label for="email" class="input-label">Email:</label>

@@ -1,9 +1,10 @@
 section#thank-you {
     min-height: 100vh;
-    background-color: var(--c-background);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+    position: relative;
 }
 
 .thank-you-wrapper {
