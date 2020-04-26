@@ -18,7 +18,7 @@ section#hero {
 
 .hero-wrapper {
     width: 90%;
-    max-width: 1280px;
+    max-width: 1440px;
     position: relative;
     z-index: 1;
 }
@@ -28,7 +28,7 @@ section#hero {
 }
 
 .hero-text {
-    font-size: var(--f-size-0);
+    font-size: calc(var(--f-size-0) + 1vw);
     font-family: var(--f-title);
     font-weight: 900;
     -webkit-text-stroke: 1px var(--c-primary);
@@ -45,7 +45,7 @@ section#hero {
 
 .block {
     background-color: var(--c-white);
-    color: var(--c-background);
+    color: var(--c-secondary);
 }
 
 .block::before,
@@ -86,11 +86,12 @@ section.block#approach::after {
 
 .section-wrapper {
     width: 90%;
+    max-width: 1440px;
     margin: auto;
     display: grid;
     grid-template-columns: 360px minmax(auto, 640px);
     grid-gap: 4vw;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .section-title {
@@ -130,7 +131,7 @@ form#contact {
 
 .form-input {
     border: none;
-    background-color: var(--c-secondary-20);
+    background-color: var(--c-purple-20);
     color: var(--c-white);
     font-size: var(--f-size-reg);
     padding: 12px;
@@ -143,7 +144,7 @@ form#contact {
 
 .form-input:focus,
 button#submit:focus {
-    background-color: var(--c-secondary-90);
+    background-color: var(--c-purple-90);
     outline: none;
 }
 
@@ -159,7 +160,7 @@ button#submit {
     padding: 12px;
     width: fit-content;
     font-size: var(--f-size-reg);
-    background-color: var(--c-secondary-20);
+    background-color: var(--c-purple-20);
     color: var(--c-white);
     border: none;
     transition: background-color 240ms ease, opacity 1200ms ease, transform 800ms ease;
@@ -167,7 +168,7 @@ button#submit {
 
 button#submit:hover {
     cursor: pointer;
-    background-color: var(--c-secondary-90);
+    background-color: var(--c-purple-90);
 }
 
 /* MEDIA QUERIES */

@@ -17,4 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener("scroll", function() {
         fadeIn()
     });
+
+    // still background if reduced motion
+    const hasReduceMotionOn = window.matchMedia('(prefers-reduced-motion)').matches;
+    if (hasReduceMotionOn) {
+        particlesJS.load('particle-js', './components/particles-js/particlesjs-config_reduced-motion.json');
+        document.documentElement.classList.add('reduced-motion');
+    } else {
+        particlesJS.load('particle-js', './components/particles-js/particlesjs-config.json');
+    }
 })

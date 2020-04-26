@@ -19,8 +19,8 @@ nav::before {
     left: 0;
     height: calc(var(--nav-height));
     width: 100%;
-    background-color: var(--c-background);
-    box-shadow: 0 2px 6px var(--c-background-40);
+    background-color: var(--c-secondary);
+    box-shadow: 0 2px 6px var(--c-secondary-40);
     transition-property: background-color, box-shadow;
     transition-duration: 400ms;
     transition-timing-function: ease;
@@ -61,7 +61,7 @@ nav.transparent::before {
 
 .nav-item.button {
     margin: 0;
-    background-color: var(--c-primary-40);
+    background-color: var(--c-primary);
     padding: 12px;
     color: var(--c-white);
     transition: background-color 200ms ease;
@@ -69,5 +69,5 @@ nav.transparent::before {
 
 .nav-item.button:focus,
 .nav-item.button:hover {
-    background-color: var(--c-primary-90);
+    background-color: var(--c-primary-60);
 }

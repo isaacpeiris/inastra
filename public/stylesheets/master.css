@@ -1,35 +1,35 @@
 /* COLOUR */
 :root {
-    --c-primary: rgb(43,190,243);
-    --c-primary-10: rgba(43,190,243,0.1);
-    --c-primary-20: rgba(43,190,243,0.2);
-    --c-primary-30: rgba(43,190,243,0.3);
-    --c-primary-40: rgba(43,190,243,0.4);
-    --c-primary-50: rgba(43,190,243,0.5);
-    --c-primary-60: rgba(43,190,243,0.6);
-    --c-primary-70: rgba(43,190,243,0.7);
-    --c-primary-80: rgba(43,190,243,0.8);
-    --c-primary-90: rgba(43,190,243,0.9);
-    --c-secondary: rgb(99,99,180);
-    --c-secondary-10: rgba(99,99,180,0.1);
-    --c-secondary-20: rgba(99,99,180,0.2);
-    --c-secondary-30: rgba(99,99,180,0.3);
-    --c-secondary-40: rgba(99,99,180,0.4);
-    --c-secondary-50: rgba(99,99,180,0.5);
-    --c-secondary-60: rgba(99,99,180,0.6);
-    --c-secondary-70: rgba(99,99,180,0.7);
-    --c-secondary-80: rgba(99,99,180,0.8);
-    --c-secondary-90: rgba(99,99,180,0.9);
-    --c-background: rgb(32,25,50);
-    --c-background-10: rgba(32,25,50,0.1);
-    --c-background-20: rgba(32,25,50,0.2);
-    --c-background-30: rgba(32,25,50,0.3);
-    --c-background-40: rgba(32,25,50,0.4);
-    --c-background-50: rgba(32,25,50,0.5);
-    --c-background-60: rgba(32,25,50,0.6);
-    --c-background-70: rgba(32,25,50,0.7);
-    --c-background-80: rgba(32,25,50,0.8);
-    --c-background-90: rgba(32,25,50,0.9);
+    --c-primary: rgb(57,186,236);
+    --c-primary-10: rgba(57,186,236,0.1);
+    --c-primary-20: rgba(57,186,236,0.2);
+    --c-primary-30: rgba(57,186,236,0.3);
+    --c-primary-40: rgba(57,186,236,0.4);
+    --c-primary-50: rgba(57,186,236,0.5);
+    --c-primary-60: rgba(57,186,236,0.6);
+    --c-primary-70: rgba(57,186,236,0.7);
+    --c-primary-80: rgba(57,186,236,0.8);
+    --c-primary-90: rgba(57,186,236,0.9);
+    --c-secondary: rgb(31,24,50);
+    --c-secondary-10: rgba(31,24,50,0.1);
+    --c-secondary-20: rgba(31,24,50,0.2);
+    --c-secondary-30: rgba(31,24,50,0.3);
+    --c-secondary-40: rgba(31,24,50,0.4);
+    --c-secondary-50: rgba(31,24,50,0.5);
+    --c-secondary-60: rgba(31,24,50,0.6);
+    --c-secondary-70: rgba(31,24,50,0.7);
+    --c-secondary-80: rgba(31,24,50,0.8);
+    --c-secondary-90: rgba(31,24,50,0.9);
+    --c-purple: rgb(100,92,168);
+    --c-purple-10: rgba(100,92,168,0.1);
+    --c-purple-20: rgba(100,92,168,0.2);
+    --c-purple-30: rgba(100,92,168,0.3);
+    --c-purple-40: rgba(100,92,168,0.4);
+    --c-purple-50: rgba(100,92,168,0.5);
+    --c-purple-60: rgba(100,92,168,0.6);
+    --c-purple-70: rgba(100,92,168,0.7);
+    --c-purple-80: rgba(100,92,168,0.8);
+    --c-purple-90: rgba(100,92,168,0.9);
     --c-white: rgb(255,255,255);
     --c-white-10: rgba(255,255,255,0.1);
     --c-white-20: rgba(255,255,255,0.2);
@@ -96,8 +96,8 @@ a {
 /* MASTER STYLES */
 ::selection {
     background: var(--c-primary);
-    color: var(--c-background);
-    -webkit-text-stroke-color: var(--c-background);
+    color: var(--c-secondary);
+    -webkit-text-stroke-color: var(--c-secondary);
 }
 
 body {
@@ -134,6 +134,10 @@ a.link:hover::after {
     /* transform-origin: left; */
 }
 
+.reduced-motion a.link::after {
+    transition: transform 0ms ease;
+}
+
 /* fade in */
 .fade-in {
     opacity: 0;
@@ -141,7 +145,8 @@ a.link:hover::after {
     transition: opacity 1200ms ease, transform 800ms ease;
 }
 
-.fade-in.visible {
+.fade-in.visible,
+.reduced-motion .fade-in {
     opacity: 1;
     transform: translateY(0);
 }
@@ -155,7 +160,7 @@ a.link:hover::after {
 
 /* PARTICLE JS */
 #particle-js {
-    background-color: var(--c-background);
+    background-color: var(--c-secondary);
     position: fixed;
     top: 0;
     left: 0;

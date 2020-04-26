@@ -69,13 +69,7 @@ router.post('/contact-form', function(req, res, next) {
                 ]
             }
         ]
-    })
-    .catch(function(error) {
-        console.log('ERROR')
-        console.log(error);
-    });
-
-
+    }).catch(function(error) { console.log(error.response) });
 
     res.redirect('/confirmed');
 });
