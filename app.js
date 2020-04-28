@@ -10,6 +10,7 @@ const usersRouter = require('./routes/users');
 const apiRouter = require('./routes/api')
 
 const app = express();
+require('dotenv').config();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
