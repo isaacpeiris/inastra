@@ -21,7 +21,7 @@ footer {
 }
 
 .social-link img {
-    width: 12px;
+    max-height: var(--f-size-sml);
     margin-right: 12px;
 }
 

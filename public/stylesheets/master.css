@@ -141,14 +141,29 @@ a.link:hover::after {
 /* fade in */
 .fade-in {
     opacity: 0;
-    transform: translateY(48px);
     transition: opacity 1200ms ease, transform 800ms ease;
+}
+
+.fade-up {
+    transform: translateY(48px);
+}
+
+.fade-down {
+    transform: translateY(-48px);
+}
+
+.fade-left {
+    transform: translateX(48px);
+}
+
+.fade-right {
+    transform: translateX(-48px);
 }
 
 .fade-in.visible,
 .reduced-motion .fade-in {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateX(0);
 }
 
 @media screen and (max-width: 860px) {

@@ -7,6 +7,10 @@ section {
     position: relative;
 }
 
+:root {
+    --wave-height: 72px;
+}
+
 /* HERO */
 section#hero {
     display: flex;
@@ -30,9 +34,9 @@ section#hero {
 .hero-text {
     font-size: calc(var(--f-size-0) + 1vw);
     font-family: var(--f-title);
-    font-weight: 900;
-    -webkit-text-stroke: 1px var(--c-primary);
-    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    color: var(--c-primary);
+    text-shadow: 0 0 12px var(--c-primary);
 }
 
 /* SECTIONS */
@@ -40,7 +44,12 @@ section#hero {
     color: var(--c-white);
     display: flex;
     align-items: center;
-    padding: 180px 0;
+    padding: calc(24px + 6vh) 0;
+    margin: calc(var(--wave-height) * 2) 0;
+}
+
+.section:last-of-type {
+    margin-bottom: var(--wave-height);
 }
 
 .block {
@@ -53,18 +62,18 @@ section#hero {
     content: '';
     position: absolute;
     left: 0;
-    height: 72px;
+    height: var(--wave-height);
     width: 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 .block::before {
-    top: -72px;
+    top: calc(var(--wave-height) * -1);
 }
 
 .block::after {
-    bottom: -72px;
+    bottom: calc(var(--wave-height) * -1);
     transform: scaleY(-1) scaleX(-1);
 }
 
@@ -89,7 +98,7 @@ section.block#approach::after {
     max-width: 1440px;
     margin: auto;
     display: grid;
-    grid-template-columns: 360px minmax(auto, 640px);
+    grid-template-columns: 420px minmax(auto, 680px);
     grid-gap: 4vw;
     justify-content: space-between;
 }

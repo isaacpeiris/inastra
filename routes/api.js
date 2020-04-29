@@ -8,82 +8,82 @@ axios.defaults.headers.common['Content-type'] = 'application/json';
 // Receive post request from contact form
 router.post('/contact-form', function(req, res, next) {
     // Post form content to #leads Slack channel
-    axios.post('https://hooks.slack.com/services/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', {
-        text: "New inbound lead 🔥",
-        blocks: [
-            {
-                type:"section",
-                text:{
-                    type:"plain_text",
-                    text:"New inbound lead 🔥"
-                }
-            },
-            {
-                type:"section",
-                block_id: "name",
-                text:{
-                    type:"mrkdwn",
-                    text:"*Name:* " + req.body.name
-                }
-            },
-            {
-                type:"section",
-                block_id: "company",
-                text:{
-                    type:"mrkdwn",
-                    text:"*Company:* " + req.body.company
-                }
-            },
-            {
-                type:"section",
-                block_id: "email",
-                text:{
-                    type:"mrkdwn",
-                    text:"*Email:* " + req.body.email
-                }
-            },
-            {
-                type:"section",
-                block_id: "phone",
-                text:{
-                    type:"mrkdwn",
-                    text:"*Phone:* " + req.body.phone
-                }
-            },
-            {
-                type:"section",
-                block_id: "message",
-                text:{
-                    type:"mrkdwn",
-                    text:"*Message:* " + req.body.message
-                }
-            },
-            {
-                type: "actions",
-                elements: [
-                    {
-                        type: "button",
-                        text: {
-                            type: "plain_text",
-                            text: "Qualify Lead",
-                            emoji: true
-                        },
-                        style: "primary",
-                        value: "qualifylead"
-                    },
-                    {
-                        type: "button",
-                        text: {
-                            type: "plain_text",
-                            text: "Disqualify Lead",
-                            emoji: true
-                        },
-                        value: "disqualifylead"
-                    }
-                ]
-            }
-        ]
-    }).catch(function(error) { console.log(error.response) });
+    // axios.post('https://hooks.slack.com/services/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', {
+    //     text: "New inbound lead 🔥",
+    //     blocks: [
+    //         {
+    //             type:"section",
+    //             text:{
+    //                 type:"plain_text",
+    //                 text:"New inbound lead 🔥"
+    //             }
+    //         },
+    //         {
+    //             type:"section",
+    //             block_id: "name",
+    //             text:{
+    //                 type:"mrkdwn",
+    //                 text:"*Name:* " + req.body.name
+    //             }
+    //         },
+    //         {
+    //             type:"section",
+    //             block_id: "company",
+    //             text:{
+    //                 type:"mrkdwn",
+    //                 text:"*Company:* " + req.body.company
+    //             }
+    //         },
+    //         {
+    //             type:"section",
+    //             block_id: "email",
+    //             text:{
+    //                 type:"mrkdwn",
+    //                 text:"*Email:* " + req.body.email
+    //             }
+    //         },
+    //         {
+    //             type:"section",
+    //             block_id: "phone",
+    //             text:{
+    //                 type:"mrkdwn",
+    //                 text:"*Phone:* " + req.body.phone
+    //             }
+    //         },
+    //         {
+    //             type:"section",
+    //             block_id: "message",
+    //             text:{
+    //                 type:"mrkdwn",
+    //                 text:"*Message:* " + req.body.message
+    //             }
+    //         },
+    //         {
+    //             type: "actions",
+    //             elements: [
+    //                 {
+    //                     type: "button",
+    //                     text: {
+    //                         type: "plain_text",
+    //                         text: "Qualify Lead",
+    //                         emoji: true
+    //                     },
+    //                     style: "primary",
+    //                     value: "qualifylead"
+    //                 },
+    //                 {
+    //                     type: "button",
+    //                     text: {
+    //                         type: "plain_text",
+    //                         text: "Disqualify Lead",
+    //                         emoji: true
+    //                     },
+    //                     value: "disqualifylead"
+    //                 }
+    //             ]
+    //         }
+    //     ]
+    // }).catch(function(error) { console.log(error.response) });
 
     // redirect to confirmation page
     res.redirect('/confirmed');
