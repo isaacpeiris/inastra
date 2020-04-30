@@ -89,6 +89,7 @@ router.post('/contact-form', function(req, res, next) {
     res.redirect('/confirmed');
 });
 
+// Receive all payloads from Slack messages
 router.post('/slack', async function(req, res, next) {
     // Convert payload from a string. Set above try, so it's accessible in catch
     const payload = JSON.parse(req.body.payload);
@@ -99,177 +100,164 @@ router.post('/slack', async function(req, res, next) {
 
     if (buttonId === 'url') {
         res.sendStatus(200);
-    } else {
+    } else if (buttonId === 'qualifylead') {
+        // To get around Slack 3 second rule send immediate confirmation once request is received
+        axios.post(payload.response_url, { text: "Processing..." }).catch(function(error) { console.log(error.response) });
         try {
-            // To get around Slack 3 second rule send immediate confirmation once request is received
-            axios.post(payload.response_url, {
-                text: "Processing..."
-            }).catch(function(error) { console.log(error.response) });
 
-            if (buttonId === 'qualifylead') {
+            // Regex to remove label from Slack message sections
+            const messageLabel = /^.*\*\s/g
 
-                // Regex to remove label from Slack message sections
-                const messageLabel = /^.*\*\s/g
-
-                // Create formInputs object with Slack message content
-                const formInputs = {
-                    contactFullName: messageContent[1].text.text.replace(messageLabel,''),
-                    contactFirstName: messageContent[1].text.text.replace(messageLabel,'').split(' ')[0],
-                    contactLastName: messageContent[1].text.text.replace(messageLabel,'').split(' ')[1],
-                    contactCompany: messageContent[2].text.text.replace(messageLabel,''),
-                    contactCompanyDomain: messageContent[3].text.text.split('|')[1].split('>')[0].split('@')[1],
-                    contactEmail: messageContent[3].text.text.split('|')[1].split('>')[0],
-                    contactPhone: messageContent[4].text.text.replace(messageLabel,''),
-                    contactMessage: messageContent[5].text.text.replace(messageLabel,'')
-                }
-
-                // Calculate UTC timestamp at midnight of current day
-                const d = new Date();
-                const UTCMidnightTime = +d.setUTCHours(0,0,0,0);
-
-                // Check if contact already exists
-                let contactId = await getContactId(formInputs.contactEmail);
-
-                // If contact doesn't exist, create them
-                if (contactId === null) {
-                    const newContact = await createContact(formInputs);
-                    contactId = newContact.data.vid;
-                }
-
-                // Get the ID of the company after it has been auto created to allow the attachment of company to deal
-                await timeout(300);
-                const companyId = await getCompanyId(formInputs.contactCompanyDomain);
-
-                // create deal and return dealId for adding note to deal
-                const dealId = await createDeal(formInputs.contactCompany, companyId, contactId, UTCMidnightTime);
-
-                // Add note to deal with message, associate with deal, contact and company
-                await addNoteToDeal(dealId, contactId, companyId, formInputs);
-
-                // cc email address of the person that didn't qualify lead
-                let emailCc;
-                if (payload.user.id === 'U012MRST35J') {
-                    emailCc = 'marissa@innova.cx'
-                } else {
-                    emailCc = 'isaac@innova.cx'
-                }
-
-                console.log(emailCc)
-                // Send confirmation back to slack
-                axios.post(payload.response_url, {
-                    blocks: [
-                        messageContent[0],
-                        messageContent[1],
-                        messageContent[2],
-                        messageContent[3],
-                        messageContent[4],
-                        messageContent[5],
-                        {
-                            type: "context",
-                            elements: [
-                                {
-                                    type: "mrkdwn",
-                                    text: `Successfully qualified by <@${payload.user.id}>`
-                                }
-                            ]
-                        },
-                        {
-                            type: "actions",
-                            elements: [
-                                {
-                                    type: "button",
-                                    text: {
-                                        type: "plain_text",
-                                        text: "Email Contact",
-                                        emoji: true
-                                    },
-                                    value: "url",
-                                    url: `mailto:${formInputs.contactEmail}?cc=${emailCc}&bcc=7583679@bcc.hubspot.com`
-                                }
-                            ]
-                        }
-                    ]
-                }).catch(function(error) { console.log(error.response) });
-            } else if (buttonId === 'disqualifylead') {
-                // If lead was disqualified, return post to Slack
-                axios.post(payload.response_url, {
-                    blocks: [
-                        messageContent[0],
-                        messageContent[1],
-                        messageContent[2],
-                        messageContent[3],
-                        messageContent[4],
-                        messageContent[5],
-                        {
-                            type: "context",
-                            elements: [
-                                {
-                                    type: "mrkdwn",
-                                    text: `Lead disqualified by <@${payload.user.id}>`
-                                }
-                            ]
-                        },
-                        {
-                            type: "actions",
-                            elements: [
-                                {
-                                    type: "button",
-                                    text: {
-                                        type: "plain_text",
-                                        text: "Reset Lead",
-                                        emoji: true
-                                    },
-                                    value: "resetlead"
-                                }
-                            ]
-                        }
-                    ]
-                }).catch(function(error) { console.log(error.response) });
-            } else if (buttonId === 'resetlead') {
-                // Reset the lead message
-                axios.post(payload.response_url, {
-                    blocks: [
-                        messageContent[0],
-                        messageContent[1],
-                        messageContent[2],
-                        messageContent[3],
-                        messageContent[4],
-                        messageContent[5],
-                        {
-                            type: "actions",
-                            elements: [
-                                {
-                                    type: "button",
-                                    text: {
-                                        type: "plain_text",
-                                        text: "Qualify Lead",
-                                        emoji: true
-                                    },
-                                    style: "primary",
-                                    value: "qualifylead"
-                                },
-                                {
-                                    type: "button",
-                                    text: {
-                                        type: "plain_text",
-                                        text: "Disqualify Lead",
-                                        emoji: true
-                                    },
-                                    value: "disqualifylead"
-                                }
-                            ]
-                        }
-                    ]
-                }).catch(function(error) { console.log(error.response) });
+            // Create formInputs object with Slack message content
+            const formInputs = {
+                contactFullName: messageContent[1].text.text.replace(messageLabel,''),
+                contactFirstName: messageContent[1].text.text.replace(messageLabel,'').split(' ')[0],
+                contactLastName: messageContent[1].text.text.replace(messageLabel,'').split(' ')[1],
+                contactCompany: messageContent[2].text.text.replace(messageLabel,''),
+                contactCompanyDomain: messageContent[3].text.text.split('|')[1].split('>')[0].split('@')[1],
+                contactEmail: messageContent[3].text.text.split('|')[1].split('>')[0],
+                contactPhone: messageContent[4].text.text.replace(messageLabel,''),
+                contactMessage: messageContent[5].text.text.replace(messageLabel,'')
             }
 
+            // Calculate UTC timestamp at midnight of current day
+            const d = new Date();
+            const UTCMidnightTime = +d.setUTCHours(0,0,0,0);
+
+            // Check if contact already exists
+            let contactId = await getContactId(formInputs.contactEmail);
+
+            // If contact doesn't exist, create them
+            if (contactId === null) {
+                const newContact = await createContact(formInputs);
+                contactId = newContact.data.vid;
+            }
+
+            // Get the ID of the company after it has been auto created to allow the attachment of company to deal
+            await timeout(300);
+            const companyId = await getCompanyId(formInputs.contactCompanyDomain);
+
+            // create deal and return dealId for adding note to deal
+            const dealId = await createDeal(formInputs.contactCompany, companyId, contactId, UTCMidnightTime);
+
+            // Add note to deal with message, associate with deal, contact and company
+            await addNoteToDeal(dealId, contactId, companyId, formInputs);
+
+            // Send confirmation back to slack
+            axios.post(payload.response_url, {
+                blocks: [
+                    messageContent[0],
+                    messageContent[1],
+                    messageContent[2],
+                    messageContent[3],
+                    messageContent[4],
+                    messageContent[5],
+                    {
+                        type: "context",
+                        elements: [
+                            {
+                                type: "mrkdwn",
+                                text: `Successfully qualified by <@${payload.user.id}>`
+                            }
+                        ]
+                    },
+                    {
+                        type: "actions",
+                        elements: [
+                            {
+                                type: "button",
+                                text: {
+                                    type: "plain_text",
+                                    text: "Email Contact",
+                                    emoji: true
+                                },
+                                value: "url",
+                                url: `mailto:${formInputs.contactEmail}?cc=marissa@innova.cx,isaac@innova.cx&bcc=7583679@bcc.hubspot.com`
+                            }
+                        ]
+                    }
+                ]
+            }).catch(function(error) { console.log(error.response) });
         } catch (err) {
-            console.log(err);
+            console.log(err)
         }
+    } else if (buttonId === 'disqualifylead') {
+        // If lead was disqualified, return post to Slack
+        axios.post(payload.response_url, {
+            blocks: [
+                messageContent[0],
+                messageContent[1],
+                messageContent[2],
+                messageContent[3],
+                messageContent[4],
+                messageContent[5],
+                {
+                    type: "context",
+                    elements: [
+                        {
+                            type: "mrkdwn",
+                            text: `Lead disqualified by <@${payload.user.id}>`
+                        }
+                    ]
+                },
+                {
+                    type: "actions",
+                    elements: [
+                        {
+                            type: "button",
+                            text: {
+                                type: "plain_text",
+                                text: "Reset Lead",
+                                emoji: true
+                            },
+                            value: "resetlead"
+                        }
+                    ]
+                }
+            ]
+        }).catch(function(error) { console.log(error.response) });
+    } else if (buttonId === 'resetlead') {
+        // Reset the lead message
+        axios.post(payload.response_url, {
+            blocks: [
+                messageContent[0],
+                messageContent[1],
+                messageContent[2],
+                messageContent[3],
+                messageContent[4],
+                messageContent[5],
+                {
+                    type: "actions",
+                    elements: [
+                        {
+                            type: "button",
+                            text: {
+                                type: "plain_text",
+                                text: "Qualify Lead",
+                                emoji: true
+                            },
+                            style: "primary",
+                            value: "qualifylead"
+                        },
+                        {
+                            type: "button",
+                            text: {
+                                type: "plain_text",
+                                text: "Disqualify Lead",
+                                emoji: true
+                            },
+                            value: "disqualifylead"
+                        }
+                    ]
+                }
+            ]
+        }).catch(function(error) { console.log(error.response) });
     }
 });
 
+/* ===================== */
 /* HUBSPOT API FUNCTIONS */
+/* ===================== */
 // Get contact ID, return null if contact doesn't exist
 async function getContactId(contactEmail) {
     let contactId;
