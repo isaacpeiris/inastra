@@ -1,16 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
-section {
-    z-index: 1;
-    position: relative;
-}
-
-:root {
-    --wave-height: 72px;
-}
-
 /* HERO */
 section#hero {
     display: flex;

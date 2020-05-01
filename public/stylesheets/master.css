@@ -94,6 +94,19 @@ a {
 }
 
 /* MASTER STYLES */
+:root {
+    --wave-height: 72px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    z-index: 1;
+    position: relative;
+}
+
 ::selection {
     background: var(--c-primary);
     color: var(--c-secondary);
