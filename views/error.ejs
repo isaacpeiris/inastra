@@ -1,3 +1,21 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<% include ./partials/head %>
+
+<link rel="stylesheet" href="/stylesheets/error.css">
+
+<% include ./partials/head-bottom %>
+
+<main>
+    <section id="error">
+        <div class="error-wrapper">
+            <div class="error-message">
+                <h1><%= error.status %></h1>
+                <h3><%= message %></h3>
+            </div>
+            <div class="action-link">
+                <a href="/" class="home-link link">Back to Home</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="particle-js"></div>

@@ -1,0 +1,28 @@
+section#error {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-wrapper {
+    text-align: center;
+}
+
+.error-message > * {
+    color: var(--c-white);
+    font-family: var(--f-title);
+    font-weight: 500;
+}
+
+.error-wrapper > h1 {
+    font-size: var(--f-size-0);
+}
+
+.action-link {
+    margin-top: 24px;
+}
+
+.home-link {
+    color: var(--c-white);
+}
