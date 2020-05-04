@@ -121,6 +121,10 @@ body {
     background-color: var(--c-primary);
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
 }
