@@ -70,17 +70,17 @@
                 <hr class="section-underline">
             </div>
             <div class="section-content fade-in fade-left">
-                <form action="/api/contact-form" method="POST" id="contact" autocomplete="off">
+                <form action="/api/contact-form" method="POST" id="contact">
                     <label for="name" class="input-label">Name:</label>
-                    <input type="text" class="form-input fade-in" id="name" name="name" placeholder="Full Name" value="First Last">
+                    <input type="text" class="form-input" id="name" name="name" placeholder="Full Name">
                     <label for="email" class="input-label">Email:</label>
-                    <input type="email" class="form-input fade-in" id="email" name="email" placeholder="Email" value="email@domain.com">
+                    <input type="email" class="form-input" id="email" name="email" placeholder="Email">
                     <label for="company" class="input-label">Company:</label>
-                    <input type="text" class="form-input fade-in" id="company" name="company" placeholder="Company" value="Company">
+                    <input type="text" class="form-input" id="company" name="company" placeholder="Company">
                     <label for="phone" class="input-label">Phone:</label>
-                    <input type="tel" class="form-input fade-in" id="phone" name="phone" placeholder="Phone" value="0404040404">
-                    <textarea class="form-input fade-in" name="message" id="message" rows="4" placeholder="Message">Message content.</textarea>
-                    <button type="submit" class="fade-in" id="submit">Submit</button>
+                    <input type="tel" class="form-input" id="phone" name="phone" placeholder="Phone">
+                    <textarea class="form-input" name="message" id="message" rows="4" placeholder="Message"></textarea>
+                    <button type="submit" id="submit">Submit</button>
                 </form>
             </div>
         </div>

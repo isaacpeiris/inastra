@@ -125,13 +125,15 @@ form#contact {
     grid-template-columns: 1fr;
 }
 
-.form-input {
+.form-input,
+button#submit {
     border: none;
     background-color: var(--c-purple-20);
     color: var(--c-white);
     font-size: var(--f-size-reg);
     padding: 12px;
     transition: background-color 240ms ease, opacity 1200ms ease, transform 800ms ease;
+    border-radius: 2px;
 }
 
 .form-input::placeholder {
@@ -153,13 +155,8 @@ textarea.form-input {
 }
 
 button#submit {
-    padding: 12px;
     width: fit-content;
-    font-size: var(--f-size-reg);
-    background-color: var(--c-purple-20);
-    color: var(--c-white);
     border: none;
-    transition: background-color 240ms ease, opacity 1200ms ease, transform 800ms ease;
 }
 
 button#submit:hover {
