@@ -65,13 +65,13 @@ nav.transparent::before {
     padding: 12px;
     color: var(--c-white);
     transition: background-color 200ms ease;
-    box-shadow: 0 0 8px var(--c-primary);
     border-radius: 2px;
 }
 
 .nav-item.button:focus,
 .nav-item.button:hover {
     background-color: var(--c-primary-60);
+    box-shadow: 0 0 8px var(--c-primary);
 }
 
 /* mobile */
