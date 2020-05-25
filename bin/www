@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('innova:server');
+var debug = require('debug')('inastra:server');
 var http = require('http');
 
 /**

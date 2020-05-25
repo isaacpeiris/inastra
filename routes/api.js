@@ -172,7 +172,7 @@ router.post('/slack', async function(req, res, next) {
                                     emoji: true
                                 },
                                 value: "url",
-                                url: `mailto:${formInputs.contactEmail}?cc=marissa@innova.cx,isaac@innova.cx&bcc=7583679@bcc.hubspot.com`
+                                url: `mailto:${formInputs.contactEmail}?cc=marissa@inastra.co,isaac@inastra.co&bcc=7583679@bcc.hubspot.com`
                             }
                         ]
                     }

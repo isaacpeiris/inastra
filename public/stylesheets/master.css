@@ -20,16 +20,46 @@
     --c-secondary-70: rgba(31,24,50,0.7);
     --c-secondary-80: rgba(31,24,50,0.8);
     --c-secondary-90: rgba(31,24,50,0.9);
-    --c-purple: rgb(100,92,168);
-    --c-purple-10: rgba(100,92,168,0.1);
-    --c-purple-20: rgba(100,92,168,0.2);
-    --c-purple-30: rgba(100,92,168,0.3);
-    --c-purple-40: rgba(100,92,168,0.4);
-    --c-purple-50: rgba(100,92,168,0.5);
-    --c-purple-60: rgba(100,92,168,0.6);
-    --c-purple-70: rgba(100,92,168,0.7);
-    --c-purple-80: rgba(100,92,168,0.8);
-    --c-purple-90: rgba(100,92,168,0.9);
+    --c-purple: rgb(98,90,167);
+    --c-purple-10: rgba(98,90,167,0.1);
+    --c-purple-20: rgba(98,90,167,0.2);
+    --c-purple-30: rgba(98,90,167,0.3);
+    --c-purple-40: rgba(98,90,167,0.4);
+    --c-purple-50: rgba(98,90,167,0.5);
+    --c-purple-60: rgba(98,90,167,0.6);
+    --c-purple-70: rgba(98,90,167,0.7);
+    --c-purple-80: rgba(98,90,167,0.8);
+    --c-purple-90: rgba(98,90,167,0.9);
+    --c-yellow: rgb(255,205,0);
+    --c-yellow-10: rgba(255,205,0,0.1);
+    --c-yellow-20: rgba(255,205,0,0.2);
+    --c-yellow-30: rgba(255,205,0,0.3);
+    --c-yellow-40: rgba(255,205,0,0.4);
+    --c-yellow-50: rgba(255,205,0,0.5);
+    --c-yellow-60: rgba(255,205,0,0.6);
+    --c-yellow-70: rgba(255,205,0,0.7);
+    --c-yellow-80: rgba(255,205,0,0.8);
+    --c-yellow-90: rgba(255,205,0,0.9);
+    --c-green: rgb(53,188,157);
+    --c-green-10: rgba(53,188,157,0.1);
+    --c-green-20: rgba(53,188,157,0.2);
+    --c-green-30: rgba(53,188,157,0.3);
+    --c-green-40: rgba(53,188,157,0.4);
+    --c-green-50: rgba(53,188,157,0.5);
+    --c-green-60: rgba(53,188,157,0.6);
+    --c-green-70: rgba(53,188,157,0.7);
+    --c-green-80: rgba(53,188,157,0.8);
+    --c-green-90: rgba(53,188,157,0.9);
+    --c-red: rgb(222,53,11);
+    --c-red-10: rgba(222,53,11,0.1);
+    --c-red-20: rgba(222,53,11,0.2);
+    --c-red-30: rgba(222,53,11,0.3);
+    --c-red-40: rgba(222,53,11,0.4);
+    --c-red-50: rgba(222,53,11,0.5);
+    --c-red-60: rgba(222,53,11,0.6);
+    --c-red-70: rgba(222,53,11,0.7);
+    --c-red-80: rgba(222,53,11,0.8);
+    --c-red-90: rgba(222,53,11,0.9);
     --c-white: rgb(255,255,255);
     --c-white-10: rgba(255,255,255,0.1);
     --c-white-20: rgba(255,255,255,0.2);
@@ -144,6 +174,7 @@ a.link::after {
     bottom: -4px;
     left: 0;
     transition: transform 200ms ease;
+    -webkit-transition: transform 200ms ease;
     /* transform-origin: right; */
 }
 
@@ -154,12 +185,14 @@ a.link:hover::after {
 
 .reduced-motion a.link::after {
     transition: transform 0ms ease;
+    -webkit-transition: transform 0ms ease;
 }
 
 /* fade in */
 .fade-in {
     opacity: 0;
     transition: opacity 1200ms ease, transform 800ms ease;
+    -webkit-transition: opacity 1200ms ease, transform 800ms ease;
 }
 
 .fade-up {

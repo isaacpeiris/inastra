@@ -10,4 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         localStorage.setItem('contact', JSON.stringify(formValues));
     });
+    document.querySelector('.hero-cta').addEventListener('click', function() {
+        setTimeout(function() {
+            document.getElementById('name').focus();
+        }, 0)
+    })
 });
