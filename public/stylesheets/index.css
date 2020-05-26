@@ -28,27 +28,9 @@ section#hero {
     text-align: center;
 }
 
-.hero-cta {
-    color: var(--c-white);
-    display: flex;
-    align-items: center;
+#hero-cta {
+    margin: 48px auto;
     font-size: var(--f-size-5);
-    width: fit-content;
-    margin: 48px auto 0;
-    background-color: var(--c-primary-80);
-    padding: 12px 16px 12px 24px;
-    border-radius: 120px;
-    transition: all 200ms ease;
-    -webkit-transition: all 200ms ease;
-}
-
-.hero-cta .material-icons {
-    margin-left: 12px;
-}
-
-.hero-cta:hover {
-    background-color: var(--c-primary);
-    box-shadow: 0 0 12px var(--c-primary);
 }
 
 .scroll-indicator {
@@ -57,7 +39,6 @@ section#hero {
     left: 50%;
     margin-left: -24px;
     color: var(--c-primary);
-    filter: drop-shadow(0 0 12px var(--c-primary));
     width: 48px;
     height: 48px;
 }
@@ -156,6 +137,7 @@ ul.expertise {
 li.expertise-item {
     display: flex;
     align-items: center;
+    font-size: var(--f-size-reg);
 }
 
 /* form */
@@ -172,8 +154,6 @@ button#submit {
     color: var(--c-white);
     font-size: var(--f-size-reg);
     padding: 12px;
-    transition: background-color 240ms ease, opacity 1200ms ease, transform 800ms ease;
-    -webkit-transition: background-color 240ms ease, opacity 1200ms ease, transform 800ms ease;
     border-radius: 2px;
 }
 
@@ -184,6 +164,7 @@ button#submit {
 .form-input:focus,
 button#submit:focus {
     background-color: var(--c-purple-90);
+    box-shadow: 0 0 12px var(--c-purple);
     outline: none;
 }
 

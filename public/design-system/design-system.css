@@ -1,0 +1,423 @@
+/* STYLES */
+/* COLOUR */
+:root {
+    --c-primary: rgb(55,189,237);
+    --c-primary-10: rgba(55,189,237,0.1);
+    --c-primary-20: rgba(55,189,237,0.2);
+    --c-primary-30: rgba(55,189,237,0.3);
+    --c-primary-40: rgba(55,189,237,0.4);
+    --c-primary-50: rgba(55,189,237,0.5);
+    --c-primary-60: rgba(55,189,237,0.6);
+    --c-primary-70: rgba(55,189,237,0.7);
+    --c-primary-80: rgba(55,189,237,0.8);
+    --c-primary-90: rgba(55,189,237,0.9);
+    --c-secondary: rgb(31,24,50);
+    --c-secondary-10: rgba(31,24,50,0.1);
+    --c-secondary-20: rgba(31,24,50,0.2);
+    --c-secondary-30: rgba(31,24,50,0.3);
+    --c-secondary-40: rgba(31,24,50,0.4);
+    --c-secondary-50: rgba(31,24,50,0.5);
+    --c-secondary-60: rgba(31,24,50,0.6);
+    --c-secondary-70: rgba(31,24,50,0.7);
+    --c-secondary-80: rgba(31,24,50,0.8);
+    --c-secondary-90: rgba(31,24,50,0.9);
+    --c-purple: rgb(98,90,167);
+    --c-purple-10: rgba(98,90,167,0.1);
+    --c-purple-20: rgba(98,90,167,0.2);
+    --c-purple-30: rgba(98,90,167,0.3);
+    --c-purple-40: rgba(98,90,167,0.4);
+    --c-purple-50: rgba(98,90,167,0.5);
+    --c-purple-60: rgba(98,90,167,0.6);
+    --c-purple-70: rgba(98,90,167,0.7);
+    --c-purple-80: rgba(98,90,167,0.8);
+    --c-purple-90: rgba(98,90,167,0.9);
+    --c-yellow: rgb(255,205,0);
+    --c-yellow-10: rgba(255,205,0,0.1);
+    --c-yellow-20: rgba(255,205,0,0.2);
+    --c-yellow-30: rgba(255,205,0,0.3);
+    --c-yellow-40: rgba(255,205,0,0.4);
+    --c-yellow-50: rgba(255,205,0,0.5);
+    --c-yellow-60: rgba(255,205,0,0.6);
+    --c-yellow-70: rgba(255,205,0,0.7);
+    --c-yellow-80: rgba(255,205,0,0.8);
+    --c-yellow-90: rgba(255,205,0,0.9);
+    --c-green: rgb(53,188,157);
+    --c-green-10: rgba(53,188,157,0.1);
+    --c-green-20: rgba(53,188,157,0.2);
+    --c-green-30: rgba(53,188,157,0.3);
+    --c-green-40: rgba(53,188,157,0.4);
+    --c-green-50: rgba(53,188,157,0.5);
+    --c-green-60: rgba(53,188,157,0.6);
+    --c-green-70: rgba(53,188,157,0.7);
+    --c-green-80: rgba(53,188,157,0.8);
+    --c-green-90: rgba(53,188,157,0.9);
+    --c-red: rgb(222,53,11);
+    --c-red-10: rgba(222,53,11,0.1);
+    --c-red-20: rgba(222,53,11,0.2);
+    --c-red-30: rgba(222,53,11,0.3);
+    --c-red-40: rgba(222,53,11,0.4);
+    --c-red-50: rgba(222,53,11,0.5);
+    --c-red-60: rgba(222,53,11,0.6);
+    --c-red-70: rgba(222,53,11,0.7);
+    --c-red-80: rgba(222,53,11,0.8);
+    --c-red-90: rgba(222,53,11,0.9);
+    --c-white: rgb(255,255,255);
+    --c-white-10: rgba(255,255,255,0.1);
+    --c-white-20: rgba(255,255,255,0.2);
+    --c-white-30: rgba(255,255,255,0.3);
+    --c-white-40: rgba(255,255,255,0.4);
+    --c-white-50: rgba(255,255,255,0.5);
+    --c-white-60: rgba(255,255,255,0.6);
+    --c-white-70: rgba(255,255,255,0.7);
+    --c-white-80: rgba(255,255,255,0.8);
+    --c-white-90: rgba(255,255,255,0.9);
+    --c-black: rgb(0,0,0);
+    --c-black-10: rgba(0,0,0,0.1);
+    --c-black-20: rgba(0,0,0,0.2);
+    --c-black-30: rgba(0,0,0,0.3);
+    --c-black-40: rgba(0,0,0,0.4);
+    --c-black-50: rgba(0,0,0,0.5);
+    --c-black-60: rgba(0,0,0,0.6);
+    --c-black-70: rgba(0,0,0,0.7);
+    --c-black-80: rgba(0,0,0,0.8);
+    --c-black-90: rgba(0,0,0,0.9);
+}
+
+:root {
+    --c-contextualisation: var(--c-yellow);
+    --c-contextualisation-10: var(--c-yellow-10);
+    --c-contextualisation-20: var(--c-yellow-20);
+    --c-contextualisation-30: var(--c-yellow-30);
+    --c-contextualisation-40: var(--c-yellow-40);
+    --c-contextualisation-50: var(--c-yellow-50);
+    --c-contextualisation-60: var(--c-yellow-60);
+    --c-contextualisation-70: var(--c-yellow-70);
+    --c-contextualisation-80: var(--c-yellow-80);
+    --c-contextualisation-90: var(--c-yellow-90);
+    --c-ideation: var(--c-green);
+    --c-ideation-10: var(--c-green-10);
+    --c-ideation-20: var(--c-green-20);
+    --c-ideation-30: var(--c-green-30);
+    --c-ideation-40: var(--c-green-40);
+    --c-ideation-50: var(--c-green-50);
+    --c-ideation-60: var(--c-green-60);
+    --c-ideation-70: var(--c-green-70);
+    --c-ideation-80: var(--c-green-80);
+    --c-ideation-90: var(--c-green-90);
+    --c-validation: var(--c-red);
+    --c-validation-10: var(--c-red-10);
+    --c-validation-20: var(--c-red-20);
+    --c-validation-30: var(--c-red-30);
+    --c-validation-40: var(--c-red-40);
+    --c-validation-50: var(--c-red-50);
+    --c-validation-60: var(--c-red-60);
+    --c-validation-70: var(--c-red-70);
+    --c-validation-80: var(--c-red-80);
+    --c-validation-90: var(--c-red-90);
+}
+
+/* FONT */
+:root {
+    --f-body: 'Lato', sans-serif;
+    --f-title: 'Quicksand', sans-serif;
+    --f-scale: 1.25;
+    --f-size-reg: 1rem;
+    --f-size-sml: calc(var(--f-size-reg) / var(--f-scale));
+    --f-size-5: calc(var(--f-size-reg) * var(--f-scale));
+    --f-size-4: calc(var(--f-size-5) * var(--f-scale));
+    --f-size-3: calc(var(--f-size-4) * var(--f-scale));
+    --f-size-2: calc(var(--f-size-3) * var(--f-scale));
+    --f-size-1: calc(var(--f-size-2) * var(--f-scale));
+    --f-size-0: calc(var(--f-size-1) * var(--f-scale));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+span,
+div {
+    font-family: var(--f-body);
+    font-weight: 400;
+    margin: 0;
+}
+
+/* typescale */
+h1 {font-size: var(--f-size-1);}
+h2 {font-size: var(--f-size-2);}
+h3 {font-size: var(--f-size-3);}
+h4 {font-size: var(--f-size-4);}
+h5 {font-size: var(--f-size-5);}
+
+p,
+a {
+    font-size: var(--f-size-reg);
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1440px;
+    display: block;
+    margin: auto;
+}
+
+/* ========== */
+/* COMPONENTS */
+/* ========== */
+/* Buttons */
+.btn {
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: var(--f-size-reg);
+    font-family: var(--f-body);
+    color: var(--c-secondary);
+    background-color: var(--c-secondary-10);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+}
+
+.btn:not(.fade-in) {
+    transition: all 200ms ease;
+    -webkit-transition: all 200ms ease;
+}
+
+.btn-primary.on-dark {
+    background-color: var(--c-primary);
+    color: var(--c-white);
+}
+
+.btn:hover {
+    background-color: var(--c-secondary-20);
+}
+
+.btn:focus {
+    outline: 2px solid var(--c-primary);
+}
+
+.btn-border {
+    border: 1px solid currentColor;
+}
+
+.btn-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    width: fit-content;
+}
+
+.btn-icon.icon-left .material-icons {
+    margin-right: 10px;
+}
+
+.btn-icon.icon-right .material-icons {
+    margin-left: 10px;
+}
+
+.btn.icon-only {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.btn-flat {
+    background-color: transparent;
+    color: var(--c-secondary);
+}
+
+.btn-flat:hover,
+.btn-flat.active {
+    background-color: var(--c-secondary-10);
+}
+
+.btn-primary {
+    color: var(--c-primary);
+    background-color: var(--c-primary-10);
+}
+
+.btn-primary:hover,
+.btn-primary.active {
+    background-color: var(--c-primary-20);
+}
+
+.btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--c-white), 0 0 0 8px var(--c-primary);
+}
+
+.btn-primary.on-dark:focus {
+    box-shadow: 0 0 0 4px var(--c-secondary), 0 0 0 8px var(--c-primary);
+}
+
+.btn-primary.glow-effect {
+    background-color: var(--c-primary-80);
+    color: var(--c-white);
+}
+
+.btn-primary.glow-effect:hover {
+    background-color: var(--c-primary);
+    box-shadow: 0 0 12px var(--c-primary);
+}
+
+/* text */
+h1.glow-effect,
+h2.glow-effect,
+h3.glow-effect,
+h4.glow-effect,
+h5.glow-effect,
+p.glow-effect,
+a.glow-effect,
+span.glow-effect {
+    text-shadow: 0 0 12px currentColor;
+}
+
+a.btn.glow-effect {
+    text-shadow: none;
+}
+
+/* Links */
+a.link {
+    position: relative;
+}
+
+a.link::after {
+    content: '';
+    width: 100%;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    height: 1px;
+    background-color: currentColor;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    -webkit-transition: tramsform 200ms ease;
+    transition: transform 200ms ease;
+    /* transform-origin: right; */
+}
+
+a.link:hover::after {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    /* transform-origin: left; */
+}
+
+/* Forms */
+select {
+    border: none;
+    background-color: var(--c-secondary-10);
+    border-radius: 3px;
+    font-size: var(--f-size-reg);
+    cursor: pointer;
+    text-indent: calc(1rem - 12px);
+    height: calc(var(--f-size-reg) + 16px);
+}
+
+select.select-flat {
+    border: 1px solid var(--c-secondary);
+    background-color: transparent;
+}
+
+input,
+textarea {
+    border: 1px solid var(--c-secondary);
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--c-primary);
+}
+
+.form-label {
+    font-family: var(--f-title);
+    font-size: var(--f-size-5);
+    padding: 1rem 0;
+}
+
+.form-input {
+    font-family: var(--f-body);
+    font-size: var(--f-size-reg);
+}
+
+/* Table */
+.table-container {
+    border-radius: 3px;
+    border: 1px solid var(--c-black-10);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    font-family: var(--f-title);
+    font-weight: 500;
+}
+
+td {
+    padding: 12px;
+    font-family: var(--f-body);
+    border-top: 1px solid var(--c-black-10);
+}
+
+td.actions {
+    text-align: center;
+}
+
+/* Fade Elements */
+.fade-in {
+    opacity: 0;
+    -webkit-transition: all 200ms ease, opacity 1200ms ease, transform 800ms ease;
+    transition: all 200ms ease, opacity 1200ms ease, transform 800ms ease;
+}
+
+.fade-up {
+    -webkit-transform: translateY(48px);
+    transform: translateY(48px);
+}
+
+.fade-down {
+    -webkit-transform: translateY(-48px);
+    transform: translateY(-48px);
+}
+
+.fade-left {
+    -webkit-transform: translateX(48px);
+    transform: translateX(48px);
+}
+
+.fade-right {
+    -webkit-transform: translateX(-48px);
+    transform: translateX(-48px);
+}
+
+.fade-in.visible,
+.reduced-motion .fade-in {
+    opacity: 1;
+    -webkit-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
+}
+
+@media screen and (max-width: 860px) {
+    .fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
