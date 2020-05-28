@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Run fade in function on scroll
     window.addEventListener("scroll", function() { fadeIn(fadeElements) });
 
-    // FORMS
+    /* FORMS */
     const innerItems = document.querySelectorAll('form.inner-label .item-wrapper');
     innerItems.forEach(itemWrapper => {
         let inputType = itemWrapper.querySelector('.form-input').tagName.toLowerCase();
@@ -28,6 +28,36 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     })
+
+    const requiredItems = document.querySelectorAll('form .item-wrapper.required');
+    requiredItems.forEach(itemWrapper => {
+        let input = itemWrapper.querySelector('.form-input');
+        input.required = true;
+        input.addEventListener('blur', function() {
+            if (input.value === "") {
+                itemWrapper.classList.remove('error-invalid');
+                itemWrapper.classList.add('error-empty');
+            } else {
+                itemWrapper.classList.remove('error-empty')
+                if (itemWrapper.classList.contains('validate-email')) {
+                    let emailResult = validateEmail(input.value);
+                    if (emailResult === false) {
+                        itemWrapper.classList.add('error-invalid');
+                    } else {
+                        itemWrapper.classList.remove('error-invalid');
+                    }
+                }
+                if (itemWrapper.classList.contains('validate-fullName')) {
+                    let nameResult = validateFullName(input.value);
+                    if (nameResult === false) {
+                        itemWrapper.classList.add('error-invalid');
+                    } else {
+                        itemWrapper.classList.remove('error-invalid');
+                    }
+                }
+            }
+        })
+    });
 })
 
 /* FUNCTIONS */
@@ -43,3 +73,19 @@ function fadeIn(fadeElements) {
         }
     })
 };
+
+function validateEmail(value) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateFullName(value) {
+    if(/^[a-zA-Z]+ [a-zA-Z]+$/.test(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
