@@ -10,8 +10,8 @@
     <section id="hero" class="particle-container">
         <div class="hero-wrapper fade-in fade-up">
             <div class="hero-content">
-                <h1 class="hero-text">Creativity is not a talent,<br>it’s a way of thinking.</h1>
-                <a href="#contact" id="hero-cta" class="btn btn-primary btn-icon icon-right on-dark glow-effect">Let's get started<span class="material-icons">chevron_right</span></a>
+                <h1 class="hero-text glow-effect">Creativity is not a talent,<br>it’s a way of thinking.</h1>
+                <a href="#contact" id="hero-cta" class="btn btn-primary btn-icon icon-right btn-filled on-dark glow-effect">Let's get started<span class="material-icons">chevron_right</span></a>
             </div>
         </div>
         <a href="#about" class="scroll-indicator glow-effect fade-in fade-up"><span class="material-icons">expand_more</span></a>
@@ -72,17 +72,28 @@
                 <hr class="section-underline">
             </div>
             <div class="section-content fade-in fade-left">
-                <form action="/api/contact-form" method="POST" id="contact">
-                    <label for="name" class="input-label">Name:</label>
-                    <input type="text" class="form-input" id="name" name="name" placeholder="Full Name">
-                    <label for="email" class="input-label">Email:</label>
-                    <input type="email" class="form-input" id="email" name="email" placeholder="Email">
-                    <label for="company" class="input-label">Company:</label>
-                    <input type="text" class="form-input" id="company" name="company" placeholder="Company">
-                    <label for="phone" class="input-label">Phone:</label>
-                    <input type="tel" class="form-input" id="phone" name="phone" placeholder="Phone">
-                    <textarea class="form-input" name="message" id="message" rows="4" placeholder="Message"></textarea>
-                    <button type="submit" id="submit" class="btn">Submit</button>
+                <form action="/api/contact-form" method="POST" id="contact" class="inner-label">
+                    <div class="item-wrapper input-filled input-purple glow-effect" id="name">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-input" id="name" name="name">
+                    </div>
+                    <div class="item-wrapper input-filled input-purple glow-effect" id="email">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-input" id="email" name="email">
+                    </div>
+                    <div class="item-wrapper input-filled input-purple glow-effect" id="company">
+                        <label for="company" class="form-label">Company</label>
+                        <input type="text" class="form-input" id="company" name="company">
+                    </div>
+                    <div class="item-wrapper input-filled input-purple glow-effect" id="phone">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" class="form-input" id="phone" name="phone">
+                    </div>
+                    <div class="item-wrapper input-filled input-purple glow-effect" id="message">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-input" name="message" id="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" id="submit" class="btn btn-filled btn-purple on-dark glow-effect">Submit</button>
                 </form>
             </div>
         </div>

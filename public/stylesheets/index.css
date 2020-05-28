@@ -24,7 +24,6 @@ section#hero {
     font-family: var(--f-title);
     font-weight: 500;
     color: var(--c-primary);
-    text-shadow: 0 0 12px var(--c-primary);
     text-align: center;
 }
 
@@ -141,49 +140,8 @@ li.expertise-item {
 }
 
 /* form */
-form#contact {
-    display: grid;
-    grid-gap: 12px;
-    grid-template-columns: 1fr;
-}
-
-.form-input,
 button#submit {
-    border: none;
-    background-color: var(--c-purple-20);
-    color: var(--c-white);
-    font-size: var(--f-size-reg);
-    padding: 12px;
-    border-radius: 2px;
-}
-
-.form-input::placeholder {
-    color: var(--c-white-60);
-}
-
-.form-input:focus,
-button#submit:focus {
-    background-color: var(--c-purple-90);
-    box-shadow: 0 0 12px var(--c-purple);
-    outline: none;
-}
-
-.input-label {
-    display: none;
-}
-
-textarea.form-input {
-    resize: vertical;
-}
-
-button#submit {
-    width: fit-content;
-    border: none;
-}
-
-button#submit:hover {
-    cursor: pointer;
-    background-color: var(--c-purple-90);
+    margin-top: 24px;
 }
 
 /* MEDIA QUERIES */

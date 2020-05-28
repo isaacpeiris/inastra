@@ -9,6 +9,25 @@ document.addEventListener("DOMContentLoaded", function() {
     fadeIn(fadeElements);
     // Run fade in function on scroll
     window.addEventListener("scroll", function() { fadeIn(fadeElements) });
+
+    // FORMS
+    const innerItems = document.querySelectorAll('form.inner-label .item-wrapper');
+    innerItems.forEach(itemWrapper => {
+        let inputType = itemWrapper.querySelector('.form-input').tagName.toLowerCase();
+        itemWrapper.classList.add('type-' + inputType);
+
+        itemWrapper.querySelector('.form-input').addEventListener('focus', function() {
+            itemWrapper.classList.add('active')
+        })
+        itemWrapper.querySelector('.form-input').addEventListener('blur', function() {
+            itemWrapper.classList.remove('active')
+            if(this.value != "") {
+                itemWrapper.classList.add('has-value')
+            } else {
+                itemWrapper.classList.remove('has-value')
+            }
+        })
+    })
 })
 
 /* FUNCTIONS */

@@ -125,22 +125,9 @@ button#menu {
     width: 100%;
 }
 
-.mobile-nav .nav-item {
-    padding: 24px;
-    background-color: var(--c-purple-20);
-    border-radius: 2px;
-    font-family: var(--f-title);
+.mobile-nav-links > a {
     font-size: var(--f-size-5);
-    transition: background-color 200ms ease;
-    -webkit-transition: background-color 200ms ease;
-}
-
-.mobile-nav .nav-item:hover {
-    background-color: var(--c-purple);
-}
-
-.mobile-nav .nav-item.button {
-    background-color: var(--c-primary);
+    padding: 18px;
 }
 
 @media screen and (max-width: 720px) {

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     document.querySelector('#hero-cta').addEventListener('click', function() {
         setTimeout(function() {
-            document.getElementById('name').focus();
+            document.querySelector('form#contact input#name').focus();
         }, 0)
     })
 });

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileNav = document.querySelector('.mobile-nav');
     const mobileMenuBtn = document.querySelector('button#menu')
     const mobileMenuIcon = mobileMenuBtn.getElementsByClassName('material-icons')[0];
-    const mobileMenuItems = document.querySelectorAll('.mobile-nav .nav-item');
+    const mobileMenuItems = document.querySelectorAll('.mobile-nav a');
 
     // function to open the mobile nav bar
     function openMobileNav() {
