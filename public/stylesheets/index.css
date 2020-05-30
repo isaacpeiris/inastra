@@ -46,6 +46,11 @@ section#hero {
     font-size: var(--f-size-1);
 }
 
+.scroll-indicator .scroll-text {
+    white-space: nowrap;
+    margin-left: -50%;
+}
+
 /* SECTIONS */
 .section {
     color: var(--c-white);

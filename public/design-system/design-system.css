@@ -201,6 +201,7 @@ body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
+    width: fit-content;
 }
 
 .btn:not(.fade-in) {
@@ -530,22 +531,15 @@ form .item-wrapper:not(:last-of-type) {
 }
 
 select {
-    border-radius: 3px;
-    font-size: var(--f-size-reg);
     cursor: pointer;
-    text-indent: calc(1rem - 12px);
+    text-indent: calc(1rem - 4px);
     height: calc(var(--f-size-reg) + (2 * 1rem));
-    border: 1px solid var(--c-secondary);
-    background-color: transparent;
     width: 100%;
 }
 
 input,
 textarea {
     padding: 1rem;
-    border-radius: 6px;
-    border: 1px solid var(--c-secondary);
-    background-color: transparent;
     transition: all 200ms ease;
     width: calc(100% - (2 * 1rem));
 }
@@ -557,6 +551,9 @@ textarea {
 .form-input {
     font-family: var(--f-body);
     font-size: var(--f-size-reg);
+    border-radius: 4px;
+    border: 1px solid var(--c-secondary);
+    background-color: transparent;
 }
 
 input:hover,
@@ -671,8 +668,8 @@ form.inner-label .item-wrapper.type-select.has-value .form-label {
     left: 0;
 }
 
-form.inner-label .form-input:focus,
-form.inner-label .item-wrapper.has-value .form-input{
+form.inner-label .item-wrapper:not(.type-select) .form-input:focus,
+form.inner-label .item-wrapper:not(.type-select).has-value .form-input{
     padding: 1.6rem 1rem 0.4rem;
 }
 
@@ -704,6 +701,11 @@ form.side-label .form-label {
     background-color: var(--c-red-10);
 }
 
+.item-wrapper.input-filled.error-empty .form-input:focus,
+.item-wrapper.input-filled.error-invalid .form-input:focus {
+    background-color: var(--c-secondary-10);
+}
+
 .item-wrapper.input-filled.input-purple.error-empty .form-input,
 .item-wrapper.input-filled.input-purple.error-invalid .form-input {
     background-color: var(--c-red-40);
@@ -711,7 +713,7 @@ form.side-label .form-label {
 
 .item-wrapper.input-filled.input-purple.error-empty .form-input:focus,
 .item-wrapper.input-filled.input-purple.error-invalid .form-input:focus {
-    background-color: var(--c-red-60);
+    background-color: var(--c-purple-90);
 }
 
 .item-wrapper.error-empty::after,
