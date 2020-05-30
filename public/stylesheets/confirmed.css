@@ -19,6 +19,6 @@ section#thank-you {
     margin: 12px 0 24px;
 }
 
-.home-link {
-    color: var(--c-white);
+#home-link {
+    margin: 24px auto;
 }
