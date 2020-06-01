@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // still background if reduced motion
-    const hasReduceMotionOn = window.matchMedia('(prefers-reduced-motion)').matches;
-    if (hasReduceMotionOn) {
+    if (document.documentElement.classList.contains('reduced-motion')) {
         particlesJS.load('particle-js', './components/particles-js/particlesjs-config_reduced-motion.json');
-        document.documentElement.classList.add('reduced-motion');
     } else {
         particlesJS.load('particle-js', './components/particles-js/particlesjs-config.json');
     };

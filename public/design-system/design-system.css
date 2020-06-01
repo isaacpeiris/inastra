@@ -799,6 +799,7 @@ td.actions {
     -webkit-transform: translateX(-48px);
     transform: translateX(-48px);
 }
+
 .reduced-motion .fade-in {
     transition: none;
     -webkit-transition: none;

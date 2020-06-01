@@ -2,6 +2,12 @@
 /* INIT */
 /* ==== */
 document.addEventListener("DOMContentLoaded", function() {
+    // Reduced motion
+    const hasReduceMotionOn = window.matchMedia('(prefers-reduced-motion)').matches;
+    if (hasReduceMotionOn) {
+        document.documentElement.classList.add('reduced-motion');
+    };
+
     /* Fade Elements */
     // Select all fade elements
     const fadeElements = document.querySelectorAll('.fade-in');
