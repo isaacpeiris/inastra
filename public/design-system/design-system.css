@@ -518,6 +518,11 @@ a.link::after {
     /* transform-origin: right; */
 }
 
+.reduced-motion a.link::after {
+    transition: none;
+    -webkit-transition: none;
+}
+
 a.link:hover::after {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
@@ -793,6 +798,10 @@ td.actions {
 .fade-right {
     -webkit-transform: translateX(-48px);
     transform: translateX(-48px);
+}
+.reduced-motion .fade-in {
+    transition: none;
+    -webkit-transition: none;
 }
 
 .fade-in.visible,

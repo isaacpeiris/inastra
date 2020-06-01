@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const waveElements = document.querySelectorAll('.wave path');
+    waveElements.forEach(e => {
+        let wave = wavify(e, {
+            height: 72,
+            bones: 3,
+            amplitude: 36,
+            color: 'rgba(255,255,255,1)',
+            speed: .12
+        });
+    })
     const contactForm = document.querySelector('form#contact');
     contactForm.addEventListener('submit', function() {
         const formValues = {

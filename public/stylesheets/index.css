@@ -69,8 +69,28 @@ section#hero {
     color: var(--c-secondary);
 }
 
-.block::before,
-.block::after {
+.wave {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.wave-top {
+    top: calc(var(--wave-height) * -2);
+}
+
+.wave-bottom {
+    bottom: calc(var(--wave-height) * -2);
+    transform: scaleY(-1) scaleX(-1);
+}
+
+.reduced-motion .wave {
+    display: none;
+}
+
+.reduced-motion .block::before,
+.reduced-motion .block::after {
     content: '';
     position: absolute;
     left: 0;
@@ -80,28 +100,28 @@ section#hero {
     background-repeat: no-repeat;
 }
 
-.block::before {
+.reduced-motion .block::before {
     top: calc(var(--wave-height) * -1);
 }
 
-.block::after {
+.reduced-motion .block::after {
     bottom: calc(var(--wave-height) * -1);
     transform: scaleY(-1) scaleX(-1);
 }
 
-section.block#about::before {
+.reduced-motion section.block#about::before {
     background-image: url('/images/wave-1.png');
 }
 
-section.block#about::after {
+.reduced-motion section.block#about::after {
     background-image: url('/images/wave-2.png');
 }
 
-section.block#approach::before {
+.reduced-motion section.block#approach::before {
     background-image: url('/images/wave-3.png');
 }
 
-section.block#approach::after {
+.reduced-motion section.block#approach::after {
     background-image: url('/images/wave-4.png');
 }
 
