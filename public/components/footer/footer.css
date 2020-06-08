@@ -17,7 +17,8 @@ footer {
     display: flex;
     align-items: center;
     color: var(--c-white);
-    width: calc(100% + 12px);
+    width: calc(100% + 24px);
+    margin: 0 18px;
 }
 
 .social-link img {
@@ -39,4 +40,5 @@ footer {
 .footer-nav,
 .social-links {
     margin: 0 auto;
+    display: flex;
 }
