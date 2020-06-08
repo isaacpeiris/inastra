@@ -243,7 +243,6 @@ body {
 /* outline */
 .btn.btn-outline {
     border: 1px solid currentColor;
-    background-color: transparent;
 }
 
 /* DEFAULT */
