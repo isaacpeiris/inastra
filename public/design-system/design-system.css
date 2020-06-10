@@ -174,6 +174,11 @@ a {
     text-decoration: none;
 }
 
+a:focus {
+    outline: 1px solid currentColor;
+    outline-offset: 2px;
+}
+
 .container {
     width: 90%;
     max-width: 1440px;
@@ -258,7 +263,7 @@ body {
 
 .btn:focus {
     outline: none;
-    box-shadow: 0 0 0 4px var(--c-white), 0 0 0 8px var(--c-secondary);
+    box-shadow: 0 0 0 2px currentColor;
 }
 
 /* filled */
@@ -297,16 +302,6 @@ body {
 .btn-primary.btn:hover,
 .btn-primary.btn.active {
     background-color: var(--c-primary-20);
-}
-
-.btn-primary.btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--c-white), 0 0 0 8px var(--c-primary);
-}
-
-.btn-primary.btn.on-dark:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--c-secondary), 0 0 0 8px var(--c-primary);
 }
 
 /* filled */
@@ -348,16 +343,6 @@ body {
     background-color: var(--c-purple-20);
 }
 
-.btn-purple.btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--c-white), 0 0 0 8px var(--c-purple);
-}
-
-.btn-purple.btn.on-dark:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--c-secondary), 0 0 0 8px var(--c-purple);
-}
-
 /* filled */
 .btn-purple.btn-filled {
     background-color: var(--c-purple);
@@ -396,16 +381,6 @@ body {
     background-color: var(--c-green-20);
 }
 
-.btn-green.btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--c-white), 0 0 0 8px var(--c-green);
-}
-
-.btn-green.btn.on-dark:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--c-secondary), 0 0 0 8px var(--c-green);
-}
-
 /* filled */
 .btn-green.btn-filled {
     background-color: var(--c-green);
@@ -442,16 +417,6 @@ body {
 .btn-red.btn:hover,
 .btn-red.btn.active {
     background-color: var(--c-red-20);
-}
-
-.btn-red.btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--c-white), 0 0 0 8px var(--c-red);
-}
-
-.btn-red.btn.on-dark:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--c-secondary), 0 0 0 8px var(--c-red);
 }
 
 /* filled */
