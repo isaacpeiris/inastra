@@ -193,10 +193,84 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* text */
+h1.glow-effect,
+h2.glow-effect,
+h3.glow-effect,
+h4.glow-effect,
+h5.glow-effect,
+p.glow-effect,
+a.glow-effect,
+span.glow-effect {
+    text-shadow: 0 0 12px currentColor;
+}
+
+a.btn.glow-effect {
+    text-shadow: none;
+}
+
+/* Links */
+a.link {
+    position: relative;
+}
+
+a.link::after {
+    content: '';
+    width: 100%;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    height: 1px;
+    background-color: currentColor;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    -webkit-transition: tramsform 200ms ease;
+    transition: transform 200ms ease;
+    /* transform-origin: right; */
+}
+
+.reduced-motion a.link::after {
+    transition: none;
+    -webkit-transition: none;
+}
+
+a.link:hover::after {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    /* transform-origin: left; */
+}
+
 /* ======= */
 /* BUTTONS */
 /* ======= */
-/* universal */
+/*
+* UNIVERSAL
+    * icon
+    * flat
+    * outline
+* DEFAULT
+    * filled
+    * flat
+    * glow effect
+* PRIMARY
+    * filled
+    * flat
+    * glow effect
+* PURPLE
+    * filled
+    * flat
+    * glow effect
+* GREEN
+    * filled
+    * flat
+    * glow effect
+* RED
+    * filled
+    * flat
+    * glow effect
+ */
+
+/* UNIVERSAL */
 .btn {
     border: none;
     border-radius: 3px;
@@ -208,12 +282,18 @@ body {
     box-sizing: border-box;
     display: block;
     width: fit-content;
+    height: fit-content;
     line-height: normal;
 }
 
 .btn:not(.fade-in) {
     transition: all 200ms ease;
     -webkit-transition: all 200ms ease;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px currentColor;
 }
 
 /* icon */
@@ -261,20 +341,18 @@ body {
     background-color: var(--c-secondary-20);
 }
 
-.btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px currentColor;
-}
-
 /* filled */
 .btn-filled {
     background-color: var(--c-secondary);
     color: var(--c-white);
 }
 
-.btn-filled.active,
+.btn-filled.active {
+
+}
+
 .btn-filled:hover {
-    background-color: var(--c-secondary);
+    background-color: var(--c-secondary-90);
 }
 
 /* flat */
@@ -294,203 +372,167 @@ body {
 }
 
 /* PRIMARY */
-.btn-primary {
-    background-color: var(--c-primary-10);
+.btn.btn-primary {
     color: var(--c-primary);
+    background-color: var(--c-primary-10);
 }
 
-.btn-primary.btn:hover,
-.btn-primary.btn.active {
+.btn.btn-primary:hover,
+.btn.btn-primary.active {
     background-color: var(--c-primary-20);
 }
 
 /* filled */
-.btn-primary.btn-filled {
+.btn-filled.btn-primary {
     background-color: var(--c-primary);
     color: var(--c-white);
 }
 
-.btn-primary.btn-filled.active,
-.btn-primary.btn-filled:hover {
-    background-color: var(--c-primary);
+.btn-filled.btn-primary.active {
+
 }
 
+.btn-filled.btn-primary:hover {
+    background-color: var(--c-primary-90);
+}
 
 /* flat */
-.btn-primary.btn-flat {
+.btn-flat.btn-primary {
     color: var(--c-primary);
 }
 
-.btn-primary.btn-flat:hover,
-.btn-primary.btn-outline:hover {
+.btn-flat.btn-primary:hover,
+.btn-outline.btn-primary:hover {
     background-color: var(--c-primary-10);
 }
 
 /* glow effect */
-.btn-primary.btn.glow-effect.active,
-.btn-primary.btn.glow-effect:hover {
+.btn.btn-primary.glow-effect.active,
+.btn.btn-primary.glow-effect:hover {
     box-shadow: 0 0 12px var(--c-primary);
 }
 
 /* PURPLE */
-.btn-purple {
-    background-color: var(--c-purple-10);
+.btn.btn-purple {
     color: var(--c-purple);
+    background-color: var(--c-purple-10);
 }
 
-.btn-purple.btn:hover,
-.btn-purple.btn.active {
+.btn.btn-purple:hover,
+.btn.btn-purple.active {
     background-color: var(--c-purple-20);
 }
 
 /* filled */
-.btn-purple.btn-filled {
+.btn-filled.btn-purple {
     background-color: var(--c-purple);
     color: var(--c-white);
 }
 
-.btn-purple.btn-filled.active,
-.btn-purple.btn-filled:hover {
-    background-color: var(--c-purple);
+.btn-filled.btn-purple.active {
+
+}
+
+.btn-filled.btn-purple:hover {
+    background-color: var(--c-purple-90);
 }
 
 /* flat */
-.btn-purple.btn-flat {
+.btn-flat.btn-purple {
     color: var(--c-purple);
 }
 
-.btn-purple.btn-flat:hover,
-.btn-purple.btn-outline:hover {
+.btn-flat.btn-purple:hover,
+.btn-outline.btn-purple:hover {
     background-color: var(--c-purple-10);
 }
 
 /* glow effect */
-.btn-purple.btn.glow-effect.active,
-.btn-purple.btn.glow-effect:hover {
+.btn.btn-purple.glow-effect.active,
+.btn.btn-purple.glow-effect:hover {
     box-shadow: 0 0 12px var(--c-purple);
 }
 
 /* GREEN */
-.btn-green {
-    background-color: var(--c-green-10);
+.btn.btn-green {
     color: var(--c-green);
+    background-color: var(--c-green-10);
 }
 
-.btn-green.btn:hover,
-.btn-green.btn.active {
+.btn.btn-green:hover,
+.btn.btn-green.active {
     background-color: var(--c-green-20);
 }
 
 /* filled */
-.btn-green.btn-filled {
+.btn-filled.btn-green {
     background-color: var(--c-green);
     color: var(--c-white);
 }
 
-.btn-green.btn-filled.active,
-.btn-green.btn-filled:hover {
-    background-color: var(--c-green);
+.btn-filled.btn-green.active {
+
+}
+
+.btn-filled.btn-green:hover {
+    background-color: var(--c-green-90);
 }
 
 /* flat */
-.btn-green.btn-flat {
+.btn-flat.btn-green {
     color: var(--c-green);
 }
 
-.btn-green.btn-flat:hover,
-.btn-green.btn-outline:hover {
+.btn-flat.btn-green:hover,
+.btn-outline.btn-green:hover {
     background-color: var(--c-green-10);
 }
 
 /* glow effect */
-.btn-green.btn.glow-effect.active,
-.btn-green.btn.glow-effect:hover {
+.btn.btn-green.glow-effect.active,
+.btn.btn-green.glow-effect:hover {
     box-shadow: 0 0 12px var(--c-green);
 }
 
 /* RED */
-.btn-red {
-    background-color: var(--c-red-10);
+.btn.btn-red {
     color: var(--c-red);
+    background-color: var(--c-red-10);
 }
 
-.btn-red.btn:hover,
-.btn-red.btn.active {
+.btn.btn-red:hover,
+.btn.btn-red.active {
     background-color: var(--c-red-20);
 }
 
 /* filled */
-.btn-red.btn-filled {
+.btn-filled.btn-red {
     background-color: var(--c-red);
     color: var(--c-white);
 }
 
-.btn-red.btn-filled.active,
-.btn-red.btn-filled:hover {
-    background-color: var(--c-red);
+.btn-filled.btn-red.active {
+
+}
+
+.btn-filled.btn-red:hover {
+    background-color: var(--c-red-90);
 }
 
 /* flat */
-.btn-red.btn-flat {
+.btn-flat.btn-red {
     color: var(--c-red);
 }
 
-.btn-red.btn-flat:hover,
-.btn-red.btn-outline:hover {
+.btn-flat.btn-red:hover,
+.btn-outline.btn-red:hover {
     background-color: var(--c-red-10);
 }
 
 /* glow effect */
-.btn-red.btn.glow-effect.active,
-.btn-red.btn.glow-effect:hover {
+.btn.btn-red.glow-effect.active,
+.btn.btn-red.glow-effect:hover {
     box-shadow: 0 0 12px var(--c-red);
-}
-
-/* text */
-h1.glow-effect,
-h2.glow-effect,
-h3.glow-effect,
-h4.glow-effect,
-h5.glow-effect,
-p.glow-effect,
-a.glow-effect,
-span.glow-effect {
-    text-shadow: 0 0 12px currentColor;
-}
-
-a.btn.glow-effect {
-    text-shadow: none;
-}
-
-/* Links */
-a.link {
-    position: relative;
-}
-
-a.link::after {
-    content: '';
-    width: 100%;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    height: 1px;
-    background-color: currentColor;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    -webkit-transition: tramsform 200ms ease;
-    transition: transform 200ms ease;
-    /* transform-origin: right; */
-}
-
-.reduced-motion a.link::after {
-    transition: none;
-    -webkit-transition: none;
-}
-
-a.link:hover::after {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    /* transform-origin: left; */
 }
 
 /* ===== */
