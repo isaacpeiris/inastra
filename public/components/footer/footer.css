@@ -14,16 +14,16 @@ footer {
 }
 
 .social-link {
-    display: flex;
+    display: grid;
+    grid-template-columns: 24px min-content;
     align-items: center;
+    grid-gap: 6px;
     color: var(--c-white);
-    width: calc(100% + 24px);
-    margin: 0 18px;
+    margin: 0 12px;
 }
 
 .social-link img {
     max-height: var(--f-size-sml);
-    margin-right: 12px;
 }
 
 .copyright {
@@ -35,6 +35,10 @@ footer {
 .footer-link {
     color: var(--c-white);
     margin-right: 12px;
+}
+
+.footer-link:last-of-type {
+    margin-right: 0;
 }
 
 .footer-nav,
