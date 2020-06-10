@@ -56,7 +56,7 @@ section#hero {
     color: var(--c-white);
     display: flex;
     align-items: center;
-    padding: calc(24px + 6vh) 0;
+    padding: calc((var(--nav-height) + 24px) + 2vh) 0;
     margin: calc(var(--wave-height) * 2) 0;
 }
 
