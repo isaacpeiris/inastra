@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const expressEnforceSsl = require('express-enforces-ssl');
 const axios = require('axios').default;
 
 const indexRouter = require('./routes/index');
@@ -11,6 +12,12 @@ const apiRouter = require('./routes/api')
 
 const app = express();
 require('dotenv').config();
+
+// Enforce SSL in production
+if (app.get('env') === 'production') {
+    app.enable('trust proxy');
+    app.use(expressEnforceSsl());
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,6 +39,14 @@ app.use('/api', apiRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+// Log all outbound HTTP requests in development
+if (process.env.NODE_ENV === 'development') {
+    axios.interceptors.request.use(request => {
+        console.log(`${request.method.toUpperCase()} ${request.url}`);
+        return request
+    });
+}
 
 // error handler
 app.use(function(err, req, res, next) {
