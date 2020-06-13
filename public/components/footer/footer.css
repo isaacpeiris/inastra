@@ -24,6 +24,7 @@ footer {
 
 .social-link img {
     max-height: var(--f-size-sml);
+    max-width: 100%;
 }
 
 .copyright {
