@@ -770,12 +770,14 @@ form.side-label .form-label {
     border: 1px solid var(--c-black-10);
 }
 
-table {
+table,
+.table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th {
+th,
+.th {
     background-color: var(--c-secondary-05);
     text-align: left;
     padding: 12px;
@@ -783,13 +785,15 @@ th {
     font-weight: 500;
 }
 
-td {
+td,
+.td {
     padding: 12px;
     font-family: var(--f-body);
     border-top: 1px solid var(--c-black-10);
 }
 
-td.actions {
+td.actions,
+.td.actions {
     text-align: center;
 }
 
