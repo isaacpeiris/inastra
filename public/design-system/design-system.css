@@ -671,11 +671,11 @@ textarea:focus {
 
 /* STRUCTURE */
 /* inner */
-form.inner-label .item-wrapper {
+.inner-label .item-wrapper {
     position: relative;
 }
 
-form.inner-label .form-label {
+.inner-label .form-label {
     position: absolute;
     left: 1rem;
     top: 1rem;
@@ -683,31 +683,31 @@ form.inner-label .form-label {
     color: var(--c-greyscale-40);
 }
 
-form.inner-label .item-wrapper.active .form-label,
-form.inner-label .item-wrapper.has-value .form-label {
+.inner-label .item-wrapper.active .form-label,
+.inner-label .item-wrapper.has-value .form-label {
     font-size: var(--f-size-sml);
     top: 0.4rem;
 }
 
-form.inner-label .item-wrapper.type-select.active .form-label,
-form.inner-label .item-wrapper.type-select.has-value .form-label {
+.inner-label .item-wrapper.type-select.active .form-label,
+.inner-label .item-wrapper.type-select.has-value .form-label {
     top: -18px;
     left: 0;
 }
 
-form.inner-label .item-wrapper:not(.type-select) .form-input:focus,
-form.inner-label .item-wrapper:not(.type-select).has-value .form-input{
+.inner-label .item-wrapper:not(.type-select) .form-input:focus,
+.inner-label .item-wrapper:not(.type-select).has-value .form-input{
     padding: 1.6rem 1rem 0.4rem;
 }
 
 /* side */
-form.side-label .item-wrapper {
+.side-label .item-wrapper {
     display: grid;
     grid-template-columns: 120px 1fr;
     grid-gap: 24px;
 }
 
-form.side-label .form-label {
+.side-label .form-label {
     font-family: var(--f-title);
     font-size: var(--f-size-5);
     padding: 1rem 0;
