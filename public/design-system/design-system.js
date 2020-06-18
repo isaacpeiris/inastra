@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("scroll", function() { fadeIn(fadeElements) });
 
     /* FORMS */
-    const innerItems = document.querySelectorAll('form.inner-label .item-wrapper');
+    const innerItems = document.querySelectorAll('.inner-label .item-wrapper');
     innerItems.forEach(itemWrapper => {
         let inputType = itemWrapper.querySelector('.form-input').tagName.toLowerCase();
         itemWrapper.classList.add('type-' + inputType);
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     })
 
-    const requiredItems = document.querySelectorAll('form .item-wrapper.required');
+    const requiredItems = document.querySelectorAll('.item-wrapper.required');
     requiredItems.forEach(itemWrapper => {
         let input = itemWrapper.querySelector('.form-input');
         input.required = true;
