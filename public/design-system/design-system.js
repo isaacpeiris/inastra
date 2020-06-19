@@ -35,35 +35,50 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     })
 
+    // form validation
     const requiredItems = document.querySelectorAll('.item-wrapper.required');
-    requiredItems.forEach(itemWrapper => {
-        let input = itemWrapper.querySelector('.form-input');
-        input.required = true;
-        input.addEventListener('blur', function() {
-            if (input.value === "") {
-                itemWrapper.classList.remove('error-invalid');
-                itemWrapper.classList.add('error-empty');
-            } else {
-                itemWrapper.classList.remove('error-empty')
-                if (itemWrapper.classList.contains('validate-email')) {
-                    let emailResult = validateEmail(input.value);
-                    if (emailResult === false) {
-                        itemWrapper.classList.add('error-invalid');
-                    } else {
-                        itemWrapper.classList.remove('error-invalid');
+    if (requiredItems.length > 0) {
+        requiredItems.forEach(itemWrapper => {
+            let input = itemWrapper.querySelector('.form-input');
+            input.required = true;
+            input.addEventListener('blur', function() {
+                if (input.value === "") {
+                    itemWrapper.classList.remove('error-invalid');
+                    itemWrapper.classList.add('error-empty');
+                } else {
+                    itemWrapper.classList.remove('error-empty')
+                    if (itemWrapper.classList.contains('validate-email')) {
+                        let emailResult = validateEmail(input.value);
+                        if (emailResult === false) {
+                            itemWrapper.classList.add('error-invalid');
+                        } else {
+                            itemWrapper.classList.remove('error-invalid');
+                        }
+                    }
+                    if (itemWrapper.classList.contains('validate-fullName')) {
+                        let nameResult = validateFullName(input.value);
+                        if (nameResult === false) {
+                            itemWrapper.classList.add('error-invalid');
+                        } else {
+                            itemWrapper.classList.remove('error-invalid');
+                        }
                     }
                 }
-                if (itemWrapper.classList.contains('validate-fullName')) {
-                    let nameResult = validateFullName(input.value);
-                    if (nameResult === false) {
-                        itemWrapper.classList.add('error-invalid');
-                    } else {
-                        itemWrapper.classList.remove('error-invalid');
-                    }
-                }
-            }
+            })
+        });
+    }
+
+    // modals
+    const modals = document.querySelectorAll('.modal');
+    if (modals.length > 0) {
+        document.body.insertAdjacentHTML('beforeend','<div class="modal-background"></div>');
+        document.querySelectorAll('.close-modal').forEach(btn => {
+            btn.addEventListener('click', function() {
+                let parentModal = this.closest('.modal')
+                closeModal(parentModal.id);
+            })
         })
-    });
+    }
 })
 
 /* FUNCTIONS */
@@ -94,4 +109,14 @@ function validateFullName(value) {
     } else {
         return false;
     }
+}
+
+function closeModal(modal_id) {
+    document.querySelector('.modal-background').style.display = 'none';
+    document.getElementById(modal_id).style.display = 'none';
+}
+
+function openModal(modal_id) {
+    document.querySelector('.modal-background').style.display = 'block';
+    document.getElementById(modal_id).style.display = 'block';
 }
