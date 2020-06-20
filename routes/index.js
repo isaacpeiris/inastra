@@ -9,4 +9,8 @@ router.get('/confirmed', function(req, res, next) {
   res.render('confirmed', { title: 'Thank You' });
 });
 
+router.get('/legal/privacy-policy', function(req, res, next) {
+  res.render('legal/privacy-policy', { title: 'Privacy Policy' });
+});
+
 module.exports = router;
