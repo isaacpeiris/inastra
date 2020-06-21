@@ -302,6 +302,7 @@ a.link:hover::after {
     width: fit-content;
     height: fit-content;
     line-height: normal;
+    white-space: nowrap;
 }
 
 .btn:not(.fade-in) {
@@ -820,7 +821,7 @@ td.actions,
     display: none;
     content: '';
     position: absolute;
-    background-color: var(--c-black-10);
+    background-color: var(--c-black-20);
     width: 100%;
     height: 100%;
     left: 0;
