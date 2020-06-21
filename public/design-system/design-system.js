@@ -72,14 +72,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const modals = document.querySelectorAll('.modal');
     if (modals.length > 0) {
         document.body.insertAdjacentHTML('beforeend','<div class="modal-background"></div>');
-        modal.insertAdjacentHTML('afterbegin',`
-        <div class="modal-header">
-            <h3 class="modal-title">${modal.dataset.title}</h3>
-            <button class="btn btn-flat icon-only close-modal"><span class="material-icons">close</span></button>
-        </div>
-        `)
-        modal.querySelector('.close-modal').addEventListener('click', function() {
-            closeModal(modal.id);
+        modals.forEach(modal => {
+            modal.insertAdjacentHTML('afterbegin',`
+            <div class="modal-header">
+                <h3 class="modal-title">${modal.dataset.title}</h3>
+                <button class="btn btn-flat icon-only close-modal"><span class="material-icons">close</span></button>
+            </div>
+            `)
+            modal.querySelector('.close-modal').addEventListener('click', function() {
+                closeModal(modal.id);
+            })
         })
         const modalTriggers = document.querySelectorAll('.modal-trigger');
         modalTriggers.forEach(trigger => {
