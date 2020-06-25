@@ -564,16 +564,16 @@ form .item-wrapper:not(:last-of-type) {
 
 select {
     cursor: pointer;
-    text-indent: calc(1rem - 4px);
-    height: calc(var(--f-size-reg) + (2 * 1rem));
+    text-indent: calc(var(--f-size-reg) - 4px);
+    height: calc(var(--f-size-reg) + (2 * var(--f-size-reg)));
     width: 100%;
 }
 
 input,
 textarea {
-    padding: 1rem;
+    padding: var(--f-size-reg);
     transition: all 200ms ease;
-    width: calc(100% - (2 * 1rem));
+    width: calc(100% - (2 * var(--f-size-reg)));
 }
 
 textarea {
@@ -682,8 +682,9 @@ textarea:focus {
 
 .inner-label .form-label {
     position: absolute;
-    left: 1rem;
-    top: 1rem;
+    left: var(--f-size-reg);
+    top: var(--f-size-reg);
+    font-size: var(--f-size-reg);
     transition: all 200ms ease;
     color: var(--c-greyscale-40);
 }
@@ -702,7 +703,7 @@ textarea:focus {
 
 .inner-label .item-wrapper:not(.type-select) .form-input:focus,
 .inner-label .item-wrapper:not(.type-select).has-value .form-input{
-    padding: 1.6rem 1rem 0.4rem;
+    padding: calc(1.6 * var(--f-size-reg)) var(--f-size-reg) calc(0.4 * var(--f-size-reg));
 }
 
 /* side */
@@ -715,7 +716,7 @@ textarea:focus {
 .side-label .form-label {
     font-family: var(--f-title);
     font-size: var(--f-size-5);
-    padding: 1rem 0;
+    padding: var(--f-size-reg) 0;
 }
 
 /* VALIDATION */
@@ -753,7 +754,7 @@ textarea:focus {
     font-family: var(--f-body);
     font-size: var(--f-size-sml);
     color: var(--c-red);
-    margin: 12px;
+    margin: calc(var(--f-size-reg)/2) var(--f-size-reg);
     display: block;
 }
 
