@@ -299,8 +299,8 @@ a.link:hover::after {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    width: fit-content;
-    height: fit-content;
+    width: min-content;
+    height: min-content;
     line-height: normal;
     white-space: nowrap;
 }
@@ -321,7 +321,6 @@ a.link:hover::after {
     justify-content: center;
     align-items: center;
     line-height: 1;
-    width: fit-content;
 }
 
 .btn-icon.icon-left .material-icons {

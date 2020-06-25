@@ -121,7 +121,7 @@ button#menu {
     display: grid;
     text-align: center;
     grid-gap: 24px;
-    height: fit-content;
+    height: min-content;
     width: 100%;
 }
 
