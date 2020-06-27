@@ -558,7 +558,7 @@ a.link:hover::after {
 /* ===== */
 /* STYLE */
 form .item-wrapper:not(:last-of-type) {
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 }
 
 select {
@@ -805,8 +805,8 @@ td.actions,
 /* MODAL */
 .modal {
     display: none;
-    position: absolute;
-    top: 36%;
+    position: fixed;
+    top: 48%;
     left: 50%;
     min-width: 480px;
     transform: translateX(-50%) translateY(-50%);
@@ -821,7 +821,7 @@ td.actions,
     display: none;
     content: '';
     position: absolute;
-    background-color: var(--c-black-20);
+    background-color: var(--c-black-40);
     width: 100%;
     height: 100%;
     left: 0;
@@ -832,17 +832,17 @@ td.actions,
 .modal-header {
     display: grid;
     grid-template-columns: 1fr 36px;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
+}
+
+.modal-title {
+    font-family: var(--f-title);
 }
 
 .modal-actions {
     margin-top: 12px;
-}
-
-.modal-actions .action-wrapper {
     display: flex;
     justify-content: flex-end;
-    width: 100%;
 }
 
 .modal-actions .btn {

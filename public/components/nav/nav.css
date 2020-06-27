@@ -9,7 +9,7 @@ nav {
     width: 100%;
     background: transparent;
     color: var(--c-white);
-    z-index: 9999;
+    z-index: 10;
 }
 
 nav::before {

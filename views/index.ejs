@@ -80,7 +80,7 @@
                 <p class="section-info">We are excited by unique challenges and people who are eager to drive change. What could we create together?</p>
             </div>
             <div class="section-content fade-in fade-left">
-                <form action="/api/contact-form" method="POST" id="contact" class="inner-label">
+                <form action="/api/contact-form" method="POST" id="contact" class="inner-label contact">
                     <div class="item-wrapper input-filled input-purple glow-effect validate-fullName required" id="name">
                         <label for="name" class="form-label">Full Name</label>
                         <input type="text" class="form-input" id="name" name="name">
@@ -107,6 +107,36 @@
         </div>
     </section>
 </main>
+
+<div class="modal" id="linkedin-contact" data-title="Let's get started">
+    <div class="modal-content">
+        <form action="/api/contact-form" method="POST" id="modal-contact" class="inner-label contact">
+            <div class="item-wrapper validate-fullName required" id="name">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-input" id="name" name="name">
+            </div>
+            <div class="item-wrapper validate-email required" id="email">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-input" id="email" name="email">
+            </div>
+            <div class="item-wrapper" id="company">
+                <label for="company" class="form-label">Company</label>
+                <input type="text" class="form-input" id="company" name="company">
+            </div>
+            <div class="item-wrapper" id="phone">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-input" id="phone" name="phone">
+            </div>
+            <div class="item-wrapper" id="message">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-input" name="message" id="message" rows="4"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="modal-actions">
+        <button type="submit" form="modal-contact" class="btn btn-filled btn-green">Submit</button>
+    </div>
+</div>
 
 <div id="particle-js"></div>
 
