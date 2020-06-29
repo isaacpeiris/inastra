@@ -553,6 +553,24 @@ a.link:hover::after {
     box-shadow: 0 0 12px var(--c-red);
 }
 
+/* BUTTON GROUP */
+.btn-group {
+    margin: 24px;
+    display: flex;
+    background: var(--c-greyscale-90);
+    width: min-content;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+.btn-group .btn {
+    margin-right: 6px;
+}
+
+.btn-group .btn:last-child {
+    margin-right: 0;
+}
+
 /* ===== */
 /* FORMS */
 /* ===== */
