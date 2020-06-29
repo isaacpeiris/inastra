@@ -133,4 +133,5 @@ function closeModal(modal_id) {
 function openModal(modal_id) {
     document.querySelector('.modal-background').style.display = 'block';
     document.getElementById(modal_id).style.display = 'block';
+    document.querySelector('.modal-background').addEventListener('click', function() { closeModal(modal_id) });
 }
