@@ -9,34 +9,34 @@ section {
 }
 
 ::selection {
-    background: var(--c-primary);
-    color: var(--c-secondary);
+    background: var(--c-blue);
+    color: var(--c-base);
 }
 
 /* COLOUR */
 :root {
-    --c-primary: rgb(55,189,237);
-    --c-primary-05: rgba(55,189,237,0.05);
-    --c-primary-10: rgba(55,189,237,0.1);
-    --c-primary-20: rgba(55,189,237,0.2);
-    --c-primary-30: rgba(55,189,237,0.3);
-    --c-primary-40: rgba(55,189,237,0.4);
-    --c-primary-50: rgba(55,189,237,0.5);
-    --c-primary-60: rgba(55,189,237,0.6);
-    --c-primary-70: rgba(55,189,237,0.7);
-    --c-primary-80: rgba(55,189,237,0.8);
-    --c-primary-90: rgba(55,189,237,0.9);
-    --c-secondary: rgb(31,24,50);
-    --c-secondary-05: rgba(31,24,50,0.05);
-    --c-secondary-10: rgba(31,24,50,0.1);
-    --c-secondary-20: rgba(31,24,50,0.2);
-    --c-secondary-30: rgba(31,24,50,0.3);
-    --c-secondary-40: rgba(31,24,50,0.4);
-    --c-secondary-50: rgba(31,24,50,0.5);
-    --c-secondary-60: rgba(31,24,50,0.6);
-    --c-secondary-70: rgba(31,24,50,0.7);
-    --c-secondary-80: rgba(31,24,50,0.8);
-    --c-secondary-90: rgba(31,24,50,0.9);
+    --c-blue: rgb(55,189,237);
+    --c-blue-05: rgba(55,189,237,0.05);
+    --c-blue-10: rgba(55,189,237,0.1);
+    --c-blue-20: rgba(55,189,237,0.2);
+    --c-blue-30: rgba(55,189,237,0.3);
+    --c-blue-40: rgba(55,189,237,0.4);
+    --c-blue-50: rgba(55,189,237,0.5);
+    --c-blue-60: rgba(55,189,237,0.6);
+    --c-blue-70: rgba(55,189,237,0.7);
+    --c-blue-80: rgba(55,189,237,0.8);
+    --c-blue-90: rgba(55,189,237,0.9);
+    --c-base: rgb(31,24,50);
+    --c-base-05: rgba(31,24,50,0.05);
+    --c-base-10: rgba(31,24,50,0.1);
+    --c-base-20: rgba(31,24,50,0.2);
+    --c-base-30: rgba(31,24,50,0.3);
+    --c-base-40: rgba(31,24,50,0.4);
+    --c-base-50: rgba(31,24,50,0.5);
+    --c-base-60: rgba(31,24,50,0.6);
+    --c-base-70: rgba(31,24,50,0.7);
+    --c-base-80: rgba(31,24,50,0.8);
+    --c-base-90: rgba(31,24,50,0.9);
     --c-purple: rgb(98,90,167);
     --c-purple-05: rgba(98,90,167,0.05);
     --c-purple-10: rgba(98,90,167,0.1);
@@ -270,7 +270,7 @@ a.link:hover::after {
     * filled
     * flat
     * glow effect
-* PRIMARY
+* BLUE
     * filled
     * flat
     * glow effect
@@ -350,18 +350,18 @@ a.link:hover::after {
 
 /* DEFAULT */
 .btn {
-    color: var(--c-secondary);
-    background-color: var(--c-secondary-10);
+    color: var(--c-base);
+    background-color: var(--c-base-10);
 }
 
 .btn:hover,
 .btn.active {
-    background-color: var(--c-secondary-20);
+    background-color: var(--c-base-20);
 }
 
 /* filled */
 .btn-filled {
-    background-color: var(--c-secondary);
+    background-color: var(--c-base);
     color: var(--c-white);
 }
 
@@ -370,64 +370,64 @@ a.link:hover::after {
 }
 
 .btn-filled:hover {
-    background-color: var(--c-secondary-90);
+    background-color: var(--c-base-90);
 }
 
 /* flat */
 .btn-flat {
-    color: var(--c-secondary);
+    color: var(--c-base);
 }
 
 .btn-flat:hover,
 .btn-outline:hover {
-    background-color: var(--c-secondary-10);
+    background-color: var(--c-base-10);
 }
 
 /* glow effect */
 .btn.glow-effect.active,
 .btn.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-secondary);
+    box-shadow: 0 0 12px var(--c-base);
 }
 
-/* PRIMARY */
-.btn.btn-primary {
-    color: var(--c-primary);
-    background-color: var(--c-primary-10);
+/* BLUE */
+.btn.btn-blue {
+    color: var(--c-blue);
+    background-color: var(--c-blue-10);
 }
 
-.btn.btn-primary:hover,
-.btn.btn-primary.active {
-    background-color: var(--c-primary-20);
+.btn.btn-blue:hover,
+.btn.btn-blue.active {
+    background-color: var(--c-blue-20);
 }
 
 /* filled */
-.btn-filled.btn-primary {
-    background-color: var(--c-primary);
+.btn-filled.btn-blue {
+    background-color: var(--c-blue);
     color: var(--c-white);
 }
 
-.btn-filled.btn-primary.active {
+.btn-filled.btn-blue.active {
 
 }
 
-.btn-filled.btn-primary:hover {
-    background-color: var(--c-primary-90);
+.btn-filled.btn-blue:hover {
+    background-color: var(--c-blue-90);
 }
 
 /* flat */
-.btn-flat.btn-primary {
-    color: var(--c-primary);
+.btn-flat.btn-blue {
+    color: var(--c-blue);
 }
 
-.btn-flat.btn-primary:hover,
-.btn-outline.btn-primary:hover {
-    background-color: var(--c-primary-10);
+.btn-flat.btn-blue:hover,
+.btn-outline.btn-blue:hover {
+    background-color: var(--c-blue-10);
 }
 
 /* glow effect */
-.btn.btn-primary.glow-effect.active,
-.btn.btn-primary.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-primary);
+.btn.btn-blue.glow-effect.active,
+.btn.btn-blue.glow-effect:hover {
+    box-shadow: 0 0 12px var(--c-blue);
 }
 
 /* PURPLE */
@@ -583,22 +583,22 @@ textarea {
     font-family: var(--f-body);
     font-size: var(--f-size-reg);
     border-radius: 4px;
-    border: 1px solid var(--c-secondary);
+    border: 1px solid var(--c-base);
     background-color: transparent;
 }
 
 input:hover,
 select:hover,
 textarea:hover {
-    background-color: var(--c-secondary-05);
+    background-color: var(--c-base-05);
 }
 
 input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--c-secondary);
-    background-color: var(--c-secondary-05);
+    box-shadow: 0 0 0 2px var(--c-base);
+    background-color: var(--c-base-05);
 }
 
 /* filled */
@@ -606,7 +606,7 @@ textarea:focus {
 .input-filled select,
 .input-filled textarea {
     border: none;
-    background-color: var(--c-secondary-05);
+    background-color: var(--c-base-05);
 }
 
 .input-filled input:hover,
@@ -615,14 +615,14 @@ textarea:focus {
 .input-filled select:focus,
 .input-filled textarea:hover,
 .input-filled textarea:focus {
-    background-color: var(--c-secondary-10);
+    background-color: var(--c-base-10);
 }
 
 /* glow-effect */
 .glow-effect input:focus,
 .glow-effect select:focus,
 .glow-effect textarea:focus {
-    box-shadow: 0 0 12px var(--c-secondary);
+    box-shadow: 0 0 12px var(--c-base);
 }
 
 /* purple */
@@ -735,7 +735,7 @@ textarea:focus {
 
 .item-wrapper.input-filled.error-empty .form-input:focus,
 .item-wrapper.input-filled.error-invalid .form-input:focus {
-    background-color: var(--c-secondary-10);
+    background-color: var(--c-base-10);
 }
 
 .item-wrapper.input-filled.input-purple.error-empty .form-input,
@@ -783,7 +783,7 @@ table,
 
 th,
 .th {
-    background-color: var(--c-secondary-05);
+    background-color: var(--c-base-05);
     text-align: left;
     padding: 12px;
     font-family: var(--f-title);
@@ -897,7 +897,7 @@ td.actions,
 
 /* PARTICLE JS */
 #particle-js {
-    background-color: var(--c-secondary);
+    background-color: var(--c-base);
     position: fixed;
     top: 0;
     left: 0;

@@ -4,6 +4,6 @@
 }
 
 body {
-    background-color: var(--c-primary);
+    background-color: var(--c-blue);
     overflow-x: hidden;
 }

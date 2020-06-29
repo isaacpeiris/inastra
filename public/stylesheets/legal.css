@@ -1,6 +1,6 @@
 nav.transparent::before {
-    background-color: var(--c-secondary);
-    box-shadow: 0 2px 6px var(--c-secondary-40);
+    background-color: var(--c-base);
+    box-shadow: 0 2px 6px var(--c-base-40);
 }
 
 main {
@@ -27,5 +27,5 @@ li {
 }
 
 footer {
-    background-color: var(--c-secondary);
+    background-color: var(--c-base);
 }

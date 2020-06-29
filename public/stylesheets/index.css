@@ -23,7 +23,7 @@ section#hero {
     font-size: calc(var(--f-size-0) + 1vw);
     font-family: var(--f-title);
     font-weight: 500;
-    color: var(--c-primary);
+    color: var(--c-blue);
     text-align: center;
 }
 
@@ -37,7 +37,7 @@ section#hero {
     bottom: 12vh;
     left: 50%;
     margin-left: -24px;
-    color: var(--c-primary);
+    color: var(--c-blue);
     width: 48px;
     height: 48px;
 }
@@ -66,7 +66,7 @@ section#hero {
 
 .block {
     background-color: var(--c-white);
-    color: var(--c-secondary);
+    color: var(--c-base);
 }
 
 .block::before,
@@ -122,7 +122,7 @@ section.block#approach::after {
 
 .section-underline {
     border: none;
-    background-color: var(--c-primary);
+    background-color: var(--c-blue);
     height: 2px;
     width: 72px;
     margin: 0;

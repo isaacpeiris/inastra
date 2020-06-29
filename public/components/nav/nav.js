@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function openMobileNav() {
         mobileNav.classList.add('active');
         mobileMenuIcon.innerText = 'close';
-        nav.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--c-secondary');
+        nav.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--c-base');
     }
 
     // function to close the mobile nav bar
