@@ -558,6 +558,7 @@ a.link:hover::after {
     display: flex;
     background: var(--c-greyscale-90);
     width: min-content;
+    height: min-content;
     padding: 6px;
     border-radius: 3px;
 }
