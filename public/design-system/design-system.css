@@ -555,7 +555,6 @@ a.link:hover::after {
 
 /* BUTTON GROUP */
 .btn-group {
-    margin: 24px;
     display: flex;
     background: var(--c-greyscale-90);
     width: min-content;
