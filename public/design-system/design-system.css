@@ -826,7 +826,8 @@ td.actions,
     position: fixed;
     top: 48%;
     left: 50%;
-    min-width: 480px;
+    width: 480px;
+    max-width: 86%;
     transform: translateX(-50%) translateY(-50%);
     background-color: var(--c-white);
     border-radius: 6px;
