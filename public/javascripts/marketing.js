@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     // C19
     let params = getParams();
-    if (params.utm_campaign == 'c19') {
-        setTimeout(function() {
-            openModal('linkedin-contact')
-        }, 6000)
+    if (params) {
+        if (params.utm_campaign == 'c19') {
+            setTimeout(function() {
+                openModal('linkedin-contact')
+            }, 6000)
+        }
     }
 });
 
