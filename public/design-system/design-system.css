@@ -793,14 +793,13 @@ textarea:focus {
     border: 1px solid var(--c-black-10);
 }
 
-table,
 .table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th,
-.th {
+.table th,
+.table .th {
     background-color: var(--c-base-05);
     text-align: left;
     padding: 12px;
@@ -808,15 +807,15 @@ th,
     font-weight: 500;
 }
 
-td,
-.td {
+.table td,
+.table .td {
     padding: 12px;
     font-family: var(--f-body);
     border-top: 1px solid var(--c-black-10);
 }
 
-td.actions,
-.td.actions {
+.table td.actions,
+.table .td.actions {
     text-align: center;
 }
 

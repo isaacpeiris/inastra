@@ -160,21 +160,6 @@ router.post('/slack', async function(req, res, next) {
                                 text: `Successfully qualified by <@${payload.user.id}>`
                             }
                         ]
-                    },
-                    {
-                        type: "actions",
-                        elements: [
-                            {
-                                type: "button",
-                                text: {
-                                    type: "plain_text",
-                                    text: "Email Contact",
-                                    emoji: true
-                                },
-                                value: "url",
-                                url: `mailto:${formInputs.contactEmail}?cc=marissa@inastra.co,isaac@inastra.co&bcc=7583679@bcc.hubspot.com`
-                            }
-                        ]
                     }
                 ]
             }).catch(function(error) { console.log(error.response) });
