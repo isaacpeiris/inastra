@@ -15,17 +15,20 @@ section {
 
 /* COLOUR */
 :root {
-    --c-blue: rgb(55,189,237);
-    --c-blue-05: rgba(55,189,237,0.05);
-    --c-blue-10: rgba(55,189,237,0.1);
-    --c-blue-20: rgba(55,189,237,0.2);
-    --c-blue-30: rgba(55,189,237,0.3);
-    --c-blue-40: rgba(55,189,237,0.4);
-    --c-blue-50: rgba(55,189,237,0.5);
-    --c-blue-60: rgba(55,189,237,0.6);
-    --c-blue-70: rgba(55,189,237,0.7);
-    --c-blue-80: rgba(55,189,237,0.8);
-    --c-blue-90: rgba(55,189,237,0.9);
+    --c-blue: #35bdee;
+    --c-blue-light-10: #49C4F0;
+    --c-blue-light-20: #5DCAF1;
+    --c-blue-light-30: #72D1F3;
+    --c-blue-05: rgba(53,189,238,0.05);
+    --c-blue-10: rgba(53,189,238,0.1);
+    --c-blue-20: rgba(53,189,238,0.2);
+    --c-blue-30: rgba(53,189,238,0.3);
+    --c-blue-40: rgba(53,189,238,0.4);
+    --c-blue-50: rgba(53,189,238,0.5);
+    --c-blue-60: rgba(53,189,238,0.6);
+    --c-blue-70: rgba(53,189,238,0.7);
+    --c-blue-80: rgba(53,189,238,0.8);
+    --c-blue-90: rgba(53,189,238,0.9);
     --c-base: rgb(31,24,50);
     --c-base-05: rgba(31,24,50,0.05);
     --c-base-10: rgba(31,24,50,0.1);
@@ -107,39 +110,6 @@ section {
     --c-greyscale-70: hsl(0,0%,70%);
     --c-greyscale-80: hsl(0,0%,80%);
     --c-greyscale-90: hsl(0,0%,90%);
-}
-
-:root {
-    --c-contextualisation: var(--c-yellow);
-    --c-contextualisation-10: var(--c-yellow-10);
-    --c-contextualisation-20: var(--c-yellow-20);
-    --c-contextualisation-30: var(--c-yellow-30);
-    --c-contextualisation-40: var(--c-yellow-40);
-    --c-contextualisation-50: var(--c-yellow-50);
-    --c-contextualisation-60: var(--c-yellow-60);
-    --c-contextualisation-70: var(--c-yellow-70);
-    --c-contextualisation-80: var(--c-yellow-80);
-    --c-contextualisation-90: var(--c-yellow-90);
-    --c-ideation: var(--c-green);
-    --c-ideation-10: var(--c-green-10);
-    --c-ideation-20: var(--c-green-20);
-    --c-ideation-30: var(--c-green-30);
-    --c-ideation-40: var(--c-green-40);
-    --c-ideation-50: var(--c-green-50);
-    --c-ideation-60: var(--c-green-60);
-    --c-ideation-70: var(--c-green-70);
-    --c-ideation-80: var(--c-green-80);
-    --c-ideation-90: var(--c-green-90);
-    --c-validation: var(--c-red);
-    --c-validation-10: var(--c-red-10);
-    --c-validation-20: var(--c-red-20);
-    --c-validation-30: var(--c-red-30);
-    --c-validation-40: var(--c-red-40);
-    --c-validation-50: var(--c-red-50);
-    --c-validation-60: var(--c-red-60);
-    --c-validation-70: var(--c-red-70);
-    --c-validation-80: var(--c-red-80);
-    --c-validation-90: var(--c-red-90);
 }
 
 /* FONT */
