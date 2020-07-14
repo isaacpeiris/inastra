@@ -757,6 +757,10 @@ textarea:focus {
     content: 'Please enter your full name.'
 }
 
+.item-wrapper.validate-mobileNumber.error-invalid::after {
+    content: 'Please enter a valid Australian mobile number.'
+}
+
 /* Table */
 .table-container {
     border-radius: 3px;

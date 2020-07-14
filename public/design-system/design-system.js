@@ -63,6 +63,15 @@ document.addEventListener("DOMContentLoaded", function() {
                             itemWrapper.classList.remove('error-invalid');
                         }
                     }
+                    if (itemWrapper.classList.contains('validate-mobileNumber')) {
+                        let numberFormat = formatMobileNumber(input.value);
+                        let numberResult = validateMobileNumber(numberFormat);
+                        if (numberResult === false) {
+                            itemWrapper.classList.add('error-invalid');
+                        } else {
+                            itemWrapper.classList.remove('error-invalid');
+                        }
+                    }
                 }
             })
         });
@@ -122,6 +131,23 @@ function validateFullName(value) {
         return true;
     } else {
         return false;
+    }
+}
+
+function validateMobileNumber(value) {
+    if(/^\+61\s\d{3}\s\d{3}\s\d{3}$/.test(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function formatMobileNumber(phoneInput) {
+    let phoneObj = phoneInput.replace(/\s/g, '').replace(/^0/g, '+61').match(/(\+61)(\d{3})(\d{3})(\d{3})/);
+    try {
+        return phoneObj[1] + ' ' + phoneObj[2] + ' ' + phoneObj[3] + ' ' + phoneObj[4];
+    } catch {
+        return null;
     }
 }
 
