@@ -47,7 +47,7 @@ router.post('/contact-form', function(req, res, next) {
                 block_id: "phone",
                 text:{
                     type:"mrkdwn",
-                    text:"*Phone:* " + req.body.phone
+                    text:"*Phone:* " + formatMobileNumber(req.body.phone)
                 }
             },
             {
@@ -388,6 +388,16 @@ function addNoteToDeal(dealId, contactId, companyId, formInputs) {
 // setTimeout represented as a promise
 function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// format mobile number
+function formatMobileNumber(phoneInput) {
+    let phoneObj = phoneInput.replace(/\s/g, '').replace(/^0/g, '+61').match(/(\+61)(\d{3})(\d{3})(\d{3})/);
+    try {
+        return phoneObj[1] + ' ' + phoneObj[2] + ' ' + phoneObj[3] + ' ' + phoneObj[4];
+    } catch {
+        return null;
+    }
 }
 
 module.exports = router;
