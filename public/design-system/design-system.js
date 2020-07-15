@@ -147,7 +147,7 @@ function formatMobileNumber(phoneInput) {
     try {
         return phoneObj[1] + ' ' + phoneObj[2] + ' ' + phoneObj[3] + ' ' + phoneObj[4];
     } catch {
-        return null;
+        return phoneInput;
     }
 }
 
