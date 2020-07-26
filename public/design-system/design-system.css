@@ -387,6 +387,7 @@ a.link:hover::after {
 /* flat */
 .btn-flat.btn-blue {
     color: var(--c-blue);
+    background-color: transparent;
 }
 
 .btn-flat.btn-blue:hover,
@@ -428,6 +429,7 @@ a.link:hover::after {
 /* flat */
 .btn-flat.btn-purple {
     color: var(--c-purple);
+    background-color: transparent;
 }
 
 .btn-flat.btn-purple:hover,
@@ -469,6 +471,7 @@ a.link:hover::after {
 /* flat */
 .btn-flat.btn-green {
     color: var(--c-green);
+    background-color: transparent;
 }
 
 .btn-flat.btn-green:hover,
@@ -510,6 +513,7 @@ a.link:hover::after {
 /* flat */
 .btn-flat.btn-red {
     color: var(--c-red);
+    background-color: transparent;
 }
 
 .btn-flat.btn-red:hover,
