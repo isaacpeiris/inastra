@@ -526,19 +526,22 @@ a.link:hover::after {
 /* BUTTON GROUP */
 .btn-group {
     display: flex;
-    background: var(--c-greyscale-90);
     width: min-content;
     height: min-content;
-    padding: 6px;
-    border-radius: 3px;
+    border-radius: 4px;
+    border: 1px solid var(--c-base-20);
 }
 
 .btn-group .btn {
-    margin-right: 6px;
+    border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+    border-radius: 3px 0 0 3px;
 }
 
 .btn-group .btn:last-child {
-    margin-right: 0;
+    border-radius: 0 3px 3px 0;
 }
 
 /* ===== */
