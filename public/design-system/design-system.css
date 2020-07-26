@@ -349,7 +349,8 @@ a.link:hover::after {
 }
 
 .btn-flat:hover,
-.btn-outline:hover {
+.btn-outline:hover,
+.btn-flat.active {
     background-color: var(--c-base-10);
 }
 
