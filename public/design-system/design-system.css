@@ -575,6 +575,11 @@ textarea {
     resize: vertical;
 }
 
+input[type="checkbox"] {
+    padding: 0;
+    width: auto;
+}
+
 .form-input {
     font-family: var(--f-body);
     font-size: var(--f-size-reg);
@@ -667,6 +672,26 @@ textarea:focus {
 .input-purple.glow-effect select:focus,
 .input-purple.glow-effect textarea:focus {
     box-shadow: 0 0 12px var(--c-purple);
+}
+
+/* checkbox */
+.inner-label .type-input-checkbox .form-label {
+    position: relative;
+    display: block;
+    left: 0;
+    top: 0;
+}
+
+.inner-label .item-wrapper.active.type-input-checkbox .form-label,
+.inner-label .item-wrapper.has-value.type-input-checkbox .form-label {
+    font-size: var(--f-size-reg);
+    top: 0;
+}
+
+.type-input-checkbox input {
+    width: auto;
+    padding: 0;
+    margin: 12px 0 0;
 }
 
 /* STRUCTURE */

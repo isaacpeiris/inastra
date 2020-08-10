@@ -19,12 +19,18 @@ document.addEventListener("DOMContentLoaded", function() {
     /* FORMS */
     const innerItems = document.querySelectorAll('.inner-label .item-wrapper');
     innerItems.forEach(itemWrapper => {
-        let inputType = itemWrapper.querySelector('.form-input').tagName.toLowerCase();
-        itemWrapper.classList.add('type-' + inputType);
+        let inputTag = itemWrapper.querySelector('.form-input').tagName.toLowerCase();
+        if (inputTag == 'input') {
+            itemWrapper.classList.add('type-' + inputTag);
+        } else {
+            let inputType = itemWrapper.querySelector('.form-input').getAttribute('type').toLowerCase();
+            itemWrapper.classList.add('type-' + inputTag + '-' + inputType);
+        }
 
         itemWrapper.querySelector('.form-input').addEventListener('focus', function() {
             itemWrapper.classList.add('active')
-        })
+        });
+
         itemWrapper.querySelector('.form-input').addEventListener('blur', function() {
             itemWrapper.classList.remove('active')
             if(this.value != "") {
