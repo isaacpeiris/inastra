@@ -826,6 +826,40 @@ textarea:focus {
     text-align: center;
 }
 
+/* ACCORDION */
+.accordion {
+    border: 1px solid var(--c-base-40);
+    border-radius: 4px;
+}
+
+.accordion-item {
+    padding: 0 24px;
+    border-bottom: 1px solid var(--c-base-40);
+}
+
+.accordion-item:last-of-type {
+    border-bottom: none;
+}
+
+.accordion-item-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    cursor: pointer;
+}
+
+.accordion-item-content {
+    height: 0px;
+    overflow: hidden;
+    transition: height 400ms ease;
+}
+
+.accordion-item.active .accordion-item-content {
+    height: max-content;
+    border-top: 1px solid var(--c-base-20);
+    padding: 12px 0;
+}
+
 /* MODAL */
 .modal {
     display: none;

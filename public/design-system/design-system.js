@@ -110,6 +110,45 @@ document.addEventListener("DOMContentLoaded", function() {
             })
         })
     }
+
+    // accordions
+    const accordions = document.querySelectorAll('.accordion');
+    if (accordions.length > 0) {
+        accordions.forEach(accordion => {
+            accordion.querySelectorAll('.accordion-item').forEach(item => {
+                // Wrap item content
+                let itemContent = item.innerHTML;
+                item.innerHTML = `<div class="accordion-item-content">${itemContent}</div>`
+
+                // Set shown header
+                item.insertAdjacentHTML('afterbegin',`
+                <div class="accordion-item-header">
+                    <p>${item.dataset.text}</p>
+                    <span class="material-icons">expand_more</span>
+                </div>
+                `)
+
+                // Toggle active class
+                item.querySelector('.accordion-item-header').addEventListener('click', function() {
+                    if (item.classList.contains('active')) {
+                        item.classList.remove('active');
+                        item.querySelector('.accordion-item-header .material-icons').innerText = 'expand_more';
+                    } else {
+                        if (!accordion.classList.contains('expandable')) {
+                            accordion.querySelectorAll('.accordion-item').forEach(item => {
+                                item.classList.remove('active');
+                                item.querySelector('.accordion-item-header .material-icons').innerText = 'expand_more';
+
+                            })
+                        }
+                        item.classList.add('active');
+                        item.querySelector('.accordion-item-header .material-icons').innerText = 'expand_less';
+                    }
+                })
+            });
+        })
+    }
+
 })
 
 /* FUNCTIONS */
