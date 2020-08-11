@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get design system stylesheet
     let stylesheet;
     for (let i = 0; i < document.styleSheets.length; i++) {
-        if (document.styleSheets[i].href == "http://localhost:3000/design-system/design-system.css" || document.styleSheets[i].href == "https://www.inastra.co/design-system/design-system.css") {
+        if (document.styleSheets[i].href == window.location.origin+"/stylesheets/master.css") {
             stylesheet = document.styleSheets[i]
         }
     }
