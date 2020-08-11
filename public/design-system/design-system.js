@@ -2,19 +2,115 @@
 /* INIT */
 /* ==== */
 document.addEventListener("DOMContentLoaded", function() {
+    /* COLOURS */
+    const colors = [
+        {
+            "name":"base",
+            "hex":"#1f1832"
+        },
+        {
+            "name":"blue",
+            "hex":"#35bdee"
+        },
+        {
+            "name":"green",
+            "hex":"#46bc97"
+        },
+        {
+            "name":"purple",
+            "hex":"#635aa7"
+        },
+        {
+            "name":"red",
+            "hex":"#de350b"
+        },
+        {
+            "name":"yellow",
+            "hex":"#ffcd00"
+        }
+    ]
+    // Get design system stylesheet
+    let stylesheet;
+    for (let i = 0; i < document.styleSheets.length; i++) {
+        if (document.styleSheets[i].href == "http://localhost:3000/design-system/design-system.css" || document.styleSheets[i].href == "https://www.inastra.co/design-system/design-system.css") {
+            stylesheet = document.styleSheets[i]
+        }
+    }
+    // set default array
+    let rootValues = [
+        "--c-black: #000000;",
+        "--c-black-10: rgba(0,0,0,0.1);",
+        "--c-black-20: rgba(0,0,0,0.2);",
+        "--c-black-30: rgba(0,0,0,0.3);",
+        "--c-black-40: rgba(0,0,0,0.4);",
+        "--c-black-50: rgba(0,0,0,0.5);",
+        "--c-black-60: rgba(0,0,0,0.6);",
+        "--c-black-70: rgba(0,0,0,0.7);",
+        "--c-black-80: rgba(0,0,0,0.8);",
+        "--c-black-90: rgba(0,0,0,0.9);",
+        "--c-white: #ffffff;",
+        "--c-white-10: rgba(255,255,255,0.1);",
+        "--c-white-20: rgba(255,255,255,0.2);",
+        "--c-white-30: rgba(255,255,255,0.3);",
+        "--c-white-40: rgba(255,255,255,0.4);",
+        "--c-white-50: rgba(255,255,255,0.5);",
+        "--c-white-60: rgba(255,255,255,0.6);",
+        "--c-white-70: rgba(255,255,255,0.7);",
+        "--c-white-80: rgba(255,255,255,0.8);",
+        "--c-white-90: rgba(255,255,255,0.9);",
+        "--c-white-dark-20: hsl(0,0%,80%);",
+        "--c-white-dark-40: hsl(0,0%,60%);",
+        "--c-white-dark-60: hsl(0,0%,40%);",
+        "--c-white-dark-80: hsl(0,0%,20%);"
+    ];
+    // For each colour in array
+    colors.forEach(color => {
+        // add standard hex value into array
+        rootValues.push(`--c-${color.name}: ${color.hex}`);
+        // get rgb from hex
+        let rgb = hexToRgb(color.hex);
+        // add rgba opacity 0.1-0.9 to array
+        for (let i = 1; i < 10; i++) {
+            rootValues.push(`--c-${color.name}-${i}0: rgba(${rgb.r},${rgb.g},${rgb.b},0.${i});`);
+        }
+        // Transition to only using intervals of 2
+        // for (let i = 2; i < 10; i+=2) {
+        //     rootValues.push(`--c-${color.name}-${i}0: rgba(${rgb.r},${rgb.g},${rgb.b},0.${i});`);
+        // }
+
+        // get hsl from rgb
+        let hsl = RgbToHsl(rgb.r,rgb.g,rgb.b);
+        // set lighten values
+        for (let i = 2, inc = (100 - hsl.l)/5, nu = hsl.l+inc; i < 10; i+=2, nu+=inc) {
+            rootValues.push(`--c-${color.name}-light-${i}0: hsl(${hsl.h},${hsl.s}%,${nu}%)`);
+        }
+        // set darken values
+        for (let i = 2, inc = hsl.l/5, nu = hsl.l-inc; i < 10; i+=2, nu-=inc) {
+            rootValues.push(`--c-${color.name}-dark-${i}0: hsl(${hsl.h},${hsl.s}%,${nu}%)`);
+        }
+
+    });
+
+    // set :root styles from array
+    stylesheet.insertRule(`:root {
+        ${rootValues.join(";\n")}
+    }`);
+
     // Reduced motion
     const hasReduceMotionOn = window.matchMedia('(prefers-reduced-motion)').matches;
     if (hasReduceMotionOn) {
         document.documentElement.classList.add('reduced-motion');
     };
 
-    /* Fade Elements */
+    /* FADE EFFECT */
     // Select all fade elements
     const fadeElements = document.querySelectorAll('.fade-in');
-    // Run fade in function on page load
-    fadeIn(fadeElements);
-    // Run fade in function on scroll
-    window.addEventListener("scroll", function() { fadeIn(fadeElements) });
+    if (fadeElements) {
+        // Run fade in function on page load
+        fadeIn(fadeElements);
+        // Run fade in function on scroll
+        window.addEventListener("scroll", function() { fadeIn(fadeElements) });
+    }
 
     /* FORMS */
     const innerItems = document.querySelectorAll('.inner-label .item-wrapper');
@@ -85,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // modals
+    /* MODALS */
     const modals = document.querySelectorAll('.modal');
     if (modals.length > 0) {
         document.body.insertAdjacentHTML('beforeend','<div class="modal-background"></div>');
@@ -111,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 
-    // accordions
+    /* ACCORDIONS */
     const accordions = document.querySelectorAll('.accordion');
     if (accordions.length > 0) {
         accordions.forEach(accordion => {
@@ -152,6 +248,88 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 /* FUNCTIONS */
+// colors
+function rgbToHex(rgb) {
+// adapted from https://css-tricks.com/converting-color-spaces-in-javascript/
+    // Choose correct separator
+    let sep = rgb.indexOf(",") > -1 ? "," : " ";
+    // Turn "rgb(r,g,b)" into [r,g,b]
+    rgb = rgb.substr(4).split(")")[0].split(sep);
+
+    let r = (+rgb[0]).toString(16),
+        g = (+rgb[1]).toString(16),
+        b = (+rgb[2]).toString(16);
+
+    if (r.length == 1)
+      r = "0" + r;
+    if (g.length == 1)
+      g = "0" + g;
+    if (b.length == 1)
+      b = "0" + b;
+
+    return "#" + r + g + b;
+  }
+
+function hexToRgb(hex) {
+// adapted from https://dev.to/azettl/convert-hex-to-rgb-with-javascript-5h06
+    let h = hex.replace('#','')
+    var aRgbHex = h.match(/.{1,2}/g);
+    var aRgb = {
+        r:parseInt(aRgbHex[0], 16),
+        g:parseInt(aRgbHex[1], 16),
+        b:parseInt(aRgbHex[2], 16)
+    };
+    return aRgb;
+}
+
+function RgbToHsl(r,g,b) {
+// adapted from https://css-tricks.com/converting-color-spaces-in-javascript/
+    // Make r, g, and b fractions of 1
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+  // Find greatest and smallest channel values
+  let cmin = Math.min(r,g,b),
+      cmax = Math.max(r,g,b),
+      delta = cmax - cmin,
+      h = 0,
+      s = 0,
+      l = 0;
+
+    // Calculate hue
+    if (delta == 0) {
+        h = 0;
+    } else if (cmax == r) {
+        h = ((g - b) / delta) % 6;
+    } else if (cmax == g) {
+        h = (b - r) / delta + 2;
+    } else {
+        h = (r - g) / delta + 4;
+    }
+
+    h = Math.round(h * 60);
+
+    // Make negative hues positive behind 360°
+    if (h < 0) {
+        h += 360;
+    }
+
+    // Calculate lightness
+    l = (cmax + cmin) / 2;
+
+    // Calculate saturation
+    s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+
+    let aHsl = {
+        h: h,
+        s: +(s * 100).toFixed(1),
+        l: +(l * 100).toFixed(1)
+    }
+
+    return aHsl
+  }
+
 function fadeIn(fadeElements) {
     let windowHeight = window.innerHeight;
     let fadeInPoint = windowHeight * (1 - 0.12);
