@@ -3,98 +3,18 @@
 /* ==== */
 document.addEventListener("DOMContentLoaded", function() {
     /* COLOURS */
-    const colors = [
-        {
-            "name":"base",
-            "hex":"#1f1832"
-        },
-        {
-            "name":"blue",
-            "hex":"#35bdee"
-        },
-        {
-            "name":"green",
-            "hex":"#46bc97"
-        },
-        {
-            "name":"purple",
-            "hex":"#635aa7"
-        },
-        {
-            "name":"red",
-            "hex":"#de350b"
-        },
-        {
-            "name":"yellow",
-            "hex":"#ffcd00"
-        }
-    ]
-    // Get design system stylesheet
-    let stylesheet;
-    for (let i = 0; i < document.styleSheets.length; i++) {
-        if (document.styleSheets[i].href == window.location.origin+"/stylesheets/master.css") {
-            stylesheet = document.styleSheets[i]
-        }
+    // get colour input
+    const colourInput = {
+        base: "#1f1832",
+        blue: "#35bdee",
+        purple: "#635aa7",
+        green: "#46bc97",
+        red: "#de350b",
+        yellow: "#ffcd00"
     }
-    // set default array
-    let rootValues = [
-        "--c-black: #000000;",
-        "--c-black-10: rgba(0,0,0,0.1);",
-        "--c-black-20: rgba(0,0,0,0.2);",
-        "--c-black-30: rgba(0,0,0,0.3);",
-        "--c-black-40: rgba(0,0,0,0.4);",
-        "--c-black-50: rgba(0,0,0,0.5);",
-        "--c-black-60: rgba(0,0,0,0.6);",
-        "--c-black-70: rgba(0,0,0,0.7);",
-        "--c-black-80: rgba(0,0,0,0.8);",
-        "--c-black-90: rgba(0,0,0,0.9);",
-        "--c-white: #ffffff;",
-        "--c-white-10: rgba(255,255,255,0.1);",
-        "--c-white-20: rgba(255,255,255,0.2);",
-        "--c-white-30: rgba(255,255,255,0.3);",
-        "--c-white-40: rgba(255,255,255,0.4);",
-        "--c-white-50: rgba(255,255,255,0.5);",
-        "--c-white-60: rgba(255,255,255,0.6);",
-        "--c-white-70: rgba(255,255,255,0.7);",
-        "--c-white-80: rgba(255,255,255,0.8);",
-        "--c-white-90: rgba(255,255,255,0.9);",
-        "--c-white-dark-20: hsl(0,0%,80%);",
-        "--c-white-dark-40: hsl(0,0%,60%);",
-        "--c-white-dark-60: hsl(0,0%,40%);",
-        "--c-white-dark-80: hsl(0,0%,20%);"
-    ];
-    // For each colour in array
-    colors.forEach(color => {
-        // add standard hex value into array
-        rootValues.push(`--c-${color.name}: ${color.hex}`);
-        // get rgb from hex
-        let rgb = hexToRgb(color.hex);
-        // add rgba opacity 0.1-0.9 to array
-        for (let i = 1; i < 10; i++) {
-            rootValues.push(`--c-${color.name}-${i}0: rgba(${rgb.r},${rgb.g},${rgb.b},0.${i});`);
-        }
-        // Transition to only using intervals of 2
-        // for (let i = 2; i < 10; i+=2) {
-        //     rootValues.push(`--c-${color.name}-${i}0: rgba(${rgb.r},${rgb.g},${rgb.b},0.${i});`);
-        // }
 
-        // get hsl from rgb
-        let hsl = RgbToHsl(rgb.r,rgb.g,rgb.b);
-        // set lighten values
-        for (let i = 2, inc = (100 - hsl.l)/5, nu = hsl.l+inc; i < 10; i+=2, nu+=inc) {
-            rootValues.push(`--c-${color.name}-light-${i}0: hsl(${hsl.h},${hsl.s}%,${nu}%)`);
-        }
-        // set darken values
-        for (let i = 2, inc = hsl.l/5, nu = hsl.l-inc; i < 10; i+=2, nu-=inc) {
-            rootValues.push(`--c-${color.name}-dark-${i}0: hsl(${hsl.h},${hsl.s}%,${nu}%)`);
-        }
-
-    });
-
-    // set :root styles from array
-    stylesheet.insertRule(`:root {
-        ${rootValues.join(";\n")}
-    }`);
+    // // Generate colours if required
+    // generateColours(colourInput);
 
     // Reduced motion
     const hasReduceMotionOn = window.matchMedia('(prefers-reduced-motion)').matches;
@@ -244,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         })
     }
-
 })
 
 /* FUNCTIONS */
@@ -328,7 +247,86 @@ function RgbToHsl(r,g,b) {
     }
 
     return aHsl
-  }
+}
+
+function generateColours(colourInput) {
+    // convert colour input to array
+    let colors = [];
+    for (const [name, hex] of Object.entries(colourInput)) {
+        let colorObj = new Object();
+        colorObj.name = name;
+        colorObj.hex = hex;
+        colors.push(colorObj)
+    }
+
+    // Get design system stylesheet
+    let stylesheet;
+    for (let i = 0; i < document.styleSheets.length; i++) {
+        if (document.styleSheets[i].href == window.location.origin+"/stylesheets/master.css") {
+            stylesheet = document.styleSheets[i]
+        }
+    }
+
+    // set default array
+    let rootValues = [
+        "--c-black: #000000;",
+        "--c-black-10: rgba(0,0,0,0.1);",
+        "--c-black-20: rgba(0,0,0,0.2);",
+        "--c-black-30: rgba(0,0,0,0.3);",
+        "--c-black-40: rgba(0,0,0,0.4);",
+        "--c-black-50: rgba(0,0,0,0.5);",
+        "--c-black-60: rgba(0,0,0,0.6);",
+        "--c-black-70: rgba(0,0,0,0.7);",
+        "--c-black-80: rgba(0,0,0,0.8);",
+        "--c-black-90: rgba(0,0,0,0.9);",
+        "--c-white: #ffffff;",
+        "--c-white-10: rgba(255,255,255,0.1);",
+        "--c-white-20: rgba(255,255,255,0.2);",
+        "--c-white-30: rgba(255,255,255,0.3);",
+        "--c-white-40: rgba(255,255,255,0.4);",
+        "--c-white-50: rgba(255,255,255,0.5);",
+        "--c-white-60: rgba(255,255,255,0.6);",
+        "--c-white-70: rgba(255,255,255,0.7);",
+        "--c-white-80: rgba(255,255,255,0.8);",
+        "--c-white-90: rgba(255,255,255,0.9);",
+        "--c-grey-10:  hsl(0,0%,90%);",
+        "--c-grey-20:  hsl(0,0%,80%);",
+        "--c-grey-30:  hsl(0,0%,70%);",
+        "--c-grey-40:  hsl(0,0%,60%);",
+        "--c-grey-50:  hsl(0,0%,50%);",
+        "--c-grey-60:  hsl(0,0%,40%);",
+        "--c-grey-60:  hsl(0,0%,30%);",
+        "--c-grey-80:  hsl(0,0%,20%);",
+        "--c-grey-90:  hsl(0,0%,10%);"
+    ];
+
+    // For each colour in array
+    colors.forEach(color => {
+        // add standard hex value into array
+        rootValues.push(`--c-${color.name}: ${color.hex}`);
+        // get rgb from hex
+        let rgb = hexToRgb(color.hex);
+        // add rgba opacity 0.1-0.9 to array
+        for (let i = 1; i < 10; i++) {
+            rootValues.push(`--c-${color.name}-${i}0: rgba(${rgb.r},${rgb.g},${rgb.b},0.${i});`);
+        }
+        // get hsl from rgb
+        let hsl = RgbToHsl(rgb.r,rgb.g,rgb.b);
+        // set lighten values
+        for (let i = 1, inc = (100 - hsl.l)/10, nu = hsl.l+inc; i < 10; i++, nu+=inc) {
+            rootValues.push(`--c-${color.name}-light-${i}0: hsl(${hsl.h},${hsl.s}%,${nu}%)`);
+        }
+        // set darken values
+        for (let i = 1, inc = hsl.l/10, nu = hsl.l-inc; i < 10; i++, nu-=inc) {
+            rootValues.push(`--c-${color.name}-dark-${i}0: hsl(${hsl.h},${hsl.s}%,${nu}%)`);
+        }
+    });
+
+    // set :root styles from array
+    stylesheet.insertRule(`:root {
+        ${rootValues.join(";\n")}
+    }`);
+}
 
 function fadeIn(fadeElements) {
     let windowHeight = window.innerHeight;
