@@ -654,8 +654,8 @@ a.link:hover::after {
 /* FORMS */
 /* ===== */
 /* STYLE */
-form .item-wrapper:not(:last-of-type) {
-    margin-bottom: 18px;
+.item-wrapper:not(:last-of-type) {
+    margin-bottom: var(--f-size-reg);
 }
 
 select {
@@ -775,6 +775,28 @@ textarea:focus {
     box-shadow: 0 0 12px var(--c-purple);
 }
 
+/* input icon */
+.input-icon .form-input {
+    width: calc(100% - (4.5 * var(--f-size-reg)));
+}
+
+.input-icon.icon-left .form-input,
+.inner-label ,.item-wrapper:not(.type-select).input-icon.icon-left .form-input:focus,
+.inner-label ,.item-wrapper:not(.type-select).has-value.input-icon.icon-left .form-input {
+    padding-left: calc(3.5 * var(--f-size-reg));
+}
+
+.input-icon.icon-left .form-label {
+    left: calc(3.5 * var(--f-size-reg));
+}
+
+.input-icon.icon-left .material-icons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: var(--f-size-reg);
+}
+
 /* checkbox */
 .inner-label .type-input-checkbox .form-label {
     position: relative;
@@ -877,6 +899,12 @@ textarea:focus {
     color: var(--c-red);
     margin: calc(var(--f-size-reg)/2) var(--f-size-reg);
     display: block;
+    position: absolute;
+}
+
+.item-wrapper.error-empty,
+.item-wrapper.error-invalid {
+    margin-bottom: calc(2 * var(--f-size-reg));
 }
 
 .item-wrapper.error-empty::after {
