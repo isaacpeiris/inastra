@@ -36,13 +36,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const formItems = document.querySelectorAll('.item-wrapper');
     if (formItems.length > 0) {
         formItems.forEach(itemWrapper => {
-            let inputTag = itemWrapper.querySelector('.form-input').tagName.toLowerCase();
-            if (inputTag == 'input') {
-                let inputType = itemWrapper.querySelector('.form-input').getAttribute('type').toLowerCase();
-                itemWrapper.classList.add('type-' + inputTag + '-' + inputType);
-            } else {
-                itemWrapper.classList.add('type-' + inputTag);
-            }
+            // let inputTag = itemWrapper.querySelector('.form-input').tagName.toLowerCase();
+            // if (inputTag == 'input') {
+            //     let inputType = itemWrapper.querySelector('.form-input').getAttribute('type').toLowerCase();
+            //     itemWrapper.classList.add('type-' + inputTag + '-' + inputType);
+            // } else {
+            //     itemWrapper.classList.add('type-' + inputTag);
+            // }
 
             checkValue(itemWrapper)
 
