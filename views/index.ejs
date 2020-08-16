@@ -21,7 +21,7 @@
                 <a href="#contact" id="hero-cta" class="btn btn-blue btn-filled on-dark glow-effect">Discover your creativity</a>
             </div>
         </div>
-        <a href="#about" class="scroll-indicator glow-effect fade-in fade-up"><span class="material-icons">expand_more</span><p class="scroll-text">Scroll for more</p></a>
+        <a href="#about" class="scroll-indicator glow-effect fade-in fade-up tooltipped tooltip-top" data-tooltip="This is a tooltip"><span class="material-icons">expand_more</span><p class="scroll-text">Scroll for more</p></a>
     </section>
     <section id="about" class="section fade-in block">
         <div class="section-wrapper">
@@ -80,24 +80,24 @@
                 <p class="section-info">We are excited by unique challenges and people who are eager to drive change. What could we create together?</p>
             </div>
             <div class="section-content fade-in fade-left">
-                <form action="/api/contact-form" method="POST" id="contact" class="inner-label contact">
-                    <div class="item-wrapper input-filled input-purple glow-effect validate-fullName required" id="name">
+                <form action="/api/contact-form" method="POST" id="contact" class="contact">
+                    <div class="item-wrapper inner-label input-purple glow-effect validate-fullName required" id="name">
                         <label for="name" class="form-label">Full Name</label>
                         <input type="text" class="form-input" id="name" name="name">
                     </div>
-                    <div class="item-wrapper input-filled input-purple glow-effect validate-email required" id="email">
+                    <div class="item-wrapper inner-label input-purple glow-effect validate-email required" id="email">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-input" id="email" name="email">
                     </div>
-                    <div class="item-wrapper input-filled input-purple glow-effect required" id="company">
+                    <div class="item-wrapper inner-label input-purple glow-effect required" id="company">
                         <label for="company" class="form-label">Company</label>
                         <input type="text" class="form-input" id="company" name="company">
                     </div>
-                    <div class="item-wrapper input-filled input-purple glow-effect validate-mobileNumber required" id="phone">
+                    <div class="item-wrapper inner-label input-purple glow-effect validate-mobileNumber required" id="phone">
                         <label for="phone" class="form-label">Phone</label>
                         <input type="tel" class="form-input" id="phone" name="phone">
                     </div>
-                    <div class="item-wrapper input-filled input-purple glow-effect" id="message">
+                    <div class="item-wrapper inner-label input-purple glow-effect" id="message">
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-input" name="message" id="message" rows="4"></textarea>
                     </div>
@@ -106,28 +106,48 @@
             </div>
         </div>
     </section>
+    <section class="block">
+        <div class="section-wrapper" style="padding: 48px 0">
+            <div class="item-wrapper inner-label required">
+                <label class="form-label" for="input">Label</label>
+                <input class="form-input" type="text" name="input" id="input" placeholder="Placeholder">
+            </div>
+            <div class="item-wrapper inner-label">
+                <label for="select" class="form-label">Label</label>
+                <select class="form-input" name="select" id="select">
+                    <option></option>
+                    <option value="1">Value 1</option>
+                    <option value="dlkgajnfrglkjsndrghlkjsenrthlkjesn">dlkgajnfrglkjsndrghlkjsenrthlkjesn</option>
+                </select>
+            </div>
+            <div class="item-wrapper inner-label">
+                <label class="form-label" for="textarea">Label</label>
+                <textarea class="form-input" name="textarea" id="textarea">Default</textarea>
+            </div>
+        </div>
+    </section>
 </main>
 
 <div class="modal" id="linkedin-contact" data-title="Let's get started">
     <div class="modal-content">
-        <form action="/api/contact-form" method="POST" id="modal-contact" class="inner-label contact">
-            <div class="item-wrapper validate-fullName required" id="name">
+        <form action="/api/contact-form" method="POST" id="modal-contact" class="contact">
+            <div class="item-wrapper inner-label validate-fullName required" id="name">
                 <label for="name" class="form-label">Full Name</label>
                 <input type="text" class="form-input" id="name" name="name">
             </div>
-            <div class="item-wrapper validate-email required" id="email">
+            <div class="item-wrapper inner-label validate-email required" id="email">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-input" id="email" name="email">
             </div>
-            <div class="item-wrapper required" id="company">
+            <div class="item-wrapper inner-label required" id="company">
                 <label for="company" class="form-label">Company</label>
                 <input type="text" class="form-input" id="company" name="company">
             </div>
-            <div class="item-wrapper validate-mobileNumber required" id="phone">
+            <div class="item-wrapper inner-label validate-mobileNumber required" id="phone">
                 <label for="phone" class="form-label">Phone</label>
                 <input type="tel" class="form-input" id="phone" name="phone">
             </div>
-            <div class="item-wrapper" id="message">
+            <div class="item-wrapper inner-label" id="message">
                 <label for="message" class="form-label">Message</label>
                 <textarea class="form-input" name="message" id="message" rows="4"></textarea>
             </div>

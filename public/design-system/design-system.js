@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     /* FORMS */
-    const innerItems = document.querySelectorAll('.inner-label .item-wrapper');
-    if (innerItems.length > 0) {
-        innerItems.forEach(itemWrapper => {
+    const formItems = document.querySelectorAll('.item-wrapper');
+    if (formItems.length > 0) {
+        formItems.forEach(itemWrapper => {
             let inputTag = itemWrapper.querySelector('.form-input').tagName.toLowerCase();
             if (inputTag == 'input') {
                 let inputType = itemWrapper.querySelector('.form-input').getAttribute('type').toLowerCase();
@@ -44,18 +44,24 @@ document.addEventListener("DOMContentLoaded", function() {
                 itemWrapper.classList.add('type-' + inputTag);
             }
 
+            checkValue(itemWrapper)
+
             itemWrapper.querySelector('.form-input').addEventListener('focus', function() {
                 itemWrapper.classList.add('active')
             });
 
             itemWrapper.querySelector('.form-input').addEventListener('blur', function() {
                 itemWrapper.classList.remove('active')
-                if(this.value != "") {
-                    itemWrapper.classList.add('has-value')
-                } else {
-                    itemWrapper.classList.remove('has-value')
-                }
+                checkValue(itemWrapper)
             })
+        })
+    }
+
+    // select
+    const selectItems = document.querySelectorAll('select');
+    if (selectItems.length > 0) {
+        selectItems.forEach(select => {
+            select.insertAdjacentHTML('afterend','<span class="material-icons expand-indicator">expand_more</span>')
         })
     }
 
@@ -162,6 +168,29 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 })
             });
+        })
+    }
+
+    /* TOOLTIPS */
+    const tooltips = document.querySelectorAll('.tooltipped');
+    if (tooltips.length > 0) {
+        tooltips.forEach(t => {
+            let tooltipId = Math.floor(100000 + Math.random() * 900000);
+            let tooltipPosition = t.classList.value.match(/tooltip-(\w*?)\s/)[1];
+            let el = document.createElement("span");
+            el.classList.add('tooltip', `tooltip-${tooltipPosition}`)
+            el.id = tooltipId;
+            el.innerText = t.dataset.tooltip;
+            document.body.appendChild(el);
+            t.dataset.tooltipId = tooltipId;
+
+            t.addEventListener('mouseover', function() {
+                el.classList.add('tooltip-visible');
+            })
+
+            t.addEventListener('mouseout', function() {
+                el.classList.remove('tooltip-visible')
+            })
         })
     }
 })
@@ -340,6 +369,15 @@ function fadeIn(fadeElements) {
         }
     })
 };
+
+function checkValue(itemWrapper) {
+    let itemInput = itemWrapper.querySelector('.form-input')
+    if(itemInput.value != "" || itemInput.placeholder != "") {
+        itemWrapper.classList.add('has-value')
+    } else {
+        itemWrapper.classList.remove('has-value')
+    }
+}
 
 function validateEmail(value) {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {

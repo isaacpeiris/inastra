@@ -329,6 +329,20 @@ a.link:hover::after {
     /* transform-origin: left; */
 }
 
+/* tooltips */
+.tooltipped {
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    display: none;
+}
+
+.tooltip.tooltip-visible {
+    display: block;
+}
+
 /* ======= */
 /* BUTTONS */
 /* ======= */
@@ -383,7 +397,7 @@ a.link:hover::after {
 
 .btn:focus {
     outline: none;
-    box-shadow: 0 0 0 2px currentColor;
+    box-shadow: 0 0 0 2px var(--c-base);
 }
 
 /* icon */
@@ -654,45 +668,46 @@ a.link:hover::after {
 /* FORMS */
 /* ===== */
 /* STYLE */
-.item-wrapper:not(:last-of-type) {
-    margin-bottom: var(--f-size-reg);
+input,
+select,
+textarea {
+    padding: var(--f-size-reg);
+    border-radius: 4px;
+    border: none;
+    transition: all 200ms ease;
+    background: var(--c-base-10);
+    font-family: var(--f-body);
+    font-size: var(--f-size-reg);
+    display: block;
+    width: calc(100% - (2 * var(--f-size-reg)));
 }
 
 select {
-    cursor: pointer;
-    text-indent: calc(var(--f-size-reg) - 4px);
-    height: calc(var(--f-size-reg) + (2 * var(--f-size-reg)));
+    appearance: none;
+    padding-right: calc((2 * var(--f-size-reg)) + 24px);
     width: 100%;
 }
 
-input,
-textarea {
-    padding: var(--f-size-reg);
-    transition: all 200ms ease;
-    width: calc(100% - (2 * var(--f-size-reg)));
+select:hover {
+    cursor: pointer;
+}
+
+select + .expand-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: var(--f-size-reg);
+    pointer-events: none;
 }
 
 textarea {
     resize: vertical;
 }
 
-input[type="checkbox"] {
-    padding: 0;
-    width: auto;
-}
-
-.form-input {
-    font-family: var(--f-body);
-    font-size: var(--f-size-reg);
-    border-radius: 4px;
-    border: 1px solid var(--c-base);
-    background-color: transparent;
-}
-
 input:hover,
 select:hover,
 textarea:hover {
-    background-color: var(--c-base-05);
+    background: var(--c-base-20);
 }
 
 input:focus,
@@ -700,129 +715,26 @@ select:focus,
 textarea:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--c-base);
-    background-color: var(--c-base-05);
+    background: var(--c-base-10);
 }
 
-/* filled */
-.input-filled input,
-.input-filled select,
-.input-filled textarea {
-    border: none;
-    background-color: var(--c-base-05);
-}
-
-.input-filled input:hover,
-.input-filled input:focus,
-.input-filled select:hover,
-.input-filled select:focus,
-.input-filled textarea:hover,
-.input-filled textarea:focus {
-    background-color: var(--c-base-10);
-}
-
-/* glow-effect */
-.glow-effect input:focus,
-.glow-effect select:focus,
-.glow-effect textarea:focus {
-    box-shadow: 0 0 12px var(--c-base);
-}
-
-/* purple */
-.input-purple input,
-.input-purple select,
-.input-purple textarea {
-    border: 1px solid var(--c-purple);
-}
-
-.input-purple input:hover,
-.input-purple select:hover,
-.input-purple textarea:hover {
-    background-color: var(--c-purple-10);
-}
-
-.input-purple input:focus,
-.input-purple select:focus,
-.input-purple textarea:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--c-purple);
-    background-color: var(--c-purple-10);
-}
-
-.input-purple.input-filled .form-label,
-.input-purple.input-filled .form-input {
-    color: var(--c-white);
-}
-
-.input-purple.input-filled input,
-.input-purple.input-filled select,
-.input-purple.input-filled textarea {
-    border: none;
-    background-color: var(--c-purple-60);
-}
-
-.input-purple.input-filled input:hover,
-.input-purple.input-filled input:focus,
-.input-purple.input-filled select:hover,
-.input-purple.input-filled select:focus,
-.input-purple.input-filled textarea:hover,
-.input-purple.input-filled textarea:focus {
-    background-color: var(--c-purple-90);
-}
-
-.input-purple.glow-effect input:focus,
-.input-purple.glow-effect select:focus,
-.input-purple.glow-effect textarea:focus {
-    box-shadow: 0 0 12px var(--c-purple);
-}
-
-/* input icon */
-.input-icon .form-input {
-    width: calc(100% - (4.5 * var(--f-size-reg)));
-}
-
-.input-icon.icon-left .form-input,
-.inner-label ,.item-wrapper:not(.type-select).input-icon.icon-left .form-input:focus,
-.inner-label ,.item-wrapper:not(.type-select).has-value.input-icon.icon-left .form-input {
-    padding-left: calc(3.5 * var(--f-size-reg));
-}
-
-.input-icon.icon-left .form-label {
-    left: calc(3.5 * var(--f-size-reg));
-}
-
-.input-icon.icon-left .material-icons {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: var(--f-size-reg);
-}
-
-/* checkbox */
-.inner-label .type-input-checkbox .form-label {
-    position: relative;
+label {
     display: block;
-    left: 0;
-    top: 0;
-}
-
-.inner-label .item-wrapper.active.type-input-checkbox .form-label,
-.inner-label .item-wrapper.has-value.type-input-checkbox .form-label {
+    font-family: var(--f-body);
     font-size: var(--f-size-reg);
-    top: 0;
+    margin-bottom: 6px;
 }
 
-.type-input-checkbox input {
-    width: auto;
-    padding: 0;
-    margin: 12px 0 0;
-}
-
-/* STRUCTURE */
-/* inner */
-.inner-label .item-wrapper {
+.item-wrapper {
+    max-width: 100%;
     position: relative;
 }
 
+.item-wrapper:not(:last-of-type) {
+    margin-bottom: var(--f-size-reg);
+}
+
+/* LAYOUT */
 .inner-label .form-label {
     position: absolute;
     left: var(--f-size-reg);
@@ -832,31 +744,30 @@ textarea:focus {
     color: var(--c-greyscale-40);
 }
 
-.inner-label .item-wrapper.active .form-label,
-.inner-label .item-wrapper.has-value .form-label {
+.inner-label.active .form-label,
+.inner-label.has-value .form-label {
     font-size: var(--f-size-sml);
     top: 0.4rem;
 }
 
-.inner-label .item-wrapper.type-select.active .form-label,
-.inner-label .item-wrapper.type-select.has-value .form-label {
-    top: -18px;
-    left: 0;
+.inner-label .form-input:focus,
+.inner-label.has-value .form-input{
+    padding-top: calc(1.6 * var(--f-size-reg));
+    padding-bottom: calc(0.4 * var(--f-size-reg));
 }
 
-.inner-label .item-wrapper:not(.type-select) .form-input:focus,
-.inner-label .item-wrapper:not(.type-select).has-value .form-input{
-    padding: calc(1.6 * var(--f-size-reg)) var(--f-size-reg) calc(0.4 * var(--f-size-reg));
+input[type="checkbox"] {
+    margin: 0;
 }
 
 /* side */
-.side-label .item-wrapper {
+.item-wrapper.side-label {
     display: grid;
     grid-template-columns: 120px 1fr;
     grid-gap: 24px;
 }
 
-.side-label .form-label {
+.form-label.side-label {
     font-family: var(--f-title);
     font-size: var(--f-size-5);
     padding: var(--f-size-reg) 0;
@@ -872,24 +783,14 @@ textarea:focus {
     border-color: var(--c-red);
 }
 
-.item-wrapper.input-filled.error-empty .form-input,
-.item-wrapper.input-filled.error-invalid .form-input {
+.item-wrapper.error-empty .form-input,
+.item-wrapper.error-invalid .form-input {
     background-color: var(--c-red-10);
 }
 
-.item-wrapper.input-filled.error-empty .form-input:focus,
-.item-wrapper.input-filled.error-invalid .form-input:focus {
+.item-wrapper.error-empty .form-input:focus,
+.item-wrapper.error-invalid .form-input:focus {
     background-color: var(--c-base-10);
-}
-
-.item-wrapper.input-filled.input-purple.error-empty .form-input,
-.item-wrapper.input-filled.input-purple.error-invalid .form-input {
-    background-color: var(--c-red-40);
-}
-
-.item-wrapper.input-filled.input-purple.error-empty .form-input:focus,
-.item-wrapper.input-filled.input-purple.error-invalid .form-input:focus {
-    background-color: var(--c-purple-90);
 }
 
 .item-wrapper.error-empty::after,
@@ -923,7 +824,9 @@ textarea:focus {
     content: 'Please enter a valid Australian mobile number.'
 }
 
-/* Table */
+/* ===== */
+/* TABLE */
+/* ===== */
 .table-container {
     border-radius: 3px;
     border: 1px solid var(--c-black-10);
