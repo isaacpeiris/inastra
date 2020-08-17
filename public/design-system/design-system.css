@@ -865,7 +865,6 @@ input[type="checkbox"] {
 }
 
 .accordion-item {
-    padding: 0 24px;
     border-bottom: 1px solid var(--c-base-40);
 }
 
@@ -873,23 +872,24 @@ input[type="checkbox"] {
     border-bottom: none;
 }
 
-.accordion-item-header {
+.accordion-header {
     display: flex;
     justify-content: space-between;
-    padding: 12px 0;
+    padding: 12px 24px;
     cursor: pointer;
 }
 
-.accordion-item-content {
+.accordion-content {
     height: 0px;
     overflow: hidden;
     transition: height 400ms ease;
 }
 
-.accordion-item.active .accordion-item-content {
+.accordion-item.active .accordion-content {
     height: max-content;
     border-top: 1px solid var(--c-base-20);
     padding: 12px 0;
+    margin: 0 24px;
 }
 
 /* MODAL */
