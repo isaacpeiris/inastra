@@ -723,6 +723,7 @@ label {
     font-family: var(--f-body);
     font-size: var(--f-size-reg);
     margin-bottom: 6px;
+    pointer-events: none;
 }
 
 .item-wrapper {
