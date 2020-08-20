@@ -735,6 +735,21 @@ label {
     margin-bottom: var(--f-size-reg);
 }
 
+/* input w/ icon/button */
+.item-wrapper.input-icon {
+    display: grid;
+    grid-gap: 12px;
+    align-items: center;
+}
+
+.item-wrapper.input-icon.icon-right {
+    grid-template-columns: 1fr 36px;
+}
+
+.item-wrapper.input-icon.icon-left {
+    grid-template-columns: 36px 1fr;
+}
+
 /* LAYOUT */
 .inner-label .form-label {
     position: absolute;
