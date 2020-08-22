@@ -736,18 +736,49 @@ label {
 }
 
 /* input w/ icon/button */
-.item-wrapper.input-icon {
-    display: grid;
-    grid-gap: 12px;
-    align-items: center;
+.item-wrapper.icon-left .form-input,
+.item-wrapper.icon-right .form-input {
+    width: calc(100% - (3 * var(--f-size-reg) + 24px));
 }
 
-.item-wrapper.input-icon.icon-right {
-    grid-template-columns: 1fr 36px;
+.item-wrapper.icon-left .form-input {
+    padding-left: calc(2 * var(--f-size-reg) + 24px);
 }
 
-.item-wrapper.input-icon.icon-left {
-    grid-template-columns: 36px 1fr;
+.item-wrapper.icon-right .form-input {
+    padding-right: calc(2 * var(--f-size-reg) + 24px);
+}
+
+.item-wrapper.btn-left .form-input,
+.item-wrapper.btn-right .form-input {
+    width: calc(100% - (3 * var(--f-size-reg) + 36px));
+}
+
+.item-wrapper.btn-left .form-input {
+    padding-left: calc(2 * var(--f-size-reg) + 36px);
+}
+
+.item-wrapper.btn-right .form-input {
+    padding-right: calc(2 * var(--f-size-reg) + 36px);
+}
+
+.item-wrapper.icon-left .material-icons,
+.item-wrapper.icon-right .material-icons,
+.item-wrapper.btn-left .btn,
+.item-wrapper.btn-right .btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.item-wrapper.icon-left .material-icons,
+.item-wrapper.btn-left .btn {
+    left: var(--f-size-reg);
+}
+
+.item-wrapper.icon-right .material-icons,
+.item-wrapper.btn-right .btn {
+    right: var(--f-size-reg);
 }
 
 /* LAYOUT */

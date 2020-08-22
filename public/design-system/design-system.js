@@ -192,6 +192,23 @@ document.addEventListener("DOMContentLoaded", function() {
             })
         })
     }
+
+    /* TABLES */
+    // sortable
+    const sortableTables = document.querySelectorAll('.table.sortable');
+    if (sortableTables.length > 0) {
+        sortableTables.forEach(table => {
+            table.querySelectorAll('th').forEach(th => {
+                th.addEventListener('click', function() {
+                    let array = [];
+                    for (let i = 1; i < table.rows.length; i++) {
+                        array.push(table.rows[i].cells[th.cellIndex].innerText);
+                    }
+                    console.log(array)
+                })
+            })
+        })
+    }
 })
 
 /* FUNCTIONS */
