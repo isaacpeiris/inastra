@@ -737,18 +737,37 @@ label {
 }
 
 /* input w/ icon/button */
+.item-wrapper.icon-left,
+.item-wrapper.icon-right {
+    --icon-width: 24px;
+}
+
+.item-wrapper.icon-left .material-icons,
+.item-wrapper.icon-right .material-icons {
+    font-size: var(--icon-width);
+}
+
 .item-wrapper.icon-left .form-input,
 .item-wrapper.icon-right .form-input {
-    width: calc(100% - (3 * var(--f-size-reg) + 24px));
+    width: calc(100% - (2 * var(--icon-width) + var(--f-size-reg)));
 }
 
 .item-wrapper.icon-left .form-input {
-    padding-left: calc(2 * var(--f-size-reg) + 24px);
+    padding-left: calc(2 * var(--icon-width));
 }
 
 .item-wrapper.icon-right .form-input {
-    padding-right: calc(2 * var(--f-size-reg) + 24px);
+    padding-right: calc(2 * var(--icon-width));
 }
+
+.item-wrapper.icon-right .material-icons {
+    right: calc(0.5 * var(--icon-width));
+}
+
+.item-wrapper.icon-left .material-icons {
+    left: calc(0.5 * var(--icon-width));
+}
+
 .item-wrapper.btn-left,
 .item-wrapper.btn-right {
     --btn-width: 36px;
@@ -782,16 +801,8 @@ label {
     transform: translateY(-50%);
 }
 
-.item-wrapper.icon-left .material-icons {
-    left: var(--f-size-reg);
-}
-
 .item-wrapper.btn-left .btn {
     left: calc(0.5 * var(--f-size-reg));
-}
-
-.item-wrapper.icon-right .material-icons {
-    right: var(--f-size-reg);
 }
 
 .item-wrapper.btn-right .btn {
