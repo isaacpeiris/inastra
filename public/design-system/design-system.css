@@ -749,18 +749,28 @@ label {
 .item-wrapper.icon-right .form-input {
     padding-right: calc(2 * var(--f-size-reg) + 24px);
 }
+.item-wrapper.btn-left,
+.item-wrapper.btn-right {
+    --btn-width: 36px;
+}
+
+.item-wrapper.btn-left .btn,
+.item-wrapper.btn-right .btn {
+    width: var(--btn-width);
+    height: var(--btn-width);
+}
 
 .item-wrapper.btn-left .form-input,
 .item-wrapper.btn-right .form-input {
-    width: calc(100% - (2.5 * var(--f-size-reg) + 36px));
+    width: calc(100% - (2.5 * var(--f-size-reg) + var(--btn-width)));
 }
 
 .item-wrapper.btn-left .form-input {
-    padding-left: calc(1.5 * var(--f-size-reg) + 36px);
+    padding-left: calc(1.5 * var(--f-size-reg) + var(--btn-width));
 }
 
 .item-wrapper.btn-right .form-input {
-    padding-right: calc(1.5 * var(--f-size-reg) + 36px);
+    padding-right: calc(1.5 * var(--f-size-reg) + var(--btn-width));
 }
 
 .item-wrapper.icon-left .material-icons,
