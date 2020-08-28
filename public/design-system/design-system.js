@@ -438,3 +438,34 @@ function openModal(modal_id) {
     document.getElementById(modal_id).style.display = 'block';
     document.querySelector('.modal-background').addEventListener('click', function() { closeModal(modal_id) });
 }
+
+function toast(text, icon) {
+    if (!document.querySelector('#toast-wrapper')) {
+        let newWrapper = document.createElement('DIV');
+        newWrapper.id = 'toast-wrapper'
+        document.body.appendChild(newWrapper);
+    }
+    let toastWrapper = document.querySelector('#toast-wrapper');
+    let newToast = document.createElement('DIV');
+    newToast.classList.add('toast');
+    if (icon) {
+        let newToastIconWrapper = document.createElement('DIV');
+        newToastIconWrapper.classList.add('toast-icon');
+        let newToastIcon = document.createElement('SPAN');
+        newToastIcon.classList.add('material-icons');
+        newToastIcon.innerText = icon;
+        newToastIconWrapper.appendChild(newToastIcon);
+        newToast.appendChild(newToastIconWrapper);
+    }
+    let newToastContent = document.createElement('DIV');
+    newToastContent.classList.add('toast-content');
+    let newToastText = document.createElement('P');
+    newToastText.innerText = text;
+    newToastContent.appendChild(newToastText);
+    newToast.appendChild(newToastContent);
+    toastWrapper.appendChild(newToast)
+
+    setTimeout(function() {
+        newToast.classList.add('expired');
+    }, 6000)
+}

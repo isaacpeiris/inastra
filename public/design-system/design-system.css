@@ -1076,3 +1076,29 @@ canvas.particles-js-canvas-el {
     position: absolute;
     opacity: 0.4;
 }
+
+/* TOAST */
+div#toast-wrapper {
+    position: fixed;
+    top: calc(var(--nav-height) + var(--f-size-reg));
+    right: var(--f-size-reg);
+    z-index: 100;
+}
+
+.toast {
+    background-color: var(--c-base);
+    color: var(--c-white);
+    padding: 12px;
+    border-radius: 4px;
+    display: flex;
+    width: 240px;
+    margin-bottom: 12px;
+}
+
+.toast.expired {
+    display: none;
+}
+
+.toast-icon {
+    margin-right: 12px;
+}
