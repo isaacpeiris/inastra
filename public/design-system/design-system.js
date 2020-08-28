@@ -439,7 +439,7 @@ function openModal(modal_id) {
     document.querySelector('.modal-background').addEventListener('click', function() { closeModal(modal_id) });
 }
 
-function toast(text, icon) {
+function toast(text, persistent, type) {
     if (!document.querySelector('#toast-wrapper')) {
         let newWrapper = document.createElement('DIV');
         newWrapper.id = 'toast-wrapper'
@@ -448,24 +448,61 @@ function toast(text, icon) {
     let toastWrapper = document.querySelector('#toast-wrapper');
     let newToast = document.createElement('DIV');
     newToast.classList.add('toast');
-    if (icon) {
+    if (type) {
+        newToast.classList.add(type, 'has-icon')
         let newToastIconWrapper = document.createElement('DIV');
         newToastIconWrapper.classList.add('toast-icon');
         let newToastIcon = document.createElement('SPAN');
         newToastIcon.classList.add('material-icons');
-        newToastIcon.innerText = icon;
+        if (type == 'info') {
+            newToastIcon.innerText = 'info';
+        } else if (type == 'success') {
+            newToastIcon.innerText = 'check_circle';
+        } else if (type == 'error') {
+            newToastIcon.innerText = 'cancel';
+        } else if (type == 'warning') {
+            newToastIcon.innerText = 'error';
+        }
+
         newToastIconWrapper.appendChild(newToastIcon);
         newToast.appendChild(newToastIconWrapper);
     }
+
     let newToastContent = document.createElement('DIV');
     newToastContent.classList.add('toast-content');
     let newToastText = document.createElement('P');
     newToastText.innerText = text;
     newToastContent.appendChild(newToastText);
     newToast.appendChild(newToastContent);
+
     toastWrapper.appendChild(newToast)
 
-    setTimeout(function() {
-        newToast.classList.add('expired');
-    }, 6000)
+    if (persistent == true) {
+        let newToastActionWrapper = document.createElement('DIV');
+        newToastActionWrapper.classList.add('toast-action');
+        newToast.appendChild(newToastActionWrapper);
+        newToast.classList.add('persistent')
+        let closeToastBtn = document.createElement('BUTTON')
+        closeToastBtn.classList.add('btn','icon-only','btn-flat');
+        let closeToastBtnIcon = document.createElement('SPAN');
+        closeToastBtnIcon.classList.add('material-icons');
+        closeToastBtnIcon.innerText = 'close';
+        closeToastBtn.appendChild(closeToastBtnIcon);
+        newToastActionWrapper.appendChild(closeToastBtn)
+        toastCloseBtns();
+    } else if (persistent == false) {
+        setTimeout(function() {
+            newToast.classList.add('expired');
+        }, 6000)
+    }
+}
+
+function toastCloseBtns() {
+    let closeBtns = document.querySelectorAll('.toast-actions .btn');
+    closeBtns.forEach(btn => {
+        btn.addEventListener("click", function() {
+            let parentToast = btn.closest('.toast');
+            parentToast.classList.add('expired')
+        })
+    })
 }
