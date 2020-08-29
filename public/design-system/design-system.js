@@ -477,6 +477,20 @@ function toast(text, type, persistent) {
 
     toastWrapper.appendChild(newToast)
 
+    newToast.animate([
+        {
+            opacity: 0,
+            transform: 'translateY(24px)'
+        },
+        {
+            opacity: 1,
+            transform: 'translateY(0px)'
+        }
+    ], {
+        duration: 400,
+        easing: 'ease'
+    })
+
     if (persistent == true) {
         let newToastActionWrapper = document.createElement('DIV');
         newToastActionWrapper.classList.add('toast-action');
@@ -492,7 +506,17 @@ function toast(text, type, persistent) {
         toastCloseBtns();
     } else {
         setTimeout(function() {
-            newToast.classList.add('expired');
+            let duration = 200;
+            newToast.animate([
+                {opacity:1},
+                {opacity:0}
+            ], {
+                duration: duration,
+                easing: 'ease'
+            });
+            setTimeout(function(){
+                newToast.classList.add('expired');
+            }, duration)
         }, 6000)
     }
 }
