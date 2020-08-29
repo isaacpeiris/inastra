@@ -490,7 +490,7 @@ function toast(text, type, persistent) {
         closeToastBtn.appendChild(closeToastBtnIcon);
         newToastActionWrapper.appendChild(closeToastBtn)
         toastCloseBtns();
-    } else if (persistent == false) {
+    } else {
         setTimeout(function() {
             newToast.classList.add('expired');
         }, 6000)
