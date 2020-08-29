@@ -1092,7 +1092,7 @@ div#toast-wrapper {
     border-radius: 4px;
     display: grid;
     grid-gap: 12px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     width: 240px;
     margin-bottom: 12px;
@@ -1129,4 +1129,8 @@ div#toast-wrapper {
 
 .toast.warning .toast-icon {
     color: var(--c-yellow);
+}
+
+.toast-content p {
+    line-height: 1.2;
 }
