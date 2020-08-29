@@ -439,7 +439,7 @@ function openModal(modal_id) {
     document.querySelector('.modal-background').addEventListener('click', function() { closeModal(modal_id) });
 }
 
-function toast(text, persistent, type) {
+function toast(text, type, persistent) {
     if (!document.querySelector('#toast-wrapper')) {
         let newWrapper = document.createElement('DIV');
         newWrapper.id = 'toast-wrapper'
@@ -448,7 +448,7 @@ function toast(text, persistent, type) {
     let toastWrapper = document.querySelector('#toast-wrapper');
     let newToast = document.createElement('DIV');
     newToast.classList.add('toast');
-    if (type) {
+    if (type || type != 'none') {
         newToast.classList.add(type, 'has-icon')
         let newToastIconWrapper = document.createElement('DIV');
         newToastIconWrapper.classList.add('toast-icon');
