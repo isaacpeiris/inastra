@@ -18,23 +18,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // function to open the mobile nav bar
     function openMobileNav() {
-        mobileNav.classList.add('active');
+        nav.classList.add('mobile-active');
         mobileMenuIcon.innerText = 'close';
-        nav.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--c-base');
     }
 
     // function to close the mobile nav bar
     function closeMobileNav() {
-        mobileNav.classList.remove('active');
+        nav.classList.remove('mobile-active');
         mobileMenuIcon.innerText = 'menu';
-        nav.style.backgroundColor = 'transparent';
     }
 
     // on click of mobile nav button, if mobile nav is open then close it, otherwise open it
     mobileMenuBtn.addEventListener('click', function() {
-        if (mobileNav.classList.contains('active')) {
+        console.log('clicked')
+        if (nav.classList.contains('mobile-active')) {
+            console.log('close')
             closeMobileNav();
         } else {
+            console.log('open')
             openMobileNav();
         }
     })

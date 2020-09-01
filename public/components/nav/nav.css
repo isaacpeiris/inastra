@@ -101,19 +101,23 @@ button#menu {
     position: fixed;
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 0;
     top: var(--nav-height);
     left: 0;
     background-color: var(--c-base);
     z-index: 1;
-    height: 0;
+    height: calc(100% - var(--nav-height));
     overflow: hidden;
-    transition: height 400ms ease;
-    -webkit-transition: height 400ms ease;
+    transition: width 400ms ease;
+    -webkit-transition: width 400ms ease;
 }
 
-.mobile-nav.active {
-    height: calc(100% - var(--nav-height));
+nav.mobile-active {
+    background-color: var(--c-base);
+}
+
+nav.mobile-active .mobile-nav {
+    width: 100%;
 }
 
 .mobile-nav-links {
@@ -128,6 +132,7 @@ button#menu {
 .mobile-nav-links > a {
     font-size: var(--f-size-5);
     padding: 18px;
+    width: 100%;
 }
 
 @media screen and (max-width: 720px) {
