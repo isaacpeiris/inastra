@@ -13,8 +13,6 @@ section#hero {
 }
 
 .hero-wrapper {
-    width: 90%;
-    max-width: 1440px;
     position: relative;
     z-index: 1;
 }
@@ -38,12 +36,13 @@ section#hero {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 12vh;
+    bottom: 8vh;
     left: 50%;
     margin-left: -24px;
     color: var(--c-blue);
     width: 48px;
     height: 48px;
+    text-shadow: 0 0 12px currentColor;
 }
 
 .scroll-indicator .material-icons {
@@ -110,12 +109,8 @@ section.block#approach::after {
 }
 
 .section-wrapper {
-    width: 90%;
-    max-width: 1440px;
-    margin: auto;
     display: grid;
-    grid-template-columns: 420px minmax(auto, 680px);
-    grid-gap: 4vw;
+    grid-template-columns: 48% 48%;
     justify-content: space-between;
 }
 

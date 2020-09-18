@@ -266,7 +266,7 @@ a:focus {
 
 .container {
     width: 90%;
-    max-width: 1440px;
+    max-width: 60rem;
     display: block;
     margin: auto;
 }
@@ -276,22 +276,6 @@ body {
     position: relative;
     font-family: var(--f-body);
     -webkit-font-smoothing: antialiased;
-}
-
-/* text */
-h1.glow-effect,
-h2.glow-effect,
-h3.glow-effect,
-h4.glow-effect,
-h5.glow-effect,
-p.glow-effect,
-a.glow-effect,
-span.glow-effect {
-    text-shadow: 0 0 12px currentColor;
-}
-
-a.btn.glow-effect {
-    text-shadow: none;
 }
 
 /* Links */

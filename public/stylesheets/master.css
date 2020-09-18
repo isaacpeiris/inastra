@@ -4,6 +4,14 @@
 }
 
 body {
-    background-color: var(--c-blue);
+    background-color: var(--c-base);
     overflow-x: hidden;
+}
+
+h1.glow-effect,
+h2.glow-effect,
+h3.glow-effect,
+h4.glow-effect,
+h5.glow-effect {
+    text-shadow: 0 0 12px currentColor;
 }
