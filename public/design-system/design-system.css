@@ -220,12 +220,12 @@ section {
     --f-scale: 1.25;
     --f-size-reg: 1rem;
     --f-size-sml: calc(var(--f-size-reg) / var(--f-scale));
+    --f-size-big: calc(var(--f-size-1) * var(--f-scale));
     --f-size-5: calc(var(--f-size-reg) * var(--f-scale));
     --f-size-4: calc(var(--f-size-5) * var(--f-scale));
     --f-size-3: calc(var(--f-size-4) * var(--f-scale));
     --f-size-2: calc(var(--f-size-3) * var(--f-scale));
     --f-size-1: calc(var(--f-size-2) * var(--f-scale));
-    --f-size-0: calc(var(--f-size-1) * var(--f-scale));
 }
 
 h1,
@@ -255,6 +255,29 @@ a {
     line-height: 1.6;
 }
 
+@media screen and (max-width: 1860px) and (orientation: landscape) {
+    :root {
+        --f-size-5: calc(var(--f-size-reg) + 0.6vw);
+        --f-size-4: calc(var(--f-size-5) + 0.6vw);
+        --f-size-3: calc(var(--f-size-4) + 0.6vw);
+        --f-size-2: calc(var(--f-size-3) + 0.6vw);
+        --f-size-1: calc(var(--f-size-2) + 0.6vw);
+        --f-size-big: calc(var(--f-size-1) + 0.6vw);
+    }
+}
+
+@media screen and (max-width: 1860px) and (orientation: portrait) {
+    :root {
+        --f-size-5: calc(var(--f-size-reg) + 0.6vh);
+        --f-size-4: calc(var(--f-size-5) + 0.6vh);
+        --f-size-3: calc(var(--f-size-4) + 0.6vh);
+        --f-size-2: calc(var(--f-size-3) + 0.6vh);
+        --f-size-1: calc(var(--f-size-2) + 0.6vh);
+        --f-size-big: calc(var(--f-size-1) + 0.6vh);
+    }
+}
+
+/* master styles */
 a {
     text-decoration: none;
 }
@@ -869,13 +892,12 @@ input[type="radio"]:checked + label::after {
     border: 1px solid var(--c-black-10);
 }
 
-.table {
+table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.table th,
-.table .th {
+table th {
     background-color: var(--c-base-05);
     text-align: left;
     padding: 12px;
@@ -883,15 +905,13 @@ input[type="radio"]:checked + label::after {
     font-weight: 500;
 }
 
-.table td,
-.table .td {
+table td {
     padding: 12px;
     font-family: var(--f-body);
     border-top: 1px solid var(--c-black-10);
 }
 
-.table td.actions,
-.table .td.actions {
+table td.actions {
     text-align: center;
 }
 
