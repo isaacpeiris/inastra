@@ -147,44 +147,6 @@ li.expertise-item {
     font-size: var(--f-size-reg);
 }
 
-/* form */
-.input-purple .form-label,
-.input-purple .form-input {
-    color: var(--c-white);
-}
-
-.input-purple input,
-.input-purple select,
-.input-purple textarea {
-    border: none;
-    background-color: var(--c-purple-60);
-}
-
-.input-purple input:hover,
-.input-purple input:focus,
-.input-purple select:hover,
-.input-purple select:focus,
-.input-purple textarea:hover,
-.input-purple textarea:focus {
-    background-color: var(--c-purple-90);
-}
-
-.input-purple.glow-effect input:focus,
-.input-purple.glow-effect select:focus,
-.input-purple.glow-effect textarea:focus {
-    box-shadow: 0 0 12px var(--c-purple);
-}
-
-.item-wrapper.input-purple.error-empty .form-input,
-.item-wrapper.input-purple.error-invalid .form-input {
-    background-color: var(--c-red-40);
-}
-
-.item-wrapper.input-purple.error-empty .form-input:focus,
-.item-wrapper.input-purple.error-invalid .form-input:focus {
-    background-color: var(--c-purple-90);
-}
-
 button#submit {
     margin-top: 18px;
 }

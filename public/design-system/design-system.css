@@ -313,49 +313,9 @@ a.link:hover::after {
     /* transform-origin: left; */
 }
 
-/* tooltips */
-.tooltipped {
-    position: relative;
-}
-
-.tooltip {
-    position: absolute;
-    display: none;
-}
-
-.tooltip.tooltip-visible {
-    display: block;
-}
-
 /* ======= */
 /* BUTTONS */
 /* ======= */
-/*
-* UNIVERSAL
-    * icon
-    * flat
-    * outline
-* DEFAULT
-    * filled
-    * flat
-    * glow effect
-* BLUE
-    * filled
-    * flat
-    * glow effect
-* PURPLE
-    * filled
-    * flat
-    * glow effect
-* GREEN
-    * filled
-    * flat
-    * glow effect
-* RED
-    * filled
-    * flat
-    * glow effect
- */
 
 /* UNIVERSAL */
 .btn {
@@ -413,11 +373,6 @@ a.link:hover::after {
     background-color: transparent;
 }
 
-/* outline */
-.btn.btn-outline {
-    border: 1px solid currentColor;
-}
-
 /* DEFAULT */
 .btn {
     color: var(--c-base);
@@ -452,12 +407,6 @@ a.link:hover::after {
 .btn-outline:hover,
 .btn-flat.active {
     background-color: var(--c-base-10);
-}
-
-/* glow effect */
-.btn.glow-effect.active,
-.btn.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-base);
 }
 
 /* BLUE */
@@ -496,12 +445,6 @@ a.link:hover::after {
     background-color: var(--c-blue-10);
 }
 
-/* glow effect */
-.btn.btn-blue.glow-effect.active,
-.btn.btn-blue.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-blue);
-}
-
 /* PURPLE */
 .btn.btn-purple {
     color: var(--c-purple);
@@ -536,12 +479,6 @@ a.link:hover::after {
 .btn-flat.btn-purple:hover,
 .btn-outline.btn-purple:hover {
     background-color: var(--c-purple-10);
-}
-
-/* glow effect */
-.btn.btn-purple.glow-effect.active,
-.btn.btn-purple.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-purple);
 }
 
 /* GREEN */
@@ -580,12 +517,6 @@ a.link:hover::after {
     background-color: var(--c-green-10);
 }
 
-/* glow effect */
-.btn.btn-green.glow-effect.active,
-.btn.btn-green.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-green);
-}
-
 /* RED */
 .btn.btn-red {
     color: var(--c-red);
@@ -620,12 +551,6 @@ a.link:hover::after {
 .btn-flat.btn-red:hover,
 .btn-outline.btn-red:hover {
     background-color: var(--c-red-10);
-}
-
-/* glow effect */
-.btn.btn-red.glow-effect.active,
-.btn.btn-red.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-red);
 }
 
 /* BUTTON GROUP */
@@ -883,19 +808,6 @@ input[type="radio"]:checked + label::after {
 .inner-label.has-value .form-input{
     padding-top: calc(1.6 * var(--f-size-reg));
     padding-bottom: calc(0.4 * var(--f-size-reg));
-}
-
-/* side */
-.item-wrapper.side-label {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    grid-gap: 24px;
-}
-
-.form-label.side-label {
-    font-family: var(--f-title);
-    font-size: var(--f-size-5);
-    padding: var(--f-size-reg) 0;
 }
 
 /* VALIDATION */

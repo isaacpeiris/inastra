@@ -15,3 +15,72 @@ h4.glow-effect,
 h5.glow-effect {
     text-shadow: 0 0 12px currentColor;
 }
+
+/* BTNS */
+/* default */
+.btn.glow-effect.active,
+.btn.glow-effect:hover {
+    box-shadow: 0 0 12px var(--c-base);
+}
+
+/* blue */
+.btn.btn-blue.glow-effect.active,
+.btn.btn-blue.glow-effect:hover {
+    box-shadow: 0 0 12px var(--c-blue);
+}
+
+/* purple */
+.btn.btn-purple.glow-effect.active,
+.btn.btn-purple.glow-effect:hover {
+    box-shadow: 0 0 12px var(--c-purple);
+}
+
+/* green */
+.btn.btn-green.glow-effect.active,
+.btn.btn-green.glow-effect:hover {
+    box-shadow: 0 0 12px var(--c-green);
+}
+
+/* red */
+.btn.btn-red.glow-effect.active,
+.btn.btn-red.glow-effect:hover {
+    box-shadow: 0 0 12px var(--c-red);
+}
+
+/* FORM */
+.input-purple .form-label,
+.input-purple .form-input {
+    color: var(--c-white);
+}
+
+.input-purple input,
+.input-purple select,
+.input-purple textarea {
+    border: none;
+    background-color: var(--c-purple-60);
+}
+
+.input-purple input:hover,
+.input-purple input:focus,
+.input-purple select:hover,
+.input-purple select:focus,
+.input-purple textarea:hover,
+.input-purple textarea:focus {
+    background-color: var(--c-purple-90);
+}
+
+.input-purple.glow-effect input:focus,
+.input-purple.glow-effect select:focus,
+.input-purple.glow-effect textarea:focus {
+    box-shadow: 0 0 12px var(--c-purple);
+}
+
+.item-wrapper.input-purple.error-empty .form-input,
+.item-wrapper.input-purple.error-invalid .form-input {
+    background-color: var(--c-red-40);
+}
+
+.item-wrapper.input-purple.error-empty .form-input:focus,
+.item-wrapper.input-purple.error-invalid .form-input:focus {
+    background-color: var(--c-purple-90);
+}
