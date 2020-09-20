@@ -12,50 +12,50 @@ router.post('/contact-form', function(req, res, next) {
         text: "New inbound lead 🔥",
         blocks: [
             {
-                type:"section",
-                text:{
-                    type:"plain_text",
-                    text:"New inbound lead 🔥"
+                type: "section",
+                text: {
+                    type: "plain_text",
+                    text: "New inbound lead 🔥"
                 }
             },
             {
-                type:"section",
+                type: "section",
                 block_id: "name",
-                text:{
-                    type:"mrkdwn",
-                    text:"*Name:* " + req.body.name
+                text: {
+                    type: "mrkdwn",
+                    text: "*Name:* " + req.body.name
                 }
             },
             {
-                type:"section",
+                type: "section",
                 block_id: "company",
-                text:{
-                    type:"mrkdwn",
-                    text:"*Company:* " + req.body.company
+                text: {
+                    type: "mrkdwn",
+                    text: "*Company:* " + req.body.company
                 }
             },
             {
-                type:"section",
+                type: "section",
                 block_id: "email",
-                text:{
-                    type:"mrkdwn",
-                    text:"*Email:* " + req.body.email
+                text: {
+                    type: "mrkdwn",
+                    text: "*Email:* " + req.body.email
                 }
             },
             {
-                type:"section",
+                type: "section",
                 block_id: "phone",
-                text:{
-                    type:"mrkdwn",
-                    text:"*Phone:* " + formatMobileNumber(req.body.phone)
+                text: {
+                    type: "mrkdwn",
+                    text: "*Phone:* " + formatMobileNumber(req.body.phone)
                 }
             },
             {
-                type:"section",
+                type: "section",
                 block_id: "message",
-                text:{
-                    type:"mrkdwn",
-                    text:"*Message:* " + req.body.message
+                text: {
+                    type: "mrkdwn",
+                    text: "*Message:* " + req.body.message
                 }
             },
             {
@@ -110,19 +110,19 @@ router.post('/slack', async function(req, res, next) {
 
             // Create formInputs object with Slack message content
             const formInputs = {
-                contactFullName: messageContent[1].text.text.replace(messageLabel,''),
-                contactFirstName: messageContent[1].text.text.replace(messageLabel,'').split(' ')[0],
-                contactLastName: messageContent[1].text.text.replace(messageLabel,'').split(' ')[1],
-                contactCompany: messageContent[2].text.text.replace(messageLabel,''),
+                contactFullName: messageContent[1].text.text.replace(messageLabel, ''),
+                contactFirstName: messageContent[1].text.text.replace(messageLabel, '').split(' ')[0],
+                contactLastName: messageContent[1].text.text.replace(messageLabel, '').split(' ')[1],
+                contactCompany: messageContent[2].text.text.replace(messageLabel, ''),
                 contactCompanyDomain: messageContent[3].text.text.split('|')[1].split('>')[0].split('@')[1],
                 contactEmail: messageContent[3].text.text.split('|')[1].split('>')[0],
-                contactPhone: messageContent[4].text.text.replace(messageLabel,''),
-                contactMessage: messageContent[5].text.text.replace(messageLabel,'')
+                contactPhone: messageContent[4].text.text.replace(messageLabel, ''),
+                contactMessage: messageContent[5].text.text.replace(messageLabel, '')
             }
 
             // Calculate UTC timestamp at midnight of current day
             const d = new Date();
-            const UTCMidnightTime = +d.setUTCHours(0,0,0,0);
+            const UTCMidnightTime = +d.setUTCHours(0, 0, 0, 0);
 
             // Check if contact already exists
             let contactId = await getContactId(formInputs.contactEmail);
@@ -376,7 +376,7 @@ function addNoteToDeal(dealId, contactId, companyId, formInputs) {
                 "contactIds": [contactId],
                 "companyIds": [companyId],
                 "dealIds": [dealId],
-                "ownerIds": [ ]
+                "ownerIds": []
             },
             "metadata": {
                 "body": `${formInputs.contactFullName} contacted through website: ${formInputs.contactMessage}`
