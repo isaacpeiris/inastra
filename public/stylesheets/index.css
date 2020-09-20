@@ -23,7 +23,7 @@ section#hero {
 
 .hero-text {
     font-family: var(--f-title);
-    font-size: var(--f-size-big);
+    font-size: var(--f-size-lrg);
     font-weight: 500;
     color: var(--c-blue);
     text-align: center;

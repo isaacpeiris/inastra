@@ -16,7 +16,7 @@ section#error {
 }
 
 .error-wrapper > h1 {
-    font-size: var(--f-size-big);
+    font-size: var(--f-size-lrg);
 }
 
 .action-link {
