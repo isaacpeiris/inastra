@@ -267,7 +267,7 @@ a {
 
 @media screen and (max-width: 1860px) and (orientation: landscape) {
     :root {
-        --f-size-lrg: calc(2.4vw + 1rem);
+        --f-size-lrg: calc(3.2vw + 1rem);
         --f-size-1: calc(2vw + 1rem);
         --f-size-2: calc(1.6vw + 1rem);
         --f-size-3: calc(1.2vw + 1rem);
@@ -278,7 +278,7 @@ a {
 
 @media screen and (max-width: 1860px) and (orientation: portrait) {
     :root {
-        --f-size-lrg: calc(2.4vh + 1rem);
+        --f-size-lrg: calc(3.2vh + 1rem);
         --f-size-1: calc(2vh + 1rem);
         --f-size-2: calc(1.6vh + 1rem);
         --f-size-3: calc(1.2vh + 1rem);
@@ -417,21 +417,6 @@ a.link:hover::after {
     background-color: var(--c-base-20);
 }
 
-/* filled */
-.btn-filled {
-    background-color: var(--c-base);
-    color: var(--c-white);
-}
-
-.btn-filled.active {
-
-}
-
-.btn-filled:hover {
-    background-color: var(--c-base-90);
-}
-
-/* flat */
 .btn-flat {
     color: var(--c-base);
 }
@@ -453,21 +438,6 @@ a.link:hover::after {
     background-color: var(--c-blue-20);
 }
 
-/* filled */
-.btn-filled.btn-blue {
-    background-color: var(--c-blue);
-    color: var(--c-white);
-}
-
-.btn-filled.btn-blue.active {
-
-}
-
-.btn-filled.btn-blue:hover {
-    background-color: var(--c-blue-90);
-}
-
-/* flat */
 .btn-flat.btn-blue {
     color: var(--c-blue);
     background-color: transparent;
@@ -489,21 +459,6 @@ a.link:hover::after {
     background-color: var(--c-purple-20);
 }
 
-/* filled */
-.btn-filled.btn-purple {
-    background-color: var(--c-purple);
-    color: var(--c-white);
-}
-
-.btn-filled.btn-purple.active {
-
-}
-
-.btn-filled.btn-purple:hover {
-    background-color: var(--c-purple-90);
-}
-
-/* flat */
 .btn-flat.btn-purple {
     color: var(--c-purple);
     background-color: transparent;
@@ -525,21 +480,6 @@ a.link:hover::after {
     background-color: var(--c-green-20);
 }
 
-/* filled */
-.btn-filled.btn-green {
-    background-color: var(--c-green);
-    color: var(--c-white);
-}
-
-.btn-filled.btn-green.active {
-
-}
-
-.btn-filled.btn-green:hover {
-    background-color: var(--c-green-90);
-}
-
-/* flat */
 .btn-flat.btn-green {
     color: var(--c-green);
     background-color: transparent;
@@ -561,21 +501,6 @@ a.link:hover::after {
     background-color: var(--c-red-20);
 }
 
-/* filled */
-.btn-filled.btn-red {
-    background-color: var(--c-red);
-    color: var(--c-white);
-}
-
-.btn-filled.btn-red.active {
-
-}
-
-.btn-filled.btn-red:hover {
-    background-color: var(--c-red-90);
-}
-
-/* flat */
 .btn-flat.btn-red {
     color: var(--c-red);
     background-color: transparent;

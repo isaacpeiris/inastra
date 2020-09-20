@@ -23,10 +23,36 @@ h5.glow-effect {
     box-shadow: 0 0 12px var(--c-base);
 }
 
+.btn-filled {
+    background-color: var(--c-base);
+    color: var(--c-white);
+}
+
+.btn-filled.active {
+
+}
+
+.btn-filled:hover {
+    background-color: var(--c-base-90);
+}
+
 /* blue */
 .btn.btn-blue.glow-effect.active,
 .btn.btn-blue.glow-effect:hover {
     box-shadow: 0 0 12px var(--c-blue);
+}
+
+.btn-filled.btn-blue {
+    background-color: var(--c-blue);
+    color: var(--c-white);
+}
+
+.btn-filled.btn-blue.active {
+
+}
+
+.btn-filled.btn-blue:hover {
+    background-color: var(--c-blue-90);
 }
 
 /* purple */
@@ -35,16 +61,55 @@ h5.glow-effect {
     box-shadow: 0 0 12px var(--c-purple);
 }
 
+.btn-filled.btn-purple {
+    background-color: var(--c-purple);
+    color: var(--c-white);
+}
+
+.btn-filled.btn-purple.active {
+
+}
+
+.btn-filled.btn-purple:hover {
+    background-color: var(--c-purple-90);
+}
+
 /* green */
 .btn.btn-green.glow-effect.active,
 .btn.btn-green.glow-effect:hover {
     box-shadow: 0 0 12px var(--c-green);
 }
 
+.btn-filled.btn-green {
+    background-color: var(--c-green);
+    color: var(--c-white);
+}
+
+.btn-filled.btn-green.active {
+
+}
+
+.btn-filled.btn-green:hover {
+    background-color: var(--c-green-90);
+}
+
 /* red */
 .btn.btn-red.glow-effect.active,
 .btn.btn-red.glow-effect:hover {
     box-shadow: 0 0 12px var(--c-red);
+}
+
+.btn-filled.btn-red {
+    background-color: var(--c-red);
+    color: var(--c-white);
+}
+
+.btn-filled.btn-red.active {
+
+}
+
+.btn-filled.btn-red:hover {
+    background-color: var(--c-red-90);
 }
 
 /* FORM */
