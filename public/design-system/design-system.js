@@ -439,21 +439,31 @@ function openModal(modal_id) {
     document.querySelector('.modal-background').addEventListener('click', function() { closeModal(modal_id) });
 }
 
-function toast(text, type, persistent) {
+function toast(text, type, persistent, action_text, action_url) {
+    // Create toast wrapper element if it doesn't already exist
     if (!document.querySelector('#toast-wrapper')) {
         let newWrapper = document.createElement('DIV');
         newWrapper.id = 'toast-wrapper'
         document.body.appendChild(newWrapper);
     }
+
     let toastWrapper = document.querySelector('#toast-wrapper');
+
+    // Create new toast element
     let newToast = document.createElement('DIV');
+    // Add toast class
     newToast.classList.add('toast');
+    // If type is set add the corresponding icon and class
     if (type || type != 'none') {
-        newToast.classList.add(type, 'has-icon')
+        // Add class for type and for icon
+        newToast.classList.add(type, 'has-icon');
+        // Create icon wrapper
         let newToastIconWrapper = document.createElement('DIV');
         newToastIconWrapper.classList.add('toast-icon');
+        // Create icon element
         let newToastIcon = document.createElement('SPAN');
         newToastIcon.classList.add('material-icons');
+        // Set icon depending on type variable
         if (type == 'info') {
             newToastIcon.innerText = 'info';
         } else if (type == 'success') {
@@ -464,19 +474,29 @@ function toast(text, type, persistent) {
             newToastIcon.innerText = 'error';
         }
 
+        // Append icon to icon wrapper
         newToastIconWrapper.appendChild(newToastIcon);
+        // Append icon wrapper with icon to toast element
         newToast.appendChild(newToastIconWrapper);
     }
 
+    // Create toast content element
     let newToastContent = document.createElement('DIV');
     newToastContent.classList.add('toast-content');
+    // Create toast text element
     let newToastText = document.createElement('P');
+    // Set toast text to input
     newToastText.innerText = text;
+
+    // Append toast text to toast content element
     newToastContent.appendChild(newToastText);
+    // Append toast content with text to toast element
     newToast.appendChild(newToastContent);
 
+    // Append toast to toast wrapper element
     toastWrapper.appendChild(newToast)
 
+    // Fade toast in
     newToast.animate([
         {
             opacity: 0,
@@ -491,20 +511,30 @@ function toast(text, type, persistent) {
         easing: 'ease'
     })
 
+    // If toast is persistent then add close button, otherwise set a timeout
     if (persistent == true) {
+        // Create action wrapper element
         let newToastActionWrapper = document.createElement('DIV');
         newToastActionWrapper.classList.add('toast-action');
+        // Append action wrapper to toast element
         newToast.appendChild(newToastActionWrapper);
+        // Add persistent class to toast
         newToast.classList.add('persistent')
+        // Create close button element
         let closeToastBtn = document.createElement('BUTTON')
         closeToastBtn.classList.add('btn', 'icon-only', 'btn-flat');
+        // Create close button icon
         let closeToastBtnIcon = document.createElement('SPAN');
         closeToastBtnIcon.classList.add('material-icons');
         closeToastBtnIcon.innerText = 'close';
+        // Append close icon to close button element
         closeToastBtn.appendChild(closeToastBtnIcon);
+        // Append close button to action wrapper element
         newToastActionWrapper.appendChild(closeToastBtn)
+        // Init close buttons
         toastCloseBtns();
     } else {
+        // Fade toast out and add expired class
         setTimeout(function() {
             let duration = 200;
             newToast.animate([
