@@ -12,3 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get contact information from local storage
     const contact = JSON.parse(window.localStorage.getItem('contact'));
 });
+
+apiUrl = window.location.protocol + '//' + window.location.host + '/api';
+
+function apiReq(options) {
+    let newReq = new XMLHttpRequest();
+    newReq.open(options.method.toUpperCase(), options.url);
+    newReq.setRequestHeader('Content-Type', 'application/json');
+    if (options.body) {
+        newReq.send(options.body);
+    } else {
+        newReq.send();
+    }
+    return newReq;
+}

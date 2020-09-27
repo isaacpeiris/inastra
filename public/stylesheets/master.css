@@ -16,6 +16,10 @@ h5.glow-effect {
     text-shadow: 0 0 12px currentColor;
 }
 
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
 /* BTNS */
 /* default */
 .btn.glow-effect.active,

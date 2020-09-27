@@ -30,12 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // on click of mobile nav button, if mobile nav is open then close it, otherwise open it
     mobileMenuBtn.addEventListener('click', function() {
-        console.log('clicked')
         if (nav.classList.contains('mobile-active')) {
-            console.log('close')
             closeMobileNav();
         } else {
-            console.log('open')
             openMobileNav();
         }
     })

@@ -1,9 +1,22 @@
+const { response } = require('express');
 var express = require('express');
 var router = express.Router();
 const axios = require('axios').default;
 
 //Add header to all axios requests
 axios.defaults.headers.common['Content-type'] = 'application/json';
+
+
+router.post('/recaptcha-verify', function(req, res, next) {
+    let params = new URLSearchParams();
+    params.append('secret', '6LeC7NAZAAAAAGHm5PbGCcTjU6QOuCewUaVOeN1u');
+    params.append('response', req.body.token)
+
+    axios.post('https://www.google.com/recaptcha/api/siteverify', params)
+        .then(function(response) {
+            res.send(response.data)
+        }).catch(function(error) { console.log(error.response) });
+})
 
 // Receive post request from contact form
 router.post('/contact-form', function(req, res, next) {
@@ -19,11 +32,24 @@ router.post('/contact-form', function(req, res, next) {
                 }
             },
             {
+                type: "context",
+                elements: [
+                    {
+                        type: "mrkdwn",
+                        text: "*Host:* " + req.body.recaptcha.hostname
+                    },
+                    {
+                        type: "mrkdwn",
+                        text: "*Score:* " + req.body.recaptcha.score
+                    }
+                ]
+            },
+            {
                 type: "section",
                 block_id: "name",
                 text: {
                     type: "mrkdwn",
-                    text: "*Name:* " + req.body.name
+                    text: "*Name:* " + req.body.fullName
                 }
             },
             {
@@ -83,10 +109,9 @@ router.post('/contact-form', function(req, res, next) {
                 ]
             }
         ]
+    }).then(function(response) {
+        res.sendStatus(200)
     }).catch(function(error) { console.log(error.response) });
-
-    // redirect to confirmation page
-    res.redirect('/confirmed');
 });
 
 // Receive all payloads from Slack messages
