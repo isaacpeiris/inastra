@@ -7,27 +7,47 @@ nav {
     top: 0;
     height: var(--nav-height);
     width: 100%;
+    z-index: 10;
+    transition: background 300ms ease;
+}
+
+nav:not(.transparent) {
+    background: var(--c-white);
+    color: var(--c-base);
+    box-shadow: 0 4px 6px var(--c-base-20);
+}
+
+nav.transparent .logo.white {
+    display: block;
+}
+
+nav.transparent .logo.colour {
+    display: none;
+}
+
+nav:not(.transparent) .logo.white {
+    display: none;
+}
+
+nav:not(.transparent) .logo.colour {
+    display: block;
+}
+
+nav.transparent {
     background: transparent;
     color: var(--c-white);
-    z-index: 10;
 }
 
-nav::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: calc(var(--nav-height));
-    width: 100%;
-    background-color: var(--c-base);
-    box-shadow: 0 2px 6px var(--c-base-40);
-    transition: background-color 400ms ease, box-shadow 400ms ease;
-    -webkit-transition: background-color 400ms ease, box-shadow 400ms ease;
+nav.transparent .btn-flat {
+    color: var(--c-white);
 }
 
-nav.transparent::before {
-    background-color: transparent;
-    box-shadow: none;
+nav.transparent .btn-flat:hover {
+    background-color: var(--c-white-10);
+}
+
+nav.transparent .btn:focus {
+    box-shadow: 0 0 0 2px var(--c-white);
 }
 
 .nav-wrapper {
@@ -92,9 +112,13 @@ nav.transparent::before {
 button#menu {
     border: none;
     background-color: transparent;
-    color: var(--c-white);
+    color: var(--c-base);
     margin: 0;
     padding: 4px 5px;
+}
+
+nav.transparent button#menu {
+    color: var(--c-white);
 }
 
 .mobile-nav {
