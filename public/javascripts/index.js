@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+    VanillaTilt.init(document.querySelector(".hero-img"), {
+        max: 7,
+        speed: 1800,
+        perspective: 800
+    });
+
     const contactForms = document.querySelectorAll('form.contact');
     contactForms.forEach(form => {
         form.addEventListener('submit', function(e) {
