@@ -294,6 +294,16 @@ function RgbToHsl(r, g, b) {
     return aHsl
 }
 
+const colours = {
+    "base": "#1f1832",
+    "blue": "#35bdee",
+    "purple": "#635aa7",
+    "green": "#46bc97",
+    "pink": "#e31568",
+    "red": "#de350b",
+    "yellow": "#ffcd00"
+}
+
 function generateColours(colourInput) {
     // convert colour input to array
     let colors = [];
