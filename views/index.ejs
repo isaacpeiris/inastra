@@ -33,7 +33,7 @@
             <p class="section-text">Inastra uses <b>transdisciplinary innovation</b> to <b>supercharge your creativity</b> and deliver <b>meaningful solutions</b> to complex problems.</p>
         </div>
     </section>
-    <section id="about" class="side">
+    <section id="about" class="side img-text">
         <div class="container">
             <div class="section-img">
                 <img src="/images/about.png" alt="">
@@ -74,7 +74,7 @@
             <!-- <a href="#" class="btn section-btn">Learn more</a> -->
         </div>
     </section>
-    <section id="approach" class="side">
+    <section id="approach" class="side img-text">
         <div class="container">
             <div class="section-img">
                 <img src="/images/transdisciplinary.png" alt="">
@@ -91,11 +91,20 @@
             </div>
         </div>
     </section>
-    <section id="experts" class="feature">
+    <section id="case-studies" class="side text-img">
         <div class="container">
-            <p class="section-text">You are the expert in your field.</p>
-            <p class="section-text">We are the experts in meaningful change.</p>
-            <p class="section-text">Let's bring the two together and create what comes next.</p>
+            <div class="section-content">
+                <div class="section-header">
+                    <p class="section-name">Case Study</p>
+                    <h2 class="section-title"><%= caseStudy.organisation %></h2>
+                    <hr class="section-underline">
+                </div>
+                <p class="section-text"><%= caseStudy.subtitle %></p>
+                <a href="/case-studies/redesigning-hotel-organisational-structures-for-an-agile-pandemic-response" class="btn section-btn">Learn more</a>
+            </div>
+            <div class="section-img">
+                <img src="/images/clients/ihg.png" alt="">
+            </div>
         </div>
     </section>
     <section id="contact" class="side">

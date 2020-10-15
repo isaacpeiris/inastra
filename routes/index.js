@@ -2,18 +2,11 @@ var express = require('express');
 var router = express.Router();
 const caseStudies = require('../content/case-studies.json');
 
-function encodeTitle(title) {
-    let lowerCase = title.toLowerCase();
-    let noSpace = lowerCase.replace(/\s/g, '-');
-    return noSpace;
-}
-
-function getCaseStudy(id) {
-
-}
-
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Transdisciplinary Innovation' });
+    res.render('index', {
+        title: 'Transdisciplinary Innovation',
+        caseStudy: caseStudies[0]
+    });
 });
 
 router.get('/confirmed', function(req, res, next) {

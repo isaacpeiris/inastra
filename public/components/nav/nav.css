@@ -17,6 +17,10 @@ nav:not(.transparent) {
     box-shadow: 0 4px 6px var(--c-base-20);
 }
 
+nav .logo.bnw-white {
+    display: none;
+}
+
 nav.transparent .logo.white {
     display: block;
 }
