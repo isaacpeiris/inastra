@@ -186,6 +186,15 @@ section img {
     margin-bottom: 0;
 }
 
+section#experts .section-text {
+    font-size: var(--f-size-3);
+    margin-bottom: var(--f-size-reg);
+}
+
+section#experts .section-text:last-of-type {
+    margin-bottom: 0;
+}
+
 /* FEATURE */
 section.feature .section-text {
     font-size: var(--f-size-1);
@@ -236,7 +245,7 @@ section.option-list .section-content {
     transition: all 200ms ease;
 }
 
-.option:hover {
+a.option:hover {
     box-shadow: 0 0 8px var(--c-base-20);
     cursor: pointer;
 }
