@@ -1,0 +1,27 @@
+[
+  {
+    "id": "redesigning-hotel-organisational-structures-for-an-agile-pandemic-response",
+    "organisation": "IHG",
+    "logo_img": "ihg.png",
+    "title": "Redesigning hotel organisational structures for an agile pandemic response",
+    "subtitle": "To adapt and respond to the global COVID-19 pandemic, IHG needed to reimagine the way hotels have operated for decades.",
+    "challenge": {
+      "summary": "The COVID-19 pandemic caused an average revenue decrease of 87% across the hospitality industry. This meant IHG required a new operational structure that could be fluid and scalable, and needed to be designed at a grassroots level while working with changes to corporate management structures."
+    },
+    "process": {
+      "summary": "Inastra facilitated a multidisciplinary project working group through navigation of inherent biases, establishing a stakeholder engagement and management plan, and the introduction of agile and design thinking methodologies to enable deeper understanding of the problem and rapidly test and iterate potential solutions."
+    },
+    "results": {
+      "summary": "The new structure has been deployed to 52 hotels across 5 geographic regions in Australasia, with implementation on track to achieve project KPIs. Elements of the restructure are also being rolled out company-wide and are set to remain in place post-COVID, redefining the way hotels have operated for decades."
+    },
+    "testimonial": {
+      "quote": "With the engagement and support of the Inastra team our project group was able to develop a Minimum Viable Product <b>within a very timebound deliverable window</b>. We were then able to <b>rapidly distribute</b> to hotels <b>across Australasia</b>, providing the guidance required to make the changes needed and support ongoing implementation. Thank you for guiding us through the innovation process.",
+      "name": "Brenden Van Blerk",
+      "title": "Director, New Hotels - Australasia & Japan"
+    }
+  },
+  {
+    "id": "another-case-study",
+    "organisation": "test org"
+  }
+]

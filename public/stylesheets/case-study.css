@@ -65,6 +65,10 @@ section#content .container {
     grid-row-gap: 48px;
 }
 
+section#content .content-body p:not(:last-child) {
+    margin-bottom: var(--f-size-reg);
+}
+
 /* TESTIMONIAL */
 section#testimonial::after {
     content: '';
@@ -102,6 +106,10 @@ section#testimonial .container::before {
 section#testimonial .container::after {
     content: '\201D';
     text-align: right;
+}
+
+section#testimonial b {
+    color: var(--c-purple);
 }
 
 .testimonial-details {
