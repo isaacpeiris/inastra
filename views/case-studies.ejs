@@ -1,0 +1,67 @@
+<% include ./partials/head %>
+
+<link rel="stylesheet" href="/stylesheets/case-study.css">
+
+<% include ./partials/head-bottom %>
+<% include ./components/nav %>
+
+<main>
+    <section id="title">
+        <div class="container">
+            <h1><%= caseStudy.title %></h1>
+        </div>
+    </section>
+    <section id="subtitle">
+        <div class="container">
+            <div class="client-logo">
+                <img src="/images/clients/<%= caseStudy.logo_img %>" alt="">
+            </div>
+            <div class="subtitle-content">
+                <h2><%= caseStudy.subtitle %></h2>
+            </div>
+        </div>
+    </section>
+    <section id="content">
+        <div class="container">
+            <div class="content-header">
+                <h3>Challenge</h3>
+            </div>
+            <div class="content-body">
+                <p><%= caseStudy.challenge.summary %></p>
+            </div>
+            <div class="content-header">
+                <h3>Process</h3>
+            </div>
+            <div class="content-body">
+                <p><%= caseStudy.process.summary %></p>
+            </div>
+            <div class="content-header">
+                <h3>Results</h3>
+            </div>
+            <div class="content-body">
+                <p><%= caseStudy.results.summary %></p>
+            </div>
+        </div>
+    </section>
+    <section id="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <p><%- caseStudy.testimonial.quote %></p>
+                <div class="testimonial-details">
+                    <p class="name"><%= caseStudy.testimonial.name %></p>
+                    <p class="title"><%= caseStudy.testimonial.title %></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section id="cta">
+        We'd love to achieve great results like this for your organisation! Let us know the best email to get in touch with you at.
+        <div class="item-wrapper input-purple glow-effect">
+            <input type="text" class="form-input">
+        </div>
+    </section> -->
+</main>
+
+<div id="particle-js"></div>
+
+<% include ./components/footer %>

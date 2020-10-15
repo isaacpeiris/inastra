@@ -140,6 +140,34 @@
     --c-green-dark-70:  hsl(161,46.8%,15.18%);
     --c-green-dark-80:  hsl(161,46.8%,10.12%);
     --c-green-dark-90:  hsl(161,46.8%,5.06%);
+    --c-pink:  #e31568;
+    --c-pink-10:  rgba(227,21,104,0.1);
+    --c-pink-20:  rgba(227,21,104,0.2);
+    --c-pink-30:  rgba(227,21,104,0.3);
+    --c-pink-40:  rgba(227,21,104,0.4);
+    --c-pink-50:  rgba(227,21,104,0.5);
+    --c-pink-60:  rgba(227,21,104,0.6);
+    --c-pink-70:  rgba(227,21,104,0.7);
+    --c-pink-80:  rgba(227,21,104,0.8);
+    --c-pink-90:  rgba(227,21,104,0.9);
+    --c-pink-light-10:  hsl(336,83.1%,53.74%);
+    --c-pink-light-20:  hsl(336,83.1%,58.88%);
+    --c-pink-light-30:  hsl(336,83.1%,64.02%);
+    --c-pink-light-40:  hsl(336,83.1%,69.16%);
+    --c-pink-light-50:  hsl(336,83.1%,74.3%);
+    --c-pink-light-60:  hsl(336,83.1%,79.44%);
+    --c-pink-light-70:  hsl(336,83.1%,84.58%);
+    --c-pink-light-80:  hsl(336,83.1%,89.72%);
+    --c-pink-light-90:  hsl(336,83.1%,94.86%);
+    --c-pink-dark-10:  hsl(336,83.1%,43.74%);
+    --c-pink-dark-20:  hsl(336,83.1%,38.88%);
+    --c-pink-dark-30:  hsl(336,83.1%,34.02%);
+    --c-pink-dark-40:  hsl(336,83.1%,29.16%);
+    --c-pink-dark-50:  hsl(336,83.1%,24.3%);
+    --c-pink-dark-60:  hsl(336,83.1%,19.44%);
+    --c-pink-dark-70:  hsl(336,83.1%,14.58%);
+    --c-pink-dark-80:  hsl(336,83.1%,9.72%);
+    --c-pink-dark-90:  hsl(336,83.1%,4.86%);
     --c-red:  #de350b;
     --c-red-10:  rgba(222,53,11,0.1);
     --c-red-20:  rgba(222,53,11,0.2);
@@ -243,6 +271,22 @@ h2,
 h3,
 h4,
 h5,
+p,
+a,
+span,
+div {
+    font-weight: 400;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--f-title);
+}
+
 p,
 a,
 span,
