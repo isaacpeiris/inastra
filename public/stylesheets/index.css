@@ -196,7 +196,6 @@ section img {
 
 section#contact .container {
     grid-template-columns: 1fr 2fr;
-    /* align-items: flex-start; */
 }
 
 /* FEATURE */
@@ -256,7 +255,7 @@ section.option-list .section-content {
 }
 
 .option {
-    padding: 24px;
+    padding: 24px 0 0 0;
     border-radius: 4px;
     transition: all 200ms ease;
 }
@@ -269,6 +268,7 @@ a.option:hover {
 .option-title {
     text-align: center;
     font-family: var(--f-title);
+    font-size: var(--f-size-5);
     margin-top: var(--f-size-reg);
     color: var(--c-base);
 }
