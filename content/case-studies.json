@@ -1,18 +1,26 @@
 [
   {
     "id": "redesigning-hotel-organisational-structures-for-an-agile-pandemic-response",
-    "organisation": "InterContinental Hotel Group",
-    "organisation_short": "IHG",
-    "logo_img": "ihg.png",
+    "organisation": {
+      "name": "InterContinental Hotel Group",
+      "abbr": "IHG",
+      "logo": "ihg.png"
+    },
     "title": "Redesigning hotel organisational structures for an agile pandemic response",
     "subtitle": "To adapt and respond to the global COVID-19 pandemic, the InterContinental Hotel Group needed to reimagine the way hotels have operated for decades.",
     "challenge": {
+      "full": "",
+      "points": {},
       "summary": "The COVID-19 pandemic caused an average revenue decrease of 87% across the hospitality industry. This meant IHG required a new fluid and scalable operational structure that needed to be designed at a grassroots level while connecting with changes to corporate management structures."
     },
     "process": {
+      "full": "",
+      "points": {},
       "summary": "Inastra facilitated the multidisciplinary project group through agile and design thinking methodologies to enable deeper understanding of the problem before rapidly testing and iterating potential solutions. This included navigating inherent biases and establishing a stakeholder engagement and management plan."
     },
     "results": {
+      "full": "",
+      "points": {},
       "summary": "The new structure has been deployed to 52 hotels across 5 geographic regions in Australasia, with implementation on track to achieve project KPIs. Elements of the restructure are also being rolled out company-wide and are set to remain in place post-COVID, redefining the way hotels have operated for decades."
     },
     "testimonial": {

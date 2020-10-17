@@ -19,7 +19,7 @@
     <section id="hero" class="particle-container">
         <div class="container">
             <div class="hero-img" data-tilt-full-page-listening>
-                <img src="/images/brand/logos/icon.png" alt="">
+                <img src="/images/brand/logos/icon.png" alt="Inastra Logo">
             </div>
             <div class="hero-content">
                 <h1 class="hero-text">Creativity is not a talent, it's a way of thinking.</h1>
@@ -93,14 +93,14 @@
             <div class="section-content">
                 <div class="section-header">
                     <p class="section-name">Case Study</p>
-                    <h2 class="section-title"><%= caseStudy.organisation %></h2>
+                    <h2 class="section-title"><%= caseStudy.organisation.name %></h2>
                     <hr class="section-underline">
                 </div>
                 <p class="section-text"><%= caseStudy.subtitle %></p>
-                <a href="/case-studies/redesigning-hotel-organisational-structures-for-an-agile-pandemic-response" class="btn section-btn">Learn more</a>
+                <a href="/case-studies/<%= caseStudy.id %>" class="btn section-btn">Learn more</a>
             </div>
             <div class="section-img">
-                <img src="/images/clients/ihg.png" alt="">
+                <img src="/images/clients/<%= organisation.logo %>" alt="IHG Logo">
             </div>
         </div>
     </section>
