@@ -185,17 +185,13 @@ section img {
     margin: 18px 0 0;
 }
 
-.section-content .section-text {
+.section-text {
     font-size: var(--f-size-5);
     margin-bottom: var(--f-size-5);
 }
 
-.section-content .section-text:last-of-type {
+.section-text:last-of-type {
     margin-bottom: 0;
-}
-
-section#contact .container {
-    grid-template-columns: 1fr 2fr;
 }
 
 /* FEATURE */
@@ -279,6 +275,10 @@ section#contact {
     display: flex;
     align-items: center;
     padding: calc((var(--nav-height) + 24px) + 2vh) 0;
+}
+
+section#contact .container {
+    grid-template-columns: 1fr 1fr;
 }
 
 button#submit {
