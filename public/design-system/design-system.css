@@ -456,8 +456,7 @@ a.link:hover::after {
     background-color: var(--c-base-10);
 }
 
-.btn:hover,
-.btn.active {
+.btn:hover {
     background-color: var(--c-base-20);
 }
 
@@ -465,9 +464,7 @@ a.link:hover::after {
     color: var(--c-base);
 }
 
-.btn-flat:hover,
-.btn-outline:hover,
-.btn-flat.active {
+.btn-flat:hover {
     background-color: var(--c-base-10);
 }
 
@@ -477,8 +474,7 @@ a.link:hover::after {
     background-color: var(--c-blue-10);
 }
 
-.btn.btn-blue:hover,
-.btn.btn-blue.active {
+.btn.btn-blue:hover {
     background-color: var(--c-blue-20);
 }
 
@@ -498,8 +494,7 @@ a.link:hover::after {
     background-color: var(--c-purple-10);
 }
 
-.btn.btn-purple:hover,
-.btn.btn-purple.active {
+.btn.btn-purple:hover {
     background-color: var(--c-purple-20);
 }
 
@@ -519,8 +514,7 @@ a.link:hover::after {
     background-color: var(--c-green-10);
 }
 
-.btn.btn-green:hover,
-.btn.btn-green.active {
+.btn.btn-green:hover {
     background-color: var(--c-green-20);
 }
 
@@ -540,8 +534,7 @@ a.link:hover::after {
     background-color: var(--c-red-10);
 }
 
-.btn.btn-red:hover,
-.btn.btn-red.active {
+.btn.btn-red:hover {
     background-color: var(--c-red-20);
 }
 
@@ -566,6 +559,10 @@ a.link:hover::after {
 
 .btn-group .btn {
     border-radius: 0;
+}
+
+.btn-group .btn.active {
+    background-color: var(--c-base-10);
 }
 
 .btn-group .btn:first-child {
