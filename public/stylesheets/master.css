@@ -8,47 +8,8 @@ body {
     overflow-x: hidden;
 }
 
-h1.glow-effect,
-h2.glow-effect,
-h3.glow-effect,
-h4.glow-effect,
-h5.glow-effect {
-    text-shadow: 0 0 12px currentColor;
-}
-
 .grecaptcha-badge {
     visibility: hidden;
-}
-
-/* GLOW EFFECT */
-/* default */
-.btn.glow-effect.active,
-.btn.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-base);
-}
-
-/* blue */
-.btn.btn-blue.glow-effect.active,
-.btn.btn-blue.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-blue);
-}
-
-/* purple */
-.btn.btn-purple.glow-effect.active,
-.btn.btn-purple.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-purple);
-}
-
-/* green */
-.btn.btn-green.glow-effect.active,
-.btn.btn-green.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-green);
-}
-
-/* red */
-.btn.btn-red.glow-effect.active,
-.btn.btn-red.glow-effect:hover {
-    box-shadow: 0 0 12px var(--c-red);
 }
 
 /* FORM */
@@ -71,12 +32,6 @@ h5.glow-effect {
 .input-purple textarea:hover,
 .input-purple textarea:focus {
     background-color: var(--c-purple-90);
-}
-
-.input-purple.glow-effect input:focus,
-.input-purple.glow-effect select:focus,
-.input-purple.glow-effect textarea:focus {
-    box-shadow: 0 0 12px var(--c-purple);
 }
 
 .item-wrapper.input-purple.error-empty .form-input,
