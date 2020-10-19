@@ -400,7 +400,27 @@ a.link:hover::after {
     border-radius: 50%;
     transform: scale(0);
     animation: btn-ripple 600ms linear;
-    background-color: var(--c-white-80);
+    background-color: var(--c-base-40);
+}
+
+.btn.btn-blue span.ripple {
+    background-color: var(--c-blue-40);
+}
+
+.btn.btn-purple span.ripple {
+    background-color: var(--c-purple-40);
+}
+
+.btn.btn-green span.ripple {
+    background-color: var(--c-green-40);
+}
+
+.btn.btn-red span.ripple {
+    background-color: var(--c-red-40);
+}
+
+.btn.btn-filled span.ripple {
+    background-color: var(--c-white-60);
 }
 
 @keyframes btn-ripple {

@@ -46,6 +46,10 @@ nav.transparent .btn-flat {
     color: var(--c-white);
 }
 
+nav.transparent .btn-flat span.ripple {
+    background-color: var(--c-white-60);
+}
+
 nav.transparent .btn-flat:hover {
     background-color: var(--c-white-10);
 }
