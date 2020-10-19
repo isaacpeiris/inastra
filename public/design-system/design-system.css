@@ -376,7 +376,7 @@ a.link::after {
     left: 0;
     -webkit-transition: tramsform 200ms ease;
     transition: transform 200ms ease;
-    /* transform-origin: right; */
+    transform-origin: right;
 }
 
 .reduced-motion a.link::after {
@@ -387,12 +387,35 @@ a.link::after {
 a.link:hover::after {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-    /* transform-origin: left; */
+    transform-origin: left;
 }
 
 /* ======= */
 /* BUTTONS */
 /* ======= */
+
+/* ripple effect */
+.btn span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: btn-ripple 600ms linear;
+    background-color: var(--c-white-80);
+}
+
+@keyframes btn-ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes btn-ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
 
 /* UNIVERSAL */
 .btn {
@@ -409,6 +432,8 @@ a.link:hover::after {
     height: min-content;
     line-height: normal;
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:not(.fade-in) {
@@ -468,6 +493,15 @@ a.link:hover::after {
     background-color: var(--c-base-10);
 }
 
+.btn-filled {
+    color: var(--c-white);
+    background-color: var(--c-base);
+}
+
+.btn-filled:hover {
+    background-color: var(--c-base-light-20);
+}
+
 /* BLUE */
 .btn.btn-blue {
     color: var(--c-blue);
@@ -483,11 +517,18 @@ a.link:hover::after {
     background-color: transparent;
 }
 
-.btn-flat.btn-blue:hover,
-.btn-outline.btn-blue:hover {
+.btn-flat.btn-blue:hover {
     background-color: var(--c-blue-10);
 }
 
+.btn-filled.btn-blue {
+    color: var(--c-white);
+    background-color: var(--c-blue);
+}
+
+.btn-filled.btn-blue:hover {
+    background-color: var(--c-blue-light-20);
+}
 /* PURPLE */
 .btn.btn-purple {
     color: var(--c-purple);
@@ -503,9 +544,17 @@ a.link:hover::after {
     background-color: transparent;
 }
 
-.btn-flat.btn-purple:hover,
-.btn-outline.btn-purple:hover {
+.btn-flat.btn-purple:hover {
     background-color: var(--c-purple-10);
+}
+
+.btn-filled.btn-purple {
+    color: var(--c-white);
+    background-color: var(--c-purple);
+}
+
+.btn-filled.btn-purple:hover {
+    background-color: var(--c-purple-light-20);
 }
 
 /* GREEN */
@@ -523,9 +572,17 @@ a.link:hover::after {
     background-color: transparent;
 }
 
-.btn-flat.btn-green:hover,
-.btn-outline.btn-green:hover {
+.btn-flat.btn-green:hover {
     background-color: var(--c-green-10);
+}
+
+.btn-filled.btn-green {
+    color: var(--c-white);
+    background-color: var(--c-green);
+}
+
+.btn-filled.btn-green:hover {
+    background-color: var(--c-green-light-20);
 }
 
 /* RED */
@@ -543,9 +600,17 @@ a.link:hover::after {
     background-color: transparent;
 }
 
-.btn-flat.btn-red:hover,
-.btn-outline.btn-red:hover {
+.btn-flat.btn-red:hover {
     background-color: var(--c-red-10);
+}
+
+.btn-filled.btn-red {
+    color: var(--c-white);
+    background-color: var(--c-red);
+}
+
+.btn-filled.btn-red:hover {
+    background-color: var(--c-red-light-20);
 }
 
 /* BUTTON GROUP */

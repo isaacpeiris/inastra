@@ -2,19 +2,10 @@
 /* INIT */
 /* ==== */
 document.addEventListener("DOMContentLoaded", function() {
-    /* COLOURS */
-    // get colour input
-    const colourInput = {
-        base: "#1f1832",
-        blue: "#35bdee",
-        purple: "#635aa7",
-        green: "#46bc97",
-        red: "#de350b",
-        yellow: "#ffcd00"
-    }
-
-    // // Generate colours if required
-    // generateColours(colourInput);
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', createRipple)
+    });
 
     // Reduced motion
     const hasReduceMotionOn = window.matchMedia('(prefers-reduced-motion)').matches;
@@ -294,7 +285,7 @@ function RgbToHsl(r, g, b) {
     return aHsl
 }
 
-const colours = {
+const colourInput = {
     "base": "#1f1832",
     "blue": "#35bdee",
     "purple": "#635aa7",
@@ -569,4 +560,24 @@ function toastCloseBtns() {
             parentToast.classList.add('expired')
         })
     })
+}
+
+function createRipple(event) {
+    const button = event.currentTarget;
+    const circle = document.createElement("SPAN");
+    const diameter = Math.max(button.clientWidth, button.clientHeight)
+    const radius = diameter / 2;
+
+    circle.style.width = circle.style.height = diameter + 'px';
+    circle.style.left = event.clientX - (button.offsetLeft + radius) + 'px';
+    circle.style.top = event.clientY - (button.offsetTop + radius) + 'px';
+    circle.classList.add('ripple');
+
+    const ripple = button.getElementsByClassName('ripple')[0];
+
+    if (ripple) {
+        ripple.remove();
+    }
+
+    button.appendChild(circle)
 }
