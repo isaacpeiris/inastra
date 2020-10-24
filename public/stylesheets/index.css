@@ -29,6 +29,7 @@ section#hero .container {
 .hero-text {
     font-weight: 500;
     color: var(--c-blue);
+    font-family: var(--f-body);
 }
 
 #hero-cta {
@@ -160,6 +161,11 @@ section:nth-last-of-type(2)::after {
 
 section img {
     max-width: 100%;
+}
+
+.section-name {
+    text-transform: uppercase;
+    font-size: var(--f-size-sml);
 }
 
 .section-title {

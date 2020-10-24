@@ -23,7 +23,7 @@ router.get('/case-studies/:id', function(req, res, next) {
     });
     if (doc) {
         res.render('case-studies', {
-            title: doc.organisation,
+            title: doc.organisation.name,
             caseStudy: doc
         });
     } else {
