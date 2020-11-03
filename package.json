@@ -5,8 +5,7 @@
   "scripts": {
     "start": "NODE_ENV=production node ./bin/www",
     "dev": "NODE_ENV=development nodemon ./bin/www",
-    "auth": "gcloud config configurations activate inastra",
-    "deploy": "gcloud app deploy --project inastra-website"
+    "deploy": "gcloud config configurations activate inastra && gcloud app deploy --project inastra-website --quiet"
   },
   "dependencies": {
     "axios": "^0.19.2",
