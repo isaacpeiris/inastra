@@ -1,0 +1,36 @@
+<% include ./partials/head %>
+
+<link rel="stylesheet" href="/stylesheets/blog.css">
+<script src="/javascripts/blog.js"></script>
+
+<% include ./partials/head-bottom %>
+<% include ./components/nav %>
+<main>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Blog</h1>
+        </div>
+    </section>
+    <section id="posts" class="main">
+        <div class="container">
+            <% posts.forEach(post => { %>
+            <a class="post" id="<%= post.id %>" href="/blog/p/<%= post.id %>">
+                <span class="img" style="background-image: url(<%= post.thumbnail %>);"></span>
+                <div class="content">
+                    <h3 class="title"><%= post.title %></h3>
+                    <p class="author"><%= post.author %></p>
+                    <div class="tags">
+                        <% post.categories.forEach(cat => { %>
+                        <span class="post-tag"><%= cat %></span>
+                        <% }) %>
+                    </div>
+                </div>
+            </a>
+            <% }) %>
+        </div>
+    </section>
+</main>
+
+<div id="particle-js"></div>
+
+<% include ./components/footer %>
