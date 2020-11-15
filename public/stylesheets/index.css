@@ -159,27 +159,6 @@ section:nth-last-of-type(2)::after {
     transform: scaleY(-1) scaleX(-1);
 }
 
-section img {
-    max-width: 100%;
-}
-
-.section-name {
-    text-transform: uppercase;
-    font-size: var(--f-size-sml);
-}
-
-.section-title {
-    margin: 12px 0 18px;
-}
-
-.section-underline {
-    border: none;
-    background-color: var(--c-blue);
-    height: 2px;
-    width: 72px;
-    margin: 0 0 18px;
-}
-
 .section-btn {
     margin: 18px 0 0;
 }

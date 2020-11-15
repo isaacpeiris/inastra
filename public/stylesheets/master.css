@@ -8,9 +8,32 @@ body {
     overflow-x: hidden;
 }
 
+section img {
+    max-width: 100%;
+}
+
 .grecaptcha-badge {
     visibility: hidden;
 }
+
+/* STANDARD PAGE */
+.section-header .section-name {
+    text-transform: uppercase;
+    font-size: var(--f-size-sml);
+}
+
+.section-header .section-title {
+    margin: 12px 0 18px;
+}
+
+.section-header .section-underline {
+    border: none;
+    background-color: var(--c-blue);
+    height: 2px;
+    width: 72px;
+    margin: 0 0 18px;
+}
+
 
 /* FORM */
 .input-purple .form-label,

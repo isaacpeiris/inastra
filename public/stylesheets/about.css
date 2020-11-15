@@ -1,0 +1,117 @@
+/* WAVES */
+section:not(:first-of-type) {
+    color: var(--c-base);
+    background: var(--c-white);
+    display: flex;
+    align-items: center;
+    padding: var(--f-size-reg) 0;
+}
+
+section::before,
+section::after {
+    width: 100%;
+    position: absolute;
+    height: var(--wave-height);
+    left: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+section:nth-of-type(2)::before {
+    content: '';
+    top: calc(var(--wave-height) * -1);
+    background-image: url('/images/wave-1.png');
+}
+
+section:nth-of-type(2) {
+    margin-top: var(--wave-height);
+}
+
+section:last-of-type {
+    margin-bottom: var(--wave-height);
+}
+
+section:last-of-type::after {
+    content: '';
+    background-image: url('/images/wave-2.png');
+    bottom: calc(var(--wave-height) * -1);
+    transform: scaleY(-1) scaleX(-1);
+}
+
+/* HERO */
+section#hero {
+    min-height: 48vh;
+    display: flex;
+}
+
+section#hero .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: var(--f-size-reg);
+    align-items: center;
+    color: var(--c-white);
+}
+
+/* BRAND */
+section#brand .section-header > * {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section#brand .container p:not(:last-of-type) {
+    margin-bottom: var(--f-size-reg);
+}
+
+/* VALUES */
+section#values .section-header > * {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.values-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--f-size-reg);
+}
+
+.value {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-gap: var(--f-size-reg);
+    padding: 0;
+}
+
+.value-title {
+    text-align: center;
+}
+
+.value.active .value-title {
+    color: var(--c-purple);
+    font-weight: bold;
+}
+
+.value-img {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.values-description {
+    display: grid;
+    margin-top: var(--f-size-reg);
+}
+
+.values-description p {
+    opacity: 0;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    transition: opacity 200ms ease;
+}
+
+.values-description p.active {
+    opacity: 1;
+}

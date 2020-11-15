@@ -2,7 +2,7 @@
 /* INIT */
 /* ==== */
 document.addEventListener("DOMContentLoaded", function() {
-    const buttons = document.querySelectorAll('.btn');
+    const buttons = document.querySelectorAll('.btn.waves-effect');
     buttons.forEach(btn => {
         btn.addEventListener('click', createRipple)
     });

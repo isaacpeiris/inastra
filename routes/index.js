@@ -9,6 +9,10 @@ router.get('/', function(req, res, next) {
     });
 });
 
+router.get('/about', function(req, res, next) {
+    res.render('about', { title: 'About' });
+});
+
 router.get('/confirmed', function(req, res, next) {
     res.render('confirmed', { title: 'Thank You' });
 });
