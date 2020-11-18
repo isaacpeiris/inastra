@@ -82,11 +82,17 @@ section#values .section-header > * {
     display: grid;
     grid-template-rows: 1fr auto;
     grid-gap: var(--f-size-reg);
-    padding: 0;
+    padding: var(--f-size-reg);
+    border-radius: 6px;
+}
+
+.value.active {
+    box-shadow: 0 2px 6px var(--c-base-40);
 }
 
 .value-title {
     text-align: center;
+    font-size: var(--f-size-5);
 }
 
 .value.active .value-title {
@@ -114,4 +120,28 @@ section#values .section-header > * {
 
 .values-description p.active {
     opacity: 1;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 720px) {
+    section#hero .container {
+        display: block;
+    }
+    section#hero .hero-img {
+        display: none;
+    }
+    section#brand .section-header > * {
+        text-align: left;
+        margin-left: 0;
+    }
+    section#values .section-header > * {
+        text-align: left;
+        margin-left: 0;
+    }
+    .values-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .value {
+        grid-template-rows: 1fr ;
+    }
 }
