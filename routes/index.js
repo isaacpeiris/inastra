@@ -13,6 +13,10 @@ router.get('/about', function(req, res, next) {
     res.render('about', { title: 'About' });
 });
 
+router.get('/services', function(req, res, next) {
+    res.render('services', { title: 'Services' });
+});
+
 router.get('/confirmed', function(req, res, next) {
     res.render('confirmed', { title: 'Thank You' });
 });
