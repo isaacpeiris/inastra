@@ -500,6 +500,17 @@ a.link:hover::after {
     background-color: transparent;
 }
 
+/* compact */
+.btn.icon-only.compact {
+    height: 24px;
+    width: 24px;
+    padding: 3px;
+}
+
+.btn.icon-only.compact .material-icons {
+    font-size: 18px;
+}
+
 /* DEFAULT */
 .btn {
     color: var(--c-base);
@@ -1177,11 +1188,11 @@ div#toast-wrapper {
 }
 
 .toast.has-icon.persistent {
-    grid-template-columns: 24px 1fr 36px;
+    grid-template-columns: 24px 1fr 24px;
 }
 
 .toast.persistent {
-    grid-template-columns: 1fr 36px;
+    grid-template-columns: 1fr 24px;
 }
 
 .toast.expired {
@@ -1191,6 +1202,7 @@ div#toast-wrapper {
 .toast-icon {
     display: flex;
     align-items: center;
+    align-self: flex-start;
 }
 
 .toast.info .toast-icon {

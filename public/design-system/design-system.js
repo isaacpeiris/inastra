@@ -527,7 +527,7 @@ function toast(options) {
         newToast.classList.add('persistent')
         // Create close button element
         let closeToastBtn = document.createElement('BUTTON')
-        closeToastBtn.classList.add('btn', 'icon-only', 'btn-flat');
+        closeToastBtn.classList.add('btn', 'icon-only', 'btn-flat', 'compact');
         // Create close button icon
         let closeToastBtnIcon = document.createElement('SPAN');
         closeToastBtnIcon.classList.add('material-icons');
