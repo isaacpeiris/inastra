@@ -440,7 +440,7 @@ function openModal(modal_id) {
     document.querySelector('.modal-background').addEventListener('click', function() { closeModal(modal_id) });
 }
 
-function toast(text, type, persistent, action_text, action_url) {
+function toast(options) {
     // Create toast wrapper element if it doesn't already exist
     if (!document.querySelector('#toast-wrapper')) {
         let newWrapper = document.createElement('DIV');
@@ -451,13 +451,13 @@ function toast(text, type, persistent, action_text, action_url) {
     let toastWrapper = document.querySelector('#toast-wrapper');
 
     // Create new toast element
-    let newToast = document.createElement('DIV');
+    let newToast = options.action_url ? document.createElement("A") : document.createElement('DIV');
     // Add toast class
     newToast.classList.add('toast');
     // If type is set add the corresponding icon and class
-    if (type || type != 'none') {
+    if (options.type) {
         // Add class for type and for icon
-        newToast.classList.add(type, 'has-icon');
+        newToast.classList.add(options.type, 'has-icon');
         // Create icon wrapper
         let newToastIconWrapper = document.createElement('DIV');
         newToastIconWrapper.classList.add('toast-icon');
@@ -465,13 +465,13 @@ function toast(text, type, persistent, action_text, action_url) {
         let newToastIcon = document.createElement('SPAN');
         newToastIcon.classList.add('material-icons');
         // Set icon depending on type variable
-        if (type == 'info') {
+        if (options.type == 'info') {
             newToastIcon.innerText = 'info';
-        } else if (type == 'success') {
+        } else if (options.type == 'success') {
             newToastIcon.innerText = 'check_circle';
-        } else if (type == 'error') {
+        } else if (options.type == 'error') {
             newToastIcon.innerText = 'cancel';
-        } else if (type == 'warning') {
+        } else if (options.type == 'warning') {
             newToastIcon.innerText = 'error';
         }
 
@@ -481,13 +481,17 @@ function toast(text, type, persistent, action_text, action_url) {
         newToast.appendChild(newToastIconWrapper);
     }
 
+    if (options.action_url) {
+        newToast.href = options.action_url
+    }
+
     // Create toast content element
     let newToastContent = document.createElement('DIV');
     newToastContent.classList.add('toast-content');
     // Create toast text element
     let newToastText = document.createElement('P');
     // Set toast text to input
-    newToastText.innerText = text;
+    newToastText.innerText = options.text;
 
     // Append toast text to toast content element
     newToastContent.appendChild(newToastText);
@@ -513,7 +517,7 @@ function toast(text, type, persistent, action_text, action_url) {
     })
 
     // If toast is persistent then add close button, otherwise set a timeout
-    if (persistent == true) {
+    if (options.persistent === true) {
         // Create action wrapper element
         let newToastActionWrapper = document.createElement('DIV');
         newToastActionWrapper.classList.add('toast-action');
@@ -532,8 +536,10 @@ function toast(text, type, persistent, action_text, action_url) {
         closeToastBtn.appendChild(closeToastBtnIcon);
         // Append close button to action wrapper element
         newToastActionWrapper.appendChild(closeToastBtn)
-        // Init close buttons
-        toastCloseBtns();
+        // Init close button
+        closeToastBtn.addEventListener("click", function() {
+            newToast.classList.add('expired')
+        });
     } else {
         // Fade toast out and add expired class
         setTimeout(function() {
@@ -550,16 +556,6 @@ function toast(text, type, persistent, action_text, action_url) {
             }, duration)
         }, 6000)
     }
-}
-
-function toastCloseBtns() {
-    let closeBtns = document.querySelectorAll('.toast-actions .btn');
-    closeBtns.forEach(btn => {
-        btn.addEventListener("click", function() {
-            let parentToast = btn.closest('.toast');
-            parentToast.classList.add('expired')
-        })
-    })
 }
 
 function createRipple(event) {
