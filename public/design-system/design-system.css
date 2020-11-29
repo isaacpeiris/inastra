@@ -801,6 +801,30 @@ label {
     right: calc(0.5 * var(--f-size-reg));
 }
 
+/* compact */
+.item-wrapper.compact .form-input {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.item-wrapper.compact.btn-left,
+.item-wrapper.compact.btn-right {
+    --btn-width: 24px;
+}
+
+.item-wrapper.compact .btn.icon-only {
+    padding: 3px;
+}
+
+.item-wrapper.compact.icon-left,
+.item-wrapper.compact.icon-right {
+    --icon-width: 18px;
+}
+
+.item-wrapper.compact .material-icons {
+    font-size: 18px;
+}
+
 
 /* CHECKBOX & RADIO */
 input[type="checkbox"],
