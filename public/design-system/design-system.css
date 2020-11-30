@@ -360,6 +360,13 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
 /* Links */
 a.link {
     position: relative;
@@ -1170,6 +1177,7 @@ div#toast-wrapper {
     bottom: var(--f-size-reg);
     left: var(--f-size-reg);
     z-index: 100;
+    max-width: calc(100% - (2 * var(--f-size-reg)));
 }
 
 .toast {
@@ -1181,21 +1189,22 @@ div#toast-wrapper {
     grid-gap: 12px;
     align-items: center;
     justify-content: space-between;
-    width: 240px;
+    width: 360px;
+    max-width: calc(100% - (2 * 12px));
     margin-bottom: 12px;
-    filter: drop-shadow(0 2px 4px var(--c-base-20));
+    box-shadow: 0 2px 4px var(--c-base-20);
 }
 
 .toast.has-icon {
-    grid-template-columns: 24px 1fr;
+    grid-template-columns: 24px auto;
 }
 
 .toast.has-icon.persistent {
-    grid-template-columns: 24px 1fr 24px;
+    grid-template-columns: 24px auto 24px;
 }
 
 .toast.persistent {
-    grid-template-columns: 1fr 24px;
+    grid-template-columns: auto 24px;
 }
 
 .toast.expired {
