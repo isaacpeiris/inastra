@@ -18,3 +18,17 @@ section#hero .section-underline {
     margin-left: auto;
     margin-right: auto;
 }
+
+@media screen and (max-width: 720px) {
+    section#hero {
+        margin-top: var(--nav-height);
+    }
+    .section-header,
+    .section-text {
+        text-align: left;
+    }
+    section#hero .section-underline {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
