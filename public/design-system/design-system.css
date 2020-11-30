@@ -740,6 +740,10 @@ label {
 }
 
 .input-wrapper textarea {
+    padding-top: var(--f-size-reg);
+}
+
+.input-wrapper label + textarea {
     padding-top: calc(1.5 * var(--f-size-reg));
 }
 
