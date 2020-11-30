@@ -474,18 +474,26 @@ a.link:hover::after {
 /* icon */
 .btn.icon-left,
 .btn.icon-right {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     line-height: 1;
+    grid-gap: calc(0.75 * var(--f-size-reg));
 }
 
-.btn.icon-left .material-icons {
-    margin-right: 10px;
+.btn.icon-left {
+    grid-template-areas: "icon text";
+    grid-template-columns: min-content auto;
 }
 
+.btn.icon-right {
+    grid-template-areas: "text icon";
+    grid-template-columns: auto min-content;
+}
+
+.btn.icon-left .material-icons,
 .btn.icon-right .material-icons {
-    margin-left: 10px;
+    grid-area: icon;
 }
 
 .btn.icon-only {
@@ -501,6 +509,14 @@ a.link:hover::after {
 }
 
 /* compact */
+.btn.compact {
+    height: calc(2 * var(--f-size-reg));
+    padding: 0 var(--f-size-reg);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
 .btn.icon-only.compact {
     height: 24px;
     width: 24px;
