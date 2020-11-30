@@ -200,33 +200,28 @@ a.option:hover {
 }
 
 /* FORM */
-.input-purple .form-label,
-.input-purple .form-input {
+.input-wrapper.input-purple input,
+.input-wrapper.input-purple textarea,
+.input-wrapper.input-purple label {
     color: var(--c-white);
 }
 
-.input-purple input,
-.input-purple select,
-.input-purple textarea {
+.input-wrapper.input-purple {
     border: none;
     background-color: var(--c-purple-60);
 }
 
-.input-purple input:hover,
-.input-purple input:focus,
-.input-purple select:hover,
-.input-purple select:focus,
-.input-purple textarea:hover,
-.input-purple textarea:focus {
+.input-wrapper.input-purple:hover,
+.input-wrapper.input-purple.active {
     background-color: var(--c-purple-90);
 }
 
-.item-wrapper.input-purple.error-empty .form-input,
-.item-wrapper.input-purple.error-invalid .form-input {
+.input-wrapper.input-purple.error-empty,
+.input-wrapper.input-purple.error-invalid {
     background-color: var(--c-red-40);
 }
 
-.item-wrapper.input-purple.error-empty .form-input:focus,
-.item-wrapper.input-purple.error-invalid .form-input:focus {
+.input-wrapper.input-purple.error-empty.active,
+.input-wrapper.input-purple.error-invalid.active {
     background-color: var(--c-purple-90);
 }

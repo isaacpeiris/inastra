@@ -24,27 +24,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     /* FORMS */
-    const formItems = document.querySelectorAll('.item-wrapper');
+    const formItems = document.querySelectorAll('.input-wrapper');
     if (formItems.length > 0) {
-        formItems.forEach(itemWrapper => {
-            // let inputTag = itemWrapper.querySelector('.form-input').tagName.toLowerCase();
-            // if (inputTag == 'input') {
-            //     let inputType = itemWrapper.querySelector('.form-input').getAttribute('type').toLowerCase();
-            //     itemWrapper.classList.add('type-' + inputTag + '-' + inputType);
-            // } else {
-            //     itemWrapper.classList.add('type-' + inputTag);
-            // }
+        formItems.forEach(inputWrapper => {
 
-            checkValue(itemWrapper)
+            checkValue(inputWrapper)
 
-            itemWrapper.querySelector('.form-input').addEventListener('focus', function() {
-                itemWrapper.classList.add('active')
-            });
-
-            itemWrapper.querySelector('.form-input').addEventListener('blur', function() {
-                itemWrapper.classList.remove('active')
-                checkValue(itemWrapper)
+            inputWrapper.querySelectorAll('input, textarea, select').forEach(inp => {
+                inp.addEventListener('focus', function() {
+                    inputWrapper.classList.add('active')
+                });
+                inp.addEventListener('blur', function() {
+                    inputWrapper.classList.remove('active')
+                    checkValue(inputWrapper)
+                });
             })
+
+            if (inputWrapper.classList.contains('compact')) {
+                inputWrapper.querySelectorAll('.btn').forEach(btn => {
+                    btn.classList.add('compact')
+                })
+            }
         })
     }
 
@@ -388,12 +388,14 @@ function fadeIn(fadeElements) {
 };
 
 function checkValue(itemWrapper) {
-    let itemInput = itemWrapper.querySelector('.form-input')
-    if (itemInput.value != "" || itemInput.placeholder != "") {
-        itemWrapper.classList.add('has-value')
-    } else {
-        itemWrapper.classList.remove('has-value')
-    }
+    let itemInput = itemWrapper.querySelectorAll('input, textarea')
+    itemInput.forEach(inp => {
+        if (inp.value != "" || inp.placeholder != "") {
+            itemWrapper.classList.add('has-value')
+        } else {
+            itemWrapper.classList.remove('has-value')
+        }
+    })
 }
 
 function validateEmail(value) {
