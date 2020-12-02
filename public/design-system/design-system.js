@@ -613,7 +613,6 @@ function openMenu(menu_id) {
 }
 
 function checkMenuPos(triggerPos, menuEl) {
-    console.log('run')
     let menuPos = menuEl.getBoundingClientRect();
     if (menuPos.left < 0) {
         menuEl.style.left = triggerPos.right - 4 + 'px'
