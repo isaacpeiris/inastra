@@ -115,11 +115,12 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         const modalTriggers = document.querySelectorAll('.modal-trigger');
         modalTriggers.forEach(trigger => {
+            console.log(trigger.dataset.modalTarget)
             trigger.addEventListener('click', function() {
                 modals.forEach(modal => {
                     closeModal(modal.id);
                 });
-                openModal(trigger.dataset.target);
+                openModal(trigger.dataset.modalTarget);
             })
         })
     }
