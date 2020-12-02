@@ -115,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         const modalTriggers = document.querySelectorAll('.modal-trigger');
         modalTriggers.forEach(trigger => {
-            console.log(trigger.dataset.modalTarget)
             trigger.addEventListener('click', function() {
                 modals.forEach(modal => {
                     closeModal(modal.id);
@@ -198,6 +197,19 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                     console.log(array)
                 })
+            })
+        })
+    }
+
+    /* MENUS */
+    const menus = document.querySelectorAll('.menu');
+    if (menus.length > 0) {
+        document.body.insertAdjacentHTML('beforeend', '<div class="menu-background"></div>');
+        const menuTriggers = document.querySelectorAll('.menu-trigger');
+        menuTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                menus.forEach(m => { closeMenu(m.id) });
+                openMenu(trigger.dataset.menuTarget);
             })
         })
     }
@@ -578,4 +590,41 @@ function createRipple(event) {
     }
 
     button.appendChild(circle)
+}
+
+function closeMenu(menu_id) {
+    document.querySelector('.menu-background').style.display = 'none';
+    document.getElementById(menu_id).style.display = 'none';
+}
+
+function openMenu(menu_id) {
+    let menuEl = document.getElementById(menu_id);
+    let menuBackground = document.querySelector('.menu-background');
+    menuEl.style.display = 'block';
+    menuBackground.style.display = 'block';
+    menuBackground.addEventListener('click', function() { closeMenu(menu_id) });
+
+    let trigger = document.querySelector(`.menu-trigger[data-menu-target="${menuEl.id}"]`);
+    let triggerPos = trigger.getBoundingClientRect();
+    menuEl.style.top = triggerPos.bottom + window.scrollY - 4 + 'px';
+    menuEl.style.left = triggerPos.left + 'px';
+
+    checkMenuPos(triggerPos, menuEl);
+}
+
+function checkMenuPos(triggerPos, menuEl) {
+    console.log('run')
+    let menuPos = menuEl.getBoundingClientRect();
+    if (menuPos.left < 0) {
+        menuEl.style.left = triggerPos.right - 4 + 'px'
+        checkMenuPos(triggerPos, menuEl);
+    }
+    if (menuPos.bottom > window.innerHeight) {
+        menuEl.style.top = triggerPos.top - menuPos.height + window.scrollY + 4 + 'px'
+        checkMenuPos(triggerPos, menuEl);
+    }
+    if (menuPos.right > window.innerWidth - 15) {
+        menuEl.style.left = triggerPos.left - menuPos.width + 4 + 'px'
+        checkMenuPos(triggerPos, menuEl);
+    }
 }

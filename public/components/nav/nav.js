@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mobile navigation variables
     const mobileNav = document.querySelector('.mobile-nav');
-    const mobileMenuBtn = document.querySelector('button#menu')
+    const mobileMenuBtn = document.querySelector('button#mobile-menu')
     const mobileMenuIcon = mobileMenuBtn.getElementsByClassName('material-icons')[0];
     const mobileMenuItems = document.querySelectorAll('.mobile-nav a');
 

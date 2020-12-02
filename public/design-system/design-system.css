@@ -1236,3 +1236,53 @@ div#toast-wrapper {
 .toast-content p {
     line-height: 1.2;
 }
+
+/* MENU */
+.menu {
+    display: none;
+    position: absolute;
+    background: white;
+    box-shadow: 0 3px 4px var(--c-base-20), 0 -1px 4px var(--c-base-20);
+    border-radius: 3px;
+    min-width: 320px;
+    max-width: 800px;
+    max-height: fit-content;
+    z-index: 10;
+}
+
+.menu-background {
+    display: none;
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9;
+}
+
+.menu-section {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--c-base-10);
+}
+
+.menu-section:last-of-type {
+    border-bottom: none;
+}
+
+.menu-title {
+    font-size: var(--f-size-sml);
+    font-family: var(--f-title);
+    font-weight: 500;
+    margin: 6px 0 6px 12px;
+    color: var(--c-base-80);
+}
+
+.menu-section .btn {
+    border-radius: 0;
+    width: 100%;
+    text-align: left;
+    justify-content: left;
+    padding: 12px;
+}
