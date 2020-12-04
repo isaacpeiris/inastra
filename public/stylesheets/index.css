@@ -153,6 +153,9 @@ button#submit:focus {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 720px) {
+    section#hero .container {
+        display: block;
+    }
     section#hero .hero-img {
         display: none;
     }
