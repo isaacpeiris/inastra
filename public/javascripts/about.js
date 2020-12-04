@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const valuesBtns = document.querySelectorAll('button.value');
+    const valuesBtns = document.querySelectorAll('button.option');
     const valuesDescriptions = document.querySelector('.values-description').children;
     const descriptionArray = Array.prototype.slice.call(valuesDescriptions);
-    const values = document.querySelector('.values-wrapper').children;
+    const values = document.querySelector('.option-list .section-content').children;
     const valuesArray = Array.prototype.slice.call(values);
     const timerDuration = 4000;
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     function valuesCounter() {
-        let currentIndex = valuesArray.indexOf(document.querySelector('.value.active'));
+        let currentIndex = valuesArray.indexOf(document.querySelector('.option.active'));
         valuesArray.forEach(v => { v.classList.remove('active') })
         if (currentIndex < 3) {
             valuesArray[currentIndex + 1].classList.add('active');
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function valuesDescription() {
         descriptionArray.forEach(d => { d.classList.remove('active') })
         for (let i = 0; i < descriptionArray.length; i++) {
-            if (descriptionArray[i].dataset.value === document.querySelector('.value.active').dataset.value) {
+            if (descriptionArray[i].dataset.value === document.querySelector('.option.active').dataset.value) {
                 descriptionArray[i].classList.add('active')
                 break
             }

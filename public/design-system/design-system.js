@@ -615,13 +615,6 @@ function openMenu(menu_id) {
     checkMenuPos(triggerPos, menuEl);
 }
 
-const triggerPosition = {
-    bottom: triggerPos.bottom + window.scrollY,
-    top: triggerPos.top + window.scrollY,
-    left: triggerPos.left + window.scrollX,
-    right: triggerPos.right + window.scrollX
-}
-
 function checkMenuPos(triggerPos, menuEl) {
     let menuPos = menuEl.getBoundingClientRect();
     // if overflow bottom, position bottom of menu to top of trigger
