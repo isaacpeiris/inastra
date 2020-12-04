@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const menus = document.querySelectorAll('.menu');
     if (menus.length > 0) {
         document.body.insertAdjacentHTML('beforeend', '<div class="menu-background"></div>');
-        const menuTriggers = document.querySelectorAll('.menu-trigger');
+        const menuTriggers = document.querySelectorAll('[data-menu-target]');
         menuTriggers.forEach(trigger => {
             trigger.addEventListener('click', function() {
                 menus.forEach(m => { closeMenu(m.id) });
@@ -595,6 +595,8 @@ function createRipple(event) {
 function closeMenu(menu_id) {
     document.querySelector('.menu-background').style.display = 'none';
     document.getElementById(menu_id).style.display = 'none';
+    let trigger = document.querySelector(`[data-menu-target="${menu_id}"]`);
+    trigger.classList.remove('active');
 }
 
 function openMenu(menu_id) {
@@ -604,26 +606,32 @@ function openMenu(menu_id) {
     menuBackground.style.display = 'block';
     menuBackground.addEventListener('click', function() { closeMenu(menu_id) });
 
-    let trigger = document.querySelector(`.menu-trigger[data-menu-target="${menuEl.id}"]`);
+    let trigger = document.querySelector(`[data-menu-target="${menu_id}"]`);
+    trigger.classList.add('active');
     let triggerPos = trigger.getBoundingClientRect();
-    menuEl.style.top = triggerPos.bottom + window.scrollY - 4 + 'px';
+    menuEl.style.top = triggerPos.bottom + window.scrollY - 2 + 'px';
     menuEl.style.left = triggerPos.left + 'px';
 
     checkMenuPos(triggerPos, menuEl);
 }
 
+const triggerPosition = {
+    bottom: triggerPos.bottom + window.scrollY,
+    top: triggerPos.top + window.scrollY,
+    left: triggerPos.left + window.scrollX,
+    right: triggerPos.right + window.scrollX
+}
+
 function checkMenuPos(triggerPos, menuEl) {
     let menuPos = menuEl.getBoundingClientRect();
-    if (menuPos.left < 0) {
-        menuEl.style.left = triggerPos.right - 4 + 'px'
-        checkMenuPos(triggerPos, menuEl);
-    }
+    // if overflow bottom, position bottom of menu to top of trigger
     if (menuPos.bottom > window.innerHeight) {
-        menuEl.style.top = triggerPos.top - menuPos.height + window.scrollY + 4 + 'px'
+        menuEl.style.top = triggerPos.top - menuPos.height + window.scrollY + 2 + 'px'
         checkMenuPos(triggerPos, menuEl);
     }
+    // if overflow right, position left of menu to right of trigger
     if (menuPos.right > window.innerWidth - 15) {
-        menuEl.style.left = triggerPos.left - menuPos.width + 4 + 'px'
+        menuEl.style.left = triggerPos.right - menuPos.width + 'px'
         checkMenuPos(triggerPos, menuEl);
     }
 }

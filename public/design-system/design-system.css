@@ -376,7 +376,7 @@ a.link:hover {
     cursor: pointer;
 }
 
-a.link::after {
+a.link::before {
     content: '';
     width: 100%;
     -webkit-transform: scaleX(0);
@@ -391,15 +391,26 @@ a.link::after {
     transform-origin: right;
 }
 
-.reduced-motion a.link::after {
+.reduced-motion a.link::before {
     transition: none;
     -webkit-transition: none;
 }
 
-a.link:hover::after {
+a.link:hover::before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
     transform-origin: left;
+}
+
+a.link[target="_blank"] {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: calc(0.5 * var(--f-size-reg));
+}
+
+a.link[target="_blank"]::after {
+    font-family: "Material Icons";
+    content: 'open_in_new';
 }
 
 /* ======= */
