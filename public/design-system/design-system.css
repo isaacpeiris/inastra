@@ -934,76 +934,56 @@ input[type="radio"]:checked + label::after {
     transform: scale(1);
 }
 
-/* LAYOUT */
-.inner-label .form-label {
-    position: absolute;
-    left: var(--f-size-reg);
-    top: var(--f-size-reg);
-    font-size: var(--f-size-reg);
-    transition: all 200ms ease;
-    color: var(--c-greyscale-40);
-}
-
-.inner-label.active .form-label,
-.inner-label.has-value .form-label {
-    font-size: var(--f-size-sml);
-    top: 0.4rem;
-}
-
-.inner-label .form-input:focus,
-.inner-label.has-value .form-input{
-    padding-top: calc(1.6 * var(--f-size-reg));
-    padding-bottom: calc(0.4 * var(--f-size-reg));
-}
-
 /* VALIDATION */
-.required .form-label::after {
+.required label::after {
     content: '*';
 }
 
-.item-wrapper.error-empty .form-input,
-.item-wrapper.error-invalid .form-input {
+.input-wrapper.error-empty input,
+.input-wrapper.error-invalid input {
     border-color: var(--c-red);
 }
 
-.item-wrapper.error-empty .form-input,
-.item-wrapper.error-invalid .form-input {
+.input-wrapper.error-empty input,
+.input-wrapper.error-invalid input {
     background-color: var(--c-red-10);
 }
 
-.item-wrapper.error-empty .form-input:focus,
-.item-wrapper.error-invalid .form-input:focus {
+.input-wrapper.error-empty input:focus,
+.input-wrapper.error-invalid input:focus {
     background-color: var(--c-base-10);
 }
 
-.item-wrapper.error-empty::after,
-.item-wrapper.error-invalid::after {
+.input-wrapper.error-empty::after,
+.input-wrapper.error-invalid::after {
     font-family: var(--f-body);
     font-size: var(--f-size-sml);
     color: var(--c-red);
     margin: calc(var(--f-size-reg)/2) var(--f-size-reg);
     display: block;
     position: absolute;
+    bottom: calc(-2 * var(--f-size-reg));
 }
 
-.item-wrapper.error-empty,
-.item-wrapper.error-invalid {
+.input-wrapper.error-empty,
+.input-wrapper.error-invalid {
     margin-bottom: calc(2 * var(--f-size-reg));
+    overflow: visible;
 }
 
-.item-wrapper.error-empty::after {
+.input-wrapper.error-empty::after {
     content: 'Please fill in this required field.';
 }
 
-.item-wrapper.validate-email.error-invalid::after {
+.input-wrapper.validate-email.error-invalid::after {
     content: 'Please enter a valid email address.';
 }
 
-.item-wrapper.validate-fullName.error-invalid::after {
+.input-wrapper.validate-fullName.error-invalid::after {
     content: 'Please enter your full name.'
 }
 
-.item-wrapper.validate-mobileNumber.error-invalid::after {
+.input-wrapper.validate-mobileNumber.error-invalid::after {
     content: 'Please enter a valid Australian mobile number.'
 }
 

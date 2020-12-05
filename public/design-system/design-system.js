@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // form validation
-    const requiredItems = document.querySelectorAll('.item-wrapper.required');
+    const requiredItems = document.querySelectorAll('.input-wrapper.required');
     if (requiredItems.length > 0) {
         requiredItems.forEach(itemWrapper => {
             let input = itemWrapper.querySelector('.form-input');
