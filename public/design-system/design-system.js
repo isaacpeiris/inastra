@@ -204,12 +204,20 @@ document.addEventListener("DOMContentLoaded", function() {
     /* MENUS */
     const menus = document.querySelectorAll('.menu');
     if (menus.length > 0) {
-        document.body.insertAdjacentHTML('beforeend', '<div class="menu-background"></div>');
         const menuTriggers = document.querySelectorAll('[data-menu-target]');
         menuTriggers.forEach(trigger => {
-            trigger.addEventListener('click', function() {
-                menus.forEach(m => { closeMenu(m.id) });
-                openMenu(trigger.dataset.menuTarget);
+            trigger.addEventListener('click', function(e) {
+                if (e.target.className.match(/active/g)) {
+                    trigger.blur();
+                } else {
+                    menus.forEach(m => { closeMenu(m.id) });
+                    openMenu(trigger.dataset.menuTarget);
+                }
+            })
+            trigger.addEventListener('blur', function(e) {
+                if (e.target.className.match(/active/g)) {
+                    closeMenu(trigger.dataset.menuTarget)
+                }
             })
         })
     }
@@ -593,7 +601,6 @@ function createRipple(event) {
 }
 
 function closeMenu(menu_id) {
-    document.querySelector('.menu-background').style.display = 'none';
     document.getElementById(menu_id).style.display = 'none';
     let trigger = document.querySelector(`[data-menu-target="${menu_id}"]`);
     trigger.classList.remove('active');
@@ -601,10 +608,7 @@ function closeMenu(menu_id) {
 
 function openMenu(menu_id) {
     let menuEl = document.getElementById(menu_id);
-    let menuBackground = document.querySelector('.menu-background');
     menuEl.style.display = 'block';
-    menuBackground.style.display = 'block';
-    menuBackground.addEventListener('click', function() { closeMenu(menu_id) });
 
     let trigger = document.querySelector(`[data-menu-target="${menu_id}"]`);
     trigger.classList.add('active');
