@@ -1241,16 +1241,8 @@ div#toast-wrapper {
     z-index: 10;
 }
 
-.menu-background {
-    display: none;
-    content: '';
-    position: absolute;
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 9;
+*[data-menu-target] > * {
+    pointer-events: none;
 }
 
 .menu-section {

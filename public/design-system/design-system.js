@@ -208,15 +208,11 @@ document.addEventListener("DOMContentLoaded", function() {
         menuTriggers.forEach(trigger => {
             trigger.addEventListener('click', function(e) {
                 if (e.target.className.match(/active/g)) {
+                    closeMenu(trigger.dataset.menuTarget);
                     trigger.blur();
                 } else {
                     menus.forEach(m => { closeMenu(m.id) });
                     openMenu(trigger.dataset.menuTarget);
-                }
-            })
-            trigger.addEventListener('blur', function(e) {
-                if (e.target.className.match(/active/g)) {
-                    closeMenu(trigger.dataset.menuTarget)
                 }
             })
         })
