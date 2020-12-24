@@ -775,6 +775,7 @@ label {
 
 .input-wrapper textarea {
     padding-top: var(--f-size-reg);
+    resize: vertical;
 }
 
 .input-wrapper label + textarea {
@@ -822,6 +823,11 @@ label {
 }
 
 /* icon/button */
+.input-wrapper.icon-left > .material-icons,
+.input-wrapper.icon-right > .material-icons {
+    pointer-events: none;
+}
+
 .input-wrapper.icon-left > .btn,
 .input-wrapper.icon-left > .material-icons {
     grid-area: left;
