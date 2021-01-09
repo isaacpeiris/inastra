@@ -131,9 +131,7 @@ section:nth-last-of-type(2)::after {
 section#contact {
     color: var(--c-white);
     background-color: transparent;
-    display: flex;
-    align-items: center;
-    padding: calc((var(--nav-height) + 24px) + 2vh) 0;
+    margin-bottom: 0;
 }
 
 section#contact::after {
@@ -142,6 +140,7 @@ section#contact::after {
 
 section#contact .container {
     grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
 }
 
 button#submit {
@@ -157,15 +156,18 @@ button#submit:focus {
     section#hero .container {
         display: block;
     }
+    section#hero .hero-img {
+        display: none;
+    }
     section#hero .hero-text {
         font-size: var(--f-size-lrg);
         text-align: center;
     }
-    section#hero .hero-img {
-        display: none;
-    }
     section#hero #hero-cta {
         margin: 48px auto;
         font-size: var(--f-size-5);
+    }
+    section#contact .container {
+        grid-template-columns: 1fr;
     }
 }

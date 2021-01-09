@@ -70,7 +70,7 @@ nav.transparent .btn:focus {
 
 .nav-right {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     align-items: center;
     grid-gap: 24px;
 }
@@ -117,7 +117,7 @@ nav.transparent .btn:focus {
     margin: auto;
 }
 
-button#menu {
+button#mobile-menu {
     border: none;
     background-color: transparent;
     color: var(--c-base);
@@ -125,7 +125,7 @@ button#menu {
     padding: 4px 5px;
 }
 
-nav.transparent button#menu {
+nav.transparent button#mobile-menu {
     color: var(--c-white);
 }
 

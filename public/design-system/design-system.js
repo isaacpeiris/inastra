@@ -24,27 +24,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     /* FORMS */
-    const formItems = document.querySelectorAll('.item-wrapper');
+    const formItems = document.querySelectorAll('.input-wrapper');
     if (formItems.length > 0) {
-        formItems.forEach(itemWrapper => {
-            // let inputTag = itemWrapper.querySelector('.form-input').tagName.toLowerCase();
-            // if (inputTag == 'input') {
-            //     let inputType = itemWrapper.querySelector('.form-input').getAttribute('type').toLowerCase();
-            //     itemWrapper.classList.add('type-' + inputTag + '-' + inputType);
-            // } else {
-            //     itemWrapper.classList.add('type-' + inputTag);
-            // }
+        formItems.forEach(inputWrapper => {
 
-            checkValue(itemWrapper)
+            checkValue(inputWrapper)
 
-            itemWrapper.querySelector('.form-input').addEventListener('focus', function() {
-                itemWrapper.classList.add('active')
-            });
-
-            itemWrapper.querySelector('.form-input').addEventListener('blur', function() {
-                itemWrapper.classList.remove('active')
-                checkValue(itemWrapper)
+            inputWrapper.querySelectorAll('input, textarea, select').forEach(inp => {
+                inp.addEventListener('focus', function() {
+                    inputWrapper.classList.add('active')
+                });
+                inp.addEventListener('blur', function() {
+                    inputWrapper.classList.remove('active')
+                    checkValue(inputWrapper)
+                });
             })
+
+            if (inputWrapper.classList.contains('compact')) {
+                inputWrapper.querySelectorAll('.btn').forEach(btn => {
+                    btn.classList.add('compact')
+                })
+            }
         })
     }
 
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // form validation
-    const requiredItems = document.querySelectorAll('.item-wrapper.required');
+    const requiredItems = document.querySelectorAll('.input-wrapper.required');
     if (requiredItems.length > 0) {
         requiredItems.forEach(itemWrapper => {
             let input = itemWrapper.querySelector('.form-input');
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 modals.forEach(modal => {
                     closeModal(modal.id);
                 });
-                openModal(trigger.dataset.target);
+                openModal(trigger.dataset.modalTarget);
             })
         })
     }
@@ -197,6 +197,23 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                     console.log(array)
                 })
+            })
+        })
+    }
+
+    /* MENUS */
+    const menus = document.querySelectorAll('.menu');
+    if (menus.length > 0) {
+        const menuTriggers = document.querySelectorAll('[data-menu-target]');
+        menuTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                if (e.target.className.match(/active/g)) {
+                    closeMenu(trigger.dataset.menuTarget);
+                    trigger.blur();
+                } else {
+                    menus.forEach(m => { closeMenu(m.id) });
+                    openMenu(trigger.dataset.menuTarget);
+                }
             })
         })
     }
@@ -388,12 +405,14 @@ function fadeIn(fadeElements) {
 };
 
 function checkValue(itemWrapper) {
-    let itemInput = itemWrapper.querySelector('.form-input')
-    if (itemInput.value != "" || itemInput.placeholder != "") {
-        itemWrapper.classList.add('has-value')
-    } else {
-        itemWrapper.classList.remove('has-value')
-    }
+    let itemInput = itemWrapper.querySelectorAll('input, textarea')
+    itemInput.forEach(inp => {
+        if (inp.value != "" || inp.placeholder != "") {
+            itemWrapper.classList.add('has-value')
+        } else {
+            itemWrapper.classList.remove('has-value')
+        }
+    })
 }
 
 function validateEmail(value) {
@@ -440,7 +459,7 @@ function openModal(modal_id) {
     document.querySelector('.modal-background').addEventListener('click', function() { closeModal(modal_id) });
 }
 
-function toast(text, type, persistent, action_text, action_url) {
+function toast(options) {
     // Create toast wrapper element if it doesn't already exist
     if (!document.querySelector('#toast-wrapper')) {
         let newWrapper = document.createElement('DIV');
@@ -451,13 +470,13 @@ function toast(text, type, persistent, action_text, action_url) {
     let toastWrapper = document.querySelector('#toast-wrapper');
 
     // Create new toast element
-    let newToast = document.createElement('DIV');
+    let newToast = options.action_url ? document.createElement("A") : document.createElement('DIV');
     // Add toast class
     newToast.classList.add('toast');
     // If type is set add the corresponding icon and class
-    if (type || type != 'none') {
+    if (options.type) {
         // Add class for type and for icon
-        newToast.classList.add(type, 'has-icon');
+        newToast.classList.add(options.type, 'has-icon');
         // Create icon wrapper
         let newToastIconWrapper = document.createElement('DIV');
         newToastIconWrapper.classList.add('toast-icon');
@@ -465,13 +484,13 @@ function toast(text, type, persistent, action_text, action_url) {
         let newToastIcon = document.createElement('SPAN');
         newToastIcon.classList.add('material-icons');
         // Set icon depending on type variable
-        if (type == 'info') {
+        if (options.type == 'info') {
             newToastIcon.innerText = 'info';
-        } else if (type == 'success') {
+        } else if (options.type == 'success') {
             newToastIcon.innerText = 'check_circle';
-        } else if (type == 'error') {
+        } else if (options.type == 'error') {
             newToastIcon.innerText = 'cancel';
-        } else if (type == 'warning') {
+        } else if (options.type == 'warning') {
             newToastIcon.innerText = 'error';
         }
 
@@ -481,13 +500,17 @@ function toast(text, type, persistent, action_text, action_url) {
         newToast.appendChild(newToastIconWrapper);
     }
 
+    if (options.action_url) {
+        newToast.href = options.action_url
+    }
+
     // Create toast content element
     let newToastContent = document.createElement('DIV');
     newToastContent.classList.add('toast-content');
     // Create toast text element
     let newToastText = document.createElement('P');
     // Set toast text to input
-    newToastText.innerText = text;
+    newToastText.innerText = options.text;
 
     // Append toast text to toast content element
     newToastContent.appendChild(newToastText);
@@ -513,7 +536,7 @@ function toast(text, type, persistent, action_text, action_url) {
     })
 
     // If toast is persistent then add close button, otherwise set a timeout
-    if (persistent == true) {
+    if (options.persistent === true) {
         // Create action wrapper element
         let newToastActionWrapper = document.createElement('DIV');
         newToastActionWrapper.classList.add('toast-action');
@@ -523,7 +546,7 @@ function toast(text, type, persistent, action_text, action_url) {
         newToast.classList.add('persistent')
         // Create close button element
         let closeToastBtn = document.createElement('BUTTON')
-        closeToastBtn.classList.add('btn', 'icon-only', 'btn-flat');
+        closeToastBtn.classList.add('btn', 'icon-only', 'btn-flat', 'compact');
         // Create close button icon
         let closeToastBtnIcon = document.createElement('SPAN');
         closeToastBtnIcon.classList.add('material-icons');
@@ -532,8 +555,10 @@ function toast(text, type, persistent, action_text, action_url) {
         closeToastBtn.appendChild(closeToastBtnIcon);
         // Append close button to action wrapper element
         newToastActionWrapper.appendChild(closeToastBtn)
-        // Init close buttons
-        toastCloseBtns();
+        // Init close button
+        closeToastBtn.addEventListener("click", function() {
+            newToast.classList.add('expired')
+        });
     } else {
         // Fade toast out and add expired class
         setTimeout(function() {
@@ -550,16 +575,6 @@ function toast(text, type, persistent, action_text, action_url) {
             }, duration)
         }, 6000)
     }
-}
-
-function toastCloseBtns() {
-    let closeBtns = document.querySelectorAll('.toast-actions .btn');
-    closeBtns.forEach(btn => {
-        btn.addEventListener("click", function() {
-            let parentToast = btn.closest('.toast');
-            parentToast.classList.add('expired')
-        })
-    })
 }
 
 function createRipple(event) {
@@ -579,4 +594,37 @@ function createRipple(event) {
     }
 
     button.appendChild(circle)
+}
+
+function closeMenu(menu_id) {
+    document.getElementById(menu_id).style.display = 'none';
+    let trigger = document.querySelector(`[data-menu-target="${menu_id}"]`);
+    trigger.classList.remove('active');
+}
+
+function openMenu(menu_id) {
+    let menuEl = document.getElementById(menu_id);
+    menuEl.style.display = 'block';
+
+    let trigger = document.querySelector(`[data-menu-target="${menu_id}"]`);
+    trigger.classList.add('active');
+    let triggerPos = trigger.getBoundingClientRect();
+    menuEl.style.top = triggerPos.bottom + window.scrollY - 2 + 'px';
+    menuEl.style.left = triggerPos.left + 'px';
+
+    checkMenuPos(triggerPos, menuEl);
+}
+
+function checkMenuPos(triggerPos, menuEl) {
+    let menuPos = menuEl.getBoundingClientRect();
+    // if overflow bottom, position bottom of menu to top of trigger
+    if (menuPos.bottom > window.innerHeight) {
+        menuEl.style.top = triggerPos.top - menuPos.height + window.scrollY + 2 + 'px'
+        checkMenuPos(triggerPos, menuEl);
+    }
+    // if overflow right, position left of menu to right of trigger
+    if (menuPos.right > window.innerWidth - 15) {
+        menuEl.style.left = triggerPos.right - menuPos.width + 'px'
+        checkMenuPos(triggerPos, menuEl);
+    }
 }

@@ -2,6 +2,13 @@ var express = require('express');
 var router = express.Router();
 const caseStudies = require('../content/case-studies.json');
 
+router.use(function(req, res, next) {
+    if (process.env.NODE_ENV === 'production' && !req.hostname.match(/^www/)) {
+        res.redirect('https://www.inastra.co' + req.path);
+    }
+    next();
+})
+
 router.get('/', function(req, res, next) {
     res.render('index', {
         title: 'Transdisciplinary Innovation',

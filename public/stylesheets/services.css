@@ -2,19 +2,3 @@
 section:not(:first-of-type):not(:last-of-type):nth-of-type(odd) {
     background-color: var(--c-white);
 }
-
-/* HERO */
-section#hero {
-    min-height: 48vh;
-    display: flex;
-}
-
-section#hero .container {
-    color: var(--c-white);
-    text-align: center;
-}
-
-section#hero .section-underline {
-    margin-left: auto;
-    margin-right: auto;
-}
