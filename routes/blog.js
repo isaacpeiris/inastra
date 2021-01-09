@@ -5,8 +5,10 @@ const axios = require('axios').default;
 //Add header to all axios requests
 axios.defaults.headers.common['Content-type'] = 'application/json';
 
+const feedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40isaacpeiris'
+
 router.get('', async function(req, res, next) {
-    const mediumBlog = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fconcio-group');
+    const mediumBlog = await axios.get(feedUrl);
     addData(mediumBlog.data.items)
     res.render('blog', {
         title: 'Blog',
@@ -15,7 +17,7 @@ router.get('', async function(req, res, next) {
 });
 
 router.get('/p/:id', async function(req, res, next) {
-    const mediumBlog = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fconcio-group');
+    const mediumBlog = await axios.get(feedUrl);
     addData(mediumBlog.data.items)
     const post = mediumBlog.data.items.find(p => p.id === req.params.id);
     res.render('blog-post', {

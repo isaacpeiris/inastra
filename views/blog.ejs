@@ -11,6 +11,7 @@
             <h1>Blog</h1>
         </div>
     </section>
+    <% if(posts.length > 0) { %>
     <section id="posts" class="main">
         <div class="container">
             <% posts.forEach(post => { %>
@@ -29,6 +30,14 @@
             <% }) %>
         </div>
     </section>
+    <% } else { %>
+    <section class="main" id="no-posts">
+        <div class="container">
+            <p>Unfortunately there's no blog posts here yet!</p>
+            <p>Check back later for new content.</p>
+        </div>
+    </section>
+    <% } %>
 </main>
 
 <div id="particle-js"></div>

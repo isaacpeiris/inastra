@@ -162,9 +162,11 @@ section#content a:hover::after {
 
 .details-wrapper {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-gap: var(--f-size-reg);
+    margin-top: var(--f-size-reg);
 }
 
-.post-tags {
-    justify-self: right;
+/*  */
+section#no-posts .container p {
+    text-align: center;
 }
