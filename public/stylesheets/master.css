@@ -22,7 +22,7 @@ section:not(:first-of-type) {
     background: var(--c-white);
     display: flex;
     align-items: center;
-    padding: calc((var(--nav-height) + 24px) + 2vh) 0;
+    padding: calc(var(--nav-height) + 2vh) 0;
 }
 
 section:not(:first-of-type):not(:last-of-type):nth-of-type(odd) {
@@ -58,6 +58,12 @@ section:last-of-type:not(:first-of-type)::after {
     background-image: url('/images/wave-2.png');
     bottom: calc(var(--wave-height) * -1);
     transform: scaleY(-1) scaleX(-1);
+}
+
+@media screen and (max-width: 720px) {
+    section:not(:first-of-type) {
+        padding: calc(0.6 * var(--nav-height)) 0;
+    }
 }
 
 /* content */
@@ -117,15 +123,14 @@ section:last-of-type:not(:first-of-type)::after {
 
 /* HERO */
 section#hero {
-    min-height: 48vh;
+    min-height: 42vh;
+    padding: var(--nav-height) 0 var(--f-size-reg);
     display: flex;
+    align-items: center;
     color: var(--c-white);
 }
 
 @media screen and (max-width: 720px) {
-    section#hero {
-        margin-top: var(--nav-height);
-    }
     section#hero .container {
         display: block;
     }
@@ -191,6 +196,7 @@ section.side.img-text .section-content {
     section.side.text-img .section-img,
     section.side.img-text .section-img {
         order: 2;
+        padding: var(--f-size-reg);
     }
 }
 
@@ -231,6 +237,15 @@ button.option:hover {
 .option.active .option-title {
     color: var(--c-purple);
     font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+    section.option-list .section-content {
+        grid-template-columns: 1fr;
+    }
+    .option {
+        padding: calc(2 * var(--f-size-reg));
+    }
 }
 
 /* FORM */

@@ -9,23 +9,27 @@
     "ad_img": "inastra_ihg.jpg",
     "title": "Redesigning hotel organisational structures for an agile pandemic response",
     "subtitle": "To adapt and respond to the global COVID-19 pandemic, the InterContinental Hotel Group needed to reimagine the way hotels have operated for decades.",
+    "introduction": {
+      "full": "The COVID-19 pandemic hit the tourism industry harder than most, with domestic and international travel for both business and leisure halted almost overnight. Hotels more specifically also saw one of their largest revenue streams, corporate events and conferencing, cease almost entirely as organisations around the world shifted to remote work options. The culmination of these unforeseen disruptions caused an industry-wide average revenue decrease of 87%.",
+      "points": []
+    },
     "challenge": {
-      "full": "",
-      "points": {},
-      "summary": "The COVID-19 pandemic caused an average revenue decrease of 87% across the hospitality industry. This meant IHG required a new fluid and scalable operational structure that needed to be designed at a grassroots level while connecting with changes to corporate management structures."
+      "full": "In order to respond to rapidly changing occupancy rates, IHG required a new operational structure that could be fluid and scalable across their multiple brand levels, and deliver to guests, staff and owners. The structures needed to be designed and implemented at a grassroots hotel level, but remain in alignment with other projects addressing corporate management structures.",
+      "points": []
     },
     "process": {
-      "full": "",
-      "points": {},
-      "summary": "Inastra facilitated the multidisciplinary project group through agile and design thinking methodologies to enable deeper understanding of the problem before rapidly testing and iterating potential solutions. This included navigating inherent biases and establishing a stakeholder engagement and management plan."
+      "full": "Inastra facilitated the IHG project team, consisting of experts from across all business areas. We kept the team accountable for milestones we collectively set, and addressed existing biases and assumptions in order to mitigate the risk of jumping to conclusions before adequately exploring and defining the problem. To ensure effective development and implementation of the project solution we introduced a comprehensive stakeholder engagement and management plan. Establishing these strong foundations was essential to achieving the tight project timelines. We primed the team for rapid innovation by introducing a bespoke project framework with tools and methodologies to enable deeper understanding of the problem and rapidly test and iterate potential solutions.",
+      "points": []
     },
     "results": {
-      "full": "",
-      "points": {},
-      "summary": "The new structure has been deployed to 52 hotels across 5 geographic regions in Australasia, with implementation on track to achieve project KPIs. Elements of the restructure are also being rolled out company-wide and are set to remain in place post-COVID, redefining the way hotels have operated for decades."
+      "full": "The agile structures have been rolled out to 52 hotels across 5 geographic regions within IHG’s Australasia portfolio. KPIs have been set to achieve a revenue increase per available room, so although occupancy is fluctuating in correspondence with local lockdown restrictions, each hotel is able to bring in more revenue per room compared to this time in 2019. So far, the hotels where this structure is being used are on track to successfully achieve these new project KPIs. The central element of the new structure is the combination of guest service teams into one Hotel Services Team that can fill a variety of roles and adapt to changing needs, which is a structural concept that is now being rolled out company-wide.",
+      "points": []
     },
     "testimonial": {
-      "quote": "With the engagement and support of the Inastra team our project group was able to develop a Minimum Viable Product <b>within a very timebound deliverable window</b>. We were then able to <b>rapidly distribute</b> to hotels <b>across Australasia</b>, providing the guidance required to make the changes needed and support ongoing implementation. Thank you for guiding us through the innovation process.",
+      "quote": {
+        "full": "The hospitality industry is not known for its speed of change or adoption of innovative ideas, and typically works with very traditional organisational structures – this was the challenge we faced when we needed to innovate our operational team structures across hotels in order to adapt to significantly reduced demand and market condition. With the engagement and support of the Inastra team our project group was able to develop a Minimum Viable Product within a very timebound deliverable window. We were then able to rapidly distribute to hotels across Australasia, providing the guidance required to make the changes needed and support ongoing implementation. Thank you for guiding us through the innovation process.",
+        "selected": "With the engagement and support of the Inastra team our project group was able to develop a Minimum Viable Product <b>within a very timebound deliverable window</b>. We were then able to <b>rapidly distribute</b> to hotels <b>across Australasia</b>, providing the guidance required to make the changes needed and support ongoing implementation. Thank you for guiding us through the innovation process."
+      },
       "name": "Brenden Van Blerk",
       "title": "Director, New Hotels - Australasia & Japan"
     }
