@@ -8,11 +8,8 @@ nav.transparent .logo.bnw-white {
 
 /* HERO */
 section#hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(68vh - (2 * 6vh));
-    padding: 6vh 0;
+    min-height: 48vh;
+    padding-bottom:calc(2*var(--f-size-reg));
 }
 
 section#hero .container {
