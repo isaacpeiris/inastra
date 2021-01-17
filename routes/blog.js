@@ -30,7 +30,14 @@ function addData(posts) {
     posts.forEach(post => {
         post.id = post.guid.match(/(?<=p\/).*$/g)[0]
         post.author_id = post.author.toLowerCase().replace(/\s/g, '');
-        post.date = new Date(post.pubDate.replace(/-/g, '/'));
+        post.date = post.pubDate.replace(/-/g, '/');
+        let pubDate = new Date(post.pubDate);
+        let dd = pubDate.getDate();
+        let mm = pubDate.getMonth() + 1;
+        let yyyy = pubDate.getFullYear();
+        if (dd < 10) { dd = '0' + dd };
+        if (mm < 10) { mm = '0' + mm };
+        post.date = dd + '/' + mm + '/' + yyyy;
     });
 }
 

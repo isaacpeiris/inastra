@@ -9,6 +9,9 @@
     <section id="hero">
         <div class="hero-content">
             <h1 class="post-title"><%= post.title %></h1>
+            <div class="post-header">
+                <a class="post-author" href="/<%= post.author_id %>"><%= post.author %></a><p class="post-date"><%= post.date %> </p>
+            </div>
         </div>
     </section>
     <section id="content" class="main">
@@ -17,13 +20,10 @@
                 <%- post.content %>
             </div>
             <div class="post-details">
-                <div class="details-wrapper">
-                    <p class="post-author">Written by <a href="/<%= post.author_id %>"><%= post.author %></a></p>
-                    <div class="post-tags">
-                        <% post.categories.forEach(tag => { %>
-                        <span class="post-tag"><%= tag %></span>
-                        <% }) %>
-                    </div>
+                <div class="post-tags">
+                    <% post.categories.forEach(tag => { %>
+                    <span class="post-tag"><%= tag %></span>
+                    <% }) %>
                 </div>
             </div>
         </div>
