@@ -1,0 +1,49 @@
+<% include ./partials/head %>
+
+<link rel="stylesheet" href="/stylesheets/insights.css">
+<script src="/javascripts/insights.js"></script>
+
+<% include ./partials/head-bottom %>
+<% include ./components/nav %>
+<main>
+    <section id="hero" class="insights">
+        <div class="hero-content">
+            <h1>Insights</h1>
+        </div>
+    </section>
+    <% if(posts.length > 0) { %>
+    <section id="posts" class="main">
+        <div class="container">
+            <% posts.forEach(post => { %>
+            <a class="post-card" id="<%= post.id %>" href="/insights/p/<%= post.id %>">
+                <span class="post-card_feature-img" style="background-image: url(<%= post.thumbnail %>);"></span>
+                <div class="post-card_content">
+                    <div class="post-card_header">
+                        <h3 class="post-card_title"><%= post.title %></h3>
+                    </div>
+                    <div class="post-card_details">
+                        <p><span class="post-card_author"><%= post.author %></span><span class="post-card_date"><%= post.date %></span></p>
+                        <div class="post-card_tags">
+                            <% post.categories.forEach(cat => { %>
+                            <span class="post_tag"><%= cat %></span>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <% }) %>
+        </div>
+    </section>
+    <% } else { %>
+    <section class="main" id="no-posts">
+        <div class="container">
+            <p>Unfortunately there's no insights posts here yet!</p>
+            <p>Check back later for new content.</p>
+        </div>
+    </section>
+    <% } %>
+</main>
+
+<div id="particle-js"></div>
+
+<% include ./components/footer %>

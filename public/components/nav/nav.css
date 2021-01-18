@@ -70,7 +70,7 @@ nav.transparent .btn:focus {
 
 .nav-right {
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(6, auto);
     align-items: center;
     grid-gap: 24px;
 }

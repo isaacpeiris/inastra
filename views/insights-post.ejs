@@ -1,0 +1,35 @@
+<% include ./partials/head %>
+
+<link rel="stylesheet" href="/stylesheets/insights.css">
+<script src="/javascripts/insights.js"></script>
+
+<% include ./partials/head-bottom %>
+<% include ./components/nav %>
+<main>
+    <section id="hero">
+        <div class="hero-content container">
+            <h1 class="post_title"><%= post.title %></h1>
+            <div class="post_header">
+                <a class="post_author intext-link" href="/<%= post.author_id %>"><%= post.author %></a><p class="post_date"><%= post.date %> </p>
+            </div>
+        </div>
+    </section>
+    <section id="content">
+        <div class="container">
+            <div class="post_content">
+                <%- post.content %>
+            </div>
+            <div class="post_details">
+                <div class="post_tags">
+                    <% post.categories.forEach(tag => { %>
+                    <span class="post_tag"><%= tag %></span>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="particle-js"></div>
+
+<% include ./components/footer %>
