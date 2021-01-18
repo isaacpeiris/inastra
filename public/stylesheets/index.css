@@ -113,6 +113,10 @@ section#hero .container {
 }
 
 /* SECTIONS */
+section:not(:first-of-type) {
+    padding: calc(var(--nav-height) + 2vh) 0;
+}
+
 section:nth-last-of-type(2) {
     margin-bottom: var(--wave-height);
 }

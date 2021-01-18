@@ -6,6 +6,8 @@ const axios = require('axios').default;
 //Add header to all axios requests
 axios.defaults.headers.common['Content-type'] = 'application/json';
 
+const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api' : 'https://www.inastra.co/api'
+
 router.post('/recaptcha-verify', function(req, res, next) {
     let params = new URLSearchParams();
     params.append('secret', '6LeC7NAZAAAAAGHm5PbGCcTjU6QOuCewUaVOeN1u');
@@ -47,6 +49,26 @@ router.get('/insights', async function(req, res, next) {
     })
     res.send(medium.data.items)
 })
+
+router.get('/insights/:id', async function(req, res, next) {
+    const allInsights = await axios.get(apiUrl + '/insights');
+    const result = allInsights.data.find(p => p.id === req.params.id);
+    res.send(result);
+});
+
+router.get('/insights/author/:id', async function(req, res, next) {
+    const allInsights = await axios.get(apiUrl + '/insights');
+    const result = allInsights.data.filter(post => post.author_id === req.params.id);
+    res.send(result);
+});
+
+router.get('/insights/tag/:id', async function(req, res, next) {
+    const allInsights = await axios.get(apiUrl + '/insights');
+    const result = allInsights.data.filter(post => {
+        return post.categories.includes(req.params.id)
+    });
+    res.send(result);
+});
 
 // Receive post request from contact form
 router.post('/contact-form', function(req, res, next) {    // Post form content to #leads Slack channel

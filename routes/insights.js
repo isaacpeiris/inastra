@@ -5,24 +5,21 @@ const axios = require('axios').default;
 //Add header to all axios requests
 axios.defaults.headers.common['Content-type'] = 'application/json';
 
-const feedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Finastra'
+const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api' : 'https://www.inastra.co/api'
 
 router.get('', async function(req, res, next) {
-    const medium = await axios.get(feedUrl);
-    addData(medium.data.items)
+    const posts = await axios.get(apiUrl + '/insights');
     res.render('insights', {
         title: 'Insights',
-        posts: medium.data.items
+        posts: posts.data
     });
 });
 
 router.get('/:id', async function(req, res, next) {
-    const medium = await axios.get(feedUrl);
-    addData(medium.data.items)
-    const post = medium.data.items.find(p => p.id === req.params.id);
+    const post = await axios.get(apiUrl + '/insights/' + req.params.id);
     res.render('insights-post', {
-        title: post.title,
-        post: post
+        title: post.data.title,
+        post: post.data
     });
 });
 

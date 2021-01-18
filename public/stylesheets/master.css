@@ -22,7 +22,7 @@ section:not(:first-of-type) {
     background: var(--c-white);
     display: flex;
     align-items: center;
-    padding: calc(var(--nav-height) + 2vh) 0;
+    padding: calc(var(--f-size-reg) + 2vh) 0;
 }
 
 section:not(:first-of-type):not(:last-of-type):nth-of-type(odd) {
@@ -62,7 +62,7 @@ section:last-of-type:not(:first-of-type)::after {
 
 @media screen and (max-width: 720px) {
     section:not(:first-of-type) {
-        padding: calc(0.6 * var(--nav-height)) 0;
+        padding: var(--f-size-reg) 0;
     }
 }
 
