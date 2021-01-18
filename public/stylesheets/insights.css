@@ -144,6 +144,7 @@ section#content img {
 }
 
 section#content p {
+    color: var(--c-black);
     margin-bottom: var(--f-size-reg);
 }
 

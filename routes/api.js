@@ -6,7 +6,6 @@ const axios = require('axios').default;
 //Add header to all axios requests
 axios.defaults.headers.common['Content-type'] = 'application/json';
 
-
 router.post('/recaptcha-verify', function(req, res, next) {
     let params = new URLSearchParams();
     params.append('secret', '6LeC7NAZAAAAAGHm5PbGCcTjU6QOuCewUaVOeN1u');
@@ -16,11 +15,41 @@ router.post('/recaptcha-verify', function(req, res, next) {
         .then(function(response) {
             res.send(response.data)
         }).catch(function(error) { console.log(error.response) });
+});
+
+router.get('/insights', async function(req, res, next) {
+    const feedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Finastra'
+    const medium = await axios.get(feedUrl);
+    medium.data.items.forEach(post => {
+        post.id = post.guid.match(/(?<=p\/).*$/g)[0]
+        post.author_id = post.author.toLowerCase().replace(/\s/g, '');
+        post.date = post.pubDate.replace(/-/g, '/');
+        let monthsArray = [
+            { full: "January", abbr: "Jan", zeroNum: "01", num: "1" },
+            { full: "February", abbr: "Feb", zeroNum: "02", num: "2" },
+            { full: "March", abbr: "Mar", zeroNum: "03", num: "3" },
+            { full: "April", abbr: "Apr", zeroNum: "04", num: "4" },
+            { full: "May", abbr: "May", zeroNum: "05", num: "5" },
+            { full: "June", abbr: "Jun", zeroNum: "06", num: "6" },
+            { full: "July", abbr: "Jul", zeroNum: "07", num: "7" },
+            { full: "August", abbr: "Aug", zeroNum: "08", num: "8" },
+            { full: "September", abbr: "Sep", zeroNum: "09", num: "9" },
+            { full: "October", abbr: "Oct", zeroNum: "10", num: "10" },
+            { full: "November", abbr: "Nov", zeroNum: "11", num: "11" },
+            { full: "December", abbr: "Dec", zeroNum: "12", num: "12" },
+        ]
+        let pubDate = new Date(post.pubDate);
+        let dd = pubDate.getDate();
+        let mm = monthsArray[pubDate.getMonth()].abbr;
+        let yyyy = pubDate.getFullYear();
+        if (dd < 10) { dd = '0' + dd };
+        post.date = dd + ' ' + mm + ' ' + yyyy;
+    })
+    res.send(medium.data.items)
 })
 
 // Receive post request from contact form
-router.post('/contact-form', function(req, res, next) {
-    // Post form content to #leads Slack channel
+router.post('/contact-form', function(req, res, next) {    // Post form content to #leads Slack channel
     axios.post('https://hooks.slack.com/services/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', {
         text: "New inbound lead 🔥",
         blocks: [
@@ -115,8 +144,7 @@ router.post('/contact-form', function(req, res, next) {
 });
 
 // Receive all payloads from Slack messages
-router.post('/slack', async function(req, res, next) {
-    // Convert payload from a string. Set above try, so it's accessible in catch
+router.post('/slack', async function(req, res, next) {    // Convert payload from a string. Set above try, so it's accessible in catch
     const payload = JSON.parse(req.body.payload);
     // Slack message content
     const messageContent = payload.message.blocks;
@@ -125,11 +153,9 @@ router.post('/slack', async function(req, res, next) {
 
     if (buttonId === 'url') {
         res.sendStatus(200);
-    } else if (buttonId === 'qualifylead') {
-        // To get around Slack 3 second rule send immediate confirmation once request is received
+    } else if (buttonId === 'qualifylead') {        // To get around Slack 3 second rule send immediate confirmation once request is received
         axios.post(payload.response_url, { text: "Processing..." }).catch(function(error) { console.log(error.response) });
         try {
-
             // Regex to remove label from Slack message sections
             const messageLabel = /^.*\*\s/g
 
@@ -191,8 +217,7 @@ router.post('/slack', async function(req, res, next) {
         } catch (err) {
             console.log(err)
         }
-    } else if (buttonId === 'disqualifylead') {
-        // If lead was disqualified, return post to Slack
+    } else if (buttonId === 'disqualifylead') {        // If lead was disqualified, return post to Slack
         axios.post(payload.response_url, {
             blocks: [
                 messageContent[0],
@@ -226,8 +251,7 @@ router.post('/slack', async function(req, res, next) {
                 }
             ]
         }).catch(function(error) { console.log(error.response) });
-    } else if (buttonId === 'resetlead') {
-        // Reset the lead message
+    } else if (buttonId === 'resetlead') {        // Reset the lead message
         axios.post(payload.response_url, {
             blocks: [
                 messageContent[0],

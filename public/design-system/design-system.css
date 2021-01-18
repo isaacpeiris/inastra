@@ -417,6 +417,7 @@ a.intext-link {
     position: relative;
     color: var(--c-base);
     font-style: italic;
+    white-space: nowrap;
 }
 
 a.intext-link:hover {
