@@ -31,6 +31,12 @@ function addData(post) {
     post.id = post.guid.match(/(?<=p\/).*$/g)[0]
     post.author_id = post.author.toLowerCase().replace(/\s/g, '');
     post.date = post.pubDate.replace(/-/g, '/');
+    let newCategories = []
+    post.categories.forEach(tag => {
+        let newTag = tag.replace(/-/g, ' ');
+        newCategories.push(newTag)
+    });
+    post.categories = newCategories;
     let monthsArray = [
         { full: "January", abbr: "Jan", zeroNum: "01", num: "1" },
         { full: "February", abbr: "Feb", zeroNum: "02", num: "2" },

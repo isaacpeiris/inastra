@@ -414,36 +414,13 @@ a.link[target="_blank"]::after {
 }
 
 a.intext-link {
-    position: relative;
-    color: var(--c-base);
+    color: inherit;
     font-style: italic;
-    white-space: nowrap;
+    border-bottom: 1px solid currentColor;
 }
 
 a.intext-link:hover {
-    color: var(--c-white);
-}
-
-a.intext-link::before {
-    content: '';
-    width: 100%;
-    height: 1px;
-    z-index: -2;
-    background-color: var(--c-base);
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    -webkit-transition: height 200ms ease;
-    transition: height 200ms ease;
-}
-
-a.intext-link:hover::before {
-    height: calc(100% + 4px);
-}
-
-.reduced-motion a.intext-link::before {
-    transition: none;
-    -webkit-transition: none;
+    border-bottom-width: 0px;
 }
 
 /* ======= */
