@@ -35,13 +35,6 @@ section#hero h1 {
     grid-gap: var(--f-size-reg);
 }
 
-.post-card .post-card_title {
-    font-family: var(--f-title);
-    font-size: var(--f-size-5);
-    color: var(--c-black);
-    line-height: 1.2;
-}
-
 .post-card_author {
     padding-right: var(--f-size-reg);
     margin-right: var(--f-size-reg);

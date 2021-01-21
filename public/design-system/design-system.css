@@ -402,7 +402,7 @@ a.link:hover::before {
     transform-origin: left;
 }
 
-a.link[target="_blank"] {
+/* a.link[target="_blank"] {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: calc(0.5 * var(--f-size-reg));
@@ -411,7 +411,7 @@ a.link[target="_blank"] {
 a.link[target="_blank"]::after {
     font-family: "Material Icons";
     content: 'open_in_new';
-}
+} */
 
 a.intext-link {
     color: inherit;
