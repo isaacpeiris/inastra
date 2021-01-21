@@ -35,33 +35,6 @@ section#hero h1 {
     grid-gap: var(--f-size-reg);
 }
 
-.post-card {
-    display: grid;
-    grid-template-rows: 180px 1fr;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px var(--c-base-20);
-    overflow: hidden;
-    color: var(--c-base);
-    transition: all 400ms ease;
-}
-
-a.post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 12px var(--c-base-20);
-}
-
-.post-card .post-card_feature-img {
-        background-size: cover;
-    background-position: center;
-}
-
-.post-card_content {
-    display: grid;
-    grid-template-rows: min-content 1fr;
-    grid-gap: var(--f-size-reg);
-    padding: var(--f-size-reg);
-}
-
 .post-card .post-card_title {
     font-family: var(--f-title);
     font-size: var(--f-size-5);
@@ -69,17 +42,14 @@ a.post-card:hover {
     line-height: 1.2;
 }
 
-.post-card .post-card_details {
-    color: var(--c-black);
-    align-self: end;
-    display: grid;
-    grid-gap: var(--f-size-reg);
-}
-
 .post-card_author {
     padding-right: var(--f-size-reg);
     margin-right: var(--f-size-reg);
     border-right: 1px solid var(--c-black);
+}
+
+.post-card_tags {
+    margin-top: var(--f-size-reg);
 }
 
 /* POST */

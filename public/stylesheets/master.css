@@ -219,7 +219,8 @@ section.option-list .section-content {
 
 a.option:hover,
 button.option:hover {
-    box-shadow: 0 0 8px var(--c-base-20);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px var(--c-black-20);
     cursor: pointer;
 }
 
