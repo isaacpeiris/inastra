@@ -117,54 +117,8 @@ nav.transparent .btn:focus {
     margin: auto;
 }
 
-button#mobile-menu {
-    border: none;
-    background-color: transparent;
-    color: var(--c-base);
-    margin: 0;
-    padding: 4px 5px;
-}
-
-nav.transparent button#mobile-menu {
+nav.transparent .menu-icon button {
     color: var(--c-white);
-}
-
-.mobile-nav {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    width: 0;
-    top: var(--nav-height);
-    left: 0;
-    background-color: var(--c-base);
-    z-index: 1;
-    height: calc(100% - var(--nav-height));
-    overflow: hidden;
-    transition: width 400ms ease;
-    -webkit-transition: width 400ms ease;
-}
-
-nav.mobile-active {
-    background-color: var(--c-base);
-}
-
-nav.mobile-active .mobile-nav {
-    width: 100%;
-}
-
-.mobile-nav-links {
-    padding: 4vh;
-    display: grid;
-    text-align: center;
-    grid-gap: 24px;
-    height: min-content;
-    width: 100%;
-}
-
-.mobile-nav-links > a {
-    font-size: var(--f-size-5);
-    padding: 18px;
-    width: 100%;
 }
 
 @media screen and (max-width: 720px) {
