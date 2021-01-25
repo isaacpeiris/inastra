@@ -243,8 +243,8 @@ section {
 
 /* FONT */
 :root {
-    --f-body: 'Nunito Sans', sans-serif;
-    --f-title: 'Nunito', sans-serif;
+    --f-body: 'Open Sans', sans-serif;
+    --f-title: 'Fraunces', serif;
     /* typescale */
     /* --f-scale: 1.25;
     --f-size-reg: 1rem;
