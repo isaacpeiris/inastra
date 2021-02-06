@@ -11,10 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     document.querySelector('.menu-icon button').addEventListener('click', function() {
-        if (this.classList.contains('active')) {
-            this.querySelector('.material-icons').innerText = 'close'
-        } else {
-            this.querySelector('.material-icons').innerText = 'menu'
-        }
+        this.blur();
     })
 })
