@@ -117,10 +117,6 @@ nav.transparent .btn:focus {
     margin: auto;
 }
 
-nav.transparent .menu-icon button {
-    color: var(--c-white);
-}
-
 @media screen and (max-width: 720px) {
     .mobile-nav-wrapper {
         display: flex;
@@ -132,8 +128,8 @@ nav.transparent .menu-icon button {
 
 .menu-icon {
     position: relative;
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
 }
 
 .menu-icon span {
@@ -141,12 +137,18 @@ nav.transparent .menu-icon button {
     display: block;
 }
 
+.transparent .menu-icon span,
+.transparent .menu-icon span::before,
+.transparent .menu-icon span::after {
+    background-color: var(--c-white);
+}
+
 .menu-icon span,
 .menu-icon span::before,
 .menu-icon span::after {
     width: 24px;
     height: 2px;
-    background-color: var(--c-white);
+    background-color: var(--c-base);
     transition: all 300ms ease;
 }
 
