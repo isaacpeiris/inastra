@@ -243,8 +243,8 @@ section {
 
 /* FONT */
 :root {
-    --f-body: 'Open Sans', sans-serif;
-    --f-title: 'Cormorant', serif;
+    --f-body: 'Lato', sans-serif;
+    --f-title: 'Corben', serif;
     /* typescale */
     /* --f-scale: 1.25;
     --f-size-reg: 1rem;
