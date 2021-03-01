@@ -12,6 +12,11 @@ body {
     visibility: hidden;
 }
 
+body.disablescroll {
+    height: 100%;
+    overflow: hidden;
+}
+
 /* ==================== */
 /* STANDARD PAGE LAYOUT */
 /* ==================== */
