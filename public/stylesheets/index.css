@@ -24,9 +24,7 @@ section#hero .container {
 }
 
 .hero-text {
-    font-weight: 500;
     color: var(--c-blue);
-    font-family: var(--f-body);
 }
 
 #hero-cta {
@@ -36,80 +34,6 @@ section#hero .container {
 
 #hero-cta:focus {
     box-shadow: 0 0 0 2px var(--c-white);
-}
-
-@keyframes scrollIndicator {
-    0% {
-        transform: translateY(-12px);
-        opacity: 0;
-    }
-    33% {
-        transform: translateY(-12px);
-        opacity: 1;
-    }
-    66% {
-        transform: translateY(12px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(12px);
-        opacity: 0;
-    }
-}
-
-@-webkit-keyframes scrollIndicator {
-    0% {
-        transform: translateY(-12px);
-        opacity: 0;
-    }
-    33% {
-        transform: translateY(-12px);
-        opacity: 1;
-    }
-    66% {
-        transform: translateY(12px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(12px);
-        opacity: 0;
-    }
-}
-
-@-moz-keyframes scrollIndicator {
-    0% {
-        transform: translateY(-12px);
-        opacity: 0;
-    }
-    33% {
-        transform: translateY(-12px);
-        opacity: 1;
-    }
-    66% {
-        transform: translateY(12px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(12px);
-        opacity: 0;
-    }
-}
-
-#scroll-indicator {
-    opacity: 0;
-    position: absolute;
-    bottom: 8vh;
-    left: 50%;
-    margin-left: -24px;
-    color: var(--c-blue);
-    width: 48px;
-    height: 48px;
-            animation: scrollIndicator 3s infinite ease;
-         -o-animation: scrollIndicator 3s infinite ease;
-       -moz-animation: scrollIndicator 3s infinite ease;
-    -webkit-animation: scrollIndicator 3s infinite ease;
-    pointer-events: none;
-    font-size: var(--f-size-1);
 }
 
 /* SECTIONS */

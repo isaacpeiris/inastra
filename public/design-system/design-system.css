@@ -285,6 +285,7 @@ h3,
 h4,
 h5 {
     font-family: var(--f-title);
+    line-height: 1.2;
 }
 
 p,
@@ -292,6 +293,8 @@ a,
 span,
 div {
     font-family: var(--f-body);
+    font-size: var(--f-size-reg);
+    line-height: 1.6;
 }
 
 img {
@@ -307,12 +310,6 @@ h2 {font-size: var(--f-size-2);}
 h3 {font-size: var(--f-size-3);}
 h4 {font-size: var(--f-size-4);}
 h5 {font-size: var(--f-size-5);}
-
-p,
-a {
-    font-size: var(--f-size-reg);
-    line-height: 1.6;
-}
 
 @media screen and (max-width: 1860px) and (orientation: landscape) {
     :root {
