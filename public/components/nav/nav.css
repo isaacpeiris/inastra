@@ -63,9 +63,9 @@ nav.transparent .btn:focus {
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    padding: 0 24px;
-    max-width: 1440px;
     margin: auto;
+    width: 90%;
+    max-width: 72rem;
 }
 
 .nav-right {

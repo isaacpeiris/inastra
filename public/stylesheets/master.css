@@ -234,6 +234,7 @@ button.option:hover {
     font-size: var(--f-size-5);
     margin-top: var(--f-size-reg);
     color: var(--c-base);
+    font-family: var(--f-body);
 }
 
 .option.active {
