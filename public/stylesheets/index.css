@@ -9,7 +9,7 @@ nav.transparent .logo.bnw-white {
 /* HERO */
 section#hero {
     min-height: 48vh;
-    padding-bottom:calc(2*var(--f-size-reg));
+    padding-bottom: var(--spacing-x-lrg);
 }
 
 section#hero .container {
