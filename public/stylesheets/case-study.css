@@ -7,7 +7,7 @@ section#cta {
 
 section:not(#hero):not(#cta) {
     background: var(--c-white);
-    color: var(--c-base);
+    color: var(--c-base-500);
 }
 
 /* TITLE */
@@ -44,7 +44,7 @@ section#subtitle .container {
 }
 
 section#subtitle .client-logo a {
-    color: var(--c-base);
+    color: var(--c-base-500);
 }
 
 section#subtitle .client-logo img {
@@ -53,7 +53,7 @@ section#subtitle .client-logo img {
 
 /* CONTENT */
 section#content {
-    background-color: var(--c-purple-light-90) !important;
+    background-color: var(--c-purple-900) !important;
     padding: 6vh 0;
 }
 
@@ -99,7 +99,7 @@ section#testimonial .container {
 section#testimonial .container::before,
 section#testimonial .container::after {
     font-size: var(--f-size-lrg);
-    color: var(--c-purple);
+    color: var(--c-purple-500);
 }
 
 section#testimonial .container::before {
@@ -112,7 +112,7 @@ section#testimonial .container::after {
 }
 
 section#testimonial b {
-    color: var(--c-purple);
+    color: var(--c-purple-500);
 }
 
 .testimonial-details {

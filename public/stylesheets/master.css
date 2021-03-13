@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: var(--c-base);
+    background-color: var(--c-base-500);
     overflow-x: hidden;
 }
 
@@ -23,7 +23,7 @@ body.disablescroll {
 /* MASTER */
 /* waves */
 section:not(:first-of-type) {
-    color: var(--c-base);
+    color: var(--c-base-500);
     background: var(--c-white);
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@ section:not(:first-of-type) {
 }
 
 section:not(:first-of-type):not(:last-of-type):nth-of-type(odd) {
-    background-color: var(--c-purple-light-90);
+    background-color: var(--c-purple-900);
 }
 
 section::before,
@@ -99,7 +99,7 @@ section:last-of-type:not(:first-of-type)::after {
 
 .section-header .section-underline {
     border: none;
-    background-color: var(--c-blue);
+    background-color: var(--c-blue-500);
     height: 2px;
     width: 72px;
 }
@@ -147,7 +147,7 @@ section.feature .section-text {
     text-align: center;
     margin: 0 auto var(--f-size-3);
     font-family: var(--f-title);
-    color: var(--c-base);
+    color: var(--c-base-500);
 }
 
 section.feature .section-text:last-of-type {
@@ -156,7 +156,7 @@ section.feature .section-text:last-of-type {
 
 section.feature .section-text b {
     font-weight: bold;
-    color: var(--c-purple);
+    color: var(--c-purple-500);
 }
 
 /* SIDE */
@@ -225,7 +225,7 @@ section.option-list .section-content {
 a.option:hover,
 button.option:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 6px var(--c-black-20);
+    box-shadow: 0 4px 6px var(--c-grey-200);
     cursor: pointer;
 }
 
@@ -233,16 +233,16 @@ button.option:hover {
     text-align: center;
     font-size: var(--f-size-5);
     margin-top: var(--f-size-reg);
-    color: var(--c-base);
+    color: var(--c-base-500);
     font-family: var(--f-body);
 }
 
 .option.active {
-    box-shadow: 0 2px 6px var(--c-base-40);
+    box-shadow: 0 2px 6px var(--c-base-400);
 }
 
 .option.active .option-title {
-    color: var(--c-purple);
+    color: var(--c-purple-500);
     font-weight: bold;
 }
 
@@ -264,20 +264,20 @@ button.option:hover {
 
 .input-wrapper.input-purple {
     border: none;
-    background-color: var(--c-purple-60);
+    background-color: var(--c-purple-600);
 }
 
 .input-wrapper.input-purple:hover,
 .input-wrapper.input-purple.active {
-    background-color: var(--c-purple-90);
+    background-color: var(--c-purple-900);
 }
 
 .input-wrapper.input-purple.error-empty,
 .input-wrapper.input-purple.error-invalid {
-    background-color: var(--c-red-40);
+    background-color: var(--c-red-400);
 }
 
 .input-wrapper.input-purple.error-empty.active,
 .input-wrapper.input-purple.error-invalid.active {
-    background-color: var(--c-purple-90);
+    background-color: var(--c-purple-900);
 }

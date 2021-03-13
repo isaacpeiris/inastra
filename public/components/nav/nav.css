@@ -13,8 +13,8 @@ nav {
 
 nav:not(.transparent) {
     background: var(--c-white);
-    color: var(--c-base);
-    box-shadow: 0 4px 6px var(--c-base-20);
+    color: var(--c-base-500);
+    box-shadow: 0 4px 6px var(--c-base-200);
 }
 
 nav .logo.bnw-white {
@@ -47,11 +47,11 @@ nav.transparent .btn-flat {
 }
 
 nav.transparent .btn-flat span.ripple {
-    background-color: var(--c-white-60);
+    background-color: var(--c-grey-600);
 }
 
 nav.transparent .btn-flat:hover {
-    background-color: var(--c-white-10);
+    background-color: var(--c-grey-100);
 }
 
 nav.transparent .btn:focus {
@@ -91,7 +91,7 @@ nav.transparent .btn:focus {
 
 .nav-item.button {
     margin: 0;
-    background-color: var(--c-blue-80);
+    background-color: var(--c-blue-800);
     padding: 12px 24px;
     color: var(--c-white);
     transition: all 200ms ease;
@@ -101,8 +101,8 @@ nav.transparent .btn:focus {
 
 .nav-item.button:focus,
 .nav-item.button:hover {
-    background-color: var(--c-blue);
-    box-shadow: 0 0 12px var(--c-blue);
+    background-color: var(--c-blue-500);
+    box-shadow: 0 0 12px var(--c-blue-500);
 }
 
 /* mobile */
@@ -148,7 +148,7 @@ nav.transparent .btn:focus {
 .menu-icon span::after {
     width: 24px;
     height: 2px;
-    background-color: var(--c-base);
+    background-color: var(--c-base-500);
     transition: all 300ms ease;
 }
 

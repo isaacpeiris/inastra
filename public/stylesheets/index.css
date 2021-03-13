@@ -24,7 +24,7 @@ section#hero .container {
 }
 
 .hero-text {
-    color: var(--c-blue);
+    color: var(--c-blue-500);
 }
 
 #hero-cta {

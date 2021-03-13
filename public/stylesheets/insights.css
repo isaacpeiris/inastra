@@ -4,7 +4,7 @@
     color: var(--c-black);
     font-size: var(--f-size-sml);
     border-radius: 2px;
-    background-color: var(--c-base-10);
+    background-color: var(--c-base-100);
     line-height: 2;
     white-space: nowrap;
     padding: calc(var(--f-size-reg) * 0.1) calc(var(--f-size-reg) * 0.4);
@@ -75,7 +75,7 @@ a.post_author::before {
 }
 
 a.post_author:hover {
-    color: var(--c-base);
+    color: var(--c-base-500);
 }
 
 .post_date {
