@@ -5,24 +5,24 @@
 
 <% include ./partials/head-bottom %>
 <% include ./components/nav %>
-<main>
+<main id="post">
     <section id="hero">
-        <div class="hero-content container">
-            <h1 class="post_title"><%= post.title %></h1>
-            <div class="post_header">
-                <p class="post_author"><%= post.author %></p><p class="post_date"><%= post.date %> </p>
+        <div class="hero-content eos-container">
+            <h1 class="post__title"><%= post.title %></h1>
+            <div class="post__header">
+                <p class="post__author"><%= post.author %></p><p class="post__date"><%= post.date %> </p>
             </div>
         </div>
     </section>
     <section id="content">
-        <div class="container">
-            <div class="post_content">
+        <div class="eos-container">
+            <div class="post__content">
                 <%- post.content %>
             </div>
-            <div class="post_details">
-                <div class="post_tags">
+            <div class="post__details">
+                <div class="post__tags">
                     <% post.categories.forEach(tag => { %>
-                    <span class="post_tag"><%= tag %></span>
+                    <span class="eos-tag"><%= tag %></span>
                     <% }) %>
                 </div>
             </div>

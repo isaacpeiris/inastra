@@ -4,7 +4,7 @@ section#brand {
 }
 
 section#brand .full-width {
-    margin-top: var(--f-size-reg);
+    margin-top: var(--spacing-m);
     display: block;
 }
 
@@ -28,7 +28,7 @@ section#brand .full-width {
 
 .values-description {
     display: grid;
-    margin-top: var(--f-size-reg);
+    margin-top: var(--spacing-m);
 }
 
 .values-description p {

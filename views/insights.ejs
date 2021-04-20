@@ -5,29 +5,27 @@
 
 <% include ./partials/head-bottom %>
 <% include ./components/nav %>
-<main>
+<main id="posts">
     <section id="hero" class="insights">
         <div class="hero-content">
             <h1>Insights</h1>
         </div>
     </section>
     <% if(posts.length > 0) { %>
-    <section id="posts" class="main">
-        <div class="container">
+    <section class="main">
+        <div class="eos-container">
             <% posts.forEach(post => { %>
-            <a class="card" id="<%= post.id %>" href="/insights/<%= post.id %>">
-                <span class="card_img" style="background-image: url(<%= post.thumbnail %>);"></span>
-                <div class="card_content">
-                    <div class="card_header">
-                        <h3 class="card_title"><%= post.title %></h3>
-                    </div>
-                    <div class="card_body">
-                        <p><span class="post-card_author"><%= post.author %></span><span class="post-card_date"><%= post.date %></span></p>
-                        <div class="post-card_tags">
-                            <% post.categories.forEach(cat => { %>
-                            <span class="post_tag"><%= cat %></span>
-                            <% }) %>
-                        </div>
+            <a class="eos-card" id="<%= post.id %>" href="/insights/<%= post.id %>">
+                <span class="eos-card__img" style="background-image: url(<%= post.thumbnail %>);"></span>
+                <div class="eos-card__header">
+                    <h3 class="eos-card__title"><%= post.title %></h3>
+                </div>
+                <div class="eos-card__content">
+                    <p><span class="post__author"><%= post.author %></span><span class="post-card_date"><%= post.date %></span></p>
+                    <div class="post__tags">
+                        <% post.categories.forEach(cat => { %>
+                        <span class="eos-tag"><%= cat %></span>
+                        <% }) %>
                     </div>
                 </div>
             </a>
@@ -36,7 +34,7 @@
     </section>
     <% } else { %>
     <section class="main" id="no-posts">
-        <div class="container">
+        <div class="eos-container">
             <p>Unfortunately there's no insights posts here yet!</p>
             <p>Check back later for new content.</p>
         </div>

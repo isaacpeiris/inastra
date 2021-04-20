@@ -37,7 +37,7 @@ section#subtitle {
     margin-top: var(--wave-height);
 }
 
-section#subtitle .container {
+section#subtitle .eos-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 4vw;
@@ -57,7 +57,7 @@ section#content {
     padding: 6vh 0;
 }
 
-section#content .container {
+section#content .eos-container {
     display: grid;
     grid-template-columns: 1fr 5fr;
     column-gap: 4vw;
@@ -69,7 +69,7 @@ section#content .introduction {
 }
 
 section#content .content-body p:not(:last-child) {
-    margin-bottom: var(--f-size-reg);
+    margin-bottom: var(--spacing-m);
 }
 
 /* TESTIMONIAL */
@@ -91,22 +91,22 @@ section#testimonial {
     padding: 6vh 0 calc(6vh - (var(--wave-height)/2));
 }
 
-section#testimonial .container {
+section#testimonial .eos-container {
     display: grid;
     grid-template-columns: 1fr 10fr 1fr;
 }
 
-section#testimonial .container::before,
-section#testimonial .container::after {
+section#testimonial .eos-container::before,
+section#testimonial .eos-container::after {
     font-size: var(--f-size-lrg);
     color: var(--c-purple-500);
 }
 
-section#testimonial .container::before {
+section#testimonial .eos-container::before {
     content: '\201C';
 }
 
-section#testimonial .container::after {
+section#testimonial .eos-container::after {
     content: '\201D';
     text-align: right;
 }
@@ -117,14 +117,14 @@ section#testimonial b {
 
 .testimonial-details {
     text-align: right;
-    margin-top: var(--f-size-reg);
+    margin-top: var(--spacing-m);
 }
 
 /* CTA */
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 680px) {
-    section#subtitle .container {
+    section#subtitle .eos-container {
         grid-template-columns: 1fr;
         text-align: center;
     }
@@ -132,7 +132,7 @@ section#testimonial b {
         max-width: 40%;
         margin: 0 auto 48px;
     }
-    section#content .container {
+    section#content .eos-container {
         grid-template-columns: 1fr;
         grid-row-gap: 10px 20px;
     }
@@ -142,10 +142,10 @@ section#testimonial b {
     section#content .introduction {
         grid-column: 1/2;
     }
-    section#testimonial .container {
+    section#testimonial .eos-container {
         grid-template-columns: 1fr;
     }
-    section#testimonial .container::after {
+    section#testimonial .eos-container::after {
         content: none;
     }
 }

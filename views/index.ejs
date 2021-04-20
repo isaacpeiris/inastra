@@ -15,27 +15,27 @@
 
 <main>
     <section id="hero" class="particle-container">
-        <div class="container">
+        <div class="eos-container">
             <div class="hero-img" data-tilt-full-page-listening>
                 <img src="/images/brand/logos/icon.png" alt="Inastra Logo">
             </div>
-            <div class="hero-content">
+            <div class="hero-content fade-in fade-left">
                 <h1 class="hero-text">Creativity is not a talent, it's a way of thinking.</h1>
-                <a href="#contact" id="hero-cta" class="eos-c-btn eos-c-btn--blue eos-c-btn--filled">Unlock your creativity</a>
+                <a href="#contact" id="hero-cta" class="eos-btn eos-btn--blue eos-btn--filled">Unlock your creativity</a>
             </div>
         </div>
     </section>
     <section id="tagline" class="feature">
-        <div class="container">
+        <div class="eos-container fade-in fade-up">
             <p class="section-text">Inastra uses <b>transdisciplinary innovation</b> to <b>supercharge your creativity</b> and deliver <b>meaningful solutions</b> to complex problems.</p>
         </div>
     </section>
     <section id="about" class="side img-text">
-        <div class="container">
-            <div class="section-img">
+        <div class="eos-container">
+            <div class="section-img fade-in fade-up">
                 <img src="/images/about.png" alt="">
             </div>
-            <div class="section-content">
+            <div class="section-content fade-in fade-left">
                 <div class="section-header">
                     <p class="section-name">About</p>
                     <h2 class="section-title">A New Perspective</h2>
@@ -43,44 +43,38 @@
                 </div>
                 <p class="section-text">We combine proven methods with fresh perspectives from diverse knowledge bases to bring your business unique insights.</p>
                 <p class="section-text">Our team is passionate about not only helping you solve problems but giving you the tools and skills to unlock your creativity.</p>
-                <a href="/about" class="eos-c-btn section-btn">Learn more</a>
+                <a href="/about" class="eos-btn section-btn">Learn more</a>
             </div>
         </div>
     </section>
     <section id="services" class="option-list">
-        <div class="container">
+        <div class="eos-container fade-in fade-up">
             <div class="section-header align-centre">
                 <p class="section-name">Services</p>
                 <h2 class="section-title">Meaningful Solutions</h2>
                 <hr class="section-underline">
             </div>
             <div class="section-content">
-                <a class="option eos-c-card" href="/services#creativity-workshop">
-                    <div class="eos-c-card__img">
-                        <img src="/images/services/service1.png" alt="" class="option-img">
-                    </div>
-                    <div class="eos-c-card__content">
-                        <div class="eos-c-card__header">
+                <a class="option eos-card" href="/services#creativity-workshop">
+                    <img src="/images/services/service1.png" alt="" class="option-img">
+                    <div class="eos-card__content">
+                        <div class="eos-card__header">
                             <h3 class="option-title">Creativity Workshop</h3>
                         </div>
                     </div>
                 </a>
-                <a class="option eos-c-card" href="/services#process-facilitation">
-                    <div class="eos-c-card__img">
-                        <img src="/images/services/service2.png" alt="" class="option-img">
-                    </div>
-                    <div class="eos-c-card__content">
-                        <div class="eos-c-card__header">
+                <a class="option eos-card" href="/services#process-facilitation">
+                    <img src="/images/services/service2.png" alt="" class="option-img">
+                    <div class="eos-card__content">
+                        <div class="eos-card__header">
                             <h3 class="option-title">Process Facilitation</h3>
                         </div>
                     </div>
                 </a>
-                <a class="option eos-c-card" href="/services#solution-design">
-                    <div class="eos-c-card__img">
-                        <img src="/images/services/service3.png" alt="" class="option-img">
-                    </div>
-                    <div class="eos-c-card__content">
-                        <div class="eos-c-card__header">
+                <a class="option eos-card" href="/services#solution-design">
+                    <img src="/images/services/service3.png" alt="" class="option-img">
+                    <div class="eos-card__content">
+                        <div class="eos-card__header">
                             <h3 class="option-title">Solution Design</h3>
                         </div>
                     </div>
@@ -89,11 +83,11 @@
         </div>
     </section>
     <section id="approach" class="side img-text">
-        <div class="container">
-            <div class="section-img">
+        <div class="eos-container">
+            <div class="section-img fade-in fade-up">
                 <img src="/images/transdisciplinary.png" alt="">
             </div>
-            <div class="section-content">
+            <div class="section-content fade-in fade-left">
                 <div class="section-header">
                     <p class="section-name">Approach</p>
                     <h2 class="section-title">Transdisciplinarity</h2>
@@ -105,30 +99,30 @@
         </div>
     </section>
     <section id="case-studies" class="side text-img">
-        <div class="container">
-            <div class="section-content">
+        <div class="eos-container">
+            <div class="section-content fade-in fade-up">
                 <div class="section-header">
                     <p class="section-name">Case Study</p>
                     <h2 class="section-title"><%= caseStudy.organisation.name %></h2>
                     <hr class="section-underline">
                 </div>
                 <p class="section-text"><%= caseStudy.subtitle %></p>
-                <a href="/case-studies/<%= caseStudy.id %>" class="eos-c-btn section-btn">Learn more</a>
+                <a href="/case-studies/<%= caseStudy.id %>" class="eos-btn section-btn">Learn more</a>
             </div>
-            <div class="section-img">
+            <div class="section-img fade-in fade-left">
                 <img src="/images/clients/<%= caseStudy.organisation.logo %>" alt="IHG Logo">
             </div>
         </div>
     </section>
     <section id="contact" class="side">
-        <div class="container">
-            <div class="section-header">
+        <div class="eos-container">
+            <div class="section-header fade-in fade-up">
                 <p class="section-name">Contact</p>
                 <h2 class="section-title">Let's get started.</h2>
                 <hr class="section-underline">
                 <p class="section-text">We are excited by unique challenges and people who are eager to drive change. What could we create together?</p>
             </div>
-            <div class="section-content">
+            <div class="section-content fade-in fade-left">
                 <form action="/api/contact-form" method="POST" id="contact" class="contact">
                     <div class="input-wrapper input-purple validate-fullName required" id="name">
                         <label for="name" class="form-label">Full Name</label>
@@ -150,7 +144,7 @@
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-input" name="message" id="message" rows="4"></textarea>
                     </div>
-                    <button type="submit" id="submit" class="eos-c-btn eos-c-btn--filled btn-purple">Submit</button>
+                    <button type="submit" id="submit" class="eos-btn eos-btn--filled eos-btn--purple">Submit</button>
                 </form>
             </div>
         </div>

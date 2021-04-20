@@ -14,7 +14,7 @@ nav {
 nav:not(.transparent) {
     background: var(--c-white);
     color: var(--c-base-500);
-    box-shadow: 0 4px 6px var(--c-base-200);
+    box-shadow: 0 4px 6px var(--c-black-opacity-40);
 }
 
 nav .logo.bnw-white {

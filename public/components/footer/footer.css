@@ -23,7 +23,7 @@ footer {
 }
 
 .social-link img {
-    max-height: var(--f-size-sml);
+    max-height: var(--f-size-s);
     max-width: 100%;
 }
 
@@ -32,23 +32,23 @@ footer {
 }
 
 .copyright {
-    font-size: var(--f-size-sml);
+    font-size: var(--f-size-s);
     word-spacing: 4px;
     text-align: center;
 }
 
-.footer-nav .link,
-.footer-legal .link {
+.footer-nav .eos-link,
+.footer-legal .eos-link {
     color: var(--c-white);
     margin-right: 12px;
 }
 
-.footer-legal .link {
-    font-size: var(--f-size-sml);
+.footer-legal .eos-link {
+    font-size: var(--f-size-s);
 }
 
-.footer-nav .link:last-of-type,
-.footer-legal .link:last-of-type {
+.footer-nav .eos-link:last-of-type,
+.footer-legal .eos-link:last-of-type {
     margin-right: 0;
 }
 
