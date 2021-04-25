@@ -92,7 +92,7 @@ section#content p {
     margin: var(--spacing-m) auto 0;
 }
 
-/*  */
+/* no posts */
 section#no-posts .eos-container p {
     text-align: center;
 }

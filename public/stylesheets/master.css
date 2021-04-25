@@ -216,6 +216,10 @@ section.option-list .section-content {
     grid-gap: var(--spacing-m);
 }
 
+.option-list .option {
+    border: none;
+}
+
 .option-list .section-btn {
     margin: 18px auto 0;
 }
