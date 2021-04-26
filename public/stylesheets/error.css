@@ -3,6 +3,7 @@ section#error {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
 }
 
 .error-wrapper {
@@ -19,10 +20,6 @@ section#error {
     font-size: var(--f-size-lrg);
 }
 
-.action-link {
-    margin-top: 24px;
-}
-
-.home-link {
-    color: var(--c-white);
+.error-wrapper .eos-btn {
+    margin: var(--spacing-m) auto 0;
 }

@@ -1,46 +1,15 @@
-/* MASTER */
-section#title,
-section#cta {
-    background: transparent;
-    color: var(--c-white);
-}
-
-section:not(#hero):not(#cta) {
-    background: var(--c-white);
-    color: var(--c-base-500);
-}
-
 /* TITLE */
 section#hero {
     text-align: center;
 }
 
 section#hero h1 {
-    font-size: var(--f-size-lrg);
+    font-size: var(--f-size-l);
 }
 
 /* SUBTITLE */
-section#subtitle::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    height: var(--wave-height);
-    width: 100%;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    top: calc(var(--wave-height) * -1);
-    background-image: url('/images/wave-1.png');
-}
-
 section#subtitle {
     padding: calc(6vh - (var(--wave-height)/2)) 0 6vh;
-    margin-top: var(--wave-height);
-}
-
-section#subtitle .eos-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 4vw;
 }
 
 section#subtitle .client-logo a {
@@ -52,11 +21,6 @@ section#subtitle .client-logo img {
 }
 
 /* CONTENT */
-section#content {
-    background-color: var(--c-purple-900) !important;
-    padding: 6vh 0;
-}
-
 section#content .eos-container {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -98,7 +62,7 @@ section#testimonial .eos-container {
 
 section#testimonial .eos-container::before,
 section#testimonial .eos-container::after {
-    font-size: var(--f-size-lrg);
+    font-size: var(--f-size-l);
     color: var(--c-purple-500);
 }
 

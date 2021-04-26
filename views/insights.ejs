@@ -12,7 +12,7 @@
         </div>
     </section>
     <% if(posts.length > 0) { %>
-    <section class="main">
+    <section class="main top-wave bottom-wave">
         <div class="eos-container">
             <% posts.forEach(post => { %>
             <a class="eos-card" id="<%= post.id %>" href="/insights/<%= post.id %>">
@@ -33,7 +33,7 @@
         </div>
     </section>
     <% } else { %>
-    <section class="main" id="no-posts">
+    <section class="main top-wave bottom-wave" id="no-posts">
         <div class="eos-container">
             <p>Unfortunately there's no insights posts here yet!</p>
             <p>Check back later for new content.</p>

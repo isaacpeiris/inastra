@@ -10,22 +10,13 @@ main {
 }
 
 h1 {
-    margin-bottom: 12px;
+    margin-bottom: var(--spacing-s);
 }
 
 h5 {
-    margin: 1em 0 0.2em;
+    margin: var(--spacing-m) 0 var(--spacing-xs);
 }
 
-ul {
-    margin: 0;
-    padding-left: 20px;
-}
-
-li {
-    line-height: 1.6;
-}
-
-footer {
-    background-color: var(--c-base-500);
+main {
+    padding-top: calc(var(--nav-height) + var(--spacing-xxl));
 }

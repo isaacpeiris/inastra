@@ -25,16 +25,6 @@ section#hero h1 {
 }
 
 /* POST */
-section::before,
-section::after {
-    width: 100%;
-    position: absolute;
-    height: var(--wave-height);
-    left: 0;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
 .post__header {
     display: flex;
     justify-content: center;

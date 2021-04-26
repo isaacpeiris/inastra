@@ -1,24 +1,17 @@
-section#thank-you {
+section.hero:first-of-type {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    position: relative;
+    padding: 0;
 }
 
 .thank-you-wrapper {
     margin: auto;
-    width: 90%;
-    max-width: 720px;
     text-align: center;
-    color: var(--c-white);
 }
 
 .thank-you-wrapper p {
-    margin: 12px 0 24px;
+    margin: var(--spacing-s) 0 var(--spacing-l);
 }
 
-#home-link {
-    margin: 24px auto;
+.thank-you-wrapper .eos-btn {
+    margin: var(--spacing-l) auto;
 }

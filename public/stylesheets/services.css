@@ -1,4 +1,36 @@
 /* SECTIONS */
-section:not(:first-of-type):not(:last-of-type):nth-of-type(odd) {
-    background-color: var(--c-white);
+/* hero */
+section.hero .eos-container {
+    max-width: 48rem;
+}
+
+section.hero .section-header,
+section.hero .section-text {
+    text-align: center;
+}
+
+section.hero .section-header .section-underline {
+    margin: 0 auto 18px;
+}
+
+/* waves */
+section.top-wave::before {
+    content: '';
+    top: calc(var(--wave-height) * -1);
+    background-image: url('/images/wave-1.png');
+}
+
+section.top-wave {
+    margin-top: var(--wave-height);
+}
+
+section.bottom-wave {
+    margin-bottom: var(--wave-height);
+}
+
+section.bottom-wave::after {
+    content: '';
+    background-image: url('/images/wave-2.png');
+    bottom: calc(var(--wave-height) * -1);
+    transform: scaleY(-1) scaleX(-1);
 }

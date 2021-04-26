@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     nav.classList.add('transparent');
 
     const navBtns = document.querySelectorAll('.nav-right .eos-btn:not(.eos-btn--filled)');
-    console.log(navBtns)
 
     window.addEventListener('scroll', function() {
         if (this.scrollY > 100) {

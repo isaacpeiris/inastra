@@ -9,13 +9,13 @@
 <% include ./partials/head-bottom %>
 <% include ./components/nav %>
 
-<main>
+<main class="alternate-colours">
     <section id="hero">
         <div class="eos-container">
             <h1><%= caseStudy.title %></h1>
         </div>
     </section>
-    <section id="subtitle">
+    <section id="subtitle" class="side img-text top-wave">
         <div class="eos-container">
             <div class="client-logo">
                 <img src="/images/clients/<%= caseStudy.organisation.logo %>" alt="">
@@ -50,7 +50,7 @@
             </div>
         </div>
     </section>
-    <section id="testimonial">
+    <section id="testimonial" class="bottom-wave">
         <div class="eos-container">
             <div class="testimonial-content">
                 <p><%- caseStudy.testimonial.quote.selected %></p>
