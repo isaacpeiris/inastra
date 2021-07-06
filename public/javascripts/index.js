@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     VanillaTilt.init(document.querySelector(".hero-img"), {
-        max: 18,
+        max: 12,
         speed: 1800,
         perspective: 800
     });
