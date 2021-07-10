@@ -6,7 +6,7 @@
 <% include ./partials/head-bottom %>
 <% include ./components/nav %>
 <main id="post">
-    <section id="hero">
+    <section id="hero" class="hero">
         <div class="hero-content eos-container">
             <h1 class="post__title"><%= post.title %></h1>
             <div class="post__header">
@@ -14,20 +14,22 @@
             </div>
         </div>
     </section>
-    <section id="content" class="top-wave bottom-wave">
-        <div class="eos-container">
-            <div class="post__content">
-                <%- post.content %>
-            </div>
-            <div class="post__details">
-                <div class="post__tags">
-                    <% post.categories.forEach(tag => { %>
-                    <span class="eos-tag"><%= tag %></span>
-                    <% }) %>
+    <div class="wave-section">
+        <section id="content">
+            <div class="eos-container">
+                <div class="post__content">
+                    <%- post.content %>
+                </div>
+                <div class="post__details">
+                    <div class="post__tags">
+                        <% post.categories.forEach(tag => { %>
+                        <span class="eos-tag"><%= tag %></span>
+                        <% }) %>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </main>
 
 <div id="particle-js"></div>

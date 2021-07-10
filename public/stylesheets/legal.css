@@ -3,10 +3,9 @@ nav.transparent::before {
     box-shadow: 0 2px 6px var(--c-base-400);
 }
 
-main {
-    margin-top: var(--nav-height);
-    padding: 24px 0;
-    background-color: var(--c-white);
+section#hero.hero {
+    text-align: center;
+    min-height: 16vh;
 }
 
 h1 {
@@ -15,8 +14,4 @@ h1 {
 
 h5 {
     margin: var(--spacing-m) 0 var(--spacing-xs);
-}
-
-main {
-    padding-top: calc(var(--nav-height) + var(--spacing-xxl));
 }

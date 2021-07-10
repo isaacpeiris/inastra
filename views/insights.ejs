@@ -6,13 +6,14 @@
 <% include ./partials/head-bottom %>
 <% include ./components/nav %>
 <main id="posts">
-    <section id="hero" class="insights">
+    <section id="hero" class="hero">
         <div class="hero-content">
             <h1>Insights</h1>
         </div>
     </section>
+    <div class="wave-section">
     <% if(posts.length > 0) { %>
-    <section class="main top-wave bottom-wave">
+    <section>
         <div class="eos-container">
             <% posts.forEach(post => { %>
             <a class="eos-card" id="<%= post.id %>" href="/insights/<%= post.id %>">
@@ -33,13 +34,14 @@
         </div>
     </section>
     <% } else { %>
-    <section class="main top-wave bottom-wave" id="no-posts">
+    <section id="no-posts">
         <div class="eos-container">
             <p>Unfortunately there's no insights posts here yet!</p>
             <p>Check back later for new content.</p>
         </div>
     </section>
     <% } %>
+    </div>
 </main>
 
 <div id="particle-js"></div>

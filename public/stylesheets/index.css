@@ -1,4 +1,4 @@
-nav.transparent .nav-wrapper .logo.white {
+nav.transparent .logo.white {
     display: none;
 }
 
@@ -14,15 +14,30 @@ section#hero.hero {
 
 section#hero .eos-container {
     display: grid;
-    grid-template-columns: 1fr 50% 1fr;
+    grid-template-columns: auto;
     justify-content: center;
     align-items: center;
 }
 
 .hero-img {
-    grid-area: 1/2/2/3;
-    height: 80%;
+    grid-area: 1/1/2/2;
     margin: auto;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    height: 80%;
+}
+
+.hero-img::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(/images/brand/logos/icon.png);
+    background-size: 100%;
+    filter: brightness(0) blur(0.8rem) opacity(0.2);
+    transform: translateZ(-200px) scale(1.2);
 }
 
 .hero-img img {
@@ -31,7 +46,7 @@ section#hero .eos-container {
 }
 
 .hero-content {
-    grid-area: 1/1/2/4;
+    grid-area: 1/1/2/2;
     text-align: center;
     z-index: 1;
 }
@@ -42,22 +57,7 @@ section#hero .eos-container {
     text-shadow: 0 2px 4px var(--c-black-opacity-40);
 }
 
-/* SECTIONS */
-section:not(:first-of-type) {
-    padding: calc(var(--nav-height) + 2vh) 0;
-}
-
 /* CONTACT */
-/* section#contact {
-    color: var(--c-white);
-    background-color: transparent;
-    margin-bottom: 0;
-} */
-
-/* section#contact::after {
-    content: none;
-} */
-
 section#contact .eos-container {
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
@@ -67,27 +67,24 @@ button#submit {
     margin-top: 18px;
 }
 
-/* button#submit:focus {
-    box-shadow: 0 0 0 2px var(--c-white);
-} */
-
 /* MEDIA QUERIES */
 @media screen and (max-width: 720px) {
-    section#hero .eos-container {
-        display: block;
-    }
-    section#hero .hero-img {
-        display: none;
-    }
     section#hero .hero-text {
         font-size: var(--f-size-l);
-        text-align: center;
     }
-    section#hero #hero-cta {
-        margin: 48px auto;
-        font-size: var(--f-size-5);
+    section#hero .hero-text br {
+        display: none;
+    }
+    .hero-img {
+        transform: perspective(0) !important;
     }
     section#contact .eos-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-img {
+        transform: perspective(0) !important;
     }
 }
