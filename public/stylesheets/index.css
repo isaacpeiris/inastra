@@ -14,17 +14,22 @@ section#hero.hero {
 
 section#hero .eos-container {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr 60% 1fr;
     justify-content: center;
     align-items: center;
 }
 
 .hero-img {
-    grid-area: 1/1/2/2;
+    grid-area: 1/2/2/3;
     margin: auto;
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    height: 80%;
+}
+
+@media screen and (orientation: landscape) {
+    .hero-img {
+        height: 80%;
+    }
 }
 
 .hero-img::after {
@@ -46,7 +51,7 @@ section#hero .eos-container {
 }
 
 .hero-content {
-    grid-area: 1/1/2/2;
+    grid-area: 1/1/2/4;
     text-align: center;
     z-index: 1;
 }
