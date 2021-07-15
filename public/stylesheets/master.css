@@ -1,6 +1,13 @@
 /* MASTER STYLES */
 :root {
     --wave-height: 72px;
+    --wave-padding: var(--spacing-m);
+    --section-padding: var(--spacing-xxl);
+    --scroll-padding: calc(var(--nav-height) + 2vh);
+}
+
+html {
+    scroll-padding-top: var(--scroll-padding);
 }
 
 body {
@@ -22,7 +29,7 @@ body.disablescroll {
 /* ==================== */
 /* MASTER */
 section {
-    padding: calc(var(--nav-height) + 2vh) 0;
+    padding: var(--section-padding) 0;
 }
 
 .wave-section section {
@@ -38,6 +45,7 @@ section {
 
 .wave-section section:first-of-type {
     margin-top: var(--wave-height);
+    padding-top: var(--wave-padding);
 }
 
 .wave-section section:first-of-type::before {
@@ -48,6 +56,7 @@ section {
 
 .wave-section section:last-of-type {
     margin-bottom: var(--wave-height);
+    padding-bottom: var(--wave-padding);
 }
 
 .wave-section section:last-of-type::after {
@@ -111,7 +120,7 @@ section::after {
 }
 
 .section-btn {
-    margin: 18px 0 0;
+    margin: var(--spacing-m) 0 0;
 }
 
 @media screen and (max-width: 720px) {
@@ -211,43 +220,26 @@ section.side.img-text .section-content {
 }
 
 /* OPTION LIST */
-section.option-list .section-content {
+section.options .section-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: var(--spacing-m);
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.option-list .option {
+section.options .option {
     border: none;
+    white-space: normal;
+    height: auto;
+    width: auto;
+    padding: var(--spacing-l);
 }
 
-.option-list .section-btn {
-    margin: 18px auto 0;
-}
-
-.option-title {
-    text-align: center;
-    font-size: var(--f-size-5);
-    margin-top: var(--spacing-m);
-    color: var(--c-base-500);
-    font-family: var(--f-body);
-}
-
-.option.active {
-    box-shadow: var(--spacing-none) var(--spacing-none) var(--spacing-s) var(--c-grey-200);
-}
-
-.option.active .option-title {
-    color: var(--c-purple-500);
-    font-weight: bold;
+.option__title {
+    font-size: var(--f-size-4);
 }
 
 @media screen and (max-width: 500px) {
-    section.option-list .section-content {
+    section.options .section-content {
         grid-template-columns: 1fr;
-    }
-    .option {
-        padding: calc(2 * var(--spacing-m));
     }
 }
 

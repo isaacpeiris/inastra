@@ -41,7 +41,7 @@ section#hero .eos-container {
     left: 0;
     background-image: url(/images/brand/logos/icon.png);
     background-size: 100%;
-    filter: brightness(0) blur(0.8rem) opacity(0.2);
+    filter: brightness(0) blur(0.8rem) opacity(0.4);
     transform: translateZ(-200px) scale(1.2);
 }
 
