@@ -50,6 +50,23 @@
                 </div>
             </div>
         </section>
+        <section id="services" class="options">
+            <div class="eos-container">
+                <div class="section-header">
+                    <p class="section-name">Services</p>
+                    <h2 class="section-title">Our Areas of Expertise</h2>
+                    <hr class="section-underline">
+                </div>
+                <div class="section-content">
+                    <% services.forEach(service => { %>
+                    <a href="/services" class="eos-btn eos-btn--flat option">
+                        <h3 class="option__title"><%= service.title %> </h3>
+                        <p class="option__text"><%= service.subtitle %> </p>
+                    </a>
+                    <% }) %>
+                </div>
+            </div>
+        </section>
         <section id="approach" class="side img-text">
             <div class="eos-container">
                 <div class="section-img fade-in fade-up">
@@ -62,34 +79,7 @@
                         <hr class="section-underline">
                     </div>
                     <p class="section-text">The best outcomes are achieved when people with a broad spectrum of experiences collaborate. As their methodologies interact, they evolve to form new ways of thinking and doing.</p>
-                    <p class="section-text">We call this <b>transdisciplinary innovation</b>, and our team is uniquely trained in this approach to problem solving.</p>
-                </div>
-            </div>
-        </section>
-        <section id="services" class="options">
-            <div class="eos-container">
-                <div class="section-header">
-                    <p class="section-name">Services</p>
-                    <h2 class="section-title">What We Can Do For You</h2>
-                    <hr class="section-underline">
-                </div>
-                <div class="section-content">
-                    <a href="/services#workshops" class="eos-btn eos-btn--flat option">
-                        <h3 class="option__title">Design Sprint</h3>
-                        <p class="option__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, obcaecati deserunt! Maxime, vel. Error, unde?</p>
-                    </a>
-                    <a href="/services#workshops" class="eos-btn eos-btn--flat option">
-                        <h3 class="option__title">Empower Creativity</h3>
-                        <p class="option__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, obcaecati deserunt! Maxime, vel. Error, unde?</p>
-                    </a>
-                    <a href="/services#consulting" class="eos-btn eos-btn--flat option">
-                        <h3 class="option__title">Process Facilitation</h3>
-                        <p class="option__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, obcaecati deserunt! Maxime, vel. Error, unde?</p>
-                    </a>
-                    <a href="/services#consulting" class="eos-btn eos-btn--flat option">
-                        <h3 class="option__title">Solution Design</h3>
-                        <p class="option__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, obcaecati deserunt! Maxime, vel. Error, unde?</p>
-                    </a>
+                    <p class="section-text">This is called <b>transdisciplinary innovation</b>, and our team is uniquely trained in this approach to problem solving.</p>
                 </div>
             </div>
         </section>

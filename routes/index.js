@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const caseStudies = require('../content/case-studies.json');
+const services = require('../content/services.json');
 
 router.use(function(req, res, next) {
     if (process.env.NODE_ENV === 'production' && !req.hostname.match(/^www/)) {
@@ -12,7 +13,8 @@ router.use(function(req, res, next) {
 router.get('/', function(req, res, next) {
     res.render('index', {
         title: 'Transdisciplinary Innovation',
-        caseStudy: caseStudies[0]
+        caseStudy: caseStudies[0],
+        services: services
     });
 });
 

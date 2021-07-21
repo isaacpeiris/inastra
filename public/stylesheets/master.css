@@ -237,6 +237,10 @@ section.options .option {
     font-size: var(--f-size-4);
 }
 
+.option__text {
+    margin-top: var(--spacing-xs);
+}
+
 @media screen and (max-width: 500px) {
     section.options .section-content {
         grid-template-columns: 1fr;
@@ -351,7 +355,7 @@ label {
 
 .input-wrapper.active label,
 .input-wrapper.has-value label {
-    font-size: var(--f-size-sml);
+    font-size: var(--f-size-s);
     height: var(--f-size-reg);
     padding-top: calc(0.25 * var(--f-size-reg));
 }
