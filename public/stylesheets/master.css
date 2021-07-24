@@ -1,7 +1,7 @@
 /* MASTER STYLES */
 :root {
     --wave-height: 72px;
-    --wave-padding: var(--spacing-m);
+    --wave-padding: var(--spacing-l);
     --section-padding: var(--spacing-xxl);
     --scroll-padding: calc(var(--nav-height) + 2vh);
 }
@@ -13,6 +13,10 @@ html {
 body {
     background-color: var(--c-base-500);
     overflow-x: hidden;
+}
+
+img {
+    display: block;
 }
 
 .grecaptcha-badge {

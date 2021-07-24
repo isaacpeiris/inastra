@@ -22,8 +22,8 @@ router.get('/about', function(req, res, next) {
     res.render('about', { title: 'About' });
 });
 
-router.get('/services', function(req, res, next) {
-    res.render('services', { title: 'Services' });
+router.get('/services/:id', function(req, res, next) {
+    res.render('services/' + req.params.id, { title: 'Services' });
 });
 
 router.get('/confirmed', function(req, res, next) {
