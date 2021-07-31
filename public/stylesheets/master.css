@@ -226,7 +226,7 @@ section.side.img-text .section-content {
 /* OPTION LIST */
 section.options .section-content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
 }
 
 section.options .option {

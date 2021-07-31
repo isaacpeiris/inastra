@@ -1,0 +1,13 @@
+section.hero .section-header,
+section.hero .section-text {
+    text-align: center;
+}
+
+section.hero .section-underline {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section.feature .section-text {
+    font-size: var(--f-size-3);
+}

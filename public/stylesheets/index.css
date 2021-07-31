@@ -62,6 +62,16 @@ section#hero .eos-container {
     text-shadow: 0 2px 4px var(--c-black-opacity-40);
 }
 
+/* SERVICES */
+section.options .section-content {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+section.options .option {
+    text-align: center;
+    padding: var(--spacing-m);
+}
+
 /* CONTACT */
 section#contact .eos-container {
     grid-template-columns: 1fr 1fr;
@@ -82,6 +92,9 @@ button#submit {
     }
     .hero-img {
         transform: perspective(0) !important;
+    }
+    section.options .section-content {
+        grid-template-columns: 1fr;
     }
     section#contact .eos-container {
         grid-template-columns: 1fr;
