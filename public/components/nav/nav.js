@@ -17,4 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.menu-icon button').addEventListener('click', function() {
         this.blur();
     })
+
+    document.querySelectorAll('#mobile-nav a.eos-btn').forEach(btn => {
+        btn.addEventListener("click", function() {
+            document.querySelector('.menu-icon button').classList.remove('active');
+        });
+    });
 })

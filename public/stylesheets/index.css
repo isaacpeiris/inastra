@@ -72,6 +72,11 @@ section.options .option {
     padding: var(--spacing-m);
 }
 
+section.options .option img {
+    margin: 0 auto var(--spacing-m);
+    max-width: 60%;
+}
+
 /* CONTACT */
 section#contact .eos-container {
     grid-template-columns: 1fr 1fr;
@@ -92,6 +97,16 @@ button#submit {
     }
     .hero-img {
         transform: perspective(0) !important;
+    }
+    .hero-img::after {
+        transform: translateZ(-200px) scale(1) !important;
+    }
+    section.options .section-header {
+        text-align: center;
+    }
+    section.options .section-header .section-underline {
+        margin-left: auto;
+        margin-right: auto;
     }
     section.options .section-content {
         grid-template-columns: 1fr;
