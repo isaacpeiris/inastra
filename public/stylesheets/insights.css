@@ -1,15 +1,16 @@
-/* INSIGHTS */
-section#hero {
+/* MASTER */
+section.hero {
     justify-content: center;
     text-align: center;
 }
 
-section#hero.insights {
-    min-height: 16vh;
+section.hero h1 {
+    font-size: var(--f-size-l);
 }
 
-section#hero h1 {
-    font-size: var(--f-size-l);
+/* INSIGHTS */
+#posts section.hero {
+    min-height: 16vh;
 }
 
 #posts .eos-container {
@@ -50,8 +51,8 @@ a.post__author:hover {
 }
 
 .post__content {
-  display: grid;
-  grid-template-columns: auto min(100%, 65ch) auto;
+    display: grid;
+    grid-template-columns: auto min(100%, 65ch) auto;
 }
 
 .post__content > * {

@@ -1,11 +1,22 @@
 /* MASTER STYLES */
 :root {
     --wave-height: 72px;
+    --wave-padding: var(--spacing-l);
+    --section-padding: var(--spacing-xxl);
+    --scroll-padding: calc(var(--nav-height) + 2vh);
+}
+
+html {
+    scroll-padding-top: var(--scroll-padding);
 }
 
 body {
     background-color: var(--c-base-500);
     overflow-x: hidden;
+}
+
+img {
+    display: block;
 }
 
 .grecaptcha-badge {
@@ -21,19 +32,42 @@ body.disablescroll {
 /* STANDARD PAGE LAYOUT */
 /* ==================== */
 /* MASTER */
-section:not(.hero) {
+section {
+    padding: var(--section-padding) 0;
+}
+
+.wave-section section {
     color: var(--c-base-500);
     background: var(--c-white);
     display: flex;
     align-items: center;
 }
 
-section:not(:first-of-type) {
-    padding: calc(var(--nav-height) + 2vh) 0;
+.wave-section.alternate-colours section:not(:first-of-type):not(:last-of-type):nth-of-type(even) {
+    background-color: var(--c-purple-50);
 }
 
-.alternate-colours section:not(:first-of-type):not(:last-of-type):nth-of-type(odd) {
-    background-color: var(--c-purple-50);
+.wave-section section:first-of-type {
+    margin-top: var(--wave-height);
+    padding-top: var(--wave-padding);
+}
+
+.wave-section section:first-of-type::before {
+    content: '';
+    top: calc(var(--wave-height) * -1);
+    background-image: url('/images/wave-1.png');
+}
+
+.wave-section section:last-of-type {
+    margin-bottom: var(--wave-height);
+    padding-bottom: var(--wave-padding);
+}
+
+.wave-section section:last-of-type::after {
+    content: '';
+    background-image: url('/images/wave-2.png');
+    bottom: calc(var(--wave-height) * -1);
+    transform: scaleY(-1) scaleX(-1);
 }
 
 section::before,
@@ -44,34 +78,6 @@ section::after {
     left: 0;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-}
-
-/* waves */
-section.top-wave::before {
-    content: '';
-    top: calc(var(--wave-height) * -1);
-    background-image: url('/images/wave-1.png');
-}
-
-section.top-wave {
-    margin-top: var(--wave-height);
-}
-
-section.bottom-wave {
-    margin-bottom: var(--wave-height);
-}
-
-section.bottom-wave::after {
-    content: '';
-    background-image: url('/images/wave-2.png');
-    bottom: calc(var(--wave-height) * -1);
-    transform: scaleY(-1) scaleX(-1);
-}
-
-@media screen and (max-width: 720px) {
-    .alternate-colours section:not(:first-of-type):not(:last-of-type):nth-of-type(odd) {
-        padding: var(--spacing-l) 0;
-    }
 }
 
 /* content */
@@ -118,7 +124,7 @@ section.bottom-wave::after {
 }
 
 .section-btn {
-    margin: 18px 0 0;
+    margin: var(--spacing-m) 0 0;
 }
 
 @media screen and (max-width: 720px) {
@@ -131,7 +137,6 @@ section.bottom-wave::after {
 }
 
 /* HERO */
-section#hero,
 section.hero {
     display: flex;
     align-items: center;
@@ -139,14 +144,12 @@ section.hero {
     background: transparent;
 }
 
-section#hero:first-of-type,
 section.hero:first-of-type {
     min-height: 42vh;
     padding: var(--nav-height) 0 var(--spacing-m);
 }
 
 @media screen and (max-width: 720px) {
-    section#hero .eos-container,
     section.hero .eos-container {
         display: block;
     }
@@ -221,43 +224,30 @@ section.side.img-text .section-content {
 }
 
 /* OPTION LIST */
-section.option-list .section-content {
+section.options .section-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: var(--spacing-m);
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
 }
 
-.option-list .option {
+section.options .option {
     border: none;
+    white-space: normal;
+    height: auto;
+    width: auto;
+    padding: var(--spacing-l);
 }
 
-.option-list .section-btn {
-    margin: 18px auto 0;
+.option__title {
+    font-size: var(--f-size-4);
 }
 
-.option-title {
-    text-align: center;
-    font-size: var(--f-size-5);
-    margin-top: var(--spacing-m);
-    color: var(--c-base-500);
-    font-family: var(--f-body);
-}
-
-.option.active {
-    box-shadow: var(--spacing-none) var(--spacing-none) var(--spacing-s) var(--c-grey-200);
-}
-
-.option.active .option-title {
-    color: var(--c-purple-500);
-    font-weight: bold;
+.option__text {
+    margin-top: var(--spacing-xs);
 }
 
 @media screen and (max-width: 500px) {
-    section.option-list .section-content {
+    section.options .section-content {
         grid-template-columns: 1fr;
-    }
-    .option {
-        padding: calc(2 * var(--spacing-m));
     }
 }
 
@@ -369,7 +359,7 @@ label {
 
 .input-wrapper.active label,
 .input-wrapper.has-value label {
-    font-size: var(--f-size-sml);
+    font-size: var(--f-size-s);
     height: var(--f-size-reg);
     padding-top: calc(0.25 * var(--f-size-reg));
 }

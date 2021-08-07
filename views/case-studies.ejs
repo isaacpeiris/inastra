@@ -9,60 +9,60 @@
 <% include ./partials/head-bottom %>
 <% include ./components/nav %>
 
-<main class="alternate-colours">
-    <section id="hero">
+<main>
+    <section id="hero" class="hero">
         <div class="eos-container">
             <h1><%= caseStudy.title %></h1>
         </div>
     </section>
-    <section id="subtitle" class="side img-text top-wave">
-        <div class="eos-container">
-            <div class="client-logo">
-                <img src="/images/clients/<%= caseStudy.organisation.logo %>" alt="">
-            </div>
-            <div class="subtitle-content">
-                <h2><%= caseStudy.subtitle %></h2>
-            </div>
-        </div>
-    </section>
-    <section id="content">
-        <div class="eos-container">
-            <div class="introduction">
-                <p><%= caseStudy.introduction.full %></p>
-            </div>
-            <div class="content-header">
-                <h3>Challenge</h3>
-            </div>
-            <div class="content-body">
-                <p><%= caseStudy.challenge.full %></p>
-            </div>
-            <div class="content-header">
-                <h3>Process</h3>
-            </div>
-            <div class="content-body">
-                <p><%= caseStudy.process.full %></p>
-            </div>
-            <div class="content-header">
-                <h3>Results</h3>
-            </div>
-            <div class="content-body">
-                <p><%= caseStudy.results.full %></p>
-            </div>
-        </div>
-    </section>
-    <section id="testimonial" class="bottom-wave">
-        <div class="eos-container">
-            <div class="testimonial-content">
-                <p><%- caseStudy.testimonial.quote.selected %></p>
-                <div class="testimonial-details">
-                    <p class="name"><%= caseStudy.testimonial.name %></p>
-                    <p class="title"><%= caseStudy.testimonial.title %></p>
+    <div class="wave-section alternate-colours">
+        <section id="subtitle" class="side img-text">
+            <div class="eos-container">
+                <div class="client-logo">
+                    <img src="/images/clients/<%= caseStudy.organisation.logo %>" alt="">
+                </div>
+                <div class="subtitle-content">
+                    <h2><%= caseStudy.subtitle %></h2>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <section id="content">
+            <div class="eos-container">
+                <div class="introduction">
+                    <p><%= caseStudy.introduction.full %></p>
+                </div>
+                <div class="content-header">
+                    <h3>Challenge</h3>
+                </div>
+                <div class="content-body">
+                    <p><%= caseStudy.challenge.full %></p>
+                </div>
+                <div class="content-header">
+                    <h3>Process</h3>
+                </div>
+                <div class="content-body">
+                    <p><%= caseStudy.process.full %></p>
+                </div>
+                <div class="content-header">
+                    <h3>Results</h3>
+                </div>
+                <div class="content-body">
+                    <p><%= caseStudy.results.full %></p>
+                </div>
+            </div>
+        </section>
+        <section id="testimonial">
+            <div class="eos-container">
+                <div class="testimonial-content">
+                    <p><%- caseStudy.testimonial.quote.selected %></p>
+                    <div class="testimonial-details">
+                        <p class="name"><%= caseStudy.testimonial.name %></p>
+                        <p class="title"><%= caseStudy.testimonial.title %></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
-
-<div id="particle-js"></div>
 
 <% include ./components/footer %>

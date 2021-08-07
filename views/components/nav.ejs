@@ -7,12 +7,11 @@
         </div>
         <div class="nav-centre"></div>
         <div class="nav-right">
-            <a href="/" class="eos-btn eos-btn--white eos-btn--flat">Home</a>
             <a href="/about" class="eos-btn eos-btn--white eos-btn--flat">About</a>
-            <a href="/services" class="eos-btn eos-btn--white eos-btn--flat">Services</a>
+            <a href="/#services" data-dropdown-target="services-dropdown" class="eos-btn has-icon--right eos-btn--white eos-btn--flat">Services<span class="eos-btn__icon material-icons">expand_more</span></a>
             <a href="/#approach" class="eos-btn eos-btn--white eos-btn--flat">Approach</a>
             <a href="/insights" class="eos-btn eos-btn--white eos-btn--flat">Insights</a>
-            <a href="/#contact" class="eos-btn eos-btn--blue eos-btn--filled">Get in touch</a>
+            <a href="/#contact" class="eos-btn eos-btn--white eos-btn--flat">Contact</a>
         </div>
     </div>
     <div class="mobile-nav-wrapper">
@@ -20,6 +19,7 @@
             <button class="eos-btn eos-btn--flat has-icon" data-menu-target="mobile-nav"><span></span></button>
         </div>
         <div class="branding">
+            <a href="/" class="nav-item logo bnw-white"><img src="/images/brand/logos/logo_b&w_white.png" alt=""></a>
             <a href="/" class="nav-item logo white"><img src="/images/brand/logos/logo_white.png" alt=""></a>
             <a href="/" class="nav-item logo colour"><img src="/images/brand/logos/logo.png" alt=""></a>
         </div>
@@ -28,11 +28,18 @@
 
 <div class="eos-menu" id="mobile-nav">
     <div class="eos-menu__section">
-        <a href="/" class="eos-btn eos-btn--flat">Home</a>
         <a href="/about" class="eos-btn eos-btn--flat">About</a>
-        <a href="/services" class="eos-btn eos-btn--flat">Services</a>
+        <a href="/#services" class="eos-btn eos-btn--flat">Services</a>
         <a href="/#approach" class="eos-btn eos-btn--flat">Approach</a>
         <a href="/insights" class="eos-btn eos-btn--flat">Insights</a>
-        <a href="/#contact" class="eos-btn eos-btn--blue eos-btn--filled">Get in touch</a>
+        <a href="/#contact" class="eos-btn eos-btn--flat">Contact</a>
+    </div>
+</div>
+
+<div class="eos-dropdown" id="services-dropdown">
+    <div class="eos-menu__section">
+        <a href="/services/creative-capabilities" class="eos-btn eos-btn--flat">Creative Capabilities</a>
+        <a href="/services/solution-design" class="eos-btn eos-btn--flat">Solution Design</a>
+        <a href="/services/change-management" class="eos-btn eos-btn--flat">Change Management</a>
     </div>
 </div>

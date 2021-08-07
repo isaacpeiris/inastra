@@ -7,8 +7,14 @@
       "logo": "ihg.png"
     },
     "ad_img": "inastra_ihg.jpg",
-    "title": "Redesigning hotel organisational structures for an agile pandemic response",
+    "title": "Redesigning hotel operational structures for an agile pandemic response",
     "subtitle": "To adapt and respond to the global COVID-19 pandemic, the InterContinental Hotel Group needed to reimagine the way hotels have operated for decades.",
+    "services": [
+      {
+        "name": "Solution Design",
+        "slug": "solution-design"
+      }
+    ],
     "introduction": {
       "full": "The COVID-19 pandemic hit the tourism industry harder than most, with domestic and international travel for both business and leisure halted almost overnight. Hotels more specifically also saw one of their largest revenue streams, corporate events and conferencing, cease almost entirely as organisations around the world shifted to remote work options. The culmination of these unforeseen disruptions caused an industry-wide average revenue decrease of 87%.",
       "points": []

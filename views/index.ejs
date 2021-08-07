@@ -2,7 +2,7 @@
 
 <meta name="description" content="Inastra is a creative intelligence consultancy delivering meaningful solutions to complex problems. We do this through transdisciplinary innovation, the cross-pollination of processes between knowledge-bases to form new ways of thinking.">
 
-<meta property="og:url" content="http://inastra.co">
+<meta property="og:url" content="https://www.inastra.co">
 <meta property="og:description" content="Inastra is a creative intelligence consultancy delivering meaningful solutions to complex problems. We do this through transdisciplinary innovation, the cross-pollination of processes between knowledge-bases to form new ways of thinking.">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous"></script>
@@ -13,88 +13,81 @@
 <% include ./partials/head-bottom %>
 <% include ./components/nav %>
 
-<main class="alternate-colours">
+<main>
     <section id="hero" class="hero">
         <div class="eos-container">
+            <div class="hero-content">
+                <h1 class="hero-text">Creativity is not a talent,<br> it's a way of thinking.</h1>
+            </div>
             <div class="hero-img" data-tilt-full-page-listening>
-                <img src="/images/brand/logos/icon.png" alt="Inastra Logo">
-            </div>
-            <div class="hero-content fade-in fade-left">
-                <h1 class="hero-text">Creativity is not a talent, it's a way of thinking.</h1>
-                <a href="#contact" id="hero-cta" class="eos-btn eos-btn--blue eos-btn--filled">Unlock your creativity</a>
+                <img src="/images/brand/logos/icon.png" alt="Inastra icon">
             </div>
         </div>
     </section>
-    <section id="tagline" class="feature top-wave">
-        <div class="eos-container fade-in fade-up">
-            <p class="section-text">Inastra uses <b>transdisciplinary innovation</b> to <b>supercharge your creativity</b> and deliver <b>meaningful solutions</b> to complex problems.</p>
-        </div>
-    </section>
-    <section id="about" class="side img-text">
-        <div class="eos-container">
-            <div class="section-img fade-in fade-up">
-                <img src="/images/about.png" alt="">
-            </div>
-            <div class="section-content fade-in fade-left">
-                <div class="section-header">
-                    <p class="section-name">About</p>
-                    <h2 class="section-title">A New Perspective</h2>
-                    <hr class="section-underline">
+    <div class="wave-section alternate-colours">
+        <section id="case-studies" class="side text-img">
+            <div class="eos-container">
+                <div class="section-content fade-in fade-up">
+                    <div class="section-header">
+                        <p class="section-name">Case Study</p>
+                        <h2 class="section-title">
+                            <%= caseStudy.title %>
+                        </h2>
+                        <hr class="section-underline">
+                    </div>
+                    <p class="section-text">
+                        <%= caseStudy.subtitle %>
+                    </p>
+                    <a href="/case-studies/<%= caseStudy.id %>" class="eos-btn section-btn">Learn more</a>
                 </div>
-                <p class="section-text">We combine proven methods with fresh perspectives from diverse knowledge bases to bring your business unique insights.</p>
-                <p class="section-text">Our team is passionate about not only helping you solve problems but giving you the tools and skills to unlock your creativity.</p>
-                <a href="/about" class="eos-btn section-btn">Learn more</a>
+                <div class="section-img fade-in fade-left">
+                    <img src="/images/clients/<%= caseStudy.organisation.logo %>" alt="IHG Logo">
+                </div>
             </div>
-        </div>
-    </section>
-    <section id="services" class="side text-img">
-        <div class="eos-container">
-            <div class="section-content fade-in fade-up">
-                <div class="section-header">
+        </section>
+        <section id="services" class="options">
+            <div class="eos-container">
+                <div class="section-header fade-in fade-right">
                     <p class="section-name">Services</p>
-                    <h2 class="section-title">Meaningful Impact</h2>
+                    <h2 class="section-title">What We Do</h2>
                     <hr class="section-underline">
                 </div>
-                <p class="section-text">Inastra offers a diverse range of services tailored to your needs. No two problems are the same, so no two processes for solving the problem will be the same. Together, we can work to find the right process to deliver the best outcome.</p>
-                <a href="/services" class="eos-btn section-btn">Learn more</a>
-            </div>
-            <div class="section-img fade-in fade-left">
-                <img src="/images/services/creative-workshop.png" alt="">
-            </div>
-        </div>
-    </section>
-    <section id="approach" class="side img-text">
-        <div class="eos-container">
-            <div class="section-img fade-in fade-up">
-                <img src="/images/transdisciplinary.png" alt="">
-            </div>
-            <div class="section-content fade-in fade-left">
-                <div class="section-header">
-                    <p class="section-name">Approach</p>
-                    <h2 class="section-title">Transdisciplinarity</h2>
-                    <hr class="section-underline">
+                <div class="section-content fade-in fade-up">
+                    <a href="/services/creative-capabilities" class="eos-btn eos-btn--flat option">
+                        <img src="/images/illustrations/workshop3.png" alt="">
+                        <h3 class="option__title">Creative Capabilities</h3>
+                        <p class="option__text">Your people, primed for innovation.</p>
+                    </a>
+                    <a href="/services/solution-design" class="eos-btn eos-btn--flat option">
+                        <img src="/images/illustrations/abstract-cube.png" alt="">
+                        <h3 class="option__title">Solution Design</h3>
+                        <p class="option__text">Generate innovative solutions, fast.</p>
+                    </a>
+                    <a href="/services/change-management" class="eos-btn eos-btn--flat option">
+                        <img src="/images/illustrations/grow.png" alt="">
+                        <h3 class="option__title">Change Management</h3>
+                        <p class="option__text">Manage the transition to future state.</p>
+                    </a>
                 </div>
-                <p class="section-text">The best outcomes are achieved when people with a broad spectrum of experiences collaborate. As their methodologies interact, they evolve to form new ways of thinking and doing.</p>
-                <p class="section-text">We call this <b>transdisciplinary innovation</b>, and our team is uniquely trained in this approach to problem solving.</p>
             </div>
-        </div>
-    </section>
-    <section id="case-studies" class="side text-img bottom-wave">
-        <div class="eos-container">
-            <div class="section-content fade-in fade-up">
-                <div class="section-header">
-                    <p class="section-name">Case Study</p>
-                    <h2 class="section-title"><%= caseStudy.organisation.name %></h2>
-                    <hr class="section-underline">
+        </section>
+        <section id="approach" class="side img-text">
+            <div class="eos-container">
+                <div class="section-img fade-in fade-up">
+                    <img src="/images/transdisciplinary.png" alt="">
                 </div>
-                <p class="section-text"><%= caseStudy.subtitle %></p>
-                <a href="/case-studies/<%= caseStudy.id %>" class="eos-btn section-btn">Learn more</a>
+                <div class="section-content fade-in fade-left">
+                    <div class="section-header">
+                        <p class="section-name">Approach</p>
+                        <h2 class="section-title">Transdisciplinarity</h2>
+                        <hr class="section-underline">
+                    </div>
+                    <p class="section-text">The best outcomes are achieved when people with a broad spectrum of experiences collaborate. As their methodologies interact, they evolve to form new ways of thinking and doing.</p>
+                    <p class="section-text">This is called <b>transdisciplinary innovation</b>, and our team is uniquely trained in this approach to problem solving.</p>
+                </div>
             </div>
-            <div class="section-img fade-in fade-left">
-                <img src="/images/clients/<%= caseStudy.organisation.logo %>" alt="IHG Logo">
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <section id="contact" class="side hero">
         <div class="eos-container">
             <div class="section-header fade-in fade-up">
@@ -131,7 +124,5 @@
         </div>
     </section>
 </main>
-
-<div id="particle-js"></div>
 
 <% include ./components/footer %>
