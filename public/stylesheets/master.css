@@ -285,7 +285,7 @@ label {
     font-size: var(--f-size-reg);
     color: var(--c-black);
     transition: all 200ms ease;
-    border: none;
+    border: none !important;
     display: block;
     background: none;
 }
@@ -293,7 +293,7 @@ label {
 input,
 textarea,
 select {
-    padding: 0 var(--f-size-reg);
+    padding: 0 var(--f-size-reg) !important;
 }
 
 input:focus,
@@ -321,7 +321,7 @@ label {
 }
 
 .input-wrapper label + textarea {
-    padding-top: calc(1.5 * var(--f-size-reg));
+    padding-top: calc(1.5 * var(--f-size-reg)) !important;
 }
 
 select {
@@ -353,7 +353,7 @@ label {
 
 .input-wrapper.active label + input,
 .input-wrapper.has-value label + input {
-    padding-top: calc(1 * var(--f-size-reg));
+    padding-top: calc(1 * var(--f-size-reg)) !important;
     height: calc(2 * var(--f-size-reg));
 }
 

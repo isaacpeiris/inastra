@@ -67,11 +67,4 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     });
-
-    // Focus on form when link is clicked
-    document.querySelector('#hero-cta').addEventListener('click', function() {
-        setTimeout(function() {
-            document.querySelector('form#contact input#name').focus();
-        }, 0)
-    })
 });
