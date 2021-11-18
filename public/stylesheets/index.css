@@ -1,74 +1,28 @@
-nav.transparent .logo.white {
-	display: none;
-}
-
-nav.transparent .logo.bnw-white {
-	display: block;
-}
-
 /* HERO */
 section#hero.hero {
-	min-height: calc(100vh - var(--nav-height));
-	padding: 0;
-}
-
-section#hero .eos-container {
-	align-items: center;
-	display: grid;
-	grid-template-columns: 1fr 60% 1fr;
-	justify-content: center;
-}
-
-.hero-img {
-	grid-area: 1/2/2/3;
-	margin: auto;
-	transform: perspective(1000px);
-	transform-style: preserve-3d;
-}
-
-@media screen and (orientation: landscape) {
-	.hero-img {
-		height: 80%;
-	}
-}
-
-.hero-img::after {
-	background-image: url(/images/brand/logos/icon.png);
-	background-size: 100%;
-	content: '';
-	filter: brightness(0) blur(0.8rem) opacity(0.4);
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	transform: translateZ(-200px) scale(1.2);
-	width: 100%;
-}
-
-.hero-img img {
-	display: block;
-	margin: auto;
-}
-
-.hero-content {
-	grid-area: 1/1/2/4;
-	text-align: center;
-	z-index: 1;
+	min-height: 42vh;
+	padding: var(--spacing-xl) 0;
 }
 
 .hero-text {
+    text-align: center;
 	color: var(--c-white);
 	font-size: 4rem;
-	text-shadow: 0 2px 4px var(--c-black-opacity-40);
+	text-shadow: 0 var(--spacing-xxs) var(--spacing-s) var(--c-black);
+    position: relative;
+    transform: perspective(1000px);
+	transform-style: preserve-3d;
 }
 
 /* SERVICES */
 section.options .section-content {
+	grid-gap: var(--spacing-s);
 	grid-template-columns: repeat(3, 1fr);
 }
 
 section.options .option {
-	padding: var(--spacing-m);
+	grid-gap: var(--spacing-xs);
+	padding: var(--spacing-l);
 	text-align: center;
 }
 
@@ -95,17 +49,11 @@ form#contact {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 720px) {
-	section#hero .hero-text {
-		font-size: var(--f-size-l);
-	}
-	section#hero .hero-text br {
-		display: none;
-	}
-	.hero-img {
+    .hero-text {
 		transform: perspective(0) !important;
 	}
-	.hero-img::after {
-		transform: translateZ(-200px) scale(1) !important;
+	.hero-text br {
+		display: none;
 	}
 	section.options .section-header {
 		text-align: center;

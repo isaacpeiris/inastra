@@ -1,5 +1,6 @@
 /* MASTER STYLES */
 :root {
+    --nav-height: 72px;
 	--wave-height: 72px;
 	--wave-padding: var(--spacing-l);
 	--section-padding: var(--spacing-xxl);
@@ -165,7 +166,7 @@ section.hero {
 
 section.hero:first-of-type {
 	min-height: 42vh;
-	padding: var(--nav-height) 0 var(--spacing-m);
+	padding: var(--spacing-l) 0;
 }
 
 @media screen and (max-width: 720px) {
@@ -183,7 +184,7 @@ section.feature .section-text {
 	color: var(--c-base-500);
 	font-family: var(--f-title);
 	font-size: var(--f-size-1);
-	margin: 0 auto var(--f-size-3);
+	margin: 0 auto var(--spacing-l);
 	text-align: center;
 }
 
@@ -248,14 +249,6 @@ section.options .section-content {
 	grid-template-columns: repeat(auto-fit, minmax(200px, auto));
 }
 
-section.options .option {
-	border: none;
-	height: auto;
-	padding: var(--spacing-l);
-	white-space: normal;
-	width: auto;
-}
-
 .option__title {
 	font-size: var(--f-size-4);
 }
@@ -278,51 +271,34 @@ section.options .option {
 	content: '*';
 }
 
-.input-wrapper.error-empty input,
-.input-wrapper.error-invalid input {
-	border-color: var(--c-red);
+.eos-input.error-empty input,
+.eos-input.error-invalid input {
+	border-color: var(--c-red-500);
 }
 
-.input-wrapper.error-empty input,
-.input-wrapper.error-invalid input {
-	background-color: var(--c-red-10);
-}
-
-.input-wrapper.error-empty input:focus,
-.input-wrapper.error-invalid input:focus {
-	background-color: var(--c-base-10);
-}
-
-.input-wrapper.error-empty::after,
-.input-wrapper.error-invalid::after {
-	bottom: calc(-2 * var(--f-size-reg));
-	color: var(--c-red);
+.eos-input.error-empty::after,
+.eos-input.error-invalid::after {
+    grid-area: error;
+    margin-top: var(--spacing-xs);
+	color: var(--c-red-500);
 	display: block;
 	font-family: var(--f-body);
 	font-size: var(--f-size-s);
-	margin: calc(var(--f-size-reg)/2) var(--f-size-reg);
-	position: absolute;
 }
 
-.input-wrapper.error-empty,
-.input-wrapper.error-invalid {
-	margin-bottom: calc(2 * var(--f-size-reg));
-	overflow: visible;
-}
-
-.input-wrapper.error-empty::after {
+.eos-input.error-empty::after {
 	content: 'Please fill in this required field.';
 }
 
-.input-wrapper.validate-email.error-invalid::after {
+.eos-input.validate-email.error-invalid::after {
 	content: 'Please enter a valid email address.';
 }
 
-.input-wrapper.validate-fullName.error-invalid::after {
+.eos-input.validate-fullName.error-invalid::after {
 	content: 'Please enter your full name.'
 }
 
-.input-wrapper.validate-mobileNumber.error-invalid::after {
+.eos-input.validate-mobileNumber.error-invalid::after {
 	content: 'Please enter a valid Australian mobile number.'
 }
 

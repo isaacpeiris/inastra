@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    VanillaTilt.init(document.querySelector(".hero-img"), {
+    VanillaTilt.init(document.querySelector(".hero-text"), {
         max: 12,
-        speed: 1800,
-        perspective: 800
+        speed: 200,
+        perspective: 1000,
+        "full-page-listening": true
     });
 
     const contactForms = document.querySelectorAll('form.contact');
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         let valid;
                         let errorIndex;
 
-                        let inputArray = form.querySelectorAll('.item-wrapper');
+                        let inputArray = form.querySelectorAll('.eos-input');
                         for (let i = 0; i < inputArray.length; i++) {
                             let classList = inputArray[i].classList.toString();
                             if (classList.match(/error/g)) {

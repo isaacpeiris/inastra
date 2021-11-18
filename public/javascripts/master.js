@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const particleJsElement = document.querySelector('#particle-js');
     if (particleJsElement) {
         if (document.documentElement.classList.contains('reduced-motion')) {
-            particlesJS.load('particle-js', window.location.origin + '/components/particles-js/particlesjs-config_reduced-motion.json');
+            particlesJS.load('particle-js', window.location.origin + '/particles-js/particlesjs-config_reduced-motion.json');
         } else {
-            particlesJS.load('particle-js', window.location.origin + '/components/particles-js/particlesjs-config.json');
+            particlesJS.load('particle-js', window.location.origin + '/particles-js/particlesjs-config.json');
         };
     }
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /* FORMS */
-    const formItems = document.querySelectorAll('.input-wrapper');
+    const formItems = document.querySelectorAll('.eos-input');
     if (formItems.length > 0) {
         formItems.forEach(inputWrapper => {
 
@@ -49,25 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     checkValue(inputWrapper)
                 });
             })
-
-            if (inputWrapper.classList.contains('compact')) {
-                inputWrapper.querySelectorAll('.btn').forEach(btn => {
-                    btn.classList.add('compact')
-                })
-            }
         })
     }
-
-    // select
-    const selectItems = document.querySelectorAll('select');
-    if (selectItems.length > 0) {
-        selectItems.forEach(select => {
-            select.insertAdjacentHTML('afterend', '<span class="material-icons expand-indicator">expand_more</span>')
-        })
-    }
-
     // form validation
-    const requiredItems = document.querySelectorAll('.input-wrapper.required');
+    const requiredItems = document.querySelectorAll('.eos-input.required');
     if (requiredItems.length > 0) {
         requiredItems.forEach(itemWrapper => {
             let input = itemWrapper.querySelector('.form-input');
@@ -159,9 +144,9 @@ function checkValue(itemWrapper) {
     let itemInput = itemWrapper.querySelectorAll('input, textarea')
     itemInput.forEach(inp => {
         if (inp.value != "" || inp.placeholder != "") {
-            itemWrapper.classList.add('has-value')
+            itemWrapper.classList.add('eos-input--has-value')
         } else {
-            itemWrapper.classList.remove('has-value')
+            itemWrapper.classList.remove('eos-input--has-value')
         }
     })
 }

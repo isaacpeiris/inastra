@@ -4,7 +4,7 @@ section#hero {
 }
 
 section#hero h1 {
-    font-size: var(--f-size-l);
+    font-size: var(--f-size-1);
 }
 
 /* SUBTITLE */
@@ -62,7 +62,7 @@ section#testimonial .eos-container {
 
 section#testimonial .eos-container::before,
 section#testimonial .eos-container::after {
-    font-size: var(--f-size-l);
+    font-size: var(--f-size-1);
     color: var(--c-purple-500);
 }
 

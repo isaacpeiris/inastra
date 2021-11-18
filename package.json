@@ -8,7 +8,7 @@
     "deploy": "gcloud config configurations activate inastra && gcloud app deploy --project inastra-website --quiet"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.23.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
@@ -21,6 +21,6 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^2.0.14"
   }
 }
