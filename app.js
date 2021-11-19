@@ -7,7 +7,6 @@ const expressEnforceSsl = require('express-enforces-ssl');
 const axios = require('axios').default;
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 const insightsRouter = require('./routes/insights');
 const apiRouter = require('./routes/api');
 
@@ -34,7 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('sitemap'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/insights', insightsRouter);
 app.use('/api', apiRouter);
 
@@ -44,12 +42,12 @@ app.use(function(req, res, next) {
 });
 
 // Log all outbound HTTP requests in development
-// if (process.env.NODE_ENV === 'development') {
-//     axios.interceptors.request.use(request => {
-//         console.log(`${request.method.toUpperCase()} ${request.url}`);
-//         return request
-//     });
-// }
+if (process.env.NODE_ENV === 'development') {
+    axios.interceptors.request.use(request => {
+        console.log(`${request.method.toUpperCase()} ${request.url}`);
+        return request
+    });
+}
 
 // error handler
 app.use(function(err, req, res, next) {

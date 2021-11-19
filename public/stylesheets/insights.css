@@ -8,6 +8,22 @@ section.hero h1 {
 	font-size: var(--f-size-1);
 }
 
+.eos-link--intext {
+    color: inherit;
+}
+
+.eos-link--intext:hover {
+    text-decoration: none;
+}
+
+.eos-tag {
+    text-transform: uppercase;
+    font-size: var(--f-size-s);
+    background-color: var(--c-grey-50);
+    padding: var(--spacing-xxs) var(--spacing-xs);
+    border-radius: var(--border-radius-xxs);
+}
+
 /* INSIGHTS */
 #posts section.hero {
 	min-height: 16vh;

@@ -1,12 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-
-    VanillaTilt.init(document.querySelector(".hero-text"), {
-        max: 12,
-        speed: 200,
-        perspective: 1000,
-        "full-page-listening": true
-    });
-
     const contactForms = document.querySelectorAll('form.contact');
     contactForms.forEach(form => {
         form.addEventListener('submit', function(e) {

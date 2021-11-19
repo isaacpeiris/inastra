@@ -10,8 +10,6 @@ section#hero.hero {
 	font-size: 4rem;
 	text-shadow: 0 var(--spacing-xxs) var(--spacing-s) var(--c-black);
     position: relative;
-    transform: perspective(1000px);
-	transform-style: preserve-3d;
 }
 
 /* SERVICES */
@@ -49,9 +47,6 @@ form#contact {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 720px) {
-    .hero-text {
-		transform: perspective(0) !important;
-	}
 	.hero-text br {
 		display: none;
 	}

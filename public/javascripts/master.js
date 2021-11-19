@@ -9,20 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // Get contact information from local storage
-    const contact = JSON.parse(window.localStorage.getItem('contact'));
-
-    const buttons = document.querySelectorAll('.btn.waves-effect');
-    buttons.forEach(btn => {
-        btn.addEventListener('click', createRipple)
-    });
-
-    // Reduced motion
-    const hasReduceMotionOn = window.matchMedia('(prefers-reduced-motion)').matches;
-    if (hasReduceMotionOn) {
-        document.documentElement.classList.add('reduced-motion');
-    };
-
     /* FADE EFFECT */
     // Select all fade elements
     const fadeElements = document.querySelectorAll('.fade-in');
@@ -51,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
         })
     }
+
     // form validation
     const requiredItems = document.querySelectorAll('.eos-input.required');
     if (requiredItems.length > 0) {
@@ -106,25 +93,6 @@ function apiReq(options) {
         newReq.send();
     }
     return newReq;
-}
-
-function createRipple(event) {
-    const button = event.currentTarget;
-    const circle = document.createElement("SPAN");
-    const diameter = Math.max(button.clientWidth, button.clientHeight)
-    const radius = diameter / 2;
-
-    circle.style.width = circle.style.height = diameter + 'px';
-    circle.style.left = event.clientX - (button.offsetLeft + radius) + 'px';
-    circle.style.top = event.clientY - (button.offsetTop + radius) + 'px';
-    circle.classList.add('ripple');
-
-    const ripple = button.getElementsByClassName('ripple')[0];
-    if (ripple) {
-        ripple.remove();
-    }
-
-    button.appendChild(circle)
 }
 
 function fadeIn(fadeElements) {
