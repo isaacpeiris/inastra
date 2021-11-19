@@ -1,15 +1,22 @@
 <header class="eos-topnav">
-    <div class="topnav__logo">
+    <div class="eos-topnav__logo">
         <a href="/"><img src="/images/brand/logos/icon.png" alt=""></a>
     </div>
 
     <button class="eos-btn eos-btn--icon eos-btn--flat eos-icon" id="mobile-menu" aria-controls="top-nav" aria-expanded="false">menu</button>
 
-    <nav class="topnav__links" id="top-nav">
+    <nav class="eos-topnav__links" id="top-nav">
         <a href="/about" class="eos-btn eos-btn--flat">About</a>
-        <a href="/#services" class="eos-btn eos-btn--flat">Services</a>
+        <a href="/#services" class="eos-btn eos-btn--flat" data-dropdown-target="services-dropdown">Services</a>
         <a href="/#approach" class="eos-btn eos-btn--flat">Approach</a>
         <a href="/insights" class="eos-btn eos-btn--flat">Insights</a>
         <a href="/#contact" class="eos-btn eos-btn--flat">Contact</a>
+        <div class="eos-dropdown" id="services-dropdown">
+            <div class="eos-dropdown__section">
+                <a href="/services/creative-capabilities" class="eos-btn eos-btn--flat">Creative Capabilities</a>
+                <a href="/services/solution-design" class="eos-btn eos-btn--flat">Solutions Design</a>
+                <a href="/services/change-management" class="eos-btn eos-btn--flat">Change Management</a>
+            </div>
+        </div>
     </nav>
 </header>
