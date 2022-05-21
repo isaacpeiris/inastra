@@ -9,7 +9,7 @@
 		"dev:scss": "node-sass -w scss -o public/stylesheets --output-style expanded",
 		"lint:scss": "npx stylelint \"**/*.scss\" --fix",
 		"lint:css": "npx stylelint \"**/*.css\" --fix",
-    "deploy": "gcloud config configurations activate default && gcloud app deploy --project inastra-website --quiet"
+    "deploy": "gcloud config configurations activate default && gcloud app deploy --project inastra-site --quiet"
   },
   "dependencies": {
     "axios": "^0.23.0",
