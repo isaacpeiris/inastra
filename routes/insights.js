@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const axios = require('axios').default;
 
+const posts = require('../content/posts.json');
+
 //Add header to all axios requests
 axios.defaults.headers.common['Content-type'] = 'application/json';
 
@@ -9,20 +11,25 @@ const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000/a
 const feedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Finastra'
 
 router.get('', async function(req, res, next) {
-    const posts = await axios.get(feedUrl);
-    posts.data.items.forEach(post => addData(post));
     res.render('insights', {
-        title: 'Insights',
-        posts: posts.data.items
+        title: 'Inastra | Insights',
+        posts: posts
     });
 });
 
+router.get('/a6926e8e6c67', async function(req, res, next) {
+    res.redirect('/insights/systemic-innovation-new-normal', 301);
+})
+
+router.get('/832636b6d62d', async function(req, res, next) {
+    res.redirect('/insights/slow-motion-multitasking', 301);
+})
+
 router.get('/:id', async function(req, res, next) {
-    const posts = await axios.get(feedUrl);
-    posts.data.items.forEach(post => addData(post));
-    const post = posts.data.items.find(p => p.id === req.params.id);
+    const post = posts.find(p => p.id === req.params.id);
+
     res.render('insights-post', {
-        title: post.title,
+        title: post.title + " | Inastra",
         post: post
     });
 });
