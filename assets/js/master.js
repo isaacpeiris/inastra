@@ -1,0 +1,148 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+	document.querySelectorAll(".currentYear").forEach(el => {
+		el.innerText = new Date().getFullYear();
+	})
+
+    /* FADE EFFECT */
+    // Select all fade elements
+    const fadeElements = document.querySelectorAll('.fade-in');
+    if (fadeElements) {
+        // Run fade in function on page load
+        fadeIn(fadeElements);
+        // Run fade in function on scroll
+        window.addEventListener("scroll", function() { fadeIn(fadeElements) });
+    }
+
+    /* FORMS */
+    const formItems = document.querySelectorAll('.eos-input');
+    if (formItems.length > 0) {
+        formItems.forEach(inputWrapper => {
+
+            checkValue(inputWrapper)
+
+            inputWrapper.querySelectorAll('input, textarea, select').forEach(inp => {
+                inp.addEventListener('focus', function() {
+                    inputWrapper.classList.add('active')
+                });
+                inp.addEventListener('blur', function() {
+                    inputWrapper.classList.remove('active')
+                    checkValue(inputWrapper)
+                });
+            })
+        })
+    }
+
+    // form validation
+    const requiredItems = document.querySelectorAll('.eos-input.required');
+    if (requiredItems.length > 0) {
+        requiredItems.forEach(itemWrapper => {
+            let input = itemWrapper.querySelector('.form-input');
+            input.required = true;
+            input.addEventListener('blur', function() {
+                if (input.value === "") {
+                    itemWrapper.classList.remove('error-invalid');
+                    itemWrapper.classList.add('error-empty');
+                } else {
+                    itemWrapper.classList.remove('error-empty')
+                    if (itemWrapper.classList.contains('validate-email')) {
+                        let emailResult = validateEmail(input.value);
+                        if (emailResult === false) {
+                            itemWrapper.classList.add('error-invalid');
+                        } else {
+                            itemWrapper.classList.remove('error-invalid');
+                        }
+                    }
+                    if (itemWrapper.classList.contains('validate-fullName')) {
+                        let nameResult = validateFullName(input.value);
+                        if (nameResult === false) {
+                            itemWrapper.classList.add('error-invalid');
+                        } else {
+                            itemWrapper.classList.remove('error-invalid');
+                        }
+                    }
+                    if (itemWrapper.classList.contains('validate-mobileNumber')) {
+                        let numberFormat = formatMobileNumber(input.value);
+                        let numberResult = validateMobileNumber(numberFormat);
+                        if (numberResult === false) {
+                            itemWrapper.classList.add('error-invalid');
+                        } else {
+                            itemWrapper.classList.remove('error-invalid');
+                        }
+                    }
+                }
+            })
+        });
+    }
+});
+
+apiUrl = window.location.protocol + '//' + window.location.host + '/api';
+
+function apiReq(options) {
+    let newReq = new XMLHttpRequest();
+    newReq.open(options.method.toUpperCase(), options.url);
+    newReq.setRequestHeader('Content-Type', 'application/json');
+    if (options.body) {
+        newReq.send(options.body);
+    } else {
+        newReq.send();
+    }
+    return newReq;
+}
+
+function fadeIn(fadeElements) {
+    let windowHeight = window.innerHeight;
+    let fadeInPoint = windowHeight * (1 - 0.12);
+    fadeElements.forEach(function(i) {
+        let objTop = i.getBoundingClientRect().top;
+        if (objTop < fadeInPoint) {
+            i.classList.add('visible')
+        } else {
+            i.classList.remove('visible')
+        }
+    })
+};
+
+function checkValue(itemWrapper) {
+    let itemInput = itemWrapper.querySelectorAll('input, textarea')
+    itemInput.forEach(inp => {
+        if (inp.value != "" || inp.placeholder != "") {
+            itemWrapper.classList.add('eos-input--has-value')
+        } else {
+            itemWrapper.classList.remove('eos-input--has-value')
+        }
+    })
+}
+
+function validateEmail(value) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateFullName(value) {
+    if (/^[a-zA-Z]+ [a-zA-Z]+$/.test(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateMobileNumber(value) {
+    if (/^\+61\s\d{3}\s\d{3}\s\d{3}$/.test(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function formatMobileNumber(phoneInput) {
+    let phoneObj = phoneInput.replace(/\s/g, '').replace(/^0/g, '+61').match(/(\+61)(\d{3})(\d{3})(\d{3})/);
+    try {
+        return phoneObj[1] + ' ' + phoneObj[2] + ' ' + phoneObj[3] + ' ' + phoneObj[4];
+    } catch {
+        return phoneInput;
+    }
+}

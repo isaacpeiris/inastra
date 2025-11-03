@@ -1,0 +1,115 @@
+/* TITLE */
+section#hero {
+    text-align: center;
+}
+
+section#hero h1 {
+    font-size: var(--f-size-1);
+}
+
+/* SUBTITLE */
+section#subtitle {
+    padding: calc(6vh - (var(--wave-height)/2)) 0 6vh;
+}
+
+section#subtitle .client-logo a {
+    color: var(--c-base-500);
+}
+
+section#subtitle .client-logo img {
+    max-width: 100%;
+}
+
+/* CONTENT */
+section#content .eos-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    column-gap: 4vw;
+    grid-row-gap: 48px;
+}
+
+section#content .introduction {
+    grid-column: 1/3;
+}
+
+section#content .content-body p:not(:last-child) {
+    margin-bottom: var(--spacing-m);
+}
+
+/* TESTIMONIAL */
+section#testimonial::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: var(--wave-height);
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    bottom: calc(var(--wave-height) * -1);
+    transform: scaleY(-1) scaleX(-1);
+    background-image: url('../images/wave-2.png');
+}
+
+section#testimonial {
+    margin-bottom: var(--wave-height);
+    padding: 6vh 0 calc(6vh - (var(--wave-height)/2));
+}
+
+section#testimonial .eos-container {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+}
+
+section#testimonial .eos-container::before,
+section#testimonial .eos-container::after {
+    font-size: var(--f-size-1);
+    color: var(--c-purple-500);
+}
+
+section#testimonial .eos-container::before {
+    content: '\201C';
+}
+
+section#testimonial .eos-container::after {
+    content: '\201D';
+    text-align: right;
+}
+
+section#testimonial b {
+    color: var(--c-purple-500);
+}
+
+.testimonial-details {
+    text-align: right;
+    margin-top: var(--spacing-m);
+}
+
+/* CTA */
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 680px) {
+    section#subtitle .eos-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    section#subtitle .client-logo {
+        max-width: 40%;
+        margin: 0 auto 48px;
+    }
+    section#content .eos-container {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px 20px;
+    }
+    section#content .content-header {
+        margin-bottom: -48px;
+    }
+    section#content .introduction {
+        grid-column: 1/2;
+    }
+    section#testimonial .eos-container {
+        grid-template-columns: 1fr;
+    }
+    section#testimonial .eos-container::after {
+        content: none;
+    }
+}

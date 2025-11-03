@@ -1,0 +1,236 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // still background if reduced motion
+    const particleJsElement = document.querySelector('#particle-js');
+
+	particles.particles.shape.image.src = particleJsElement.dataset.path ? particleJsElement.dataset.path + "/four-point-star.png" : "assets/images/four-point-star.png";
+
+    if (particleJsElement) {
+        if (document.documentElement.classList.contains('reduced-motion')) {
+            particlesJS('particle-js', reduceMotion);
+        } else {
+            particlesJS('particle-js', particles);
+        };
+    }
+})
+
+const particles = {
+  "particles": {
+    "number": {
+      "value": 48,
+      "density": {
+        "enable": true,
+        "value_area": 480
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "image",
+      "stroke": {
+        "width": 0,
+        "color": "#ffffff"
+      },
+      "polygon": {
+        "nb_sides": 3
+      },
+      "image": {
+        "src": "assets/images/four-point-star.png",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 1,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 6,
+        "opacity_min": 0,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 4,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 6,
+        "size_min": 1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false,
+      "distance": 120,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 0.16,
+      "direction": "left",
+      "random": false,
+      "straight": true,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "window",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "bubble"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 120,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 120,
+        "size": 12,
+        "duration": 12,
+        "opacity": 1,
+        "speed": 1
+      },
+      "repulse": {
+        "distance": 120,
+        "duration": 4
+      },
+      "push": {
+        "particles_nb": 1
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+}
+
+const reduceMotion = {
+  "particles": {
+    "number": {
+      "value": 48,
+      "density": {
+        "enable": true,
+        "value_area": 480
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "image",
+      "stroke": {
+        "width": 0,
+        "color": "#ffffff"
+      },
+      "polygon": {
+        "nb_sides": 3
+      },
+      "image": {
+        "src": "assets/images/four-point-star.png",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 1,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 6,
+        "opacity_min": 0,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 4,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 6,
+        "size_min": 1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false,
+      "distance": 120,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": false,
+      "speed": 0,
+      "direction": "left",
+      "random": false,
+      "straight": true,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "window",
+    "events": {
+      "onhover": {
+        "enable": false,
+        "mode": "bubble"
+      },
+      "onclick": {
+        "enable": false,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 120,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 120,
+        "size": 12,
+        "duration": 12,
+        "opacity": 1,
+        "speed": 1
+      },
+      "repulse": {
+        "distance": 120,
+        "duration": 4
+      },
+      "push": {
+        "particles_nb": 1
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+}
